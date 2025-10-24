@@ -35,6 +35,7 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "./src"),
         lodash: "lodash-es",
       },
+      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
     },
     define: {
       "process.env.VITE_SUPABASE_URL": JSON.stringify(env.VITE_SUPABASE_URL),
