@@ -3,50 +3,123 @@ import type { Database } from '@/integrations/supabase/types'
 import { toast } from 'sonner'
 import { env } from '@/config/env'
 
-// Create the supabase client directly here
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+// DEMO MODE: Check if we're in demo mode
+const isDemoMode = import.meta.env.VITE_DEMO_MODE === 'true';
 
-if (!supabaseUrl || !supabaseAnonKey) {
+// Create the supabase client directly here
+const supabaseUrl = isDemoMode ? 'https://demo.supabase.co' : import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = isDemoMode ? 'demo-anon-key' : import.meta.env.VITE_SUPABASE_ANON_KEY
+
+if (!isDemoMode && (!supabaseUrl || !supabaseAnonKey)) {
   throw new Error('Missing Supabase environment variables')
 }
 
-// OPTIMIZATION: Enhanced client configuration to reduce realtime overhead
-export const supabase = createClient<Database>(
-  supabaseUrl,
-  supabaseAnonKey,
-  {
-    auth: {
-      autoRefreshToken: true,
-      persistSession: true,
-      detectSessionInUrl: true,
-      storage: localStorage, // Explicitly use localStorage
-      storageKey: 'ovenai-auth', // Custom storage key
+// DEMO MODE: Create mock client that doesn't make any real calls
+const createMockSupabaseClient = () => {
+  console.log('🎭 [DEMO MODE] Using mock Supabase client - NO real API calls will be made');
+  
+  const mockAuth = {
+    getSession: async () => {
+      console.log('📝 [DEMO MODE] Mock: This would fetch session from Supabase auth.sessions table');
+      return { data: { session: null }, error: null };
     },
-    global: {
-      headers: {
-        'x-application-name': 'ovenai-crm'
-      }
+    getUser: async () => {
+      console.log('📝 [DEMO MODE] Mock: This would fetch user from Supabase auth.users table');
+      return { data: { user: null }, error: null };
     },
-    db: {
-      schema: 'public'
+    onAuthStateChange: (callback: any) => {
+      console.log('📝 [DEMO MODE] Mock: This would subscribe to Supabase auth state changes');
+      return { data: { subscription: { unsubscribe: () => {} } } };
     },
-    realtime: {
-      // OPTIMIZATION: Dramatically reduce realtime frequency
-      params: {
-        eventsPerSecond: 1 // Reduced from 2 to 1 (50% reduction)
-      },
-      // OPTIMIZATION: Add heartbeat configuration for better connection management
-      heartbeatIntervalMs: 30000, // 30 seconds instead of default 15
-      // OPTIMIZATION: Timeout configuration
-      timeout: 20000, // 20 seconds
-      // OPTIMIZATION: Enable smart reconnection
-      reconnectAfterMs: (tries: number) => Math.min(tries * 1000, 10000), // Exponential backoff
-      // OPTIMIZATION: Reduce log verbosity in production
-      log_level: import.meta.env.DEV ? 'info' : 'error'
+    signOut: async () => {
+      console.log('📝 [DEMO MODE] Mock: This would sign out user via Supabase auth');
+      return { error: null };
+    },
+    signInWithPassword: async (credentials: any) => {
+      console.log('📝 [DEMO MODE] Mock: This would authenticate via Supabase auth.users table');
+      return { data: null, error: { message: 'Demo mode - no real authentication' } };
     }
-  }
-)
+  };
+
+  const mockFrom = (table: string) => {
+    return {
+      select: (...args: any[]) => {
+        console.log(`📝 [DEMO MODE] Mock: SELECT from "${table}" - This would query Supabase table`);
+        return mockFrom(table);
+      },
+      insert: (data: any) => {
+        console.log(`📝 [DEMO MODE] Mock: INSERT into "${table}"`, data, '- This would insert into Supabase table');
+        return mockFrom(table);
+      },
+      update: (data: any) => {
+        console.log(`📝 [DEMO MODE] Mock: UPDATE "${table}"`, data, '- This would update Supabase table');
+        return mockFrom(table);
+      },
+      delete: () => {
+        console.log(`📝 [DEMO MODE] Mock: DELETE from "${table}" - This would delete from Supabase table');
+        return mockFrom(table);
+      },
+      eq: (...args: any[]) => mockFrom(table),
+      in: (...args: any[]) => mockFrom(table),
+      order: (...args: any[]) => mockFrom(table),
+      limit: (...args: any[]) => mockFrom(table),
+      single: () => ({ data: null, error: null }),
+      then: (resolve: any) => resolve({ data: null, error: null })
+    };
+  };
+
+  return {
+    auth: mockAuth,
+    from: mockFrom,
+    channel: (name: string) => ({
+      on: () => ({ subscribe: () => ({ unsubscribe: () => {} }) }),
+      subscribe: () => ({ unsubscribe: () => {} })
+    }),
+    rpc: async (fn: string, params: any) => {
+      console.log(`📝 [DEMO MODE] Mock: RPC call to "${fn}"`, params, '- This would call Supabase function');
+      return { data: null, error: null };
+    }
+  };
+};
+
+// OPTIMIZATION: Enhanced client configuration to reduce realtime overhead
+export const supabase = isDemoMode 
+  ? createMockSupabaseClient() as any
+  : createClient<Database>(
+      supabaseUrl,
+      supabaseAnonKey,
+      {
+        auth: {
+          autoRefreshToken: true,
+          persistSession: true,
+          detectSessionInUrl: true,
+          storage: localStorage, // Explicitly use localStorage
+          storageKey: 'ovenai-auth', // Custom storage key
+        },
+        global: {
+          headers: {
+            'x-application-name': 'ovenai-crm'
+          }
+        },
+        db: {
+          schema: 'public'
+        },
+        realtime: {
+          // OPTIMIZATION: Dramatically reduce realtime frequency
+          params: {
+            eventsPerSecond: 1 // Reduced from 2 to 1 (50% reduction)
+          },
+          // OPTIMIZATION: Add heartbeat configuration for better connection management
+          heartbeatIntervalMs: 30000, // 30 seconds instead of default 15
+          // OPTIMIZATION: Timeout configuration
+          timeout: 20000, // 20 seconds
+          // OPTIMIZATION: Enable smart reconnection
+          reconnectAfterMs: (tries: number) => Math.min(tries * 1000, 10000), // Exponential backoff
+          // OPTIMIZATION: Reduce log verbosity in production
+          log_level: import.meta.env.DEV ? 'info' : 'error'
+        }
+      }
+    )
 
 // OPTIMIZATION: Enhanced connection monitoring and optimization
 class SupabaseOptimizer {

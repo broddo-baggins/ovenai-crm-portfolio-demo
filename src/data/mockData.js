@@ -21,7 +21,9 @@ export const mockLeads = [
     tags: ['enterprise', 'hot-lead', 'demo-scheduled'],
     notes: 'Very interested in AI automation features. Demo scheduled for next week.',
     source: 'WhatsApp Inbound',
-    created_at: '2024-01-15T09:00:00Z'
+    created_at: '2024-01-15T09:00:00Z',
+    project_id: 'project-001',
+    current_project_id: 'project-001'
   },
   {
     id: 'lead-002',

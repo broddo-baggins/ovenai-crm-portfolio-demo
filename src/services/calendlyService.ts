@@ -467,6 +467,25 @@ export class CalendlyService {
     } = {}
   ): Promise<CalendlyScheduledEvent[]> {
     try {
+      // DEMO MODE: Return mock calendar events
+      if (import.meta.env.VITE_DEMO_MODE === 'true') {
+        console.log('📅 [DEMO MODE] Mock: Returning mock calendar events - This would fetch from Calendly API');
+        const { mockCalendarBookings } = await import('@/data/mockData');
+        // Transform mock bookings to Calendly format
+        return mockCalendarBookings.map((booking: any) => ({
+          uri: `https://api.calendly.com/scheduled_events/${booking.id}`,
+          name: booking.title,
+          status: booking.status,
+          start_time: booking.scheduled_time,
+          end_time: new Date(new Date(booking.scheduled_time).getTime() + booking.duration * 60000).toISOString(),
+          event_type: booking.meeting_type,
+          location: { type: 'custom', location: booking.meeting_link },
+          invitees_counter: { total: booking.attendees?.length || 1, active: booking.attendees?.length || 1 },
+          created_at: booking.scheduled_time,
+          updated_at: booking.scheduled_time,
+        }));
+      }
+      
       // Load PAT if not already loaded
       if (!this.patUser) {
         await this.loadPAT();
@@ -954,6 +973,25 @@ export class CalendlyService {
     error?: string;
   }> {
     try {
+      // DEMO MODE: Return mock connection status
+      if (import.meta.env.VITE_DEMO_MODE === 'true') {
+        console.log('📅 [DEMO MODE] Mock: Calendar is connected (mock) - This would check Calendly authentication');
+        return {
+          connected: true,
+          method: 'pat',
+          user: {
+            uri: 'https://api.calendly.com/users/demo-user',
+            name: 'Demo User',
+            slug: 'demo-user',
+            email: 'demo@example.com',
+            scheduling_url: 'https://calendly.com/demo-user',
+            timezone: 'America/New_York',
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          }
+        };
+      }
+      
       // First try PAT method
       const patUser = await this.loadPAT();
       if (patUser) {

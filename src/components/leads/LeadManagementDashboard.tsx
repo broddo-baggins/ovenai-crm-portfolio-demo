@@ -771,15 +771,18 @@ export const LeadManagementDashboard: React.FC = () => {
       // Use simpleProjectService with project ID for proper caching and filtering
       const allLeads = await simpleProjectService.getAllLeads(projectId);
 
+      // DEMO MODE: Skip filtering to show all mock leads
+      const isDemoMode = import.meta.env.VITE_DEMO_MODE === 'true';
+      
       // ENHANCED: The service should already filter by project, but add defensive filtering
-      const filteredLeads = projectId
-        ? allLeads.filter((lead) => {
+      const filteredLeads = (isDemoMode || !projectId)
+        ? allLeads  // In demo mode or "All projects", show all leads
+        : allLeads.filter((lead) => {
             const hasProjectMatch =
               lead.project_id === projectId ||
               lead.current_project_id === projectId;
             return hasProjectMatch;
-          })
-        : allLeads;
+          });
 
       // Transform data to include full name and ensure type compatibility
       const transformedLeads = filteredLeads.map((lead) => ({

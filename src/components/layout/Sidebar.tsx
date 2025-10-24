@@ -85,13 +85,17 @@ const Sidebar = () => {
           }),
         ]);
 
+        // DEMO MODE: Skip project filtering to show all leads
+        const isDemoMode = import.meta.env.VITE_DEMO_MODE === 'true';
+        
         // Filter by current project if selected
-        const projectLeads = currentProject
-          ? allLeads.filter(
+        const projectLeads = (isDemoMode || !currentProject)
+          ? allLeads  // In demo mode or no project selected, show all leads
+          : allLeads.filter(
               (lead) =>
-                lead.current_project_id === currentProject.id,
-            )
-          : allLeads;
+                lead.current_project_id === currentProject.id ||
+                lead.project_id === currentProject.id,
+            );
 
         // Get lead IDs for the current project
         const projectLeadIds = projectLeads.map(lead => lead.id);
