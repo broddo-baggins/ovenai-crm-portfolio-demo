@@ -138,8 +138,8 @@ const FAQ: React.FC = () => {
     {
       id: 'system-overview',
       category: 'getting-started',
-      question: 'What are the main features of OvenAI?',
-      answer: 'OvenAI is a comprehensive WhatsApp Business automation platform with lead management, BANT/HEAT scoring, automated messaging, queue management, Calendly integration, advanced analytics, and full Hebrew/RTL support. It handles everything from lead capture to conversion tracking.',
+      question: 'What are the main features of CRM Demo?',
+      answer: 'CRM Demo is a comprehensive WhatsApp Business automation platform with lead management, BANT/HEAT scoring, automated messaging, queue management, Calendly integration, advanced analytics, and full Hebrew/RTL support. It handles everything from lead capture to conversion tracking.',
       steps: [
         'Lead Management: Add, import, and qualify leads with BANT/HEAT scoring',
         'Queue Management: Automate WhatsApp messaging with business hours and daily targets',
