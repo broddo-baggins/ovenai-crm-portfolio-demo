@@ -163,14 +163,20 @@ coverage/
 *confidential*
 *credential*
 *token*
-*auth*
 *.backup
 
-# Exception: Allow legitimate source code files in context directories
-!src/context/*Auth*.tsx
-!src/context/*Auth*.ts
-!src/contexts/*Auth*.tsx
-!src/contexts/*Auth*.ts
+# Auth pattern - ONLY block auth config/credential files, NOT source code
+*.auth.json
+*.auth.js
+*auth-config*
+*auth-credentials*
+*auth-tokens*
+
+# Exception: ALWAYS allow all TypeScript/JavaScript source files in src/
+!src/**/*.ts
+!src/**/*.tsx
+!src/**/*.js
+!src/**/*.jsx
 
 # 🔐 CREDENTIALS DIRECTORY - COMPLETE EXCLUSION
 # Block the entire credentials directory and all its contents
