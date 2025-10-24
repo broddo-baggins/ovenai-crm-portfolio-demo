@@ -57,6 +57,7 @@ import LeadService from "@/services/leadService";
 import { ProjectWithStats } from "@/types/project";
 import { ErrorBoundary } from "react-error-boundary";
 import { EnhancedProjectEditDialog } from "@/components/projects/EnhancedProjectEditDialog";
+import { useProject } from "@/context/ProjectContext";
 
 // Mobile-responsive error fallback
 function ErrorFallback({
@@ -86,6 +87,7 @@ const Projects: React.FC = () => {
   const { t: tCommon } = useTranslation("common");
   const { isRTL } = useLang();
   const { isMobile, deviceType, touchSupported } = useMobileInfo();
+  const { currentProject, setCurrentProject } = useProject();
 
   // State
   const [projects, setProjects] = useState<ProjectWithStats[]>([]);
@@ -293,6 +295,21 @@ const Projects: React.FC = () => {
   const handleViewProject = (project: ProjectWithStats) => {
     setSelectedProject(project);
     setIsViewModalOpen(true);
+  };
+
+  const handleSwitchProject = (project: ProjectWithStats) => {
+    console.log('[PROJECT SWITCH] Switching to project:', project.name);
+    setCurrentProject({
+      id: project.id,
+      name: project.name,
+      description: project.description || '',
+      status: project.status,
+      created_at: project.created_at || new Date().toISOString(),
+      updated_at: project.updated_at || new Date().toISOString(),
+      priority: project.priority,
+      color: project.color
+    });
+    toast.success(`Switched to project: ${project.name}`);
   };
 
   const handleEditProject = (project: ProjectWithStats) => {
@@ -784,6 +801,29 @@ const Projects: React.FC = () => {
                       isRTL && "flex-row-reverse",
                     )}
                   >
+                    {currentProject?.id !== project.id ? (
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="flex-1 bg-blue-600 hover:bg-blue-700"
+                        onClick={() => handleSwitchProject(project)}
+                      >
+                        <Star className="h-3 w-3 mr-1" />
+                        <span className="hidden sm:inline">Switch To</span>
+                        <span className="sm:hidden">Switch</span>
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="flex-1 bg-green-600 hover:bg-green-700"
+                        disabled
+                      >
+                        <Star className="h-3 w-3 mr-1 fill-current" />
+                        <span className="hidden sm:inline">Active</span>
+                        <span className="sm:hidden">Active</span>
+                      </Button>
+                    )}
                     <Button
                       variant="outline"
                       size="sm"
