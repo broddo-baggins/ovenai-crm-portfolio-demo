@@ -666,6 +666,461 @@ export const mockConversations = [
       overall_score: 90,
       recommendation: 'URGENT: Compliance-driven deal with budget approved. High priority close.'
     }
+  },
+  {
+    lead_id: 'lead-005',
+    lead_name: 'Amanda Foster - E-Commerce Director',
+    messages: [
+      {
+        id: 'msg-401',
+        sender: 'lead',
+        timestamp: '2024-01-23T08:15:00Z',
+        content: 'Our e-commerce store gets 800+ customer inquiries daily via WhatsApp. We are drowning. Can your AI help?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-402',
+        sender: 'agent',
+        timestamp: '2024-01-23T08:17:00Z',
+        content: 'Absolutely! We handle 1000+ messages/day per agent with 95% accuracy. Our AI handles common questions instantly, escalates complex ones to your team.',
+        status: 'read'
+      },
+      {
+        id: 'msg-403',
+        sender: 'lead',
+        timestamp: '2024-01-23T08:20:00Z',
+        content: 'What about product recommendations? Can it suggest items based on customer questions?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-404',
+        sender: 'agent',
+        timestamp: '2024-01-23T08:22:00Z',
+        content: 'Yes! Our AI integrates with your product catalog. It can suggest items, check inventory, even send product images. Increased our clients average order value by 35%.',
+        status: 'read'
+      },
+      {
+        id: 'msg-405',
+        sender: 'lead',
+        timestamp: '2024-01-23T08:25:00Z',
+        content: 'That sounds perfect. We are currently paying $8k/month for 5 customer service reps. What is your pricing?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-406',
+        sender: 'agent',
+        timestamp: '2024-01-23T08:27:00Z',
+        content: 'For 800 daily messages with product integration, we are at $6k/month. This includes unlimited AI responses, human escalation, and full analytics dashboard.',
+        status: 'read'
+      },
+      {
+        id: 'msg-407',
+        sender: 'lead',
+        timestamp: '2024-01-23T08:30:00Z',
+        content: 'So we save $2k monthly AND handle more volume? I am the Director so I can approve this. When can we start?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-408',
+        sender: 'agent',
+        timestamp: '2024-01-23T08:32:00Z',
+        content: 'We can have you live in 2 weeks! Let me send you our implementation timeline and contract. You will see ROI within the first month.',
+        status: 'read'
+      },
+      {
+        id: 'msg-409',
+        sender: 'lead',
+        timestamp: '2024-01-23T08:35:00Z',
+        content: 'Send it over. This is exactly what we need. Our Black Friday is coming and we need this ASAP.',
+        status: 'delivered'
+      }
+    ],
+    bant_analysis: {
+      budget: 'QUALIFIED - Currently spending $8k/month, $6k pricing is savings',
+      authority: 'QUALIFIED - Director level with approval power',
+      need: 'QUALIFIED - Critical operational pain, 800+ daily inquiries overwhelming team',
+      timeline: 'QUALIFIED - Urgent need, Black Friday deadline approaching',
+      overall_score: 95,
+      recommendation: 'SUPER HOT: Clear ROI, decision maker, urgent timeline. Close immediately!'
+    }
+  },
+  {
+    lead_id: 'lead-008',
+    lead_name: 'Dr. Rachel Martinez - Healthcare Administrator',
+    messages: [
+      {
+        id: 'msg-501',
+        sender: 'lead',
+        timestamp: '2024-01-23T11:00:00Z',
+        content: 'We are a medical clinic. Need a CRM for patient appointment reminders via WhatsApp. Must be HIPAA compliant. Are you certified?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-502',
+        sender: 'agent',
+        timestamp: '2024-01-23T11:02:00Z',
+        content: 'Yes! We are HIPAA compliant with BAA available. End-to-end encryption, audit logs, and secure patient data handling. We work with 50+ healthcare providers.',
+        status: 'read'
+      },
+      {
+        id: 'msg-503',
+        sender: 'lead',
+        timestamp: '2024-01-23T11:05:00Z',
+        content: 'Good. We have 200 appointments weekly. 30% no-shows costing us $15k monthly. Can you reduce that?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-504',
+        sender: 'agent',
+        timestamp: '2024-01-23T11:07:00Z',
+        content: 'Absolutely! Our clients see 60-70% reduction in no-shows with automated reminders 48hrs and 2hrs before appointments. Patients can confirm via WhatsApp.',
+        status: 'read'
+      },
+      {
+        id: 'msg-505',
+        sender: 'lead',
+        timestamp: '2024-01-23T11:10:00Z',
+        content: 'That would save us $10k monthly! What is the pricing and how fast can we implement?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-506',
+        sender: 'agent',
+        timestamp: '2024-01-23T11:12:00Z',
+        content: 'For 200 weekly appointments, $2.5k/month. Implementation takes 1 week including EHR integration. ROI payback in 3 weeks based on your no-show costs.',
+        status: 'read'
+      },
+      {
+        id: 'msg-507',
+        sender: 'lead',
+        timestamp: '2024-01-23T11:15:00Z',
+        content: 'Send me the BAA and contract. I am the Administrator so I can sign today. This will transform our practice.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-508',
+        sender: 'agent',
+        timestamp: '2024-01-23T11:17:00Z',
+        content: 'Perfect! Sending BAA, contract, and HIPAA compliance documentation now. Welcome to better patient care!',
+        status: 'read'
+      }
+    ],
+    bant_analysis: {
+      budget: 'QUALIFIED - Clear ROI: $2.5k cost vs $10k savings monthly',
+      authority: 'QUALIFIED - Healthcare Administrator with signing authority',
+      need: 'QUALIFIED - Critical: $15k monthly loss from no-shows',
+      timeline: 'QUALIFIED - Ready to sign today, immediate implementation',
+      overall_score: 93,
+      recommendation: 'HOT DEAL: Healthcare with clear ROI and immediate authorization. Close NOW!'
+    }
+  },
+  {
+    lead_id: 'lead-010',
+    lead_name: 'James Richardson - SaaS Founder',
+    messages: [
+      {
+        id: 'msg-601',
+        sender: 'lead',
+        timestamp: '2024-01-23T14:30:00Z',
+        content: 'Hey! We just raised Series A. Scaling from 100 to 1000 leads/month. Current CRM can not handle it. Need something NOW.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-602',
+        sender: 'agent',
+        timestamp: '2024-01-23T14:32:00Z',
+        content: 'Congrats on Series A! We specialize in fast-scaling SaaS companies. Can handle 10k+ leads/month with AI qualification. How quickly do you need to be live?',
+        status: 'read'
+      },
+      {
+        id: 'msg-603',
+        sender: 'lead',
+        timestamp: '2024-01-23T14:35:00Z',
+        content: 'Like yesterday haha. Our investors want to see improved conversion metrics by Q2. We close at 8% now, need to hit 15%.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-604',
+        sender: 'agent',
+        timestamp: '2024-01-23T14:37:00Z',
+        content: 'Our SaaS clients average 18-22% conversion with our AI BANT scoring and automated follow-ups. We can migrate your data and go live in 72 hours.',
+        status: 'read'
+      },
+      {
+        id: 'msg-605',
+        sender: 'lead',
+        timestamp: '2024-01-23T14:40:00Z',
+        content: 'Whoa, 72 hours? And 18-22% conversion? That would make our investors VERY happy. What is the investment?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-606',
+        sender: 'agent',
+        timestamp: '2024-01-23T14:42:00Z',
+        content: 'For rapid scaling at your volume: $8k/month with onboarding included. White-glove service, dedicated success manager, and we guarantee live in 3 days.',
+        status: 'read'
+      },
+      {
+        id: 'msg-607',
+        sender: 'lead',
+        timestamp: '2024-01-23T14:45:00Z',
+        content: 'SOLD. Send me the contract. I am the Founder/CEO so I can sign immediately. Let us start tomorrow morning.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-608',
+        sender: 'agent',
+        timestamp: '2024-01-23T14:47:00Z',
+        content: 'Amazing! Contract incoming. I will personally oversee your implementation. By Friday you will be scaling like a rocket. Welcome aboard!',
+        status: 'read'
+      }
+    ],
+    bant_analysis: {
+      budget: 'QUALIFIED - Series A funded, $8k/month approved instantly',
+      authority: 'QUALIFIED - Founder/CEO, ultimate decision maker',
+      need: 'QUALIFIED - Critical: scaling 10x, investor pressure for metrics',
+      timeline: 'QUALIFIED - URGENT: needs implementation "yesterday", starting tomorrow',
+      overall_score: 98,
+      recommendation: 'HOTTEST LEAD: Funded startup, CEO direct, URGENT timeline. VIP treatment!'
+    }
+  },
+  {
+    lead_id: 'lead-015',
+    lead_name: 'Maria Santos - Real Estate Agency Owner',
+    messages: [
+      {
+        id: 'msg-701',
+        sender: 'lead',
+        timestamp: '2024-01-23T16:00:00Z',
+        content: 'Hi, I run a real estate agency with 12 agents. We get 400+ property inquiries monthly but only close 15 deals. Need better lead management.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-702',
+        sender: 'agent',
+        timestamp: '2024-01-23T16:02:00Z',
+        content: 'That is only 3.75% conversion! Our real estate clients see 10-12% with automated lead routing, instant property details via WhatsApp, and smart follow-ups.',
+        status: 'read'
+      },
+      {
+        id: 'msg-703',
+        sender: 'lead',
+        timestamp: '2024-01-23T16:05:00Z',
+        content: 'Really? 10-12% would be 40-48 deals monthly! That is $480k additional annual commission for us. How does it work?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-704',
+        sender: 'agent',
+        timestamp: '2024-01-23T16:07:00Z',
+        content: 'Our AI qualifies leads by budget/location, routes hot prospects to your best agents instantly, sends property photos/videos via WhatsApp automatically. Your agents only handle warm leads.',
+        status: 'read'
+      },
+      {
+        id: 'msg-705',
+        sender: 'lead',
+        timestamp: '2024-01-23T16:10:00Z',
+        content: 'This sounds like exactly what we need. My agents are wasting time on unqualified leads. What is the pricing?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-706',
+        sender: 'agent',
+        timestamp: '2024-01-23T16:12:00Z',
+        content: 'For 12 agents with 400 monthly leads: $5k/month. Based on your numbers, this pays for itself with just 1 extra deal closed per month.',
+        status: 'read'
+      },
+      {
+        id: 'msg-707',
+        sender: 'lead',
+        timestamp: '2024-01-23T16:15:00Z',
+        content: 'So if we close even 5 extra deals monthly, that is $50k revenue vs $5k cost. I am the owner, I can approve this. When can we start?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-708',
+        sender: 'agent',
+        timestamp: '2024-01-23T16:17:00Z',
+        content: 'We can start this week! I will personally train your agents. Plus, you will get a dedicated dashboard showing each agent performance in real-time.',
+        status: 'read'
+      },
+      {
+        id: 'msg-709',
+        sender: 'lead',
+        timestamp: '2024-01-23T16:20:00Z',
+        content: 'Perfect! Send the contract and training schedule. My team is going to love this. Game changer for our agency!',
+        status: 'delivered'
+      }
+    ],
+    bant_analysis: {
+      budget: 'QUALIFIED - Clear 10x ROI: $5k cost vs $50k+ monthly revenue increase',
+      authority: 'QUALIFIED - Agency owner with full approval power',
+      need: 'QUALIFIED - Critical inefficiency: 3.75% conversion, agents wasting time',
+      timeline: 'QUALIFIED - Ready to start this week, immediate implementation',
+      overall_score: 94,
+      recommendation: 'HOT REAL ESTATE DEAL: Owner-level, massive ROI, ready to sign. High priority!'
+    }
+  },
+  {
+    lead_id: 'lead-018',
+    lead_name: 'Professor Alex Kim - EdTech Platform',
+    messages: [
+      {
+        id: 'msg-801',
+        sender: 'lead',
+        timestamp: '2024-01-24T09:00:00Z',
+        content: 'We are an online education platform with 5,000 students. Need automated support for course questions via WhatsApp. Students ask 200+ questions daily.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-802',
+        sender: 'agent',
+        timestamp: '2024-01-24T09:02:00Z',
+        content: 'Perfect use case! Our AI can answer common course questions 24/7, handle enrollment inquiries, send class reminders, and escalate complex questions to instructors.',
+        status: 'read'
+      },
+      {
+        id: 'msg-803',
+        sender: 'lead',
+        timestamp: '2024-01-24T09:05:00Z',
+        content: 'Our instructors spend 3 hours daily answering repetitive questions. If AI handles 70%, that saves us 2 hours per instructor. Can it integrate with our LMS?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-804',
+        sender: 'agent',
+        timestamp: '2024-01-24T09:07:00Z',
+        content: 'Yes! We integrate with Canvas, Moodle, Blackboard, and custom LMS platforms. AI can check student progress, assignment deadlines, and grades to give personalized answers.',
+        status: 'read'
+      },
+      {
+        id: 'msg-805',
+        sender: 'lead',
+        timestamp: '2024-01-24T09:10:00Z',
+        content: 'That is amazing. We currently pay 2 support staff $6k/month total. If your AI handles most questions, we could redeploy them to curriculum development.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-806',
+        sender: 'agent',
+        timestamp: '2024-01-24T09:12:00Z',
+        content: 'Exactly! Our EdTech clients save 60-70% on support costs while improving student satisfaction scores. For 5,000 students, pricing is $3k/month with LMS integration included.',
+        status: 'read'
+      },
+      {
+        id: 'msg-807',
+        sender: 'lead',
+        timestamp: '2024-01-24T09:15:00Z',
+        content: 'So we save $3k monthly AND improve student experience? I am the Platform Director. Let me discuss with our Dean and get back to you by Friday.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-808',
+        sender: 'agent',
+        timestamp: '2024-01-24T09:17:00Z',
+        content: 'Sounds good! I will send you our EdTech case studies and ROI calculator. Our implementation takes 2 weeks - perfect timing for next semester launch!',
+        status: 'read'
+      },
+      {
+        id: 'msg-809',
+        sender: 'lead',
+        timestamp: '2024-01-24T09:20:00Z',
+        content: 'Perfect timing indeed! Send those over. I am confident we will move forward. Our students deserve better support.',
+        status: 'delivered'
+      }
+    ],
+    bant_analysis: {
+      budget: 'QUALIFIED - $3k cost vs $3k savings = cost-neutral with improved service',
+      authority: 'QUALIFIED - Platform Director, needs Dean approval (one step away)',
+      need: 'QUALIFIED - Support team overwhelmed, 200+ daily questions, student experience issue',
+      timeline: 'QUALIFIED - Decision by Friday, implementation for next semester',
+      overall_score: 82,
+      recommendation: 'WARM LEAD: Strong ROI, authority needs one approval. Follow up Friday. High probability close.'
+    }
+  },
+  {
+    lead_id: 'lead-020',
+    lead_name: 'Lisa Chen - Financial Advisory Firm',
+    messages: [
+      {
+        id: 'msg-901',
+        sender: 'lead',
+        timestamp: '2024-01-24T13:00:00Z',
+        content: 'We are a financial advisory firm. Need secure WhatsApp communication for 500 high-net-worth clients. Must be compliant with SEC regulations. Do you support this?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-902',
+        sender: 'agent',
+        timestamp: '2024-01-24T13:02:00Z',
+        content: 'Yes! We are SEC-compliant with full message archiving, e-discovery support, and encrypted communication. We work with 20+ financial firms managing $5B+ in assets.',
+        status: 'read'
+      },
+      {
+        id: 'msg-903',
+        sender: 'lead',
+        timestamp: '2024-01-24T13:05:00Z',
+        content: 'Good. Our clients want instant responses for market updates, portfolio questions. We have 8 advisors manually responding. Takes too much time from actual financial planning.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-904',
+        sender: 'agent',
+        timestamp: '2024-01-24T13:07:00Z',
+        content: 'Our AI handles routine inquiries, sends automated market updates, portfolio summaries, and meeting reminders. Advisors only handle complex financial planning conversations.',
+        status: 'read'
+      },
+      {
+        id: 'msg-905',
+        sender: 'lead',
+        timestamp: '2024-01-24T13:10:00Z',
+        content: 'That would free up 20 hours per advisor weekly. That is 160 billable hours monthly. At $500/hour, that is $80k in recovered revenue. What is your pricing?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-906',
+        sender: 'agent',
+        timestamp: '2024-01-24T13:12:00Z',
+        content: 'For 500 clients with SEC compliance and financial integrations: $7k/month. Based on your math, $80k revenue vs $7k cost = $73k net monthly gain!',
+        status: 'read'
+      },
+      {
+        id: 'msg-907',
+        sender: 'lead',
+        timestamp: '2024-01-24T13:15:00Z',
+        content: 'Impressive ROI. I am the Managing Partner. Need to present to our compliance team first. Can you provide SEC compliance documentation?',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-908',
+        sender: 'agent',
+        timestamp: '2024-01-24T13:17:00Z',
+        content: 'Absolutely! Sending full SEC compliance docs, FINRA archiving procedures, and case studies from similar firms. I can also join your compliance call to answer technical questions.',
+        status: 'read'
+      },
+      {
+        id: 'msg-909',
+        sender: 'lead',
+        timestamp: '2024-01-24T13:20:00Z',
+        content: 'Perfect. Our compliance meets next Tuesday. Can you attend? If they approve, we will move forward immediately.',
+        status: 'delivered'
+      },
+      {
+        id: 'msg-910',
+        sender: 'agent',
+        timestamp: '2024-01-24T13:22:00Z',
+        content: 'I will clear my calendar for Tuesday. Sending meeting invite now. Looking forward to helping your firm scale efficiently while staying compliant!',
+        status: 'read'
+      }
+    ],
+    bant_analysis: {
+      budget: 'QUALIFIED - Massive ROI: $7k cost vs $80k recovered revenue monthly',
+      authority: 'QUALIFIED - Managing Partner, final decision maker after compliance',
+      need: 'QUALIFIED - Advisors losing 20hrs/week on routine questions, opportunity cost critical',
+      timeline: 'QUALIFIED - Compliance meeting Tuesday, immediate implementation if approved',
+      overall_score: 91,
+      recommendation: 'HIGH-VALUE FINANCIAL DEAL: Huge ROI, Managing Partner, compliance step only. Prepare for Tuesday!'
+    }
   }
 ];
 
