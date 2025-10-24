@@ -1,0 +1,30 @@
+{
+  "chart": {
+    "defaultTitle": "תרשים",
+    "mockData": "הדמיית נתוני תרשים",
+    "rtlSupport": "RTL: מופעל",
+    "series": "סדרה"
+  },
+  "legend": {
+    "show": "הצג מקרא",
+    "hide": "הסתר מקרא"
+  },
+  "axes": {
+    "xAxis": "ציר X",
+    "yAxis": "ציר Y",
+    "time": "זמן",
+    "value": "ערך"
+  },
+  "types": {
+    "line": "תרשים קווי",
+    "bar": "תרשים עמודות",
+    "pie": "תרשים עוגה",
+    "area": "תרשים שטח"
+  },
+  "actions": {
+    "zoom": "זום",
+    "reset": "איפוס",
+    "download": "הורדה",
+    "fullscreen": "מסך מלא"
+  }
+} 

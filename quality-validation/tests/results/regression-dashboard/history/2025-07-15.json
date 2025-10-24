@@ -1,0 +1,1933 @@
+{
+  "timestamp": "2025-07-15T09:15:24.230Z",
+  "summary": {
+    "totalSuites": 8,
+    "totalTests": 30,
+    "totalPassed": 0,
+    "totalFailed": 0,
+    "totalSkipped": 0,
+    "totalDuration": 858551,
+    "passRate": "0.00",
+    "criticalIssues": 0,
+    "highIssues": 0,
+    "mediumIssues": 0
+  },
+  "suites": [
+    {
+      "suite": "Sanity Tests",
+      "priority": "critical",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 300217,
+      "status": "failed",
+      "error": "spawnSync /bin/sh ETIMEDOUT",
+      "timestamp": "2025-07-15T09:15:24.230Z"
+    },
+    {
+      "suite": "E2E Core",
+      "priority": "high",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 300052,
+      "status": "failed",
+      "error": "spawnSync /bin/sh ETIMEDOUT",
+      "timestamp": "2025-07-15T09:15:24.230Z"
+    },
+    {
+      "suite": "Admin Console",
+      "priority": "high",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 1291,
+      "status": "failed",
+      "error": "Command failed: npx playwright test tests/suites/e2e/admin/ --reporter=json",
+      "timestamp": "2025-07-15T09:15:24.230Z"
+    },
+    {
+      "suite": "Search Functionality",
+      "priority": "medium",
+      "total": 30,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 46530,
+      "status": "failed",
+      "timestamp": "2025-07-15T09:15:24.230Z",
+      "details": [
+        {
+          "title": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+          "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "🔍 Comprehensive Search Functionality",
+              "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+              "line": 20,
+              "column": 6,
+              "specs": [],
+              "suites": [
+                {
+                  "title": "🎯 Global Search Bar Testing",
+                  "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                  "line": 35,
+                  "column": 8,
+                  "specs": [
+                    {
+                      "title": "should find and test global search functionality",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "chromium",
+                          "projectName": "chromium",
+                          "results": [
+                            {
+                              "workerIndex": 0,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 4593,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing global search bar functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:26.842Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-e200c3514612a6498db6",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 36,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search with various search terms",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "chromium",
+                          "projectName": "chromium",
+                          "results": [
+                            {
+                              "workerIndex": 0,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 4266,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search with different terms...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:31.702Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-ad71946333554f170d11",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 100,
+                      "column": 5
+                    },
+                    {
+                      "title": "should find and test global search functionality",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "firefox",
+                          "projectName": "firefox",
+                          "results": [
+                            {
+                              "workerIndex": 3,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 5696,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing global search bar functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:26.838Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-6ac080f0cbb5dad3ada1",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 36,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search with various search terms",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "firefox",
+                          "projectName": "firefox",
+                          "results": [
+                            {
+                              "workerIndex": 3,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 4839,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search with different terms...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:34.019Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-04ddf63c907d5cb6f06f",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 100,
+                      "column": 5
+                    },
+                    {
+                      "title": "should find and test global search functionality",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "webkit",
+                          "projectName": "webkit",
+                          "results": [
+                            {
+                              "workerIndex": 6,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 8005,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing global search bar functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:37.143Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-7bd02ea22e27e8aa17f8",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 36,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search with various search terms",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "webkit",
+                          "projectName": "webkit",
+                          "results": [
+                            {
+                              "workerIndex": 6,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 5479,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search with different terms...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:45.410Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-ef8d03fcb46fad247f38",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 100,
+                      "column": 5
+                    },
+                    {
+                      "title": "should find and test global search functionality",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Chrome",
+                          "projectName": "Mobile Chrome",
+                          "results": [
+                            {
+                              "workerIndex": 8,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 4395,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing global search bar functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:51.199Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-1d650721d013ac0242fd",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 36,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search with various search terms",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Chrome",
+                          "projectName": "Mobile Chrome",
+                          "results": [
+                            {
+                              "workerIndex": 8,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 4355,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search with different terms...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:55.835Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-ec152293f05a7851d350",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 100,
+                      "column": 5
+                    },
+                    {
+                      "title": "should find and test global search functionality",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Safari",
+                          "projectName": "Mobile Safari",
+                          "results": [
+                            {
+                              "workerIndex": 12,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 4778,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing global search bar functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:26:00.778Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-fc3471d5213544aa4701",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 36,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search with various search terms",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Safari",
+                          "projectName": "Mobile Safari",
+                          "results": [
+                            {
+                              "workerIndex": 12,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 4640,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search with different terms...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:26:05.778Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-d98f79f3b8b9e535a4e1",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 100,
+                      "column": 5
+                    }
+                  ]
+                },
+                {
+                  "title": "📱 Mobile Search Testing",
+                  "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                  "line": 141,
+                  "column": 8,
+                  "specs": [
+                    {
+                      "title": "should test search on mobile viewport",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "chromium",
+                          "projectName": "chromium",
+                          "results": [
+                            {
+                              "workerIndex": 1,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 5176,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing mobile search functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:26.829Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-56d807aeb657b52dd8f5",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 142,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search on mobile viewport",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "firefox",
+                          "projectName": "firefox",
+                          "results": [
+                            {
+                              "workerIndex": 4,
+                              "parallelIndex": 2,
+                              "status": "passed",
+                              "duration": 6953,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing mobile search functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:36.538Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-65959deaeb4fd0c98f3d",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 142,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search on mobile viewport",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "webkit",
+                          "projectName": "webkit",
+                          "results": [
+                            {
+                              "workerIndex": 7,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 5657,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing mobile search functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:39.889Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-bee8bb65de306e97970b",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 142,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search on mobile viewport",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Chrome",
+                          "projectName": "Mobile Chrome",
+                          "results": [
+                            {
+                              "workerIndex": 11,
+                              "parallelIndex": 2,
+                              "status": "passed",
+                              "duration": 5793,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing mobile search functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:51.905Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-1da9908eb44ab34c8dcd",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 142,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search on mobile viewport",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Safari",
+                          "projectName": "Mobile Safari",
+                          "results": [
+                            {
+                              "workerIndex": 13,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 5853,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing mobile search functionality...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:26:00.987Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-0ef572d3e35cc386c484",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 142,
+                      "column": 5
+                    }
+                  ]
+                },
+                {
+                  "title": "🔍 Search Results Validation",
+                  "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                  "line": 173,
+                  "column": 8,
+                  "specs": [
+                    {
+                      "title": "should validate search result structure",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "chromium",
+                          "projectName": "chromium",
+                          "results": [
+                            {
+                              "workerIndex": 1,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 4225,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Validating search result structure...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:32.286Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-a8b539a83d43230e9f80",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 174,
+                      "column": 5
+                    },
+                    {
+                      "title": "should validate search result structure",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "firefox",
+                          "projectName": "firefox",
+                          "results": [
+                            {
+                              "workerIndex": 4,
+                              "parallelIndex": 2,
+                              "status": "passed",
+                              "duration": 5818,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Validating search result structure...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:44.757Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-911f16b4b68e1a6f5383",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 174,
+                      "column": 5
+                    },
+                    {
+                      "title": "should validate search result structure",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "webkit",
+                          "projectName": "webkit",
+                          "results": [
+                            {
+                              "workerIndex": 7,
+                              "parallelIndex": 3,
+                              "status": "passed",
+                              "duration": 4569,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Validating search result structure...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:45.762Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-605e44cd0387d21ff71b",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 174,
+                      "column": 5
+                    },
+                    {
+                      "title": "should validate search result structure",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Chrome",
+                          "projectName": "Mobile Chrome",
+                          "results": [
+                            {
+                              "workerIndex": 11,
+                              "parallelIndex": 2,
+                              "status": "passed",
+                              "duration": 4118,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Validating search result structure...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:58.003Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-5b750f54484c42e27bc9",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 174,
+                      "column": 5
+                    },
+                    {
+                      "title": "should validate search result structure",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Safari",
+                          "projectName": "Mobile Safari",
+                          "results": [
+                            {
+                              "workerIndex": 13,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 4854,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Validating search result structure...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:26:07.278Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-06d93fdbc01a8852a4eb",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 174,
+                      "column": 5
+                    }
+                  ]
+                },
+                {
+                  "title": "⚡ Search Performance Testing",
+                  "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                  "line": 218,
+                  "column": 8,
+                  "specs": [
+                    {
+                      "title": "should test search debounce and performance",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "chromium",
+                          "projectName": "chromium",
+                          "results": [
+                            {
+                              "workerIndex": 2,
+                              "parallelIndex": 2,
+                              "status": "passed",
+                              "duration": 4555,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search performance and debounce...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:26.830Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-2f4d37e14a80109b5269",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 219,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search debounce and performance",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "firefox",
+                          "projectName": "firefox",
+                          "results": [
+                            {
+                              "workerIndex": 5,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 6191,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search performance and debounce...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:36.544Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-0081540a37baba902d70",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 219,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search debounce and performance",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "webkit",
+                          "projectName": "webkit",
+                          "results": [
+                            {
+                              "workerIndex": 9,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 5063,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search performance and debounce...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:51.195Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-8e92d561458419f5c1c9",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 219,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search debounce and performance",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Chrome",
+                          "projectName": "Mobile Chrome",
+                          "results": [
+                            {
+                              "workerIndex": 10,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 4444,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search performance and debounce...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:51.498Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-e5b76ba11db107b135e1",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 219,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search debounce and performance",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Safari",
+                          "projectName": "Mobile Safari",
+                          "results": [
+                            {
+                              "workerIndex": 14,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 4836,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search performance and debounce...\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:26:02.575Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-2cd665862ece44cd0f09",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 219,
+                      "column": 5
+                    }
+                  ]
+                },
+                {
+                  "title": "🎯 Search Categories Testing",
+                  "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                  "line": 249,
+                  "column": 8,
+                  "specs": [
+                    {
+                      "title": "should test search across different data categories",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "chromium",
+                          "projectName": "chromium",
+                          "results": [
+                            {
+                              "workerIndex": 2,
+                              "parallelIndex": 2,
+                              "status": "passed",
+                              "duration": 4285,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search across different data categories...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:31.662Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-ad39c73f59db7034bed2",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 250,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search across different data categories",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "firefox",
+                          "projectName": "firefox",
+                          "results": [
+                            {
+                              "workerIndex": 5,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 6237,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search across different data categories...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:43.365Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-29cca77b4eae8f1b37b7",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 250,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search across different data categories",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "webkit",
+                          "projectName": "webkit",
+                          "results": [
+                            {
+                              "workerIndex": 9,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 5236,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search across different data categories...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:56.481Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-e4911026dcd3e0487f17",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 250,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search across different data categories",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Chrome",
+                          "projectName": "Mobile Chrome",
+                          "results": [
+                            {
+                              "workerIndex": 10,
+                              "parallelIndex": 1,
+                              "status": "passed",
+                              "duration": 4157,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search across different data categories...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:25:56.211Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-21492ebc2295773c549c",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 250,
+                      "column": 5
+                    },
+                    {
+                      "title": "should test search across different data categories",
+                      "ok": true,
+                      "tags": [],
+                      "tests": [
+                        {
+                          "timeout": 60000,
+                          "annotations": [],
+                          "expectedStatus": "passed",
+                          "projectId": "Mobile Safari",
+                          "projectName": "Mobile Safari",
+                          "results": [
+                            {
+                              "workerIndex": 14,
+                              "parallelIndex": 0,
+                              "status": "passed",
+                              "duration": 4676,
+                              "errors": [],
+                              "stdout": [
+                                {
+                                  "text": "🧪 Testing search across different data categories...\n"
+                                },
+                                {
+                                  "text": "\n🎯 Search Functionality Test Summary:\n"
+                                },
+                                {
+                                  "text": "════════════════════════════════════════\n"
+                                },
+                                {
+                                  "text": "✅ Global search functionality tested\n"
+                                },
+                                {
+                                  "text": "📱 Mobile search interface verified\n"
+                                },
+                                {
+                                  "text": "⚡ Performance and debounce validated\n"
+                                },
+                                {
+                                  "text": "🎯 Multiple search categories tested\n"
+                                },
+                                {
+                                  "text": "📚 Search system capabilities documented\n"
+                                },
+                                {
+                                  "text": "\n💡 Search System Features:\n"
+                                },
+                                {
+                                  "text": "• Real-time search across projects, leads, and conversations\n"
+                                },
+                                {
+                                  "text": "• 300ms debounce for optimal performance\n"
+                                },
+                                {
+                                  "text": "• Mobile-responsive dropdown interface\n"
+                                },
+                                {
+                                  "text": "• Click-to-navigate result selection\n"
+                                },
+                                {
+                                  "text": "• Graceful error handling and fallbacks\n"
+                                }
+                              ],
+                              "stderr": [],
+                              "retry": 0,
+                              "startTime": "2025-07-15T09:26:07.610Z",
+                              "annotations": [],
+                              "attachments": []
+                            }
+                          ],
+                          "status": "expected"
+                        }
+                      ],
+                      "id": "e6f35556c7ca9d03ed09-acc3c9517d5019525fd4",
+                      "file": "suites/e2e/search/comprehensive-search-functionality.spec.ts",
+                      "line": 250,
+                      "column": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "suite": "Mobile Tests",
+      "priority": "medium",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 750,
+      "status": "failed",
+      "error": "Command failed: npx playwright test tests/mobile/ --reporter=json",
+      "timestamp": "2025-07-15T09:15:24.230Z"
+    },
+    {
+      "suite": "API Tests",
+      "priority": "high",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 967,
+      "status": "failed",
+      "error": "Command failed: npx playwright test tests/api/ --reporter=json",
+      "timestamp": "2025-07-15T09:15:24.230Z"
+    },
+    {
+      "suite": "Security Tests",
+      "priority": "critical",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 207642,
+      "status": "failed",
+      "error": "Command failed: npx playwright test tests/security/ --reporter=json",
+      "timestamp": "2025-07-15T09:15:24.230Z"
+    },
+    {
+      "suite": "Performance Tests",
+      "priority": "medium",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 1102,
+      "status": "failed",
+      "error": "Command failed: npx playwright test tests/functional/ --reporter=json",
+      "timestamp": "2025-07-15T09:15:24.230Z"
+    }
+  ],
+  "trends": {
+    "passRateTrend": [],
+    "performanceTrend": [],
+    "flakyTests": [],
+    "improvingTests": [],
+    "degradingTests": []
+  },
+  "recommendations": [
+    {
+      "priority": "medium",
+      "type": "performance",
+      "message": "3 test suite(s) running slowly",
+      "action": "Consider optimization or parallel execution",
+      "suites": [
+        {
+          "suite": "Sanity Tests",
+          "duration": 300217
+        },
+        {
+          "suite": "E2E Core",
+          "duration": 300052
+        },
+        {
+          "suite": "Security Tests",
+          "duration": 207642
+        }
+      ]
+    },
+    {
+      "priority": "high",
+      "type": "quality",
+      "message": "Overall pass rate is 0.00% (target: 95%+)",
+      "action": "Review and fix failing tests",
+      "details": "Focus on high-priority suites first"
+    }
+  ]
+}

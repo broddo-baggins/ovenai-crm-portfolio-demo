@@ -1,0 +1,2 @@
+# Validate commit message format and check for quote issues
+./scripts/validate-commit-msg.sh "$1" 

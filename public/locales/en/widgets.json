@@ -1,0 +1,197 @@
+{
+  "leadFunnel": {
+    "title": "Lead Funnel",
+    "stages": {
+      "new": "New",
+      "contacted": "Contacted", 
+      "qualified": "Qualified",
+      "meeting": "Meeting Set",
+      "closed": "Closed"
+    }
+  },
+  "totalLeads": {
+    "title": "Total Leads",
+    "subtitle": "Total leads tracked",
+    "previousPeriod": "Previous period",
+    "thisWeek": "This week"
+  },
+  "reachedLeads": {
+    "title": "Reached Leads",
+    "subtitle": "Leads successfully reached",
+    "reachRate": "Reach rate",
+    "previousPeriod": "Previous period",
+    "thisWeek": "This week"
+  },
+  "conversationsCompleted": {
+    "title": "Conversations Completed",
+    "subtitle": "Conversations Completed",
+    "thisWeek": "This Week",
+    "conversionRate": "Conversion rate",
+    "breakdown": "Breakdown",
+    "meetings": "Meetings",
+    "sales": "Sales",
+    "followUps": "Follow-ups"
+  },
+  "leadTemperature": {
+    "title": "Lead Temperature Distribution",
+    "hot": "Hot Leads",
+    "warm": "Warm Leads", 
+    "cold": "Cold Leads",
+    "burning": "Burning Leads",
+    "frozen": "Frozen Leads",
+    "ofTotal": "of total"
+  },
+  "bant": {
+    "title": "BANT Qualification Rate",
+    "subtitle": "Budget, Authority, Need, Timeline assessment",
+    "qualificationRate": "Qualification Rate",
+    "budget": "Budget Qualified",
+    "authority": "Authority Qualified",
+    "need": "Need Qualified",
+    "timeline": "Timeline Qualified",
+    "fullyQualified": "Fully Qualified",
+    "partiallyQualified": "Partially Qualified",
+    "notQualified": "Not Qualified",
+    "assessmentPending": "Assessment Pending",
+    "pipeline": "BANT/HEAT Pipeline",
+    "initialOutreach": "Initial Outreach",
+    "responses": "Responses",
+    "bantQualified": "BANT Qualified",
+    "meetingsBooked": "Meetings Booked"
+  },
+  "heat": {
+    "title": "Hot & Burning Leads",
+    "subtitle": "High-priority leads requiring immediate attention",
+    "hotLeads": "Hot Leads",
+    "burningLeads": "Burning Leads",
+    "totalHot": "Total Hot",
+    "heatTrend": "Heat Trend",
+    "heating": "Heating",
+    "cooling": "Cooling",
+    "stable": "Stable",
+    "temperatureScale": "Temperature Scale (0-100)",
+    "heatProgression": "Heat Progression",
+    "temperatureDistribution": "Temperature Distribution"
+  },
+  "performance": {
+    "title": "Performance Metrics",
+    "overallActivity": "Overall Activity",
+    "target": "Target",
+    "progress": "Progress",
+    "keyStrengths": "Key Strengths",
+    "growthOpportunities": "Growth Opportunities",
+    "recommendedActions": "Recommended Actions",
+    "highPriority": "High Priority",
+    "mediumPriority": "Medium Priority",
+    "lowPriority": "Low Priority"
+  },
+  "messaging": {
+    "title": "First Message Rate",
+    "subtitle": "Automated first contact success rate",
+    "firstMessageRate": "First Message Rate",
+    "messagesPerWeek": "Messages per Week",
+    "responseRate": "Response Rate",
+    "automationSuccess": "Automation Success"
+  },
+  "meetings": {
+    "title": "Meeting Pipeline",
+    "subtitle": "BANT/HEAT Lead Progression & Meeting Pipeline",
+    "meetingsScheduled": "Meetings Scheduled",
+    "meetingConversion": "Meeting Conversion",
+    "calendlyIntegration": "Calendly Integration",
+    "meetingRate": "Meeting Rate",
+    "meetingsSet": "Meetings Set",
+    "ofInitialMessages": "of initial messages",
+    "calendlyMeetingsBooked": "Calendly Meetings Booked"
+  },
+  "propertyStats": {
+    "title": "Property Statistics",
+    "averagePrice": "Average Price",
+    "totalListings": "Total Listings",
+    "soldThisMonth": "Sold This Month"
+  },
+  "messagesSent": {
+    "title": "Messages Sent",
+    "total": "Total messages sent"
+  },
+  "interactions": {
+    "title": "Interactions",
+    "total": "Total interactions"
+  },
+  "conversationsStarted": {
+    "title": "Conversations Started",
+    "total": "Total conversations started"
+  },
+  "conversationsAbandoned": {
+    "title": "Conversations Abandoned",
+    "total": "Total conversations abandoned"
+  },
+  "meanResponseTime": {
+    "title": "Mean Response Time",
+    "average": "Average response time"
+  },
+  "avgMessagesPerCustomer": {
+    "title": "Avg Messages Per Customer",
+    "average": "Average messages per customer"
+  },
+  "meetingsVsMessages": {
+    "title": "Meetings vs Messages",
+    "meetings": "Meetings",
+    "messages": "Messages"
+  },
+  "meetingsSetPercentage": {
+    "title": "Meetings Set Percentage",
+    "percentage": "Meeting conversion rate"
+  },
+  "trends": {
+    "increase": "increase",
+    "decrease": "decrease",
+    "fromLastWeek": "from last week",
+    "vsLastWeek": "vs last week"
+  },
+  "settings": {
+    "title": "Widget Settings",
+    "customTitle": "Widget Title",
+    "refreshInterval": "Refresh Interval",
+    "timeRange": "Time Range",
+    "showLegend": "Show Legend",
+    "showTooltip": "Show Tooltip",
+    "showPercentages": "Show Percentages",
+    "showInactive": "Show Inactive",
+    "currency": "Currency",
+    "showTrends": "Show Trends",
+    "save": "Save",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "seconds": "seconds",
+    "timeRanges": {
+      "today": "Last 24 Hours",
+      "week": "Last 7 Days", 
+      "month": "Last 30 Days",
+      "year": "Last 365 Days"
+    }
+  },
+  "bank": {
+    "title": "Widget Bank",
+    "search": "Search widgets...",
+    "categories": {
+      "all": "All",
+      "coreMetrics": "Core Metrics",
+      "crmAnalytics": "CRM Analytics",
+      "performance": "Performance",
+      "legacy": "Legacy"
+    },
+    "badges": {
+      "popular": "Popular",
+      "recommended": "Recommended",
+      "useful": "Useful"
+    },
+    "noResults": "No widgets found matching your criteria.",
+    "adjustFilters": "Try adjusting your search or category filter.",
+    "calculation": "Calculation:",
+    "tooltips": {
+      "close": "Close widget bank",
+      "open": "Open widget bank"
+    }
+  }
+} 

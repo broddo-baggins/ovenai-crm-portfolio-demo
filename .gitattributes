@@ -1,0 +1,26 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# GitHub Actions workflows
+.github/workflows/*.yml linguist-language=YAML
+.github/workflows/*.yaml linguist-language=YAML
+
+# YAML files
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# JavaScript and TypeScript
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.jsx text eol=lf
+
+# CSS and related
+*.css text eol=lf
+*.scss text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# JSON
+*.json text eol=lf 

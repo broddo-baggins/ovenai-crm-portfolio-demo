@@ -1,0 +1,113 @@
+name: '🛡️ Regression Protection'
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20.9.0'
+
+jobs:
+  # TEMPORARILY DISABLED DUE TO BILLING ISSUES
+  regression-checks:
+    name: '🛡️ Regression Protection Checks'
+    runs-on: ubuntu-latest
+    if: false  # DISABLED - Remove this line when billing is resolved
+    timeout-minutes: 15
+    
+    steps:
+      - name: '📥 Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: '⚙️ Setup Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: '📦 Install Dependencies'
+        run: npm ci --prefer-offline --no-audit
+
+      - name: '🔍 Type Checking'
+        run: npm run type-check
+
+      - name: '🧹 Lint Checking'
+        run: npm run lint:check
+
+      - name: '🧪 Unit Tests'
+        run: npm test -- --run
+
+      - name: '🔒 Security Audit'
+        run: npm run security-check
+
+      - name: '📊 Build Verification'
+        run: npm run build
+
+      - name: '🎭 E2E Critical Path Tests'
+        run: npx playwright test sidebar-functionality --max-failures=3
+
+      - name: '🚫 Debug Log Detection'
+        run: |
+          if grep -r "console\.log.*🔍\|console\.log.*📊\|console\.log.*✅\|console\.log.*❌" src/; then
+            echo "❌ Debug logs detected in codebase!"
+            echo "Run 'npm run clean-logs' to remove them."
+            exit 1
+          else
+            echo "✅ No debug logs detected"
+          fi
+
+      - name: '📈 Bundle Size Check'
+        run: |
+          npm run build
+          BUNDLE_SIZE=$(du -sk dist | cut -f1)
+          if [ $BUNDLE_SIZE -gt 5000 ]; then
+            echo "⚠️ Bundle size is ${BUNDLE_SIZE}KB (threshold: 5MB)"
+            echo "Consider optimizing imports and dependencies"
+          else
+            echo "✅ Bundle size OK: ${BUNDLE_SIZE}KB"
+          fi
+
+  accessibility-check:
+    name: '♿ Accessibility Check'
+    runs-on: ubuntu-latest
+    needs: regression-checks
+    
+    steps:
+      - name: '📥 Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: '⚙️ Setup Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: '📦 Install Dependencies'
+        run: npm ci --prefer-offline --no-audit
+
+      - name: '♿ Run Accessibility Tests'
+        run: npm test tests/accessibility/ -- --run
+
+  performance-check:
+    name: '⚡ Performance Check'
+    runs-on: ubuntu-latest
+    needs: regression-checks
+    
+    steps:
+      - name: '📥 Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: '⚙️ Setup Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: '📦 Install Dependencies'
+        run: npm ci --prefer-offline --no-audit
+
+      - name: '⚡ Run Performance Tests'
+        run: npm test tests/performance/ -- --run 

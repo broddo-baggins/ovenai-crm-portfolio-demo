@@ -1,0 +1,267 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Emergency Backups - NEVER COMMIT
+EMERGENCY_BACKUP/
+
+# Testing
+/coverage
+/playwright-report/
+# /test-results/ - REMOVED: We want test summaries committed for team visibility
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+dist/
+
+# Exception: Allow tests/build directory (contains critical build safety tests)
+!tests/build/
+
+# Environment Variables - CRITICAL SECURITY
+# Based on Truffle Security research on "Oops Commits"
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+.env.backup
+.env.bak
+.env.example
+.env.sample
+.env.template
+
+# Additional environment patterns from leaked secrets research
+*.env
+*.env.*
+.environment
+.secrets
+secrets.txt
+config.env
+application.properties
+appsettings.json
+db.js
+.env.development.local
+.env.production.local
+
+# API Keys and Credentials
+**/api-keys.py
+**/secrets.txt
+**/config.json
+**/hardhat.config.js
+**/hardhat.config.ts
+**/*credentials*
+**/*secrets*
+**/*keys*
+**/.aws/
+**/.gcp/
+**/.azure/
+
+# Database credentials
+**/database.js
+**/db-credentials.*
+**/*database*
+
+# Docker secrets
+docker-compose.override.yml
+.docker/
+
+# Logs and Reports (organized folders)
+logs/
+reports/
+assets/debug/
+
+# Test artifacts that may contain secrets
+test-results/
+**/traces/
+**/*.network
+**/playwright-artifacts-*/
+**/.playwright-artifacts-*/
+
+# Additional security patterns for JWT tokens and service keys
+**/eyJ*
+**/*service*role*key*
+**/*jwt*token*
+**/*bearer*token*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# ESLint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# SECURITY: Never commit private keys, certificates, or tokens
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.crt
+*.der
+
+# Additional security patterns from research
+*password*
+*secret*
+*private*
+*confidential*
+*credential*
+*token*
+*auth*
+*.backup
+
+# 🔐 CREDENTIALS DIRECTORY - COMPLETE EXCLUSION
+# Block the entire credentials directory and all its contents
+credentials/
+credentials/*
+credentials/**/*
+
+# Prevent accidental commit of local configuration
+config.local.*
+*local.config*
+
+# CRITICAL: Never commit these specific files (additional protection)
+**/agent-db-credentials.local
+**/site-db-credentials.local
+**/test-credentials.local
+**/whatsapp-credentials.local
+**/supabase-credentials.local
+
+# Additional database credential patterns
+**/db-credentials.local
+**/db-credentials.local.json
+**/*-db-credentials.local*
+**/*-credentials.local*
+
+# Archive and cleanup folders
+scripts/_archive-cleanup/
+**/archive/
+**/old/
+**/deprecated/
+# WhatsApp configuration files with credentials
+config/whatsapp-settings.json
+
+# Demo credentials for secure testing
+demo-credentials.json
+dev_output.log
+allure-results/
+playwright-report/
+test-results/
+playwright-report-*/
+test-results-*/
+
+temp/
+test-outputs/
+*.tsbuildinfo
+
+# 🚨 HTML REPORTS - PERMANENTLY BLOCKED (CAUSE TEST HANGS)
+playwright-report/
+playwright-report-*/
+allure-results/
+allure-report/
+test-results/html/
+coverage/html/
+*.html.report
+*-report.html
+
+# Test outputs (text-only allowed)
+test-results/
+test-results-*/
+
+tests/Validation/logs/
+
+# Quality & Validation (centralized testing)
+quality-validation/results/
+quality-validation/reports/
+quality-validation/logs/
+quality-validation/build/
+
+# System files and temporary directories
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local Vercel config
+.vercel/
+
+# Temporary audit and progress files
+typescript-*.json
+*-audit-results.json
+*-progress.json
+*-nocheck-results.json
+
+# Temporary reports (use docs/06-REPORTS/ instead)
+/reports/
+/temp-reports/
+/recovery-reports/
+# Demo: Prevent any .env files from being committed
+.env
+.env.*
+!.env.example
+node_modules
+node_modules
+node_modules
+node_modules
+node_modules
+node_modules
+node_modules

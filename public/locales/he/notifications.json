@@ -1,0 +1,24 @@
+{
+  "notifications": {
+    "close": "סגור התראה",
+    "success": "הצלחה",
+    "error": "שגיאה",
+    "warning": "אזהרה",
+    "info": "מידע"
+  },
+  "messages": {
+    "saved": "נשמר בהצלחה",
+    "deleted": "נמחק בהצלחה",
+    "updated": "עודכן בהצלחה",
+    "created": "נוצר בהצלחה",
+    "error": "אירעה שגיאה",
+    "loading": "טוען...",
+    "noData": "אין נתונים להצגה"
+  },
+  "actions": {
+    "undo": "בטל",
+    "retry": "נסה שוב",
+    "dismiss": "התעלם",
+    "viewDetails": "הצג פרטים"
+  }
+} 

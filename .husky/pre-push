@@ -1,0 +1,54 @@
+#!/usr/bin/env sh
+
+# OvenAI Pre-Push Quality Checks (Simplified for Demo)
+echo "🚀 Running pre-push quality checks..."
+
+# Function to check if we're on main/master branch
+is_main_branch() {
+  local current_branch
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+  [[ "$current_branch" == "main" || "$current_branch" == "master" ]]
+}
+
+# Enhanced checks for main/master branch
+if is_main_branch; then
+  echo "🎯 Enhanced checks for main branch..."
+  
+  # 1. TypeScript compilation
+  echo "🔧 Checking TypeScript compilation..."
+  npm run type-check || {
+    echo "❌ TypeScript compilation failed"
+    exit 1
+  }
+  echo "✅ TypeScript check passed"
+  
+  # 2. Linting
+  echo "🧹 Running linter..."
+  npm run lint || {
+    echo "❌ Linting failed"
+    exit 1
+  }
+  echo "✅ Linting passed"
+  
+  # 3. Quick build test (skip E2E tests for speed)
+  echo "🔨 Testing production build..."
+  npm run build > /dev/null 2>&1 || {
+    echo "❌ Build failed - fix before pushing!"
+    exit 1
+  }
+  echo "✅ Build test passed"
+  
+  echo "🎉 All main branch checks passed!"
+  
+else
+  echo "🔧 Development branch - running quick checks..."
+  
+  # Basic TypeScript check
+  npm run type-check || {
+    echo "⚠️ TypeScript errors - consider fixing"
+  }
+  
+  echo "✅ Development branch checks completed"
+fi
+
+echo "✅ Pre-push checks completed successfully!"

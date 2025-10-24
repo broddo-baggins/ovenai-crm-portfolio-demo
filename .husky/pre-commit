@@ -1,0 +1,52 @@
+#!/usr/bin/env sh
+
+# Only run in git environments
+if [ ! -d ".git" ]; then
+  echo "⏩ Skipping pre-commit hooks (not a git repository)"
+  exit 0
+fi
+
+echo "🔍 Running fast pre-commit checks..."
+
+# Critical secret scanning (fast)
+echo "🔍 Scanning for secrets before commit..."
+staged_files=$(git diff --cached --name-only --diff-filter=ACM)
+secrets_found=false
+
+for file in $staged_files; do
+  if [ -f "$file" ]; then
+    # Check for critical secrets only
+    if grep -qE "(VITE_SUPABASE_SERVICE_ROLE_KEY|eyJ[A-Za-z0-9_\/+-]*\.[A-Za-z0-9_\/+-]*\.[A-Za-z0-9_\/+-]*|sk_live_[0-9a-zA-Z]{24,})" "$file" 2>/dev/null; then
+      echo "❌ SECURITY WARNING: Potential secret found in $file"
+      secrets_found=true
+    fi
+  fi
+done
+
+# Check for .env files
+for file in $staged_files; do
+  case "$file" in
+    *.env|*credentials*|*secrets*)
+      echo "❌ SECURITY WARNING: Attempting to commit sensitive file: $file"
+      secrets_found=true
+      ;;
+  esac
+done
+
+if [ "$secrets_found" = true ]; then
+  echo "🚨 COMMIT BLOCKED - Potential secrets detected!"
+  echo "Remove secrets and try again, or use: git commit --no-verify"
+  exit 1
+fi
+
+echo "✅ No secrets detected - commit proceeding..."
+
+# Run our fast build safety tests (these prevent DOA issues)
+echo "🔍 Running DOA prevention tests..."
+if ! npm run test:build-safety > /dev/null 2>&1; then
+  echo "❌ Build safety tests failed! These prevent DOA (Dead On Arrival) deployment issues."
+  echo "Run 'npm run test:build-safety' to see details."
+  exit 1
+fi
+
+echo "✅ All fast pre-commit checks passed!" 

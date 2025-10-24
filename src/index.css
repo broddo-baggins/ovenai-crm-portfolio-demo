@@ -1,0 +1,1654 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "./styles/whatsapp.css";
+@import "./styles/mobile-touch.css";
+
+/* Local font imports */
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist/Geist-VariableFont_wght.ttf') format('truetype-variations'),
+       url('./assets/fonts/Geist/static/Geist-Regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik/Rubik-VariableFont_wght.ttf') format('truetype-variations'),
+       url('./assets/fonts/Rubik/static/Rubik-Regular.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Early RTL initialization detection */
+  html:not([data-rtl-initialized]) {
+    /* Prevent flash of incorrectly positioned content */
+    visibility: hidden;
+  }
+
+  html[data-rtl-initialized] {
+    visibility: visible;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+
+    --sidebar: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Enhanced chart colors - ensuring proper color definition */
+    --chart-1: 220 70% 50%; /* Blue */
+    --chart-2: 160 84% 39%; /* Green */
+    --chart-3: 30 80% 55%; /* Orange */
+    --chart-4: 280 65% 60%; /* Purple */
+    --chart-5: 340 75% 55%; /* Pink/Red */
+
+    /* Additional chart colors for more variety */
+    --color-chrome: #3b82f6; /* Blue */
+    --color-safari: #10b981; /* Green */
+    --color-firefox: #f59e0b; /* Orange */
+    --color-edge: #8b5cf6; /* Purple */
+    --color-other: #ef4444; /* Red */
+    --color-january: #3b82f6; /* Blue */
+    --color-february: #10b981; /* Green */
+    --color-march: #f59e0b; /* Orange */
+    --color-april: #8b5cf6; /* Purple */
+    --color-may: #ef4444; /* Red */
+
+    /* Sidebar variables - Enhanced for responsiveness */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Enhanced sidebar width variables for better responsiveness */
+    --sidebar-width: 16rem;
+    --sidebar-width-mobile: 18rem;
+    --sidebar-width-icon: 4rem;
+    --sidebar-width-collapsed: 4rem;
+
+    /* Breakpoint-specific sidebar widths */
+    --sidebar-width-sm: 14rem;
+    --sidebar-width-md: 16rem;
+    --sidebar-width-lg: 18rem;
+    --sidebar-width-xl: 20rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+
+    --sidebar: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 224 76% 94%;
+    --sidebar-primary-foreground: 229 84% 5%;
+    --sidebar-accent: 216 34% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 216 34% 17%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Dark mode chart colors - enhanced visibility */
+    --chart-1: 220 70% 60%; /* Lighter blue for dark mode */
+    --chart-2: 160 70% 50%; /* Lighter green for dark mode */
+    --chart-3: 30 90% 60%; /* Lighter orange for dark mode */
+    --chart-4: 280 70% 65%; /* Lighter purple for dark mode */
+    --chart-5: 340 80% 60%; /* Lighter red for dark mode */
+
+    /* Dark mode additional colors */
+    --color-chrome: #60a5fa; /* Lighter blue */
+    --color-safari: #34d399; /* Lighter green */
+    --color-firefox: #fbbf24; /* Lighter orange */
+    --color-edge: #a78bfa; /* Lighter purple */
+    --color-other: #f87171; /* Lighter red */
+    --color-january: #60a5fa;
+    --color-february: #34d399;
+    --color-march: #fbbf24;
+    --color-april: #a78bfa;
+    --color-may: #f87171;
+  }
+
+  /* Enhanced responsive font sizing + zoom for more content density */
+  html {
+    font-size: 16px;
+    /* Reduce overall scale to show 15% more content (0.85 = 85% scale) */
+    zoom: 0.85;
+  }
+
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 13px;
+    }
+  }
+
+  /* RTL support improvements */
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  [dir="rtl"] .rtl\:text-right {
+    text-align: right;
+  }
+
+  [dir="rtl"] .rtl\:text-left {
+    text-align: left;
+  }
+
+  [dir="rtl"] .rtl\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* Hebrew font support */
+  .font-hebrew {
+    font-family: "Segoe UI", "Arial", "Noto Sans Hebrew", "David", sans-serif;
+  }
+
+  /* Smooth transitions for language switching */
+  * {
+    transition:
+      margin 0.2s ease,
+      padding 0.2s ease,
+      text-align 0.2s ease;
+  }
+
+  /* Base body styles */
+  body {
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  /* Improved scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-geist;
+  }
+
+  /* Geist font variants for branding and content */
+  .font-geist {
+    font-family: "Geist", sans-serif;
+  }
+
+  .font-geist-light {
+    font-family: "Geist", sans-serif;
+    font-weight: 300;
+  }
+
+  .font-geist-medium {
+    font-family: "Geist", sans-serif;
+    font-weight: 500;
+  }
+
+  .font-geist-semibold {
+    font-family: "Geist", sans-serif;
+    font-weight: 600;
+  }
+
+  .font-geist-bold {
+    font-family: "Geist", sans-serif;
+    font-weight: 700;
+  }
+
+  /* System font for chat interface (mimics WhatsApp behavior) */
+  .font-chat {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "SF Pro Display",
+      "SF Pro Text",
+      "Segoe UI",
+      "Roboto",
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+  }
+
+  /* System font utility */
+  .font-system {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "Roboto",
+      sans-serif;
+  }
+
+  /* RTL-specific utilities */
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  .rtl-rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  /* RTL text input direction */
+  [dir="rtl"] input,
+  [dir="rtl"] textarea {
+    text-align: right;
+  }
+
+  [dir="ltr"] input,
+  [dir="ltr"] textarea {
+    text-align: left;
+  }
+
+  /* Custom margin-inline utilities for widget bank */
+  .margin-inline-start-80 {
+    margin-inline-start: 20rem;
+  }
+
+  .margin-inline-end-80 {
+    margin-inline-end: 20rem;
+  }
+
+  /* ===== ENHANCED RTL LAYOUT FIXES ===== */
+
+  /* 1. Sidebar component RTL enhancements - work with early initialization */
+  [dir="rtl"] .group[data-side="right"] {
+    order: -1; /* Move sidebar to start of flex container in RTL */
+  }
+
+  /* Enhanced sidebar positioning - immediate application */
+  [dir="rtl"] [data-sidebar="sidebar"] {
+    border-left: 1px solid var(--sidebar-border) !important;
+    border-right: none !important;
+    /* Force immediate positioning */
+    inset-inline-start: auto !important;
+    inset-inline-end: 0 !important;
+    /* Prevent transition flicker */
+    transition: none !important;
+  }
+
+  [dir="ltr"] [data-sidebar="sidebar"] {
+    border-right: 1px solid var(--sidebar-border) !important;
+    border-left: none !important;
+    /* Force immediate positioning */
+    inset-inline-start: 0 !important;
+    inset-inline-end: auto !important;
+    /* Prevent transition flicker */
+    transition: none !important;
+  }
+
+  /* Force immediate layout calculation for RTL sidebar container */
+  [dir="rtl"] .group[data-state="expanded"],
+  [dir="rtl"] .group[data-state="collapsed"] {
+    flex-direction: row-reverse !important;
+  }
+
+  /* Enhanced sidebar spacer behavior - works with early init */
+  [dir="rtl"] [data-sidebar="sidebar"] + div,
+  [dir="rtl"] div[data-sidebar="sidebar"] ~ div {
+    order: -1;
+    /* Immediate margin application */
+    margin-right: 0 !important;
+    margin-left: var(--sidebar-width, 256px) !important;
+  }
+
+  [dir="ltr"] [data-sidebar="sidebar"] + div,
+  [dir="ltr"] div[data-sidebar="sidebar"] ~ div {
+    margin-left: 0 !important;
+    margin-right: var(--sidebar-width, 256px) !important;
+  }
+
+  /* 2. Enhanced widget bank positioning - Pin to correct side in RTL */
+  [dir="rtl"] .widget-drawer,
+  [dir="rtl"] .fixed.top-0.right-0 {
+    inset-inline-start: 0 !important;
+    inset-inline-end: auto !important;
+    right: auto !important;
+    left: 0 !important;
+    border-inline-end: 1px solid rgb(229 231 235) !important;
+    border-inline-start: none !important;
+  }
+
+  /* Fix widget bank toggle button positioning */
+  [dir="rtl"] .widget-drawer .absolute.top-4.-left-6,
+  [dir="rtl"] .fixed.top-0.right-0 .absolute.top-4.-left-6 {
+    left: auto !important;
+    right: -1.5rem !important;
+  }
+
+  /* 3. Toast alignment - Fix close button position and flex direction */
+  [dir="rtl"] .toaster .toast,
+  [dir="rtl"] [data-sonner-toast] {
+    flex-direction: row-reverse !important;
+    direction: rtl;
+  }
+
+  [dir="rtl"] .toaster .toast .close-btn,
+  [dir="rtl"] .toast [data-close-button],
+  [dir="rtl"] [data-sonner-toast] [data-close-button] {
+    margin-inline-start: 0.5rem !important;
+    margin-inline-end: 0 !important;
+    left: 0.75rem !important;
+    right: auto !important;
+  }
+
+  /* Fix Sonner toast positioning in RTL */
+  [dir="rtl"] [data-sonner-toaster] {
+    left: 1rem !important;
+    right: auto !important;
+  }
+
+  [dir="rtl"] [data-sonner-toaster][data-x-position="right"] {
+    left: 1rem !important;
+    right: auto !important;
+  }
+
+  /* RTL-aware React Grid Layout fixes */
+  [dir="rtl"] .react-grid-item {
+    direction: ltr; /* Keep widget content LTR unless specifically designed for RTL */
+  }
+
+  /* RTL resize handle positioning */
+  [dir="rtl"] .react-grid-item > .react-resizable-handle {
+    right: auto;
+    left: 0;
+    background-position: bottom right;
+    padding: 0 3px 3px 0;
+    cursor: se-resize;
+  }
+
+  /* RTL transform overrides for cssTransforms mode */
+  [dir="rtl"] .react-grid-item.cssTransforms {
+    transform-origin: top right;
+  }
+
+  /* RTL popover and dropdown positioning utilities */
+  [dir="rtl"] .rtl-popover-align-end {
+    transform: translateX(20px);
+  }
+
+  [dir="rtl"] .rtl-dropdown-align-end {
+    transform: translateX(15px);
+  }
+
+  /* RTL-aware search results positioning */
+  [dir="rtl"] .search-results-container {
+    left: auto;
+    right: 0;
+  }
+
+  /* RTL flexbox utilities */
+  [dir="rtl"] .rtl-flex-reverse {
+    flex-direction: row-reverse;
+  }
+
+  [dir="rtl"] .rtl-margin-inline-start {
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+
+  /* RTL-aware absolute positioning */
+  [dir="rtl"] .rtl-inset-inline-end-0 {
+    right: auto;
+    left: 0;
+  }
+
+  [dir="rtl"] .rtl-inset-inline-start-0 {
+    left: auto;
+    right: 0;
+  }
+
+  /* RTL-aware chart and visualization fixes */
+  [dir="rtl"] .recharts-wrapper {
+    direction: ltr; /* Keep charts LTR for proper data visualization */
+  }
+
+  [dir="rtl"] .chart-container {
+    direction: ltr; /* Keep chart containers LTR */
+  }
+
+  /* RTL-aware progress bar fixes */
+  [dir="rtl"] .progress-bar {
+    transform-origin: right;
+  }
+
+  [dir="rtl"] .progress-bar .progress-indicator {
+    transform-origin: right;
+  }
+
+  /* RTL-aware tooltip positioning */
+  [dir="rtl"] .tooltip-container {
+    direction: ltr; /* Keep tooltips readable */
+  }
+
+  /* RTL-aware badge and indicator positioning */
+  [dir="rtl"] .badge-indicator {
+    left: auto;
+    right: -4px;
+  }
+
+  /* RTL-aware flex layouts */
+  [dir="rtl"] .flex-row-rtl {
+    flex-direction: row-reverse;
+  }
+
+  [dir="rtl"] .justify-end-rtl {
+    justify-content: flex-start;
+  }
+
+  [dir="rtl"] .justify-start-rtl {
+    justify-content: flex-end;
+  }
+
+  /* RTL-aware text alignment */
+  [dir="rtl"] .text-left-rtl {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right-rtl {
+    text-align: left;
+  }
+
+  /* RTL-aware margin and padding utilities */
+  [dir="rtl"] .ml-auto-rtl {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  [dir="rtl"] .mr-auto-rtl {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  [dir="rtl"] .pl-rtl {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+
+  [dir="rtl"] .pr-rtl {
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+}
+
+/* Material Design Elevation */
+.elevation-1 {
+  @apply shadow-card-1 transition-shadow duration-200;
+}
+
+.elevation-2 {
+  @apply shadow-card-2 transition-shadow duration-200;
+}
+
+.elevation-3 {
+  @apply shadow-card-3 transition-shadow duration-200;
+}
+
+.elevation-hover:hover {
+  @apply shadow-card-hover;
+}
+
+/* Material Design Button Ripple Effect */
+.ripple {
+  @apply relative overflow-hidden;
+}
+
+.ripple::after {
+  @apply absolute top-0 left-0 right-0 bottom-0 bg-white opacity-30 scale-0 rounded-full transition-transform duration-500 ease-in-out;
+  content: "";
+  transform-origin: center;
+}
+
+.ripple:active::after {
+  @apply scale-100 opacity-0 transition-transform duration-300 ease-in-out;
+  transform: scale(2);
+}
+
+/* React Grid Layout Styles */
+.react-grid-layout {
+  position: relative;
+}
+
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top, width, height;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-grid-item.cssTransforms {
+  transition-property: transform, width, height;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K");
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.react-grid-item:hover > .react-resizable-handle {
+  opacity: 1;
+}
+
+/* Consolidated placeholder styling with enhanced visual feedback */
+.react-grid-item.react-grid-placeholder {
+  background:
+    linear-gradient(45deg, #3b82f6 25%, transparent 25%),
+    linear-gradient(-45deg, #3b82f6 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #3b82f6 75%),
+    linear-gradient(-45deg, transparent 75%, #3b82f6 75%);
+  background-size: 8px 8px;
+  background-position:
+    0 0,
+    0 4px,
+    4px -4px,
+    -4px 0px;
+  opacity: 0.3;
+  border: 2px dashed #3b82f6;
+  border-radius: 8px;
+  animation: pulse 1s ease-in-out infinite alternate;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  opacity: 0.8;
+}
+
+.react-grid-item.static {
+  background: #f3f4f6;
+  border: 2px dashed #d1d5db;
+}
+
+.widget-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+/* Auto-resizing for dynamic content */
+.widget-container .card {
+  height: 100%;
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-container .card-content {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Breakdown section styling for better space utilization */
+.breakdown-section {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Consolidated widget content styling */
+.widget-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  height: 100%;
+  justify-content: center;
+}
+
+.widget-content h3 {
+  font-size: 0.875rem !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.widget-content .metric-value {
+  font-size: 1.5rem !important;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+}
+
+.widget-content .metric-label {
+  font-size: 0.75rem !important;
+  margin-top: 0.25rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Text alignment improvements */
+.widget-text-content {
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+/* Container-based responsive text sizing */
+.widget-title {
+  font-size: 0.875rem;
+  line-height: 1.25;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.widget-value {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.widget-description {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Responsive text sizing with media queries */
+@media (min-width: 200px) {
+  .widget-title {
+    font-size: 0.875rem;
+  }
+  .widget-value {
+    font-size: 1.5rem;
+  }
+  .widget-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 300px) {
+  .widget-title {
+    font-size: 1rem;
+  }
+  .widget-value {
+    font-size: 1.875rem;
+  }
+  .widget-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 400px) {
+  .widget-title {
+    font-size: 1.125rem;
+  }
+  .widget-value {
+    font-size: 2.25rem;
+  }
+  .widget-description {
+    font-size: 0.875rem;
+  }
+}
+
+/* Widget-specific text handling */
+.widget-header-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+.widget-breakdown-text {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.widget-breakdown-value {
+  font-size: 0.875rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Ensure proper spacing and layout - optimized for minimal whitespace */
+.widget-flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.widget-flex-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 0;
+}
+
+.widget-flex-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  gap: 0.125rem;
+}
+
+/* Custom drag handle styling */
+.drag-handle {
+  cursor: move;
+}
+
+.react-grid-item.react-draggable-dragging .drag-handle {
+  cursor: grabbing;
+}
+
+/* WhatsApp-style typing animation */
+@keyframes dotPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+/* ===== MOBILE SAFE AREA FIXES ===== */
+
+/* Mobile safe area for landing page header fixes */
+.safe-area-top {
+  padding-top: max(1.25rem, env(safe-area-inset-top)) !important;
+}
+
+@media (max-width: 768px) {
+  .safe-area-top {
+    padding-top: max(1.5rem, env(safe-area-inset-top)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .safe-area-top {
+    padding-top: max(2rem, env(safe-area-inset-top)) !important;
+  }
+}
+
+/* Modern Dashboard Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Staggered animations for dashboard cards */
+.animate-fade-in-up:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.animate-fade-in-up:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.animate-fade-in-up:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.animate-fade-in-up:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+/* Enhanced chart animations */
+.chart-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 400ms;
+  opacity: 0;
+}
+
+/* Hover animations for interactive elements */
+.hover-scale {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* RTL Support Enhancements */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+/* Enhanced RTL Sidebar Support */
+[dir="rtl"] .rtl-sidebar {
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] [data-sidebar="sidebar"] {
+  left: auto !important;
+  right: 0 !important;
+  border-left: 1px solid hsl(var(--border)) !important;
+  border-right: none !important;
+}
+
+/* Mobile sidebar fixes for RTL */
+@media (max-width: 768px) {
+  [dir="rtl"] [data-sidebar="sidebar"][data-state="open"] {
+    transform: translateX(0) !important;
+  }
+
+  [dir="rtl"] [data-sidebar="sidebar"][data-state="closed"] {
+    transform: translateX(100%) !important;
+  }
+}
+
+/* Main content padding adjustments for RTL */
+[dir="rtl"] [data-sidebar="content"] {
+  padding-left: 0 !important;
+  padding-right: var(--sidebar-width, 16rem) !important;
+}
+
+[dir="ltr"] [data-sidebar="content"] {
+  padding-left: var(--sidebar-width, 16rem) !important;
+  padding-right: 0 !important;
+}
+
+/* Collapsed sidebar adjustments */
+[dir="rtl"] [data-sidebar="content"][data-sidebar-state="collapsed"] {
+  padding-right: var(--sidebar-width-collapsed, 3rem) !important;
+}
+
+[dir="ltr"] [data-sidebar="content"][data-sidebar-state="collapsed"] {
+  padding-left: var(--sidebar-width-collapsed, 3rem) !important;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 640px) {
+  /* Full-width on mobile */
+  [data-sidebar="content"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Mobile-optimized spacing */
+  .p-4 {
+    padding: 1rem !important;
+  }
+
+  .gap-6 {
+    gap: 1rem !important;
+  }
+
+  /* Mobile card adjustments */
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  /* Mobile text sizing */
+  .text-3xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+}
+
+/* Tablet responsiveness */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem !important;
+  }
+
+  .sm\:gap-6 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Enhanced mobile navigation */
+@media (max-width: 768px) {
+  /* Hide desktop navigation elements */
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  /* Show mobile-specific elements */
+  .show-mobile {
+    display: block !important;
+  }
+
+  /* Mobile button sizing */
+  .mobile-button {
+    padding: 0.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Mobile form adjustments */
+  .mobile-form {
+    width: 95vw !important;
+    max-width: 24rem !important;
+  }
+}
+
+/* Project page specific mobile styles */
+@media (max-width: 640px) {
+  .project-card {
+    margin-bottom: 0.75rem;
+  }
+
+  .project-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .project-actions {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .project-actions button {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Error boundary styling */
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 28rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+}
+
+/* Loading states */
+.loading-skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: 0 0% 0%;
+    --ring: 0 0% 0%;
+  }
+
+  .dark {
+    --border: 0 0% 100%;
+    --ring: 0 0% 100%;
+  }
+}
+
+/* Focus management for accessibility */
+.focus-visible:focus {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-full-width {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* Component layer improvements */
+@layer components {
+  /* Enhanced sidebar component styles */
+  .sidebar-responsive {
+    /* Base responsive behavior */
+    @apply transition-all duration-300 ease-in-out;
+
+    /* Prevent content overflow */
+    @apply overflow-hidden;
+
+    /* Ensure proper positioning */
+    @apply relative;
+  }
+
+  /* Sidebar container improvements */
+  .sidebar-container {
+    /* Better responsive width handling */
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width-icon);
+    max-width: min(var(--sidebar-width), 90vw);
+
+    /* Prevent horizontal overflow */
+    @apply overflow-x-hidden overflow-y-auto;
+
+    /* Smooth transitions */
+    @apply transition-all duration-300 ease-in-out;
+
+    /* Fix height and positioning */
+    @apply h-screen flex flex-col;
+    @apply relative z-10;
+  }
+
+  /* Responsive sidebar widths */
+  @media (max-width: 640px) {
+    .sidebar-container {
+      width: var(--sidebar-width-mobile);
+      max-width: 85vw;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .sidebar-container {
+      width: var(--sidebar-width-sm);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar-container {
+      width: var(--sidebar-width-md);
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .sidebar-container {
+      width: var(--sidebar-width-lg);
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .sidebar-container {
+      width: var(--sidebar-width-xl);
+    }
+  }
+
+  /* Collapsed sidebar styles */
+  .sidebar-collapsed {
+    width: var(--sidebar-width-icon) !important;
+    min-width: var(--sidebar-width-icon) !important;
+  }
+
+  /* Fix sidebar height and prevent unwanted scrolling */
+  [data-sidebar="sidebar"] {
+    @apply h-screen max-h-screen;
+    @apply overflow-hidden;
+    @apply flex flex-col;
+  }
+
+  [data-sidebar="sidebar"] [data-sidebar="content"] {
+    @apply flex-1 overflow-y-auto overflow-x-hidden;
+    @apply min-h-0; /* Allow flexbox to shrink */
+  }
+
+  /* RTL sidebar positioning fixes */
+  [dir="rtl"] .sidebar-container {
+    right: 0 !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  [dir="ltr"] .sidebar-container {
+    left: 0;
+    right: auto;
+  }
+
+  /* Mobile sidebar overlay improvements */
+  .sidebar-mobile-overlay {
+    @apply fixed inset-0 z-50 bg-black/50 backdrop-blur-sm;
+    @apply transition-opacity duration-300;
+  }
+
+  /* Prevent body scroll when mobile sidebar is open */
+  .sidebar-mobile-open {
+    @apply overflow-hidden;
+  }
+
+  /* Enhanced button styles for better touch targets */
+  .sidebar-button {
+    @apply min-h-[44px] min-w-[44px]; /* Better touch target size */
+    @apply transition-all duration-200 ease-in-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+
+  /* Sidebar menu button specific fixes */
+  [data-sidebar="menu-button"] {
+    @apply flex items-center justify-start;
+    @apply min-h-[44px] w-full;
+    @apply overflow-hidden;
+    @apply text-left;
+  }
+
+  [data-sidebar="menu-button"] svg {
+    @apply flex-shrink-0;
+    @apply w-5 h-5;
+  }
+
+  [data-sidebar="menu-button"] span {
+    @apply flex-1 min-w-0;
+    @apply truncate;
+    @apply transition-all duration-300;
+  }
+
+  /* Improved menu item styles */
+  .sidebar-menu-item {
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:bg-gray-100 dark:hover:bg-slate-800;
+    @apply focus-within:bg-gray-100 dark:focus-within:bg-gray-800;
+    @apply flex items-center min-h-[44px]; /* Ensure proper height and alignment */
+    @apply overflow-hidden; /* Prevent content overflow */
+  }
+
+  /* Better text truncation for sidebar items */
+  .sidebar-text {
+    @apply truncate max-w-full;
+    @apply transition-all duration-300 ease-in-out;
+    @apply whitespace-nowrap overflow-hidden text-ellipsis; /* Better text handling */
+    @apply flex-1 min-w-0; /* Allow text to shrink properly */
+  }
+
+  /* Responsive text sizing in sidebar */
+  @media (max-width: 640px) {
+    .sidebar-text {
+      @apply text-sm;
+    }
+  }
+
+  /* Loading states */
+  .sidebar-loading {
+    @apply animate-pulse bg-gray-100 dark:bg-slate-800;
+  }
+
+  /* Error states */
+  .sidebar-error {
+    @apply bg-destructive/10 text-destructive;
+    @apply border border-destructive/20;
+  }
+
+  /* Success states */
+  .sidebar-success {
+    @apply bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400;
+    @apply border border-green-200 dark:border-green-800;
+  }
+}
+
+/* Utility layer improvements */
+@layer utilities {
+  /* RTL-aware utilities */
+  .rtl-margin-start-4 {
+    margin-inline-start: 1rem;
+  }
+
+  .rtl-margin-end-4 {
+    margin-inline-end: 1rem;
+  }
+
+  .rtl-padding-start-4 {
+    padding-inline-start: 1rem;
+  }
+
+  .rtl-padding-end-4 {
+    padding-inline-end: 1rem;
+  }
+
+  /* Responsive utilities */
+  .responsive-sidebar-width {
+    width: clamp(var(--sidebar-width-icon), var(--sidebar-width), 90vw);
+  }
+
+  /* Overflow protection */
+  .overflow-safe {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Smooth animations */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Focus improvements */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+  }
+
+  /* Better hover states */
+  .hover-lift {
+    @apply transition-transform duration-200 ease-in-out;
+    @apply hover:scale-105 hover:shadow-md;
+  }
+
+  /* Mobile-friendly tap targets */
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
+    @apply flex items-center justify-center;
+  }
+
+  /* Accessibility improvements */
+  .sr-only-focusable {
+    @apply sr-only;
+  }
+
+  .sr-only-focusable:focus {
+    @apply not-sr-only absolute z-50 p-2 bg-background border rounded;
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    .sidebar-container {
+      display: none !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .sidebar-container {
+      border: 2px solid;
+    }
+
+    .sidebar-button {
+      border: 1px solid;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .sidebar-container,
+    .sidebar-button,
+    .sidebar-menu-item {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  /* Force hardware acceleration for smooth animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* RTL Support for Sidebar */
+[dir="rtl"] .sidebar-container {
+  right: 0 !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+[dir="rtl"] .sidebar-content {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .sidebar-menu-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .sidebar-menu-button {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .sidebar-trigger {
+  right: auto;
+  left: 1rem;
+}
+
+/* Text Readability Fixes */
+.text-content {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  z-index: 10;
+}
+
+/* Fix dark mode text visibility */
+.dark .text-content {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Ensure proper contrast ratios */
+.sidebar-text {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+  color: #000 !important;
+}
+
+.dark .sidebar-text {
+  background: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
+}
+
+/* Fix text backgrounds in cards and components */
+.card-content-text {
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--card-foreground)) !important;
+}
+
+/* Ensure buttons have proper backgrounds */
+.button-text {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Fix modal and dialog text */
+.dialog-content {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Enhanced button styles for better touch targets */
+.sidebar-button {
+  @apply min-h-[44px] min-w-[44px]; /* Better touch target size */
+  @apply transition-all duration-200 ease-in-out;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+}
+
+/* Improved menu item styles */
+.sidebar-menu-item {
+  @apply transition-all duration-200 ease-in-out;
+  @apply hover:bg-gray-100 dark:hover:bg-slate-800;
+  @apply focus-within:bg-gray-100 dark:focus-within:bg-gray-800;
+}
+
+/* Force sidebar menu visibility */
+[data-sidebar="menu"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[data-sidebar="menu-item"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: list-item !important;
+  list-style: none !important;
+}
+
+[data-sidebar="menu-button"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  width: 100% !important;
+}
+
+/* Ensure sidebar content is visible */
+[data-sidebar="content"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix collapsed state text visibility */
+.group[data-state="collapsed"] .sidebar-text {
+  display: none;
+}
+
+.group[data-state="expanded"] .sidebar-text {
+  display: inline !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure nav links are visible */
+.sidebar-nav-link {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+@source '../node_modules/@llamaindex/chat-ui/**/*.{ts,tsx}';
+
+/* Meteor Animation */
+@keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(-500px) translateY(300px);
+    opacity: 0;
+  }
+}
+
+.animate-meteor {
+  animation: meteor 8s linear infinite;
+  animation-delay: var(--animation-delay, 0s);
+  animation-duration: var(--animation-duration, 8s);
+}
+
+/* Custom slow spin animation for compass */
+@keyframes slow-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.slow-spin {
+  animation: slow-spin 3s linear infinite;
+}

@@ -1,0 +1,178 @@
+{
+  "title": "לוח ניהול לידים",
+  "subtitle": "נהל ועקוב אחר הלידים שלך עם עדכונים בזמן אמת",
+  "loading": "טוען נתוני לוח הבקרה...",
+  
+  "stats": {
+    "totalLeads": "סך הכל לידים",
+    "totalLeadsDesc": "כל הלידים במערכת",
+    "newLeads": "לידים חדשים",
+    "newLeadsDesc": "דורש תשומת לב",
+    "hotLeads": "לידים חמים",
+    "hotLeadsDesc": "לידים בעדיפות גבוהה",
+    "conversionRate": "שיעור המרה",
+    "conversionRateDesc": "אחוז המרה להצלחה",
+    "total": "סה\"כ לידים",
+    "new": "חדשים",
+    "contacted": "נוצר קשר",
+    "qualified": "מוכשרים",
+    "converted": "הומרו"
+  },
+  
+  "status": {
+    "live": "פעיל",
+    "offline": "לא מחובר",
+    "status": "סטטוס",
+    "new": "חדש",
+    "contacted": "נוצר קשר",
+    "qualified": "מוכשר",
+    "proposal": "הצעה",
+    "won": "זכה",
+    "lost": "הפסיד"
+  },
+  
+  "actions": {
+    "export": "ייצא",
+    "addLead": "הוסף ליד",
+    "viewProperties": "צפה במאפייני הליד",
+    "editLead": "ערוך ליד",
+    "deleteLead": "מחק ליד",
+    "clickToView": "לחץ לצפייה במאפייני הליד",
+    "viewLead": "צפה בליד",
+    "import": "ייבא",
+    "viewDetails": "צפה בפרטים",
+    "contact": "יצירת קשר",
+    "call": "התקשר",
+    "sendEmail": "שלח אימייל",
+    "sendMessage": "שלח הודעה",
+    "scheduleMeeting": "קבע פגישה",
+    "changeStatus": "שנה סטטוס",
+    "addToFavorites": "הוסף למועדפים",
+    "assignToUser": "הקצה למשתמש",
+    "addTags": "הוסף תגיות",
+    "copyLeadId": "העתק מזהה ליד",
+    "copyEmail": "העתק אימייל",
+    "copyPhone": "העתק טלפון",
+    "exportLeadData": "ייצא נתוני ליד",
+    "archiveLead": "העבר לארכיון",
+    "view": "צפה",
+    "edit": "ערוך",
+    "message": "הודעה"
+  },
+  
+  "sections": {
+    "realTimeUpdates": "עדכונים בזמן אמת",
+    "filters": "סינונים",
+    "leadsTable": "לידים"
+  },
+  
+  "filters": {
+    "search": "חיפוש",
+    "searchPlaceholder": "חפש לידים...",
+    "state": "סטטוס",
+    "heatLevel": "רמת חום",
+    "source": "מקור",
+    "dateRange": "טווח תאריכים",
+    "allTime": "כל הזמנים",
+    "today": "היום",
+    "lastWeek": "השבוע שעבר",
+    "lastMonth": "החודש שעבר",
+    "clearFilters": "נקה סינונים",
+    "all": "הכל",
+    "heat": "רמת חום"
+  },
+  
+  "table": {
+    "name": "שם",
+    "contact": "פרטי קשר",
+    "state": "סטטוס",
+    "heat": "חום",
+    "created": "נוצר",
+    "actions": "פעולות",
+    "email": "אימייל",
+    "phone": "טלפון",
+    "company": "חברה",
+    "source": "מקור"
+  },
+  
+  "heatLevels": {
+    "all": "כל רמות החום",
+    "cold": "קר",
+    "warm": "חמים",
+    "hot": "לוהט",
+    "burning": "בוער"
+  },
+  
+  "states": {
+    "all": "כל הסטטוסים",
+    "new": "חדש",
+    "contacted": "נוצר קשר",
+    "qualified": "מוכשר",
+    "proposal": "הצעה",
+    "negotiation": "משא ומתן",
+    "closed_won": "נסגר בהצלחה",
+    "closed_lost": "נסגר ללא הצלחה",
+    "archived": "בארכיון"
+  },
+  
+  "sources": {
+    "all": "כל המקורות",
+    "website": "אתר אינטרנט",
+    "referral": "הפניה",
+    "socialMedia": "רשתות חברתיות",
+    "advertisement": "פרסום",
+    "coldOutreach": "פנייה קרה",
+    "event": "אירוע",
+    "other": "אחר",
+    "social_media": "רשתות חברתיות",
+    "cold_outreach": "יוזמה קרה"
+  },
+  
+  "tooltips": {
+    "totalLeads": "ספירה פשוטה של כל רשומות הלידים במערכת שלך, ללא קשר למצב הנוכחי או רמת החום שלהם.",
+    "newLeads": "לידים עם סטטוס \"חדש\" שעדיין לא נוצר איתם קשר. אלה דורשים תשומת לב מיידית מצוות המכירות שלך.",
+    "hotLeads": "לידים המסומנים כ\"לוהט\" או \"בוער\" - מראים עניין חזק והסתברות גבוהה להמרה.",
+    "conversionRate": "אחוז מסך הלידים שהומרו לסטטוס \"נסגר - זכייה\". נוסחה: (נסגר - זכייה / סך הלידים) × 100%",
+    "email": "כתובת אימייל - רק אם ניתנה לנו על ידי הליד",
+    "phone": "מספר טלפון ליצירת קשר",
+    "company": "שם החברה של הליד",
+    "source": "המקור ממנו הגיע הליד",
+    "heat": "רמת העניין והפוטנציאל של הליד"
+  },
+  
+  "notifications": {
+    "newLeadAdded": "ליד חדש נוסף",
+    "leadUpdated": "פרטי הליד עודכנו",
+    "leadRemoved": "הליד הוסר",
+    "leadRemovedDescription": "ליד הוסר מהמערכת",
+    "dashboardRefreshed": "לוח הבקרה רוענן",
+    "leadDeleted": "הליד נמחק",
+    "leadsExported": "הלידים יוצאו בהצלחה",
+    "leadCreated": "ליד חדש נוצר בהצלחה",
+    "emailOptional": "אימייל אופציונלי - רק אם ניתן"
+  },
+  
+  "errors": {
+    "failedToLoad": "נכשל בטעינת נתוני הלידים",
+    "unexpectedError": "אירעה שגיאה בלתי צפויה בעת טעינת הלידים",
+    "failedToDelete": "נכשל במחיקת הליד",
+    "failedToExport": "נכשל בייצוא הלידים",
+    "loadFailed": "טעינת הלידים נכשלה",
+    "createFailed": "יצירת הליד נכשלה",
+    "updateFailed": "עדכון הליד נכשל",
+    "deleteFailed": "מחיקת הליד נכשלה",
+    "emailNotRequired": "אימייל לא נדרש - רק אם ניתן לנו"
+  },
+  
+  "confirmDelete": "האם אתה בטוח שברצונך למחוק את הליד הזה?",
+  "noLeadsFound": "לא נמצאו לידים התואמים את הסינונים שלך",
+  "lead": "ליד",
+  "leads": "לידים",
+  "individual": "אישי",
+  "status": "סטטוס וטמפרטורה",
+  "temperature": "טמפרטורה",
+  "contactInfo": "פרטי קשר",
+  "notAvailable": "לא זמין",
+  "lastMessage": "הודעה אחרונה",
+  "notes": "הערות"
+} 

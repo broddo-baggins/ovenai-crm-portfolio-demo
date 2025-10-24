@@ -1,0 +1,270 @@
+{
+  "timestamp": "2025-07-13T18:36:42.091Z",
+  "summary": {
+    "migratedFiles": 63,
+    "skippedFiles": 1,
+    "errors": 0,
+    "createdDirectories": 1
+  },
+  "migratedFiles": [
+    {
+      "from": "tests/e2e/admin-commands-execution.spec.ts",
+      "to": "tests/suites/e2e/admin/admin-commands-execution.spec.ts"
+    },
+    {
+      "from": "tests/e2e/admin-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/admin/admin-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/admin-console-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/admin/admin-console-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/admin-pages-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/admin/admin-pages-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/admin-security-access-control.spec.ts",
+      "to": "tests/suites/e2e/admin/admin-security-access-control.spec.ts"
+    },
+    {
+      "from": "tests/e2e/admin-system-comprehensive.ts",
+      "to": "tests/suites/e2e/admin/admin-system-comprehensive.ts"
+    },
+    {
+      "from": "tests/e2e/admin-ui-dialogs.spec.ts",
+      "to": "tests/suites/e2e/admin/admin-ui-dialogs.spec.ts"
+    },
+    {
+      "from": "tests/e2e/avatar-upload.spec.ts",
+      "to": "tests/suites/e2e/auth/avatar-upload.spec.ts"
+    },
+    {
+      "from": "tests/e2e/dark-mode-audit.spec.ts",
+      "to": "tests/suites/e2e/dashboard/dark-mode-audit.spec.ts"
+    },
+    {
+      "from": "tests/e2e/dashboard-heat-cards.spec.ts",
+      "to": "tests/suites/e2e/dashboard/dashboard-heat-cards.spec.ts"
+    },
+    {
+      "from": "tests/e2e/phase3-dashboard-integration.spec.ts",
+      "to": "tests/suites/e2e/dashboard/phase3-dashboard-integration.spec.ts"
+    },
+    {
+      "from": "tests/e2e/comprehensive-user-data-tests.spec.ts",
+      "to": "tests/suites/e2e/leads/comprehensive-user-data-tests.spec.ts"
+    },
+    {
+      "from": "tests/e2e/enhanced-lead-management.spec.ts",
+      "to": "tests/suites/e2e/leads/enhanced-lead-management.spec.ts"
+    },
+    {
+      "from": "tests/e2e/leads-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/leads/leads-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/queue-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/queue/queue-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/queue-focused.spec.ts",
+      "to": "tests/suites/e2e/queue/queue-focused.spec.ts"
+    },
+    {
+      "from": "tests/e2e/queue-management-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/queue/queue-management-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/reports-buttons-functionality.spec.ts",
+      "to": "tests/suites/e2e/reports/reports-buttons-functionality.spec.ts"
+    },
+    {
+      "from": "tests/e2e/reports-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/reports/reports-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/reports-interactions-animations.spec.ts",
+      "to": "tests/suites/e2e/reports/reports-interactions-animations.spec.ts"
+    },
+    {
+      "from": "tests/e2e/reports-responsive-design.spec.ts",
+      "to": "tests/suites/e2e/reports/reports-responsive-design.spec.ts"
+    },
+    {
+      "from": "tests/e2e/reports-rtl-support.spec.ts",
+      "to": "tests/suites/e2e/reports/reports-rtl-support.spec.ts"
+    },
+    {
+      "from": "tests/e2e/manual-notification-flow.spec.ts",
+      "to": "tests/suites/e2e/messages/manual-notification-flow.spec.ts"
+    },
+    {
+      "from": "tests/e2e/messages-buttons-functionality.spec.ts",
+      "to": "tests/suites/e2e/messages/messages-buttons-functionality.spec.ts"
+    },
+    {
+      "from": "tests/e2e/messages-functionality.spec.ts",
+      "to": "tests/suites/e2e/messages/messages-functionality.spec.ts"
+    },
+    {
+      "from": "tests/e2e/notification-automation-e2e.ts",
+      "to": "tests/suites/e2e/messages/notification-automation-e2e.ts"
+    },
+    {
+      "from": "tests/e2e/notification-system-regression.spec.ts",
+      "to": "tests/suites/e2e/messages/notification-system-regression.spec.ts"
+    },
+    {
+      "from": "tests/e2e/button-alignment-tests.spec.ts",
+      "to": "tests/suites/e2e/navigation/button-alignment-tests.spec.ts"
+    },
+    {
+      "from": "tests/e2e/phase2-advanced-components.spec.ts",
+      "to": "tests/suites/e2e/navigation/phase2-advanced-components.spec.ts"
+    },
+    {
+      "from": "tests/e2e/sidebar-bugs-tests.spec.ts",
+      "to": "tests/suites/e2e/navigation/sidebar-bugs-tests.spec.ts"
+    },
+    {
+      "from": "tests/e2e/sidebar-functionality.spec.ts",
+      "to": "tests/suites/e2e/navigation/sidebar-functionality.spec.ts"
+    },
+    {
+      "from": "tests/e2e/sidebar-immediate-load.spec.ts",
+      "to": "tests/suites/e2e/navigation/sidebar-immediate-load.spec.ts"
+    },
+    {
+      "from": "tests/e2e/simple-sidebar-test.spec.ts",
+      "to": "tests/suites/e2e/navigation/simple-sidebar-test.spec.ts"
+    },
+    {
+      "from": "tests/e2e/critical-bug-fixes.spec.ts",
+      "to": "tests/suites/e2e/errors/critical-bug-fixes.spec.ts"
+    },
+    {
+      "from": "tests/e2e/doa-prevention.spec.ts",
+      "to": "tests/suites/e2e/errors/doa-prevention.spec.ts"
+    },
+    {
+      "from": "tests/e2e/error-pages-and-edge-cases.spec.ts",
+      "to": "tests/suites/e2e/errors/error-pages-and-edge-cases.spec.ts"
+    },
+    {
+      "from": "tests/e2e/error-pages-animations-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/errors/error-pages-animations-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/error-pages-meteors.spec.ts",
+      "to": "tests/suites/e2e/errors/error-pages-meteors.spec.ts"
+    },
+    {
+      "from": "tests/e2e/landing-page-faq.spec.ts",
+      "to": "tests/suites/e2e/public/landing-page-faq.spec.ts"
+    },
+    {
+      "from": "tests/e2e/legal-and-special-pages.spec.ts",
+      "to": "tests/suites/e2e/public/legal-and-special-pages.spec.ts"
+    },
+    {
+      "from": "tests/e2e/all-pages-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/integration/all-pages-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/complete-workflow.spec.ts",
+      "to": "tests/suites/e2e/integration/complete-workflow.spec.ts"
+    },
+    {
+      "from": "tests/e2e/comprehensive-all-pages-coverage.spec.ts",
+      "to": "tests/suites/e2e/integration/comprehensive-all-pages-coverage.spec.ts"
+    },
+    {
+      "from": "tests/e2e/comprehensive-app-navigation.spec.ts",
+      "to": "tests/suites/e2e/integration/comprehensive-app-navigation.spec.ts"
+    },
+    {
+      "from": "tests/e2e/full-system-e2e.spec.ts",
+      "to": "tests/suites/e2e/integration/full-system-e2e.spec.ts"
+    },
+    {
+      "from": "tests/e2e/manual-requirements-automation.spec.ts",
+      "to": "tests/suites/e2e/integration/manual-requirements-automation.spec.ts"
+    },
+    {
+      "from": "tests/e2e/settings-comprehensive.spec.ts",
+      "to": "tests/suites/e2e/integration/settings-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/optimized-critical-paths.spec.ts",
+      "to": "tests/suites/e2e/performance/optimized-critical-paths.spec.ts"
+    },
+    {
+      "from": "tests/e2e/performance-rtl-test.spec.ts",
+      "to": "tests/suites/e2e/performance/performance-rtl-test.spec.ts"
+    },
+    {
+      "from": "tests/e2e/mobile-comprehensive.spec.ts",
+      "to": "tests/suites/mobile/responsive/mobile-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/mobile-reports-error-handling.spec.ts",
+      "to": "tests/suites/mobile/responsive/mobile-reports-error-handling.spec.ts"
+    },
+    {
+      "from": "tests/e2e/mobile-usability.spec.ts",
+      "to": "tests/suites/mobile/responsive/mobile-usability.spec.ts"
+    },
+    {
+      "from": "tests/e2e/accessibility-and-messages.spec.ts",
+      "to": "tests/suites/accessibility/wcag/accessibility-and-messages.spec.ts"
+    },
+    {
+      "from": "tests/e2e/phase3-accessibility-polish.spec.ts",
+      "to": "tests/suites/accessibility/wcag/phase3-accessibility-polish.spec.ts"
+    },
+    {
+      "from": "tests/e2e/rtl-hebrew-comprehensive.spec.ts",
+      "to": "tests/suites/accessibility/i18n/rtl-hebrew-comprehensive.spec.ts"
+    },
+    {
+      "from": "tests/e2e/rtl-hebrew-dark-mode.spec.ts",
+      "to": "tests/suites/accessibility/i18n/rtl-hebrew-dark-mode.spec.ts"
+    },
+    {
+      "from": "tests/e2e/rtl-simple-test.spec.ts",
+      "to": "tests/suites/accessibility/i18n/rtl-simple-test.spec.ts"
+    },
+    {
+      "from": "tests/e2e/debug-ui-loading.spec.ts",
+      "to": "tests/deprecated/admin/debug-ui-loading.spec.ts"
+    },
+    {
+      "from": "tests/e2e/explore-ovenai.spec.ts",
+      "to": "tests/deprecated/exploration/explore-ovenai.spec.ts"
+    },
+    {
+      "from": "tests/e2e/ovenai-exploration.spec.ts",
+      "to": "tests/deprecated/exploration/ovenai-exploration.spec.ts"
+    },
+    {
+      "from": "tests/e2e/website-planner-exploration.spec.ts",
+      "to": "tests/deprecated/exploration/website-planner-exploration.spec.ts"
+    },
+    {
+      "from": "tests/e2e/propagation-fixes.spec.ts",
+      "to": "tests/deprecated/fixes/propagation-fixes.spec.ts"
+    },
+    {
+      "from": "tests/e2e/test-fixes.spec.ts",
+      "to": "tests/deprecated/fixes/test-fixes.spec.ts"
+    }
+  ],
+  "skippedFiles": [
+    "tests/e2e/debug-login-form.spec.ts"
+  ],
+  "errors": [],
+  "createdDirectories": [
+    "tests/deprecated/fixes"
+  ]
+}

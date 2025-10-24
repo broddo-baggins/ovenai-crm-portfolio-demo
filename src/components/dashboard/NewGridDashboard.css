@@ -1,0 +1,410 @@
+/* New Grid Dashboard Styles */
+
+.new-grid-container {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Grid visibility - only show on hover or during interactions */
+.new-grid-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px; /* Match rowHeight */
+  background-position: 16px 16px; /* Match containerPadding */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Show grid on hover or during interactions */
+.new-grid-container.show-grid::before {
+  opacity: 1;
+}
+
+/* Enhanced grid layout styling */
+.new-grid-layout {
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid item styling - optimized for free movement */
+.new-grid-item {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Base z-index for stacking */
+}
+
+/* RTL support for grid container */
+/* DISABLED: Grid container is now forced to LTR for drag-and-drop compatibility
+[dir="rtl"] .new-grid-container {
+  direction: rtl;
+}
+*/
+
+/* RTL grid background positioning */
+/* DISABLED: Grid container is now forced to LTR for drag-and-drop compatibility
+[dir="rtl"] .new-grid-container::before {
+  background-image: 
+    linear-gradient(to left, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-position: calc(100% - 16px) 16px;
+}
+*/
+
+/* RTL React Grid Layout transform fixes */
+/* DISABLED: Grid container is now forced to LTR for drag-and-drop compatibility
+[dir="rtl"] .new-grid-layout .react-grid-item {
+  direction: ltr;
+}
+
+[dir="rtl"] .new-grid-layout .react-grid-item.cssTransforms {
+  transform-origin: top right;
+}
+*/
+
+/* RTL resize handle positioning for new grid - Enhanced for all handles */
+/* REMOVED - Using specific handle classes instead */
+
+.new-grid-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  z-index: 10; /* Bring to front on hover */
+}
+
+/* Locked state styling */
+.new-grid-container.locked .new-grid-item {
+  border: 2px solid rgba(251, 146, 60, 0.5);
+  background: rgba(251, 146, 60, 0.05);
+}
+
+.new-grid-item.locked {
+  cursor: not-allowed;
+}
+
+/* Dragging state - enhanced for free movement */
+.new-grid-layout.dragging .new-grid-item {
+  transition: none;
+}
+
+.new-grid-layout.dragging .react-grid-item.react-draggable-dragging {
+  z-index: 1000;
+  transform: rotate(1deg) scale(1.05); /* Slightly more pronounced for better feedback */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(59, 130, 246, 0.8);
+  opacity: 0.95; /* Slight transparency to see underneath */
+}
+
+/* Resizing state */
+.new-grid-layout.resizing .react-grid-item.react-resizable-resizing {
+  z-index: 1000;
+  border: 2px solid rgba(34, 197, 94, 0.6);
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+}
+
+/* Enhanced resize handles - EXACT COPY FROM ENGLISH */
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+.react-resizable-handle-se {
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+  z-index: 10;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  opacity: 0.6;
+}
+
+.react-resizable-handle-sw {
+  bottom: 0;
+  left: 0;
+  cursor: sw-resize;
+  z-index: 10;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  opacity: 0.6;
+}
+
+.react-resizable-handle-ne {
+  top: 0;
+  right: 0;
+  cursor: ne-resize;
+  z-index: 10;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  opacity: 0.6;
+}
+
+.react-resizable-handle-nw {
+  top: 0;
+  left: 0;
+  cursor: nw-resize;
+  z-index: 10;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  opacity: 0.6;
+}
+
+.react-grid-item:hover > .react-resizable-handle,
+.react-grid-item:hover > .react-resizable-handle-se,
+.react-grid-item:hover > .react-resizable-handle-sw,
+.react-grid-item:hover > .react-resizable-handle-ne,
+.react-grid-item:hover > .react-resizable-handle-nw {
+  opacity: 1;
+}
+
+/* RTL resize handle positioning for new grid - SAME ARROWS AS ENGLISH */
+[dir="rtl"] .new-grid-layout .react-grid-item > .react-resizable-handle {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  opacity: 0.4;
+}
+
+[dir="rtl"] .new-grid-layout .react-grid-item > .react-resizable-handle-se {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  opacity: 0.6;
+}
+
+[dir="rtl"] .new-grid-layout .react-grid-item > .react-resizable-handle-sw {
+  bottom: 0;
+  right: 0;
+  left: auto;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: sw-resize;
+  opacity: 0.6;
+}
+
+[dir="rtl"] .new-grid-layout .react-grid-item > .react-resizable-handle-ne {
+  top: 0;
+  left: 0;
+  right: auto;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: ne-resize;
+  opacity: 0.6;
+}
+
+[dir="rtl"] .new-grid-layout .react-grid-item > .react-resizable-handle-nw {
+  top: 0;
+  right: 0;
+  left: auto;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBkPSJtMTUgMTJjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0wIDRjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTEgLjQ0OC0xIDEtMSAxIC40NDggMSAxem0tNS00YzAtLjU1Mi40NDgtMSAxLTFzMSAuNDQ4IDEgMS0uNDQ4IDEtMSAxLTEtLjQ0OC0xLTF6bTAgNGMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDEtLjQ0OCAxLTEgMS0xLS40NDgtMS0xeiIvPgo8L3N2Zz4K') no-repeat;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: nw-resize;
+  opacity: 0.6;
+}
+
+/* Placeholder styling during drag/resize - enhanced for free movement */
+.react-grid-placeholder {
+  background: rgba(59, 130, 246, 0.15) !important;
+  border: 2px dashed rgba(59, 130, 246, 0.8) !important;
+  border-radius: 8px !important;
+  opacity: 0.8 !important;
+  z-index: 999 !important; /* Just below dragging item */
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Free movement enhancements */
+.react-grid-item {
+  cursor: grab;
+}
+
+.react-grid-item:active {
+  cursor: grabbing;
+}
+
+/* Overlapping widget management - Apple-like approach */
+.new-grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.new-grid-item:hover {
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  z-index: 100; /* Bring hovered widget to front */
+  transform: scale(1.02); /* Slight scale up on hover */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Widget stacking order based on interaction */
+.new-grid-item.recently-interacted {
+  z-index: 50; /* Recently moved widgets stay above others */
+}
+
+.new-grid-item.overlapping {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Semi-transparent overlay for widgets underneath */
+.new-grid-item.underneath {
+  opacity: 0.7;
+  filter: brightness(0.9);
+}
+
+/* Peek effect - show outline of widgets underneath */
+.new-grid-item.peek-mode::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 2px dashed rgba(59, 130, 246, 0.4);
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.new-grid-item.peek-mode:hover::after {
+  opacity: 1;
+}
+
+/* Compact mode adjustments */
+.new-grid-layout .react-grid-item {
+  touch-action: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .new-grid-container::before {
+    background-size: 40px 40px;
+  }
+  
+  .new-grid-item {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .react-resizable-handle {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Animation for grid state changes */
+.new-grid-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced focus states for accessibility */
+.new-grid-item:focus-within {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+}
+
+/* Improved performance with GPU acceleration */
+.new-grid-layout,
+.new-grid-item,
+.react-grid-item {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth transitions for layout changes */
+.react-grid-item:not(.react-draggable-dragging):not(.react-resizable-resizing) {
+  transition: transform 0.2s ease-in-out, width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+/* Custom scrollbar for overflow areas */
+.new-grid-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.new-grid-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.new-grid-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.new-grid-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+} 

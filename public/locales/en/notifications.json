@@ -1,0 +1,21 @@
+{
+  "types": {
+    "info": "Information",
+    "success": "Success",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "actions": {
+    "dismiss": "Dismiss",
+    "view": "View",
+    "markRead": "Mark as read",
+    "markUnread": "Mark as unread"
+  },
+  "messages": {
+    "welcomeBack": "Welcome back!",
+    "dataUpdated": "Data has been updated",
+    "changesSaved": "Changes saved successfully",
+    "errorOccurred": "An error occurred",
+    "operationCompleted": "Operation completed successfully"
+  }
+} 

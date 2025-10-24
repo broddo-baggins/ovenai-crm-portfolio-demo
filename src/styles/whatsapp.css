@@ -1,0 +1,324 @@
+/* WhatsApp Original Colors and Styles */
+
+/* WhatsApp Color Palette - Meta Official Colors */
+:root {
+  /* Default wallpaper - Pearl Bush */
+  --whatsapp-background: #ECE5DD;
+  
+  /* Message colors */
+  --whatsapp-outgoing: #DCF8C6;         /* Light green for lead messages (outgoing from lead perspective) */
+  --whatsapp-incoming: #FFFFFF;         /* White for agent messages (incoming to lead) */
+  --whatsapp-system: #FFF4C4;          /* Light yellow for system messages */
+  --whatsapp-link-preview: #F0F0F0;    /* Light grey for link previews */
+  
+  /* Header color - Meta Official WhatsApp Green */
+  --whatsapp-header: #25D366;          /* Official WhatsApp green */
+  --whatsapp-header-hover: #1eb85e;    /* Darker green for hover */
+  
+  /* Input area */
+  --whatsapp-input-bg: #F0F0F0;        /* Light grey */
+  
+  /* Text colors */
+  --whatsapp-text-primary: #262626;
+  --whatsapp-text-secondary: #667781;
+  --whatsapp-text-timestamp: #999999;
+  --whatsapp-placeholder: #9FA4A9;     /* Placeholder text color - 60% opacity of black */
+}
+
+/* WhatsApp message bubbles */
+.whatsapp-message {
+  border-radius: 18px;
+  max-width: 80%;
+  padding: 8px 12px;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  word-wrap: break-word;
+  position: relative;
+}
+
+.whatsapp-message-outgoing {
+  background-color: var(--whatsapp-outgoing);
+  border-bottom-right-radius: 4px;
+  margin-left: auto;
+}
+
+.whatsapp-message-incoming {
+  background-color: var(--whatsapp-incoming);
+  border-bottom-left-radius: 4px;
+  margin-right: auto;
+}
+
+.whatsapp-message-system {
+  background-color: var(--whatsapp-system);
+  border-radius: 18px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+/* WhatsApp background pattern (doodle motif) */
+.whatsapp-background {
+  background-color: var(--whatsapp-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23f0f0f0' fill-opacity='0.06'%3E%3Ccircle cx='15' cy='15' r='2'/%3E%3Ccircle cx='45' cy='15' r='2'/%3E%3Ccircle cx='15' cy='45' r='2'/%3E%3Ccircle cx='45' cy='45' r='2'/%3E%3Cpath d='M20 10h5v5h-5zM35 10h5v5h-5zM20 35h5v5h-5zM35 35h5v5h-5z'/%3E%3Cpath d='M15 20c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5zm20 0c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* WhatsApp header styling */
+.whatsapp-header {
+  background-color: var(--whatsapp-header);
+  color: white;
+  padding: 16px;
+}
+
+.whatsapp-header:hover {
+  background-color: var(--whatsapp-header-hover);
+}
+
+/* WhatsApp input area */
+.whatsapp-input-area {
+  background-color: var(--whatsapp-input-bg);
+  border-top: 1px solid #e5e7eb;
+  padding: 12px;
+}
+
+.whatsapp-input {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 12px 16px;
+  flex: 1;
+  outline: none;
+  transition: border-color 0.15s ease-in-out;
+  font-size: 15px;
+  line-height: 1.4;
+  resize: none;
+  overflow-y: auto;
+}
+
+.whatsapp-input::placeholder {
+  color: var(--whatsapp-placeholder);
+}
+
+.whatsapp-input:focus {
+  border-color: var(--whatsapp-header);
+  box-shadow: 0 0 0 1px var(--whatsapp-header);
+}
+
+/* WhatsApp send button */
+.whatsapp-send-button {
+  background-color: var(--whatsapp-header);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  flex-shrink: 0;
+}
+
+.whatsapp-send-button:hover {
+  background-color: var(--whatsapp-header-hover);
+}
+
+.whatsapp-send-button img {
+  filter: brightness(0) invert(1); /* Make the icon white */
+}
+
+/* Typography adjustments for Hebrew and English matching */
+.whatsapp-text {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--whatsapp-text-primary);
+}
+
+.whatsapp-text-hebrew {
+  font-family: 'Noto Sans Hebrew', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+.whatsapp-text-english {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: plaintext;
+}
+
+/* Timestamp styling */
+.whatsapp-timestamp {
+  font-size: 12px;
+  color: var(--whatsapp-text-timestamp);
+  direction: ltr; /* Always LTR regardless of message language */
+  margin-top: 4px;
+}
+
+/* Read receipts (checkmarks) */
+.whatsapp-checkmarks {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.whatsapp-checkmark {
+  width: 16px;
+  height: 12px;
+  color: var(--whatsapp-text-timestamp);
+}
+
+.whatsapp-checkmark-read {
+  color: #53bdeb; /* Blue for read messages */
+}
+
+/* Typing indicator */
+.whatsapp-typing {
+  background-color: #FFFFFF; /* White background for typing indicator */
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+}
+
+/* Status/online indicator */
+.whatsapp-online-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00d856;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Contact avatar placeholder */
+.whatsapp-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Scrollbar styling for chat area */
+.whatsapp-chat-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.whatsapp-chat-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.whatsapp-chat-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.whatsapp-chat-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .whatsapp-message {
+    max-width: 80%; /* Reduced from 85% to fit 80% of mobile browser */
+  }
+  
+  .whatsapp-text,
+  .whatsapp-text-hebrew,
+  .whatsapp-text-english {
+    font-size: 14px; /* Increased from 13px for better readability */
+  }
+  
+  /* Mobile-specific input adjustments */
+  .whatsapp-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* WhatsApp container mobile sizing */
+  .whatsapp-chat-interface {
+    max-height: 80vh;
+    width: 95%;
+    max-width: 95%;
+  }
+  
+  /* Header mobile adjustments - Compact for mobile */
+  .whatsapp-header {
+    padding: 8px 12px; /* Further reduced vertical padding for mobile */
+    min-height: 56px; /* Set minimum height to maintain usability */
+  }
+  
+  /* Chat container mobile optimization */
+  .whatsapp-chat-container {
+    padding: 12px; /* Reduced from 16px */
+  }
+}
+
+/* Extra compact styles for small mobile screens */
+@media (max-width: 480px) {
+  .whatsapp-header {
+    padding: 6px 12px; /* Even more compact for small screens */
+    min-height: 48px; /* Smaller minimum height for small screens */
+  }
+  
+  .whatsapp-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
+/* Compact safe area for WhatsApp header specifically */
+@media (max-width: 768px) {
+  .whatsapp-header.safe-area-top {
+    padding-top: max(8px, env(safe-area-inset-top)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-header.safe-area-top {
+    padding-top: max(6px, env(safe-area-inset-top)) !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --whatsapp-background: #ffffff;
+    --whatsapp-outgoing: #e3f2fd;
+    --whatsapp-incoming: #f5f5f5;
+  }
+  
+  .whatsapp-message {
+    border: 1px solid #000000;
+  }
+}
+
+/* Dark mode adjustments (if needed) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --whatsapp-background: #0b141a;
+    --whatsapp-outgoing: #005c4b;
+    --whatsapp-incoming: #1f2937;
+    --whatsapp-text-primary: #e5e7eb;
+    --whatsapp-text-secondary: #9ca3af;
+  }
+}
+
+/* Typing caret animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+} 

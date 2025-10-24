@@ -1,0 +1,128 @@
+{
+  "title": "Lead Management Dashboard",
+  "subtitle": "Manage and track your leads with real-time updates",
+  "loading": "Loading dashboard data...",
+  
+  "stats": {
+    "totalLeads": "Total Leads",
+    "totalLeadsDesc": "All leads in the system",
+    "newLeads": "New Leads",
+    "newLeadsDesc": "Requires attention",
+    "hotLeads": "Hot Leads",
+    "hotLeadsDesc": "High priority leads",
+    "conversionRate": "Conversion Rate",
+    "conversionRateDesc": "Success conversion percentage"
+  },
+  
+  "status": {
+    "live": "Live",
+    "offline": "Offline"
+  },
+  
+  "actions": {
+    "export": "Export",
+    "addLead": "Add Lead",
+    "viewProperties": "View lead properties",
+    "editLead": "Edit Lead",
+    "deleteLead": "Delete Lead",
+    "clickToView": "Click to view lead properties",
+    "viewLead": "View Lead",
+    "import": "Import"
+  },
+  
+  "sections": {
+    "realTimeUpdates": "Real-time Updates",
+    "filters": "Filters",
+    "leadsTable": "Leads"
+  },
+  
+  "filters": {
+    "search": "Search",
+    "searchPlaceholder": "Search leads...",
+    "state": "Status",
+    "heatLevel": "Heat Level",
+    "source": "Source",
+    "dateRange": "Date Range",
+    "allTime": "All Time",
+    "today": "Today",
+    "lastWeek": "Last Week",
+    "lastMonth": "Last Month",
+    "clearFilters": "Clear Filters"
+  },
+  
+  "table": {
+    "name": "Name",
+    "contact": "Contact Details",
+    "state": "Status",
+    "heat": "Heat",
+    "created": "Created",
+    "actions": "Actions"
+  },
+  
+  "heatLevels": {
+    "all": "All Heat Levels",
+    "cold": "Cold",
+    "warm": "Warm",
+    "hot": "Hot",
+    "burning": "Burning"
+  },
+  
+  "states": {
+    "all": "All Statuses",
+    "new": "New",
+    "contacted": "Contacted",
+    "qualified": "Qualified",
+    "proposal": "Proposal",
+    "negotiation": "Negotiation",
+    "closedWon": "Closed Won",
+    "closedLost": "Closed Lost",
+    "archived": "Archived"
+  },
+  
+  "sources": {
+    "all": "All Sources",
+    "website": "Website",
+    "referral": "Referral",
+    "socialMedia": "Social Media",
+    "advertisement": "Advertisement",
+    "coldOutreach": "Cold Outreach",
+    "event": "Event",
+    "other": "Other"
+  },
+  
+  "tooltips": {
+    "totalLeads": "Simple count of all lead records in your system, regardless of their current status or heat level.",
+    "newLeads": "Leads with 'New' status that haven't been contacted yet. These require immediate attention from your sales team.",
+    "hotLeads": "Leads marked as 'Hot' or 'Burning' - showing strong interest and high probability of conversion.",
+    "conversionRate": "Percentage of total leads that converted to 'Closed Won' status. Formula: (Closed Won / Total Leads) × 100%"
+  },
+  
+  "notifications": {
+    "newLeadAdded": "New lead added",
+    "leadUpdated": "Lead updated",
+    "leadRemoved": "Lead removed",
+    "leadRemovedDescription": "Lead removed from system",
+    "dashboardRefreshed": "Dashboard refreshed",
+    "leadDeleted": "Lead deleted successfully",
+    "leadsExported": "Leads exported successfully"
+  },
+  
+  "errors": {
+    "failedToLoad": "Failed to load lead data",
+    "unexpectedError": "An unexpected error occurred while loading leads",
+    "failedToDelete": "Failed to delete lead",
+    "failedToExport": "Failed to export leads"
+  },
+  
+  "confirmDelete": "Are you sure you want to delete this lead?",
+  "noLeadsFound": "No leads found matching your filters",
+  "lead": "Lead",
+  "leads": "Leads",
+  "individual": "Individual",
+  "status": "Status & Temperature",
+  "temperature": "Temperature",
+  "contactInfo": "Contact Information",
+  "notAvailable": "N/A",
+  "lastMessage": "Last Message",
+  "notes": "Notes"
+} 

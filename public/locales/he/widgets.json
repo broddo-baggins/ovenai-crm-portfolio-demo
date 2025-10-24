@@ -1,0 +1,197 @@
+{
+  "leadFunnel": {
+    "title": "משפך לידים",
+    "stages": {
+      "new": "חדש",
+      "contacted": "נוצר קשר", 
+      "qualified": "מוכשר",
+      "meeting": "נקבעה פגישה",
+      "closed": "נסגר"
+    }
+  },
+  "totalLeads": {
+    "title": "סך הכל לידים",
+    "subtitle": "סך הכל לידים במעקב",
+    "previousPeriod": "תקופה קודמת",
+    "thisWeek": "השבוע"
+  },
+  "reachedLeads": {
+    "title": "לידים שהושגו",
+    "subtitle": "לידים שהושגו בהצלחה",
+    "reachRate": "שיעור הגעה",
+    "previousPeriod": "תקופה קודמת",
+    "thisWeek": "השבוע"
+  },
+  "conversationsCompleted": {
+    "title": "שיחות שהושלמו",
+    "subtitle": "שיחות שהושלמו",
+    "thisWeek": "השבוע",
+    "conversionRate": "שיעור המרה",
+    "breakdown": "פירוט",
+    "meetings": "פגישות",
+    "sales": "מכירות",
+    "followUps": "מעקבים"
+  },
+  "leadTemperature": {
+    "title": "התפלגות חום לידים",
+    "hot": "לידים חמים",
+    "warm": "לידים פושרים", 
+    "cold": "לידים קרים",
+    "burning": "לידים בוערים",
+    "frozen": "לידים קפואים",
+    "ofTotal": "מהסך הכל"
+  },
+  "bant": {
+    "title": "שיעור הכשרת BANT",
+    "subtitle": "הערכת תקציב, סמכות, צורך וזמן",
+    "qualificationRate": "שיעור הכשרה",
+    "budget": "מוכשר תקציב",
+    "authority": "מוכשר סמכות",
+    "need": "מוכשר צורך",
+    "timeline": "מוכשר זמן",
+    "fullyQualified": "מוכשר במלואו",
+    "partiallyQualified": "מוכשר חלקית",
+    "notQualified": "לא מוכשר",
+    "assessmentPending": "הערכה בהמתנה",
+    "pipeline": "צינור BANT/HEAT",
+    "initialOutreach": "יצירת קשר ראשונית",
+    "responses": "תגובות",
+    "bantQualified": "הוכשר BANT",
+    "meetingsBooked": "פגישות שנקבעו"
+  },
+  "heat": {
+    "title": "לידים חמים ובוערים",
+    "subtitle": "לידים בעדיפות גבוהה הדורשים טיפול מיידי",
+    "hotLeads": "לידים חמים",
+    "burningLeads": "לידים בוערים",
+    "totalHot": "סך הכל חמים",
+    "heatTrend": "מגמת חום",
+    "heating": "מתחמם",
+    "cooling": "מתקרר",
+    "stable": "יציב",
+    "temperatureScale": "סולם טמפרטורה (0-100)",
+    "heatProgression": "התקדמות חום",
+    "temperatureDistribution": "פיזור טמפרטורה"
+  },
+  "performance": {
+    "title": "מדדי ביצועים",
+    "overallActivity": "פעילות כללית",
+    "target": "יעד",
+    "progress": "התקדמות",
+    "keyStrengths": "נקודות חוזק מרכזיות",
+    "growthOpportunities": "הזדמנויות צמיחה",
+    "recommendedActions": "פעולות מומלצות",
+    "highPriority": "עדיפות גבוהה",
+    "mediumPriority": "עדיפות בינונית",
+    "lowPriority": "עדיפות נמוכה"
+  },
+  "messaging": {
+    "title": "שיעור הודעה ראשונה",
+    "subtitle": "שיעור הצלחה של יצירת קשר ראשון אוטומטי",
+    "firstMessageRate": "שיעור הודעה ראשונה",
+    "messagesPerWeek": "הודעות בשבוע",
+    "responseRate": "שיעור תגובה",
+    "automationSuccess": "הצלחת האוטומציה"
+  },
+  "meetings": {
+    "title": "צינור פגישות",
+    "subtitle": "התקדמות לידים BANT/HEAT וצינור פגישות",
+    "meetingsScheduled": "פגישות שנקבעו",
+    "meetingConversion": "המרת פגישות",
+    "calendlyIntegration": "אינטגרציית Calendly",
+    "meetingRate": "שיעור פגישות",
+    "meetingsSet": "פגישות שנקבעו",
+    "ofInitialMessages": "מההודעות הראשוניות",
+    "calendlyMeetingsBooked": "פגישות Calendly שנקבעו"
+  },
+  "propertyStats": {
+    "title": "סטטיסטיקות נכסים",
+    "averagePrice": "מחיר ממוצע",
+    "totalListings": "סך הכל רישומים",
+    "soldThisMonth": "נמכר החודש"
+  },
+  "messagesSent": {
+    "title": "הודעות שנשלחו",
+    "total": "סך הכל הודעות שנשלחו"
+  },
+  "interactions": {
+    "title": "אינטראקציות",
+    "total": "סך הכל אינטראקציות"
+  },
+  "conversationsStarted": {
+    "title": "שיחות שהתחילו",
+    "total": "סך הכל שיחות שהתחילו"
+  },
+  "conversationsAbandoned": {
+    "title": "שיחות שננטשו",
+    "total": "סך הכל שיחות שננטשו"
+  },
+  "meanResponseTime": {
+    "title": "זמן תגובה ממוצע",
+    "average": "זמן תגובה ממוצע"
+  },
+  "avgMessagesPerCustomer": {
+    "title": "ממוצע הודעות ללקוח",
+    "average": "ממוצע הודעות ללקוח"
+  },
+  "meetingsVsMessages": {
+    "title": "פגישות מול הודעות",
+    "meetings": "פגישות",
+    "messages": "הודעות"
+  },
+  "meetingsSetPercentage": {
+    "title": "אחוז פגישות שנקבעו",
+    "percentage": "שיעור המרה לפגישות"
+  },
+  "trends": {
+    "increase": "עלייה",
+    "decrease": "ירידה",
+    "fromLastWeek": "מהשבוע שעבר",
+    "vsLastWeek": "לעומת השבוע שעבר"
+  },
+  "settings": {
+    "title": "הגדרות ווידג'ט",
+    "customTitle": "כותרת ווידג'ט",
+    "refreshInterval": "מרווח רענון",
+    "timeRange": "טווח זמן",
+    "showLegend": "הצג מקרא",
+    "showTooltip": "הצג רמז כלים",
+    "showPercentages": "הצג אחוזים",
+    "showInactive": "הצג לא פעילים",
+    "currency": "מטבע",
+    "showTrends": "הצג מגמות",
+    "save": "שמור",
+    "cancel": "ביטול",
+    "remove": "הסר",
+    "seconds": "שניות",
+    "timeRanges": {
+      "today": "24 שעות אחרונות",
+      "week": "7 ימים אחרונים", 
+      "month": "30 ימים אחרונים",
+      "year": "365 ימים אחרונים"
+    }
+  },
+  "bank": {
+    "title": "בנק ווידג'טים",
+    "search": "חפש ווידג'טים...",
+    "categories": {
+      "all": "הכל",
+      "coreMetrics": "מדדים עיקריים",
+      "crmAnalytics": "אנליטיקס CRM",
+      "performance": "ביצועים",
+      "legacy": "ישן"
+    },
+    "badges": {
+      "popular": "פופולרי",
+      "recommended": "מומלץ",
+      "useful": "שימושי"
+    },
+    "noResults": "לא נמצאו ווידג'טים התואמים לקריטריונים שלך.",
+    "adjustFilters": "נסה לשנות את החיפוש או סינון הקטגוריה.",
+    "calculation": "חישוב:",
+    "tooltips": {
+      "close": "סגור בנק ווידג'טים",
+      "open": "פתח בנק ווידג'טים"
+    }
+  }
+} 

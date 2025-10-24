@@ -1,0 +1,128 @@
+{
+  "hero": {
+    "brand": "CRM Demo",
+    "headline": "Real-Estate Sales CRM, Re-imagined",
+    "sub": "A fully-custom AI agent for every project. Native Hebrew. Always on. Ready to book face-to-face meetings while you sleep.",
+    "cta": "Request Early Access",
+    "secondary_cta": "Watch Demo"
+  },
+  "badge": {
+    "hebrew": "100% Hebrew support",
+    "re": "Built for Israeli Real-Estate",
+    "always_on": "24/7 Always On",
+    "custom": "Custom Per Project"
+  },
+  "stats": {
+    "response_rate": "70% Response Rate",
+    "meeting_boost": "2.5x More Meetings",
+    "time_saved": "70% Time Saved",
+    "projects": "50+ Projects"
+  },
+  "diff": {
+    "title": "Why CRM Demo is different",
+    "subtitle": "We're not just another chatbot. We're your dedicated sales team that never sleeps.",
+    "item1": {
+      "title": "Agent per project",
+      "body": "Hyper-granular personas - each project owns its tone, FAQ and sales path.",
+      "detail": "Every tower, every neighborhood, every price point gets its own specialized agent."
+    },
+    "item2": {
+      "title": "Human-grade journey",
+      "body": "Typing dots, natural delays, contextual memory - prospects feel a real agent, not a bot.",
+      "detail": "Advanced conversation flow that remembers context and builds genuine relationships."
+    },
+    "item3": {
+      "title": "Always on",
+      "body": "Instant replies at 2 a.m.; meetings booked before breakfast.",
+      "detail": "Never miss a hot lead again. Your agent works while you sleep."
+    }
+  },
+  "benefits": {
+    "title": "Transform Your Sales Process",
+    "subtitle": "Experience tangible improvements in your real estate sales",
+    "items": [
+      {
+        "title": "Reduce manual follow-up work by 70%",
+        "description": "Let your team focus on closing deals while CRM Demo handles the outreach and qualification.",
+        "icon": "time"
+      },
+      {
+        "title": "70% average response rate from cold leads",
+        "description": "Our customers report dramatic increases in engagement from previously inactive prospects.",
+        "icon": "chart"
+      },
+      {
+        "title": "Book 2.5x more face-to-face meetings",
+        "description": "Intelligent scheduling and follow-up sequences that actually convert leads to appointments.",
+        "icon": "calendar"
+      },
+      {
+        "title": "Complete Hebrew conversation mastery",
+        "description": "Native Hebrew understanding with cultural context and real estate terminology.",
+        "icon": "language"
+      }
+    ]
+  },
+  "metrics": {
+    "title": "Data you can act on",
+    "subtitle": "Track every interaction, optimize every message, maximize every opportunity",
+    "body": "Track every hook message, compare value props, see funnel drop-offs, and let CRM Demo auto-optimise copy.",
+    "bullet1": "Best-performing first touch",
+    "bullet2": "Value-prop heat-map",
+    "bullet3": "CSV import → live meetings",
+    "features": [
+      "Real-time conversation analytics",
+      "A/B testing for message optimization",
+      "Lead temperature tracking",
+      "Conversion funnel analysis",
+      "ROI measurement per project"
+    ]
+  },
+  "process": {
+    "title": "How We Build Your Perfect Sales Agent",
+    "subtitle": "We combine your expertise with AI to create the ultimate sales representative",
+    "description": "We combine your PR materials, FAQs, call transcripts, and sales agent design documents to craft the best sales agent in the world - tailored to your business and customers.",
+    "steps": [
+      {
+        "title": "Gather Your Knowledge",
+        "description": "We collect your PR, FAQs, and real sales call transcripts to understand your unique value and customer needs.",
+        "details": ["Project brochures & marketing materials", "Frequently asked questions", "Successful sales call recordings", "Pricing strategies & objection handling"]
+      },
+      {
+        "title": "Design the Agent",
+        "description": "Our team works with your Sales Agent Design documentation to ensure the AI agent matches your brand and sales style.",
+        "details": ["Custom personality & tone", "Project-specific knowledge base", "Hebrew language optimization", "Sales process mapping"]
+      },
+      {
+        "title": "Deploy & Optimize",
+        "description": "We launch your AI sales agent, continuously learning and optimizing to deliver the best results for your business.",
+        "details": ["Live deployment & monitoring", "Performance optimization", "Continuous learning updates", "24/7 support & maintenance"]
+      }
+    ]
+  },
+  "integrations": {
+    "title": "Plugs into your stack",
+    "subtitle": "Seamless integration with your existing tools",
+    "body": "CRM Demo pushes updates to any CRM - HubSpot, Monday, Salesforce or your custom webhook.",
+    "platforms": ["HubSpot", "Salesforce", "Monday.com", "Pipedrive", "Custom Webhooks", "WhatsApp Business"]
+  },
+  "how": {
+    "title": "How it works",
+    "subtitle": "From cold leads to booked meetings in three simple steps",
+    "step1": "Pick a project • upload PR, FAQ, transcripts",
+    "step2": "Import qualified leads (CSV or API) • schedule outreach",
+    "step3": "Watch meetings appear • tweak copy in one click"
+  },
+  "cta": {
+    "title": "Bring your next tower to life",
+    "subtitle": "Start converting more leads today with AI that actually works",
+    "button": "Book a Demo",
+    "secondary": "Start Free Trial"
+  },
+  "footer": {
+    "copyright": "© 2025 CRM Demo • Built by Humans",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "contact": "Contact Us"
+  }
+} 

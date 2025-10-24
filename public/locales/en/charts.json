@@ -1,0 +1,47 @@
+{
+  "chart": {
+    "defaultTitle": "Chart",
+    "mockData": "Mock chart data visualization",
+    "rtlSupport": "RTL Support"
+  },
+  "types": {
+    "line": "Line Chart",
+    "bar": "Bar Chart",
+    "pie": "Pie Chart",
+    "area": "Area Chart",
+    "scatter": "Scatter Plot",
+    "bubble": "Bubble Chart",
+    "donut": "Donut Chart",
+    "gauge": "Gauge Chart",
+    "radar": "Radar Chart",
+    "heatmap": "Heatmap",
+    "treemap": "Treemap",
+    "funnel": "Funnel Chart"
+  },
+  "axes": {
+    "xAxis": "X Axis",
+    "yAxis": "Y Axis",
+    "category": "Category",
+    "value": "Value",
+    "time": "Time",
+    "date": "Date"
+  },
+  "legend": {
+    "legend": "Legend",
+    "show": "Show Legend",
+    "hide": "Hide Legend",
+    "position": "Position",
+    "top": "Top",
+    "bottom": "Bottom",
+    "left": "Left",
+    "right": "Right"
+  },
+  "data": {
+    "noData": "No data available",
+    "loading": "Loading chart data...",
+    "error": "Error loading chart data",
+    "refresh": "Refresh data",
+    "export": "Export chart",
+    "download": "Download chart"
+  }
+} 

@@ -1,0 +1,289 @@
+{
+  "title": "לוח בקרה",
+  "subtitle": {
+    "withProject": "פרויקט: ${project}",
+    "allProjects": "סקירת כל הפרויקטים"
+  },
+  "navigation": {
+    "dashboard": "לוח בקרה",
+    "projects": "פרויקטים", 
+    "leads": "לידים",
+    "messages": "הודעות",
+    "reports": "דוחות",
+    "clients": "לקוחות",
+    "users": "משתמשים",
+    "settings": "הגדרות"
+  },
+  "connection": {
+    "liveDataConnected": "נתונים חיים מחוברים",
+    "dataConnected": "נתונים מחוברים",
+    "connected": "מחובר",
+    "disconnected": "מנותק",
+    "connecting": "מתחבר..."
+  },
+  "widgets": {
+    "totalLeads": "סך כל הלידים",
+    "reachedLeads": "לידים שהושגו",
+    "conversionRate": "אחוז המרה",
+    "activeProjects": "פרויקטים פעילים",
+    "messagesThisWeek": "הודעות השבוע",
+    "meetingsScheduled": "פגישות שנקבעו",
+    "title": "ווידג'טים של הדשבורד",
+    "visible": "גלויים",
+    "controls": "בקרות ווידג'טים",
+    "visibility": "נראות ווידג'טים",
+    "metrics": "מדדים",
+    "monthlyPerformance": "ביצועים חודשיים",
+    "leadGeneration": "יצירת לידים",
+    "revenue": "ערוץ הכנסות",
+    "pieCharts": "תרשימי עוגה",
+    "showAll": "הצג הכל",
+    "hideAll": "הסתר הכל",
+    "leadFunnel": "משפך לידים",
+    "totalChats": "סך הכל צ'אטים",
+    "messagesSent": "הודעות שנשלחו",
+    "interactions": "אינטראקציות",
+    "conversationsStarted": "שיחות שהתחילו",
+    "conversationsCompleted": "שיחות שהושלמו",
+    "conversationsAbandoned": "שיחות שנזנחו",
+    "meanResponseTime": "זמן תגובה ממוצע",
+    "avgMessagesPerCustomer": "הודעות ממוצעות ללקוח",
+    "meetingsVsMessages": "פגישות מול הודעות",
+    "propertyStats": "סטטיסטיקות נכסים"
+  },
+  "techstore": {
+    "name": "TechStore",
+    "leadGeneration": "יצירת לידים של TechStore"
+  },
+  "trends": {
+    "fromLastWeek": "מהשבוע שעבר",
+    "fromLastMonth": "מהחודש שעבר",
+    "lastWeek": "השבוע שעבר",
+    "thisWeek": "השבוע",
+    "previous": "קודם",
+    "industryAverage": "ממוצע בתעשייה",
+    "industryReachRate": "שיעור הגעה בתעשייה",
+    "sevenDays": "7 ימים",
+    "thirtyDays": "30 יום"
+  },
+  "charts": {
+    "bantHeatDistribution": "התפלגות BANT/HEAT לידים",
+    "leadTemperatureBreakdown": "פירוט טמפרטורת לידים נוכחית ותזמון פגישות",
+    "heatTrending": "מגמת חום עולה",
+    "leadDistributionDescription": "מציג סטטוס הכשרת לידים וצינור המרת פגישות",
+    "leads": "לידים",
+    "conversions": "המרות",
+    "leadGenerationConversionTrends": "מגמות יצירת לידים והמרות",
+    "monthlyPerformanceDescription": "ביצועים חודשיים המציגים נפח לידים ותוצאות המרה",
+    "leadsConversions": {
+      "title": "לידים והמרות",
+      "description": "עקוב אחר ביצועי יצירת הלידים וההמרות שלך לאורך זמן"
+    },
+    "bantHeatProgression": {
+      "title": "התקדמות BANT/HEAT וצינור פגישות",
+      "description": "עקוב אחר הכשרת לידים מהקשר הראשון דרך הערכת BANT ועד לפגישות מתוזמנות"
+    },
+    "performanceTrends": {
+      "title": "מגמות ביצועים",
+      "description": "תצוגה אינטראקטיבית של לידים והמרות לאורך זמן עם בחירת טווח תאריכים"
+    },
+    "monthlyPerformance": {
+      "title": "ביצועים חודשיים",
+      "subtitle": "מדדי ביצועים חודשיים",
+      "description": "תצוגה מקיפה של לידים חודשיים, הגעה, המרות, פגישות והודעות"
+    },
+    "leadSources": "מקורות לידים",
+    "leadSourcesDescription": "התפלגות לידים לפי ערוץ רכישה",
+    "salesLeadsTrend": "מגמת מכירות ולידים",
+    "performanceTrendsTitle": "מגמות ביצועים",
+    "monthlyOverview": "סקירה חודשית",
+    "monthlyPerformanceTitle": "ביצועים חודשיים",
+    "noDataAvailable": "אין נתונים זמינים",
+    "noLeadSourceData": "אין נתוני מקורות לידים זמינים",
+    "noMonthlyData": "אין נתונים חודשיים זמינים",
+    "defaultTitle": "תרשים",
+    "mockData": "הדמיית נתוני תרשים",
+    "rtlSupport": "RTL: מופעל",
+    "series": "סדרה",
+    "labels": {
+      "month": "חודש",
+      "count": "כמות",
+      "value": "ערך",
+      "percentage": "אחוז",
+      "leads": "לידים",
+      "conversions": "המרות",
+      "meetings": "פגישות",
+      "messages": "הודעות",
+      "reach": "הגעה",
+      "sales": "מכירות",
+      "projects": "פרויקטים",
+      "activities": "פעילויות",
+      "performance": "ביצועים",
+      "hour": "שעה",
+      "desktop": "דסקטופ",
+      "mobile": "מובייל",
+      "visitors": "מבקרים"
+    },
+    "temperature": {
+      "cold": "לידים קרים",
+      "warm": "לידים חמים",
+      "hot": "לידים לוהטים",
+      "burning": "לידים בוערים",
+      "meetingScheduled": "פגישות מתוזמנות"
+    },
+    "tooltips": {
+      "clickToView": "לחץ לצפייה בפרטים",
+      "dataPoint": "נקודת נתונים",
+      "totalValue": "ערך כולל",
+      "percentage": "אחוז מהכלל"
+    },
+    "legends": {
+      "leadSources": "מקורות לידים",
+      "leadTemperature": "טמפרטורת לידים",
+      "monthlyMetrics": "מדדים חודשיים",
+      "performanceIndicators": "מדדי ביצועים"
+    },
+    "axis": {
+      "xAxis": "ציר X",
+      "yAxis": "ציר Y",
+      "time": "זמן",
+      "quantity": "כמות",
+      "date": "תאריך"
+    }
+  },
+  "months": {
+    "jan": "ינו",
+    "feb": "פבר",
+    "mar": "מרץ",
+    "apr": "אפר",
+    "may": "מאי", 
+    "jun": "יוני",
+    "january": "ינואר",
+    "february": "פברואר",
+    "march": "מרץ",
+    "april": "אפריל",
+    "june": "יוני"
+  },
+  "status": {
+    "live": "נתונים חיים",
+    "updating": "מעדכן...",
+    "active": "פעיל",
+    "inactive": "לא פעיל",
+    "completed": "הושלם",
+    "pending": "ממתין",
+    "new": "חדש",
+    "in_progress": "בתהליך",
+    "on_hold": "מושהה"
+  },
+  "realTimeStatus": {
+    "title": "סטטוס בזמן אמת",
+    "dataConnected": "נתונים מחוברים",
+    "lastUpdate": "עדכון אחרון: עכשיו",
+    "autoRefresh": "רענון אוטומטי",
+    "every5min": "כל 5 דקות",
+    "trending": "במגמת עלייה",
+    "thisWeek": "השבוע"
+  },
+  "errors": {
+    "dashboardError": "שגיאת לוח בקרה",
+    "loadingData": "שגיאה בטעינת נתוני לוח הבקרה"
+  },
+  "actions": {
+    "retry": "נסה שוב",
+    "create": "צור",
+    "edit": "ערוך",
+    "delete": "מחק",
+    "save": "שמור",
+    "cancel": "בטל",
+    "view": "צפה",
+    "export": "יצא",
+    "import": "יבא",
+    "refresh": "רענן"
+  },
+  "stats": {
+    "total_projects": "סך כל הפרויקטים",
+    "total_leads": "סך כל הלידים",
+    "total_clients": "סך כל הלקוחות",
+    "active_conversations": "שיחות פעילות",
+    "completion_rate": "אחוז השלמה",
+    "response_time": "זמן תגובה ממוצע"
+  },
+  "filters": {
+    "all": "הכל",
+    "active": "פעיל",
+    "inactive": "לא פעיל",
+    "completed": "הושלם",
+    "pending": "ממתין",
+    "filter_by": "סנן לפי",
+    "search": "חפש",
+    "clear_filters": "נקה מסננים"
+  },
+  "messages": {
+    "loading": "טוען...",
+    "no_data": "אין נתונים זמינים",
+    "error_loading": "שגיאה בטעינת הנתונים",
+    "success_save": "נשמר בהצלחה",
+    "success_delete": "נמחק בהצלחה",
+    "confirm_delete": "האם אתה בטוח שברצונך למחוק פריט זה?"
+  },
+  "tables": {
+    "name": "שם",
+    "email": "אימייל",
+    "phone": "טלפון", 
+    "status": "סטטוס",
+    "created": "נוצר",
+    "updated": "עודכן",
+    "actions": "פעולות",
+    "no_results": "לא נמצאו תוצאות",
+    "rows_per_page": "שורות בעמוד",
+    "page": "עמוד"
+  },
+  "integration": {
+    "title": "זרימת אינטגרציה",
+    "messagesProcessed": "הודעות שעובדו",
+    "today": "היום",
+    "syncStatus": "סטטוס סנכרון",
+    "realtime": "זמן אמת",
+    "activeConnections": "חיבורים פעילים"
+  },
+  "recentActivity": {
+    "title": "פעילות אחרונה",
+    "description": "העדכונים והאינטראקציות האחרונות עם הלידים שלך",
+    "newLead": "ליד חדש נוצר",
+    "proposalSent": "הצעה נשלחה",
+    "meetingScheduled": "פגישה נקבעה",
+    "dealClosed": "עסקה נסגרה",
+    "time": {
+      "2min": "לפני 2 דקות",
+      "1hour": "לפני שעה",
+      "3hours": "לפני 3 שעות",
+      "1day": "לפני יום"
+    }
+  },
+  "insights": {
+    "title": "📊 תובנות ביצועים מרכזיות",
+    "description": "ניתוח מקיף של ביצועי העסק שלך והזדמנויות צמיחה",
+    "working": {
+      "title": "✅ מה עובד טוב",
+      "reach": "שיעור הגעה של 100% ללידים הנוכחיים",
+      "delivery": "ביצוע פרויקטים עקבי וצמיחה",
+      "communication": "תקשורת פעילה עם פרוספקטים",
+      "meetings": "פעילות קבועה של תזמון פגישות"
+    },
+    "improvement": {
+      "title": "⚠️ תחומים לשיפור",
+      "conversion": "שיעור ההמרה זקוק לאופטימיזציה",
+      "volume": "ניתן להגדיל את נפח הלידים",
+      "followup": "תהליכי המעקב זקוקים לשיפור",
+      "meetings": "שיפור יחס פגישות להמרות"
+    }
+  },
+  "monthlyPerformance": {
+    "title": "סקירת ביצועים חודשיים"
+  },
+  "controls": {
+    "addWidget": "הוסף ווידג'ט",
+    "removeWidget": "הסר ווידג'ט",
+    "resetLayout": "אפס פריסה"
+  }
+} 

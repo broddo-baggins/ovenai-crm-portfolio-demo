@@ -1,0 +1,84 @@
+name: '🔧 Basic CI'
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.ts'
+      - 'tsconfig.json'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20.9.0'
+  # Use real working Supabase credentials (from local credentials files)
+  VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://ajszzemkpenbfnghqiyz.supabase.co' }}
+  VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqc3p6ZW1rcGVuYmZuZ2hxaXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMzI5NzQsImV4cCI6MjA2MjkwODk3NH0.cyTX4-5zmeZs9OKuqo8mMNPeQIpcq6ni8LjwaauB1Gc' }}
+  # Test-specific environment variables
+  NODE_ENV: 'test'
+  CI: 'true'
+
+jobs:
+  basic-ci:
+    name: '🔧 Basic CI Checks'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: '📥 Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: '⚙️ Setup Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: '📦 Install Dependencies'
+        run: npm ci --prefer-offline --no-audit
+
+      - name: '🔍 Lint Code'
+        run: npm run lint
+
+      - name: '🔨 Build Application'
+        run: npm run build
+
+      - name: '🧪 Run Unit Tests'
+        run: npm test -- --run --coverage --reporter=verbose
+        env:
+          # Use the real working Supabase credentials for tests
+          VITE_SUPABASE_URL: ${{ env.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ env.VITE_SUPABASE_ANON_KEY }}
+          NODE_ENV: 'test'
+
+      - name: '📤 Upload Build Artifacts'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: dist/
+          retention-days: 1
+
+      - name: '📤 Upload Coverage'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
+
+  notify-success:
+    name: '✅ Success Notification'
+    runs-on: ubuntu-latest
+    needs: [basic-ci]
+    if: success()
+    
+    steps:
+      - name: '✅ Basic CI Complete'
+        run: |
+          echo "🎉 Basic CI pipeline completed successfully!"
+          echo "✅ Build: Passed"
+          echo "✅ Unit Tests: Passed"
+          echo "✅ Linting: Passed" 

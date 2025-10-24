@@ -1,0 +1,845 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Overview of your lead management system",
+    "welcome": "Welcome to your dashboard",
+    "charts": {
+      "bantHeatDistribution": "BANT/HEAT Lead Distribution",
+      "leadTemperatureBreakdown": "Current lead pipeline temperature distribution and meeting scheduling",
+      "heatTrending": "Heat Trending Up",
+      "leadDistributionDescription": "Showing lead qualification status and meeting conversion pipeline",
+      "count": "Count",
+      "month": "Month",
+      "leadsConversions": {
+        "title": "Leads & Conversions",
+        "description": "Track your lead generation and conversion performance over time"
+      },
+      "qualificationFunnel": {
+        "title": "Qualification Funnel",
+        "description": "Lead progression through qualification stages"
+      },
+      "monthlyPerformanceOverview": "Monthly Performance Overview"
+    },
+    "months": {
+      "month": "Month"
+    },
+    "trends": {
+      "fromLastWeek": "from last week"
+    },
+    "totalLeads": "Total Leads",
+    "totalProjects": "Total Projects",
+    "activeTemplates": "Active Templates",
+    "totalConversations": "Total Conversations",
+    "activeConversations": "Active Conversations",
+    "unreadMessages": "Unread Messages",
+    "responseRate": "Response Rate",
+    "avgResponseTime": "Avg Response Time",
+    "avgScoreBANT": "Avg BANT Score",
+    "highPotentialLeads": "High Potential Leads",
+    "avgScoreHEAT": "Avg HEAT Score",
+    "warmLeads": "Warm Leads",
+    "conversationsStarted": "Conversations Started",
+    "conversationsCompleted": "Conversations Completed",
+    "interactions": "Interactions",
+    "totalChats": "Total Chats",
+    "avgMessagesPerCustomer": "Avg Messages Per Customer",
+    "messagesSent": "Messages Sent",
+    "newConversations": "New Conversations",
+    "conversations": "Conversations",
+    "today": "Today",
+    "thisWeek": "This Week",
+    "system_prompt_reader": "System Prompt Reader",
+    "client": "Client",
+    "sections": "sections",
+    "edit_system_prompt": "Edit System Prompt",
+    "search_sections": "Search sections...",
+    "expand_all": "Expand All",
+    "collapse_all": "Collapse All",
+    "showing": "Showing",
+    "of": "of",
+    "copy_section": "Copy section",
+    "expand_section": "Expand section",
+    "collapse_section": "Collapse section",
+    "no_sections_found": "No sections found matching \"{{searchTerm}}\"",
+    "faq": {
+      "admin": {
+        "systemPrompts": {
+          "question": "How do I view and edit system prompts for clients?",
+          "answer": "System prompts are accessible through the Admin Console System Prompts tab. Each client has a customizable system prompt that defines AI behavior, conversation flow, and business rules. The system prompt reader provides organized sections with search, copy, and editing capabilities.",
+          "step1": "Navigate to Admin Console → System Prompts tab",
+          "step2": "Select a client from the dropdown to view their system prompt",
+          "step3": "Use the collapsible interface: expand/collapse entire prompt or individual sections",
+          "step4": "Search within sections using the search bar at the top",
+          "step5": "Copy specific sections using the copy button next to each section",
+          "step6": "Edit system prompt by clicking \"Edit System Prompt\" button",
+          "step7": "Changes propagate immediately to the site database for live AI behavior",
+          "step8": "Use \"Expand All\" / \"Collapse All\" buttons to manage section visibility"
+        },
+        "systemPromptSections": {
+          "question": "What sections are available in the system prompt reader?",
+          "answer": "The system prompt reader organizes content into logical sections with icons and collapsible interface. Each section can be expanded, collapsed, searched, and copied independently. The interface supports both English and Hebrew with proper RTL layout.",
+          "step1": "🤖 Role & Identity: Defines the AI assistant's personality and core identity",
+          "step2": "🎯 Primary Goal: Main objectives and success criteria for conversations",
+          "step3": "📊 Current User State: Context about the current conversation state",
+          "step4": "💬 State-Aware Communication: Rules for contextual conversation flow",
+          "step5": "✅ BANT Qualification Process: Lead qualification methodology and criteria",
+          "step6": "📅 Meeting Scheduling Protocol: Calendly integration and meeting booking rules",
+          "step7": "🚨 Smart Escalation Triggers: When to escalate to human agents",
+          "step8": "🏢 Project Details: Specific project information and context",
+          "step9": "📋 JSON Output Requirements: Structured data format specifications"
+        },
+        "systemPromptRTL": {
+          "question": "How does RTL (Hebrew) support work in the system prompt reader?",
+          "answer": "The system prompt reader provides complete RTL support for Hebrew interface elements while preserving the original system prompt text formatting. UI controls, navigation, and layout adapt to Hebrew direction, but system prompt content remains in its original language for AI consistency.",
+          "step1": "Switch to Hebrew using the language toggle (🌐) in the navigation",
+          "step2": "Interface elements automatically adjust to right-to-left layout",
+          "step3": "Buttons, search bar, and controls move to RTL positions",
+          "step4": "Section headers and navigation text appear in Hebrew",
+          "step5": "System prompt content remains in original language (usually English)",
+          "step6": "Copy and edit functions work seamlessly in both languages",
+          "step7": "Collapsible sections maintain proper RTL spacing and alignment",
+          "step8": "Toast notifications and confirmations appear in Hebrew"
+        }
+      }
+    },
+    "followUps": "Follow-ups",
+    "meetings": "Meetings",
+    "sales": "Sales",
+    "breakdown": "Breakdown",
+    "conversionRate": "Conversion Rate",
+    "clicks": "Clicks",
+    "replies": "Replies",
+    "reactions": "Reactions",
+    "automated": "Automated",
+    "manual": "Manual",
+    "inbound": "Inbound",
+    "newCustomers": "New Customers",
+    "returningCustomers": "Returning Customers",
+    "vipCustomers": "VIP Customers",
+    "messagingStats": "Messaging Stats",
+    "newLeads": "New Leads",
+    "warmConversations": "Warm Conversations",
+    "totalSent": "Total Sent",
+    "totalReceived": "Total Received",
+    "messageVolume": "Message Volume",
+    "conversionFunnel": "Conversion Funnel",
+    "leads": "Leads",
+    "qualified": "Qualified",
+    "converted": "Converted",
+    "messages": "Messages"
+  },
+  "leads": {
+    "title": "Leads",
+    "subtitle": "Lead management and tracking",
+    "searchPlaceholder": "Search leads...",
+    "allLeads": "All Leads",
+    "newLeads": "New Leads",
+    "qualifiedLeads": "Qualified Leads",
+    "convertedLeads": "Converted Leads",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "status": "Status",
+    "project": "Project",
+    "source": "Source",
+    "created": "Created",
+    "actions": "Actions",
+    "editLead": "Edit Lead",
+    "deleteLead": "Delete Lead",
+    "viewDetails": "View Details",
+    "bankScore": "BANT Score",
+    "heatScore": "HEAT Score",
+    "budget": "Budget",
+    "authority": "Authority",
+    "need": "Need",
+    "timeline": "Timeline",
+    "lead": "Lead",
+    "temperature": "Temperature",
+    "engagement": "Engagement",
+    "activity": "Activity",
+    "totalLeads": "Total Leads",
+    "conversionRate": "Conversion Rate",
+    "averageScore": "Average Score",
+    "highPotential": "High Potential",
+    "qualification": "Qualification",
+    "qualification_complete": "Qualification Complete",
+    "qualification_in_progress": "Qualification In Progress",
+    "qualification_not_started": "Qualification Not Started",
+    "loadingLeads": "Loading leads...",
+    "noLeadsFound": "No leads found",
+    "refreshLeads": "Refresh Leads"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Project management and templates",
+    "activeProjects": "Active Projects",
+    "totalProjects": "Total Projects",
+    "projectName": "Project Name",
+    "description": "Description",
+    "status": "Status",
+    "created": "Created",
+    "actions": "Actions",
+    "editProject": "Edit Project",
+    "deleteProject": "Delete Project",
+    "viewProject": "View Project",
+    "createProject": "Create Project",
+    "noProjectsFound": "No projects found",
+    "loadingProjects": "Loading projects..."
+  },
+  "templates": {
+    "title": "Templates",
+    "subtitle": "Message template management",
+    "activeTemplates": "Active Templates",
+    "totalTemplates": "Total Templates",
+    "templateName": "Template Name",
+    "category": "Category",
+    "language": "Language",
+    "status": "Status",
+    "created": "Created",
+    "actions": "Actions",
+    "editTemplate": "Edit Template",
+    "deleteTemplate": "Delete Template",
+    "viewTemplate": "View Template",
+    "createTemplate": "Create Template",
+    "noTemplatesFound": "No templates found",
+    "loadingTemplates": "Loading templates..."
+  },
+  "reports": {
+    "title": "Reports",
+    "loadingData": "Loading real data...",
+    "leadsAnalyzed": "leads analyzed",
+    "refreshData": "Refresh Data",
+    "generating": "Generating...",
+    "generatePDF": "Generate PDF",
+    "generatingAdvanced": "Generating Advanced...",
+    "advancedReport": "Advanced Report",
+    "exportOptions": "Export Options"
+  },
+  "messages": {
+    "title": "Messages",
+    "subtitle": "WhatsApp conversations and message management",
+    "total": "Total",
+    "active": "Active",
+    "withMessages": "With Messages",
+    "messages": "messages",
+    "uniqueLeads": "Unique Leads",
+    "avgPerConv": "Avg/Conv",
+    "conversations": "conversations",
+    "currentlyActive": "Currently active",
+    "haveContent": "Have content",
+    "totalSentReceived": "Total sent/received",
+    "differentContacts": "Different contacts",
+    "messagesPerConversation": "Messages per conversation",
+    "performanceAnalytics": "Performance Analytics",
+    "today": "Today",
+    "responseRate": "Response Rate",
+    "highActivity": "High Activity",
+    "chats": "Chats",
+    "todaysConversations": "Today's Conversations",
+    "highActivityChats": "High Activity Chats",
+    "project": "Project",
+    "allProjects": "All Projects",
+    "exporting": "Exporting...",
+    "exportCSV": "Export CSV",
+    "allConversations": "All Conversations",
+    "activeOnly": "Active Only",
+    "latestFirst": "Latest First",
+    "oldestFirst": "Oldest First",
+    "nameAZ": "Name A-Z",
+    "nameZA": "Name Z-A",
+    "mostMessages": "Most Messages",
+    "leastMessages": "Least Messages",
+    "filtered": "filtered",
+    "noMessageContent": "No message content",
+    "msgs": "Msgs",
+    "noConversationsFound": "No conversations found",
+    "noConversationsOnPage": "No conversations on page",
+    "tryAdjustingFilters": "Try adjusting your search or filters",
+    "conversationsPerPage": "Conversations per page",
+    "lastActive": "Last active",
+    "loadingMessages": "Loading messages...",
+    "noMessages": "No messages yet",
+    "typeMessage": "Type a message...",
+    "selectConversation": "Select a conversation to view messages",
+    "chooseFrom": "Choose from",
+    "availableConversations": "Available conversations",
+    "page": "Page",
+    "of": "Of",
+    "loadingConversations": "Loading conversations...",
+    "fetchingData": "Fetching messages and lead data",
+    "analyticsTitle": "Messages Analytics Dashboard",
+    "analyticsSubtitle": "Track your lead conversion and messaging performance",
+    "firstMessagesToday": "First Messages Today",
+    "leadsContacted": "Leads contacted today",
+    "repliesToFirst": "Replies to First Messages",
+    "meetingsScheduled": "Meetings Scheduled",
+    "avgResponseTime": "Avg Response Time",
+    "responseTimeDesc": "Time to first reply",
+    "dailyMetrics": "Daily Metrics",
+    "queueManagement": "Queue Management",
+    "trends": "Trends",
+    "dailyPerformance": "Daily Performance",
+    "leadsProcessedToday": "Leads Processed Today",
+    "leadsQueuedTomorrow": "Leads Queued for Tomorrow",
+    "activeConversations": "Active Conversations",
+    "conversionFunnel": "Conversion Funnel",
+    "firstMessages": "First Messages",
+    "replies": "Replies",
+    "meetings": "Meetings",
+    "processedToday": "Processed Today",
+    "queuedTomorrow": "Queued for Tomorrow",
+    "processingRate": "Processing Rate",
+    "last7Days": "Last 7 Days Queue Performance",
+    "sent": "Sent",
+    "conversion": "conversion",
+    "lastUpdated": "Last updated",
+    "conversionRate": "conversion rate",
+    "noEmail": "No email",
+    "noPhone": "No phone",
+    "refresh": "Refresh",
+    "scheduleMeeting": "Schedule Meeting",
+    "shareLink": "Share Link",
+    "connectCalendly": "Connect Calendly",
+    "calendlyConnected": "Calendly connected",
+    "meetingReady": "Meeting scheduling ready",
+    "startWithMeeting": "Start with a meeting",
+    "addMeetingLink": "Add meeting link to message"
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Reports and analytics",
+    "generateReport": "Generate Report",
+    "downloadReport": "Download Report",
+    "exportData": "Export Data",
+    "dateRange": "Date Range",
+    "reportType": "Report Type",
+    "conversationReport": "Conversation Report",
+    "leadReport": "Lead Report",
+    "performanceReport": "Performance Report",
+    "messageReport": "Message Report"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "System settings and configuration",
+    "general": "General",
+    "notifications": "Notifications",
+    "integrations": "Integrations",
+    "security": "Security",
+    "account": "Account",
+    "preferences": "Preferences",
+    "language": "Language",
+    "theme": "Theme",
+    "timezone": "Timezone",
+    "saveSettings": "Save Settings",
+    "resetSettings": "Reset Settings"
+  },
+  "users": {
+    "title": "Users",
+    "subtitle": "User management",
+    "addUser": "Add User"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error loading page",
+    "retry": "Retry",
+    "back": "Back",
+    "home": "Home"
+  },
+  "leadPipeline": {
+    "title": "Lead Pipeline",
+    "subtitle": "Manage and track your leads through the sales funnel"
+  },
+  "leadManagement": {
+    "title": "Lead Management Dashboard",
+    "subtitle": "Manage and track your leads with real-time updates",
+    "offline": "Offline",
+    "export": "Export",
+    "addLead": "Add Lead",
+    "totalLeads": "Total Leads",
+    "totalLeadsDescription": "All leads in the system",
+    "newLeads": "New Leads",
+    "newLeadsDescription": "Requires attention",
+    "hotLeads": "Hot Leads",
+    "hotLeadsDescription": "High priority leads",
+    "conversionRate": "Conversion Rate",
+    "conversionRateDescription": "Conversion rate",
+    "filters": "Filters",
+    "search": "Search",
+    "state": "State",
+    "allStates": "All States",
+    "heatLevel": "Heat Level",
+    "allHeatLevels": "All Heat Levels",
+    "source": "Source",
+    "allSources": "All Sources",
+    "dateRange": "Date Range",
+    "allTime": "All Time",
+    "showing": "Showing",
+    "of": "of",
+    "leads": "leads",
+    "name": "Name",
+    "contact": "Contact",
+    "created": "Created",
+    "actions": "Actions"
+  },
+  "monthlyPerformance": {
+    "title": "Monthly Performance Overview"
+  },
+  "errors": {
+    "unauthorized": {
+      "title": "Unauthorized Access",
+      "message": "You don't have permission to access this resource. Please log in or contact your administrator.",
+      "reason": "Authentication Required",
+      "details": "This page requires valid authentication credentials. Your session may have expired.",
+      "help": "If you believe this is an error, please contact support or try logging in again."
+    },
+    "badRequest": {
+      "title": "Bad Request",
+      "message": "The request couldn't be processed due to invalid parameters or malformed data.",
+      "reason": "Invalid Request Format",
+      "details": "The server couldn't understand the request due to invalid syntax or missing required parameters.",
+      "help": "If this problem persists, please contact support with the error details."
+    },
+    "forbidden": {
+      "title": "Access Forbidden",
+      "message": "You don't have sufficient permissions to access this resource.",
+      "reason": "Insufficient Permissions",
+      "details": "Your current role doesn't grant access to this resource. Contact your administrator if you need access.",
+      "help": "If you believe you should have access to this resource, please contact your administrator."
+    },
+    "internalServerError": {
+      "title": "Internal Server Error",
+      "message": "Something went wrong on our servers. We're working to fix this issue.",
+      "reason": "Server-Side Error",
+      "details": "An unexpected error occurred while processing your request. Our technical team has been notified.",
+      "help": "If this problem continues, please contact our support team with the error details."
+    },
+    "serviceUnavailable": {
+      "title": "Service Unavailable",
+      "message": "The service is temporarily unavailable. We're performing maintenance to improve your experience.",
+      "reason": "Temporary Maintenance",
+      "details": "Our system is currently undergoing scheduled maintenance. This should only take a few minutes.",
+      "nextRetry": "Next auto-retry in:",
+      "help": "Thank you for your patience. The service will be restored shortly."
+    },
+    "notFound": {
+      "alternative": {
+        "title": "Oops! You're off the map",
+        "message": "The page you're looking for seems to have wandered off. Don't worry, let's get you back on track!",
+        "searchTitle": "Search for what you need",
+        "searchPlaceholder": "What are you looking for?",
+        "searchHint": "Try searching for leads, reports, or specific features",
+        "quickNavTitle": "Quick Navigation",
+        "helpTitle": "What happened?",
+        "helpMessage": "The URL you entered might be mistyped, or the page might have been moved or deleted.",
+        "urlInfo": "Requested URL:"
+      }
+    }
+  },
+  "faq": {
+    "title": "Help & Support Center",
+    "subtitle": "Find answers to common questions and learn how to make the most of CRM Demo",
+    "searchPlaceholder": "Search help articles...",
+    "categories": {
+      "title": "Categories",
+      "all": "All Topics",
+      "gettingStarted": "Getting Started",
+      "features": "Features",
+      "leads": "Lead Management",
+      "messages": "Messages & WhatsApp",
+      "analytics": "Analytics & Reports",
+      "calendar": "Calendar & Meetings",
+      "admin": "Admin Console",
+      "integrations": "Integrations & APIs",
+      "templates": "Templates & Automation",
+      "notifications": "Notifications",
+      "technical": "Technical Support"
+    },
+    "gettingStarted": {
+      "firstLogin": {
+        "question": "How do I log in for the first time?",
+        "answer": "Go to the login page, enter your email and password. You can also use Google or Facebook authentication. If you don't have an account, click \"Sign Up\" to create one.",
+        "step1": "Navigate to the login page",
+        "step2": "Enter your email and password",
+        "step3": "Click \"Sign In\" or choose social login",
+        "step4": "Complete email verification if required"
+      },
+      "dashboard": {
+        "question": "How do I navigate the dashboard?",
+        "answer": "The dashboard is your central hub. Use the sidebar to navigate between sections: Leads, Messages, Calendar, Reports, and Settings. The main area shows widgets with real-time metrics.",
+        "step1": "Familiarize yourself with the sidebar navigation",
+        "step2": "Explore the dashboard widgets and metrics",
+        "step3": "Use the global search in the top bar",
+        "step4": "Check notifications and profile settings"
+      }
+    },
+    "features": {
+      "whatsapp": {
+        "question": "How does WhatsApp integration work?",
+        "answer": "CRM Demo connects to WhatsApp Business API for automated messaging. Set up templates, configure automated responses, and manage conversations directly from the Messages section.",
+        "step1": "Go to Settings → Integrations",
+        "step2": "Connect your WhatsApp Business account",
+        "step3": "Configure message templates and automation",
+        "step4": "Start conversations from the Messages page"
+      },
+      "scoring": {
+        "question": "What is BANT/HEAT lead scoring?",
+        "answer": "BANT (Budget, Authority, Need, Timeline) and HEAT (Hot, Warm, Cold, Burning) are qualification systems. BANT scores lead quality based on decision criteria, while HEAT tracks engagement temperature.",
+        "step1": "View lead scores in the Leads section",
+        "step2": "Edit individual lead BANT criteria",
+        "step3": "Monitor HEAT temperature changes",
+        "step4": "Use scoring for prioritization and filtering"
+      }
+    },
+    "leads": {
+      "management": {
+        "question": "How do I add and manage leads?",
+        "answer": "Navigate to the Leads section to add, edit, and manage your leads. You can import leads via CSV, add manually, or they'll be created automatically from WhatsApp conversations.",
+        "step1": "Go to the Leads page from the sidebar",
+        "step2": "Click \"Add New Lead\" or import CSV",
+        "step3": "Fill in contact information and qualification",
+        "step4": "Set BANT/HEAT scores and save"
+      },
+      "filtering": {
+        "question": "How do I filter and search leads?",
+        "answer": "Use the search bar and filters in the Leads section. Filter by status, temperature, project, source, or BANT/HEAT scores. Save frequent filter combinations for quick access.",
+        "step1": "Use the search bar for quick text search",
+        "step2": "Apply filters using the filter dropdown",
+        "step3": "Combine multiple filters for precise results",
+        "step4": "Sort results by various criteria"
+      }
+    },
+    "messages": {
+      "conversations": {
+        "question": "How do I manage WhatsApp conversations?",
+        "answer": "The Messages section shows all WhatsApp conversations. Click on any conversation to view message history, send replies, and schedule meetings directly from the chat interface.",
+        "step1": "Navigate to the Messages page",
+        "step2": "Select a conversation from the list",
+        "step3": "Review message history and lead context",
+        "step4": "Send replies or schedule meetings"
+      },
+      "templates": {
+        "question": "How do I create and use message templates?",
+        "answer": "Create reusable message templates in the Templates section. Templates can include variables for personalization and can be used for automated responses or quick manual sending.",
+        "step1": "Go to Templates from the sidebar",
+        "step2": "Click \"Create Template\"",
+        "step3": "Write your message with variables like {name}",
+        "step4": "Set category and automation rules"
+      }
+    },
+    "analytics": {
+      "dashboard": {
+        "question": "How do I read the analytics dashboard?",
+        "answer": "The analytics dashboard shows key metrics like conversion rates, response times, and lead progression. Use the Messages Analytics page for detailed message performance and the Reports page for comprehensive analysis.",
+        "step1": "Review main dashboard widgets",
+        "step2": "Visit Messages Analytics for detailed metrics",
+        "step3": "Generate reports from the Reports page",
+        "step4": "Export data for external analysis"
+      },
+      "export": {
+        "question": "How do I export reports and data?",
+        "answer": "Most sections have export functionality. Use the \"Export\" buttons to download data as CSV or PDF. Reports can be generated with custom date ranges and filters.",
+        "step1": "Go to the section you want to export",
+        "step2": "Apply any desired filters",
+        "step3": "Click the Export button",
+        "step4": "Choose format (CSV, PDF) and download"
+      }
+    },
+    "calendar": {
+      "scheduling": {
+        "question": "How do I schedule meetings with leads?",
+        "answer": "Use the Calendar page or schedule directly from message conversations. Integration with Calendly allows leads to book meetings automatically. View all scheduled meetings in the Calendar section.",
+        "step1": "Go to Calendar page or message conversation",
+        "step2": "Click \"Schedule Meeting\" button",
+        "step3": "Choose date/time or share Calendly link",
+        "step4": "Confirm meeting details and send invitation"
+      },
+      "calendly": {
+        "question": "How do I set up Calendly integration?",
+        "answer": "Connect your Calendly account in Settings → Integrations. Once connected, you can share booking links directly from conversations and track meeting analytics.",
+        "step1": "Go to Settings → Integrations",
+        "step2": "Find Calendly and click \"Connect\"",
+        "step3": "Authorize CRM Demo access to your Calendly",
+        "step4": "Configure default meeting types and settings"
+      }
+    },
+    "technical": {
+      "mobile": {
+        "question": "Can I use CRM Demo on mobile devices?",
+        "answer": "Yes! CRM Demo is fully responsive and optimized for mobile use. Access all features from your smartphone or tablet browser. The interface automatically adapts to your screen size.",
+        "step1": "Open your mobile browser",
+        "step2": "Navigate to your CRM Demo URL",
+        "step3": "Log in with your credentials",
+        "step4": "Use touch-optimized interface"
+      },
+      "language": {
+        "question": "How do I change the language?",
+        "answer": "Use the language toggle in the top navigation bar to switch between English and Hebrew. The interface supports right-to-left (RTL) layout for Hebrew and other RTL languages.",
+        "step1": "Look for the language toggle (🌐) in the top bar",
+        "step2": "Click to switch between languages",
+        "step3": "Interface automatically adjusts direction",
+        "step4": "Setting is saved for future sessions"
+      }
+    },
+    "allTopics": "All Topics",
+    "articles": "articles",
+    "stepByStep": "Step-by-step:",
+    "noResults": {
+      "title": "No results found",
+      "description": "Try adjusting your search terms or browse different categories"
+    },
+    "stillNeedHelp": {
+      "title": "Still need help?",
+      "description": "Our support team is here to help you get the most out of CRM Demo"
+    },
+    "contactSupport": "Contact Support",
+    "scheduleCall": "Schedule a Call"
+  },
+  "maintenance": {
+    "title": "System Maintenance",
+    "subtitle": "We are improving our services for you",
+    "status": {
+      "scheduled": "Scheduled Maintenance",
+      "scheduledDesc": "Maintenance is scheduled to begin soon",
+      "ongoing": "Maintenance in Progress", 
+      "ongoingDesc": "We are currently performing system updates",
+      "extended": "Extended Maintenance",
+      "extendedDesc": "Maintenance is taking longer than expected",
+      "completed": "Maintenance Completed",
+      "completedDesc": "All systems are back online",
+      "unknown": "System Maintenance",
+      "unknownDesc": "Please check back later"
+    },
+    "estimated": {
+      "title": "Estimated Completion"
+    },
+    "timer": {
+      "hours": "Hours",
+      "minutes": "Minutes", 
+      "seconds": "Seconds",
+      "expected": "Expected completion: {{time}}"
+    }
+  },
+  "comingSoon": {
+    "badge": "Coming Soon",
+    "subtitle": "Revolutionary features are on the way to transform your lead management experience",
+    "release": {
+      "in": "In {{days}} days",
+      "complete": "Complete"
+    },
+    "progress": {
+      "title": "Development Progress",
+      "description": "Track our journey as we build amazing features for you",
+      "overall": "Overall Progress"
+    },
+    "status": {
+      "ready": "Ready",
+      "testing": "Testing",
+      "inDevelopment": "In Development",
+      "planned": "Planned"
+    },
+    "notifications": {
+      "subscribed": "Successfully Subscribed!",
+      "subscribedDesc": "We'll notify you when {{feature}} is available"
+    }
+  },
+  "analytics": {
+    "analytics": "Analytics",
+    "totalLeads": "Total Leads",
+    "bantQualificationRate": "BANT Qualification Rate",
+    "hotBurningLeads": "Hot & Burning Leads",
+    "firstMessageRate": "First Message Rate",
+    "meetingPipeline": "Meeting Pipeline",
+    "temperatureDistribution": "Temperature Distribution",
+    "pipelineOverview": "Pipeline Overview",
+    "pipelineHealth": "Pipeline Health",
+    "activeConversations": "Active Conversations",
+    "conversionRate": "Conversion Rate",
+    "allLeadsInPipeline": "All leads in pipeline",
+    "of": "of",
+    "leads": "leads",
+    "bantQualified": "BANT Qualified",
+    "basedOnQualification": "Based on qualification rate and outreach success"
+  },
+  "insights": {
+    "title": "Performance Analytics",
+    "description": "AI-powered insights and recommendations for business growth",
+    "badge": "Live Analysis",
+    "performance": {
+      "excellent": "Excellent",
+      "needs_improvement": "Needs Focus",
+      "good": "Good Progress",
+      "reach": "Lead Reach Rate",
+      "conversion": "Conversion Rate",
+      "activity": "Overall Activity"
+    },
+    "strengths": {
+      "title": "Key Strengths",
+      "bant": {
+        "title": "BANT Qualification System",
+        "desc": "68% of leads successfully BANT qualified - strong budget, authority, need, and timeline assessment."
+      },
+      "heat": {
+        "title": "Lead Temperature System",
+        "desc": "45% of leads progressed from cold to warm/hot status through automated nurturing sequences."
+      },
+      "calendly": {
+        "title": "Calendly Integration Success",
+        "desc": "32% increase in hot leads booking Calendly meetings automatically - seamless scheduling flow."
+      }
+    },
+    "opportunities": {
+      "title": "Growth Opportunities",
+      "cold_warming": {
+        "title": "Cold Lead Warming",
+        "desc": "55% of leads still in cold status - optimize automated sequences to increase temperature faster."
+      },
+      "bant_improvement": {
+        "title": "BANT Process Enhancement", 
+        "desc": "Improve BANT qualification rate from 68% to 80% through better discovery questions and timing."
+      },
+      "calendly_optimization": {
+        "title": "Calendly Conversion Boost",
+        "desc": "Only 23% of burning leads book meetings - optimize CTAs and reduce friction in scheduling flow."
+      }
+    },
+    "actions": {
+      "title": "Recommended Actions",
+      "priority": {
+        "high": "High Priority",
+        "medium": "Medium Priority"
+      },
+      "high": {
+        "1": "Optimize cold→warm lead warming sequences",
+        "2": "Improve BANT qualification questions"
+      },
+      "medium": {
+        "1": "A/B test Calendly booking flow CTAs",
+        "2": "Analyze burning→meeting conversion gaps"
+      }
+    }
+  },
+  "performanceTargets": {
+    "title": "Performance Targets",
+    "description": "Set and track your BANT/HEAT lead management goals",
+    "editTargets": "Edit Targets",
+    "saveTargets": "Save Targets",
+    "cancelEditing": "Cancel",
+    "categories": {
+      "basicMetrics": "Basic Metrics",
+      "engagement": "Engagement", 
+      "bantHeat": "BANT & HEAT"
+    },
+    "targets": {
+      "leadsPerMonth": "Leads per Month",
+      "conversionRate": "Conversion Rate",
+      "meetingsPerMonth": "Meetings per Month",
+      "messagesPerWeek": "Messages per Week"
+    },
+    "progress": "Progress",
+    "current": "Current"
+  },
+  "leads": {
+    "title": "Lead Management Dashboard",
+    "subtitle": "Manage and track your leads with real-time updates",
+    "totalLeads": "Total Leads",
+    "allLeadsInSystem": "All leads in the system",
+    "newLeads": "New Leads", 
+    "requiresAttention": "Requires attention",
+    "hotLeads": "Hot Leads",
+    "highPriorityLeads": "High priority leads",
+    "conversionRate": "Conversion Rate",
+    "filters": "Filters",
+    "search": "Search",
+    "state": "State",
+    "allStates": "All States",
+    "heatLevel": "Heat Level",
+    "allHeatLevels": "All Heat Levels",
+    "source": "Source",
+    "allSources": "All Sources",
+    "dateRange": "Date Range",
+    "all": "All",
+    "showing": "Showing {{from}} of {{total}} leads",
+    "overview": "Overview",
+    "queueManagement": "Queue Management",
+    "analytics": "Analytics",
+    "addLead": "Add Lead",
+    "export": "Export",
+    "connected": "Connected",
+    "live": "Live",
+    "heatLevels": {
+      "all": "All Heat Levels",
+      "cold": "Cold",
+      "warm": "Warm", 
+      "hot": "Hot",
+      "burning": "Burning"
+    }
+  },
+  "templates": {
+    "title": "Message Template Management",
+    "subtitle": "Manage your message templates with drag & drop. Choose 1-3 active templates from your template bank.",
+    "filterTemplates": "Filter Templates",
+    "export": "Export",
+    "newTemplate": "New Template",
+    "activeTemplates": "Active Templates",
+    "totalTemplates": "Total Templates",
+    "avgResponseRate": "Average Response Rate",
+    "totalUsage": "Total Usage",
+    "templateBank": "Template Bank",
+    "editTemplate": "Edit Template",
+    "saveTemplate": "Save Template",
+    "cancelEdit": "Cancel Edit",
+    "deleteTemplate": "Delete Template",
+    "templateContent": "Template Content",
+    "templateType": "Template Type",
+    "industry": "Industry",
+    "targetAudience": "Target Audience",
+    "language": "Language",
+    "priority": "Priority",
+    "overLimit": "Over Limit",
+    "optimizationNeeded": "Optimization Needed",
+    "overLimitGuide": "You have more than 3 active templates. For optimal performance, consider moving some to Template Bank.",
+    "templateGuideDescription": "Drag templates from your Template Bank to Active Templates (max 3). These will be used as your message hooks. Click any template to edit content and targeting.",
+    "autoOptimize": "Auto-Optimize",
+    "templateGuide": "Template Management Guide"
+  },
+  "users": {
+    "title": "Users",
+    "subtitle": "User management and permissions",
+    "createUser": "Create User",
+    "resetPassword": "Reset Password",
+    "newUser": "New User",
+    "resetUserPassword": "Reset User Password",
+    "setNewPassword": "Set a new password for {{email}}",
+    "newPassword": "New Password",
+    "searchUsers": "Search users...",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "client": "Client",
+    "projects": "Projects",
+    "status": "Status",
+    "actions": "Actions",
+    "selectRole": "Select role",
+    "staff": "Staff",
+    "admin": "Admin",
+    "superAdmin": "Super Admin",
+    "active": "Active",
+    "disabled": "Disabled",
+    "disableUser": "Disable User",
+    "enableUser": "Enable User",
+    "noUsersFound": "No users found."
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "System configuration and preferences",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "saveCadenceSettings": "Save Cadence Settings"
+  },
+  "demo": {
+    "deleteAccount": "Delete Account",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  }
+} 

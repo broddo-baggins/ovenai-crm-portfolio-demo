@@ -1,0 +1,681 @@
+import React, { useState, useEffect } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
+import { useToast } from '@/components/ui/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+import { 
+  Building2, 
+  Edit2, 
+  Save, 
+  X, 
+  History, 
+  Plus, 
+  Trash2, 
+  Users, 
+  FolderOpen,
+  Calendar,
+  Phone,
+  Mail
+} from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
+import { Textarea } from '@/components/ui/textarea';
+import { 
+  Table, 
+  TableBody, 
+  TableCell, 
+  TableHead, 
+  TableHeader, 
+  TableRow 
+} from '@/components/ui/table';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+
+interface Client {
+  id: string;
+  name: string;
+  description?: string;
+  contact_email?: string;
+  contact_phone?: string;
+  status: string;
+  created_at: string;
+  updated_at: string;
+  _count?: {
+    client_members: number;
+    projects: number;
+    leads: number;
+  };
+}
+
+interface ClientHistory {
+  id: string;
+  action: string;
+  entity_id: string;
+  old_values: any;
+  new_values: any;
+  changed_by: string;
+  created_at: string;
+  user?: {
+    email: string;
+    full_name?: string;
+  };
+}
+
+export function ClientManagement() {
+  const [clients, setClients] = useState<Client[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editData, setEditData] = useState<Partial<Client>>({});
+  const [showNewForm, setShowNewForm] = useState(false);
+  const [newClient, setNewClient] = useState({
+    name: '',
+    description: '',
+    contact_email: '',
+    contact_phone: ''
+  });
+  const [history, setHistory] = useState<ClientHistory[]>([]);
+  const [selectedClientHistory, setSelectedClientHistory] = useState<string | null>(null);
+  
+  const { toast } = useToast();
+
+  useEffect(() => {
+    loadClients();
+    loadClientHistory();
+  }, []);
+
+  const loadClients = async () => {
+    setLoading(true);
+    
+    const { data, error } = await supabase
+      .from('clients')
+      .select(`
+        *,
+        client_members(count),
+        projects(count),
+        leads(count)
+      `)
+      .order('name');
+
+    if (error) {
+      toast({
+        title: "Error loading clients",
+        description: error.message,
+        variant: "destructive"
+      });
+      setLoading(false);
+      return;
+    }
+
+    // Transform the count data properly
+    const transformedClients = data?.map(client => ({
+      ...client,
+      _count: {
+        client_members: client.client_members?.length || 0,
+        projects: client.projects?.length || 0,
+        leads: client.leads?.length || 0
+      }
+    })) || [];
+
+    setClients(transformedClients);
+    setLoading(false);
+  };
+
+  const loadClientHistory = async () => {
+    // TODO: Enable when audit_logs table is added to schema
+    setClientHistory([]);
+    return;
+    
+    // const { data, error } = await supabase
+    //   .from('audit_logs')
+    //   .select(`
+    //     *,
+    //     profiles:changed_by(email, full_name)
+    //   `)
+    //   .eq('table_name', 'clients')
+    //   .order('created_at', { ascending: false })
+    //   .limit(100);
+
+    if (error) {
+      console.error('Error loading client history:', error);
+      return;
+    }
+
+    setHistory(data || []);
+  };
+
+  const startEdit = (client: Client) => {
+    setEditingId(client.id);
+    setEditData({
+      name: client.name,
+      description: client.description || '',
+      contact_email: client.contact_email || '',
+      contact_phone: client.contact_phone || ''
+    });
+  };
+
+  const cancelEdit = () => {
+    setEditingId(null);
+    setEditData({});
+  };
+
+  const saveEdit = async (clientId: string) => {
+    if (!editData.name?.trim()) {
+      toast({
+        title: "Invalid input",
+        description: "Client name is required",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const originalClient = clients.find(c => c.id === clientId);
+    
+    const { error } = await supabase
+      .from('clients')
+      .update({
+        name: editData.name,
+        description: editData.description,
+        contact_email: editData.contact_email,
+        contact_phone: editData.contact_phone
+      })
+      .eq('id', clientId);
+
+    if (error) {
+      toast({
+        title: "Error updating client",
+        description: error.message,
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Log the change to audit_logs
+    await logClientChange('UPDATE', clientId, originalClient, editData);
+
+    toast({
+      title: "Client updated",
+      description: `${editData.name} has been updated successfully`
+    });
+
+    setEditingId(null);
+    setEditData({});
+    loadClients();
+    loadClientHistory();
+  };
+
+  const addNewClient = async () => {
+    if (!newClient.name.trim()) {
+      toast({
+        title: "Invalid input",
+        description: "Client name is required",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from('clients')
+      .insert({
+        name: newClient.name,
+        description: newClient.description,
+        contact_email: newClient.contact_email,
+        contact_phone: newClient.contact_phone,
+        status: 'active'
+      })
+      .select()
+      .single();
+
+    if (error) {
+      toast({
+        title: "Error creating client",
+        description: error.message,
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Log the creation
+    await logClientChange('INSERT', data.id, null, data);
+
+    toast({
+      title: "Client created",
+      description: `${newClient.name} has been created successfully`
+    });
+
+    setNewClient({ name: '', description: '', contact_email: '', contact_phone: '' });
+    setShowNewForm(false);
+    loadClients();
+    loadClientHistory();
+  };
+
+  const deleteClient = async (clientId: string) => {
+    const client = clients.find(c => c.id === clientId);
+    
+    // Check if client has dependencies
+    if (client?._count && (client._count.client_members > 0 || client._count.projects > 0)) {
+      toast({
+        title: "Cannot delete client",
+        description: "Client has associated members or projects. Remove them first.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const { error } = await supabase
+      .from('clients')
+      .delete()
+      .eq('id', clientId);
+
+    if (error) {
+      toast({
+        title: "Error deleting client",
+        description: error.message,
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Log the deletion
+    await logClientChange('DELETE', clientId, client, null);
+
+    toast({
+      title: "Client deleted",
+      description: `${client?.name} has been deleted successfully`
+    });
+
+    loadClients();
+    loadClientHistory();
+  };
+
+  const logClientChange = async (
+    action: string, 
+    clientId: string, 
+    oldValues: any, 
+    newValues: any
+  ) => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      // TODO: Enable when audit_logs table is added to schema
+      // await supabase
+      //   .from('audit_logs')
+      //   .insert({
+      //     table_name: 'clients',
+      //     action,
+      //     entity_id: clientId,
+      //     old_values: oldValues,
+      //     new_values: newValues,
+      //     changed_by: user?.id
+      //   });
+    } catch (error) {
+      console.error('Error logging client change:', error);
+    }
+  };
+
+  const getClientHistory = (clientId: string) => {
+    return history.filter(h => h.entity_id === clientId);
+  };
+
+  const formatHistoryValue = (value: any) => {
+    if (value === null || value === undefined) return 'null';
+    if (typeof value === 'object') return JSON.stringify(value, null, 2);
+    return String(value);
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'active': return 'default';
+      case 'inactive': return 'secondary';
+      case 'suspended': return 'destructive';
+      default: return 'outline';
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <Building2 className="h-8 w-8 text-blue-600" />
+          <div>
+            <h2 className="text-2xl font-bold">Client Management</h2>
+            <p className="text-muted-foreground">Manage client information and relationships</p>
+          </div>
+        </div>
+        <Button onClick={() => setShowNewForm(true)} className="flex items-center gap-2">
+          <Plus className="h-4 w-4" />
+          Add Client
+        </Button>
+      </div>
+
+      {/* Add new client form */}
+      {showNewForm && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Add New Client</CardTitle>
+            <CardDescription>Create a new client profile</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="new-name">Client Name *</Label>
+                <Input
+                  id="new-name"
+                  placeholder="Enter client name..."
+                  value={newClient.name}
+                  onChange={(e) => setNewClient(prev => ({ ...prev, name: e.target.value }))}
+                />
+              </div>
+              <div>
+                <Label htmlFor="new-email">Contact Email</Label>
+                <Input
+                  id="new-email"
+                  type="email"
+                  placeholder="contact@client.com"
+                  value={newClient.contact_email}
+                  onChange={(e) => setNewClient(prev => ({ ...prev, contact_email: e.target.value }))}
+                />
+              </div>
+              <div>
+                <Label htmlFor="new-phone">Contact Phone</Label>
+                <Input
+                  id="new-phone"
+                  placeholder="+1 (555) 123-4567"
+                  value={newClient.contact_phone}
+                  onChange={(e) => setNewClient(prev => ({ ...prev, contact_phone: e.target.value }))}
+                />
+              </div>
+              <div>
+                <Label htmlFor="new-description">Description</Label>
+                <Textarea
+                  id="new-description"
+                  placeholder="Brief description of the client..."
+                  value={newClient.description}
+                  onChange={(e) => setNewClient(prev => ({ ...prev, description: e.target.value }))}
+                />
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <Button onClick={addNewClient}>
+                <Save className="h-4 w-4 mr-2" />
+                Create Client
+              </Button>
+              <Button variant="outline" onClick={() => setShowNewForm(false)}>
+                <X className="h-4 w-4 mr-2" />
+                Cancel
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Clients table */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Clients ({clients.length})</CardTitle>
+          <CardDescription>
+            Manage client information with inline editing
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {loading ? (
+            <div className="text-center py-8">Loading clients...</div>
+          ) : clients.length === 0 ? (
+            <div className="text-center py-8 text-muted-foreground">
+              No clients found. Create your first client above.
+            </div>
+          ) : (
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Name</TableHead>
+                  <TableHead>Contact</TableHead>
+                  <TableHead>Stats</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Created</TableHead>
+                  <TableHead>Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {clients.map(client => (
+                  <TableRow key={client.id}>
+                    <TableCell>
+                      {editingId === client.id ? (
+                        <Input
+                          value={editData.name || ''}
+                          onChange={(e) => setEditData(prev => ({ ...prev, name: e.target.value }))}
+                          className="min-w-[200px]"
+                        />
+                      ) : (
+                        <div>
+                          <div className="font-medium">{client.name}</div>
+                          {client.description && (
+                            <div className="text-sm text-muted-foreground">{client.description}</div>
+                          )}
+                        </div>
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      {editingId === client.id ? (
+                        <div className="space-y-2">
+                          <Input
+                            placeholder="Email"
+                            value={editData.contact_email || ''}
+                            onChange={(e) => setEditData(prev => ({ ...prev, contact_email: e.target.value }))}
+                          />
+                          <Input
+                            placeholder="Phone"
+                            value={editData.contact_phone || ''}
+                            onChange={(e) => setEditData(prev => ({ ...prev, contact_phone: e.target.value }))}
+                          />
+                        </div>
+                      ) : (
+                        <div className="space-y-1">
+                          {client.contact_email && (
+                            <div className="flex items-center gap-1 text-sm">
+                              <Mail className="h-3 w-3" />
+                              {client.contact_email}
+                            </div>
+                          )}
+                          {client.contact_phone && (
+                            <div className="flex items-center gap-1 text-sm">
+                              <Phone className="h-3 w-3" />
+                              {client.contact_phone}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex gap-2">
+                        <Badge variant="outline" className="flex items-center gap-1">
+                          <Users className="h-3 w-3" />
+                          {client._count?.client_members || 0}
+                        </Badge>
+                        <Badge variant="outline" className="flex items-center gap-1">
+                          <FolderOpen className="h-3 w-3" />
+                          {client._count?.projects || 0}
+                        </Badge>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <Badge variant={getStatusColor(client.status)}>
+                        {client.status}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Calendar className="h-3 w-3" />
+                        {new Date(client.created_at).toLocaleDateString()}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-1">
+                        {editingId === client.id ? (
+                          <>
+                            <Button
+                              size="sm"
+                              onClick={() => saveEdit(client.id)}
+                              className="h-8 w-8 p-0"
+                            >
+                              <Save className="h-4 w-4" />
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={cancelEdit}
+                              className="h-8 w-8 p-0"
+                            >
+                              <X className="h-4 w-4" />
+                            </Button>
+                          </>
+                        ) : (
+                          <>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => startEdit(client)}
+                              className="h-8 w-8 p-0"
+                            >
+                              <Edit2 className="h-4 w-4" />
+                            </Button>
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button
+                                  size="sm"
+                                  variant="ghost"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => setSelectedClientHistory(client.id)}
+                                >
+                                  <History className="h-4 w-4" />
+                                </Button>
+                              </DialogTrigger>
+                              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                                <DialogHeader>
+                                  <DialogTitle>Change History: {client.name}</DialogTitle>
+                                  <DialogDescription>
+                                    View all changes made to this client
+                                  </DialogDescription>
+                                </DialogHeader>
+                                <div className="space-y-4">
+                                  {getClientHistory(client.id).length === 0 ? (
+                                    <div className="text-center py-8 text-muted-foreground">
+                                      No history found for this client
+                                    </div>
+                                  ) : (
+                                    getClientHistory(client.id).map(historyItem => (
+                                      <Card key={historyItem.id} className="p-4">
+                                        <div className="flex items-center justify-between mb-2">
+                                          <Badge variant={
+                                            historyItem.action === 'INSERT' ? 'default' :
+                                            historyItem.action === 'UPDATE' ? 'secondary' : 'destructive'
+                                          }>
+                                            {historyItem.action}
+                                          </Badge>
+                                          <div className="text-sm text-muted-foreground">
+                                            {new Date(historyItem.created_at).toLocaleString()}
+                                          </div>
+                                        </div>
+                                        <div className="text-sm">
+                                          <strong>Changed by:</strong> {historyItem.user?.full_name || historyItem.user?.email || 'Unknown'}
+                                        </div>
+                                        {historyItem.old_values && (
+                                          <div className="mt-2">
+                                            <strong>Before:</strong>
+                                            <pre className="bg-muted p-2 rounded text-xs mt-1">
+                                              {formatHistoryValue(historyItem.old_values)}
+                                            </pre>
+                                          </div>
+                                        )}
+                                        {historyItem.new_values && (
+                                          <div className="mt-2">
+                                            <strong>After:</strong>
+                                            <pre className="bg-muted p-2 rounded text-xs mt-1">
+                                              {formatHistoryValue(historyItem.new_values)}
+                                            </pre>
+                                          </div>
+                                        )}
+                                      </Card>
+                                    ))
+                                  )}
+                                </div>
+                              </DialogContent>
+                            </Dialog>
+                            {client._count && (client._count.client_members === 0 && client._count.projects === 0) && (
+                              <Button
+                                size="sm"
+                                variant="ghost"
+                                onClick={() => deleteClient(client.id)}
+                                className="h-8 w-8 p-0 text-red-600 hover:text-red-700"
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Recent changes summary */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <History className="h-5 w-5" />
+            Recent Client Changes
+          </CardTitle>
+          <CardDescription>
+            Latest modifications across all clients
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {history.length === 0 ? (
+            <div className="text-center py-4 text-muted-foreground">
+              No recent changes found
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {history.slice(0, 10).map(item => {
+                const client = clients.find(c => c.id === item.entity_id);
+                return (
+                  <div key={item.id} className="flex items-center justify-between py-2 border-b">
+                    <div className="flex items-center gap-3">
+                      <Badge variant={
+                        item.action === 'INSERT' ? 'default' :
+                        item.action === 'UPDATE' ? 'secondary' : 'destructive'
+                      }>
+                        {item.action}
+                      </Badge>
+                      <span className="font-medium">
+                        {client?.name || 'Deleted Client'}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        by {item.user?.full_name || item.user?.email || 'Unknown'}
+                      </span>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {new Date(item.created_at).toLocaleString()}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  );
+} 

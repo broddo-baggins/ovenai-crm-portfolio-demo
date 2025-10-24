@@ -1,0 +1,2812 @@
+
+> vite_react_shadcn_ts@0.0.0 test
+> npm run test:unit-with-doa && node scripts/testing/test-tracker.cjs e2e "npx playwright test"
+
+
+> vite_react_shadcn_ts@0.0.0 test:unit-with-doa
+> npm run test:unit-full && npm run test:build-safety && npm run test:sanity && npm run test:e2e-doa
+
+
+> vite_react_shadcn_ts@0.0.0 test:unit-full
+> npm run test:dependency-safety && npm run test:react-safety && npm run test:unit
+
+
+> vite_react_shadcn_ts@0.0.0 test:dependency-safety
+> node scripts/testing/test-tracker.cjs unit "vitest run tests/regression/react-dependency-safety.test.ts"
+
+[1m
+🧪 OvenAI Test Tracker[0m
+[34m📁 Working directory: /Users/amity/projects/oven-ai/oven-ai[0m
+[1m
+🚀 Running Unit Tests...[0m
+[34m📋 Command: vitest run tests/regression/react-dependency-safety.test.ts[0m
+
+ RUN  v3.2.4 /Users/amity/projects/oven-ai/oven-ai
+
+ ✓ tests/regression/react-dependency-safety.test.ts (5 tests) 2ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  14:00:01
+   Duration  887ms (transform 49ms, setup 173ms, collect 9ms, tests 2ms, environment 370ms, prepare 41ms)
+
+[32m✅ Unit Tests completed successfully[0m
+[34m📊 Test results saved to: test-results-unit-1752404402646.json[0m
+[32m
+🎉 All tests completed successfully![0m
+
+> vite_react_shadcn_ts@0.0.0 test:react-safety
+> node scripts/testing/test-tracker.cjs unit "vitest run src/test/react-api-safety.test.tsx"
+
+[1m
+🧪 OvenAI Test Tracker[0m
+[34m📁 Working directory: /Users/amity/projects/oven-ai/oven-ai[0m
+[1m
+🚀 Running Unit Tests...[0m
+[34m📋 Command: vitest run src/test/react-api-safety.test.tsx[0m
+
+ RUN  v3.2.4 /Users/amity/projects/oven-ai/oven-ai
+
+ ✓ src/test/react-api-safety.test.tsx (6 tests) 18ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  14:00:02
+   Duration  584ms (transform 46ms, setup 109ms, collect 10ms, tests 18ms, environment 198ms, prepare 35ms)
+
+[32m✅ Unit Tests completed successfully[0m
+[34m📊 Test results saved to: test-results-unit-1752404403665.json[0m
+[32m
+🎉 All tests completed successfully![0m
+
+> vite_react_shadcn_ts@0.0.0 test:unit
+> node scripts/testing/test-tracker.cjs unit "vitest run"
+
+[1m
+🧪 OvenAI Test Tracker[0m
+[34m📁 Working directory: /Users/amity/projects/oven-ai/oven-ai[0m
+[1m
+🚀 Running Unit Tests...[0m
+[34m📋 Command: vitest run[0m
+
+ RUN  v3.2.4 /Users/amity/projects/oven-ai/oven-ai
+
+ ↓ tests/unit/production-sanity.test.ts (7 tests | 7 skipped)
+stderr | src/components/forms/__tests__/LeadForm.test.tsx > LeadForm > Basic Rendering > should render all required form fields
+Warning: validateDOMNesting(...): <span> cannot appear as a child of <select>.
+    at span
+    at SelectValue (/Users/amity/projects/oven-ai/oven-ai/src/components/forms/__tests__/LeadForm.test.tsx:99:19)
+    at SelectTrigger (/Users/amity/projects/oven-ai/oven-ai/src/components/forms/__tests__/LeadForm.test.tsx:94:21)
+    at select
+    at div
+    at Select (/Users/amity/projects/oven-ai/oven-ai/src/components/forms/__tests__/LeadForm.test.tsx:63:14)
+    at div
+    at form
+    at div
+    at /Users/amity/projects/oven-ai/oven-ai/src/components/ui/card.tsx:110:57
+    at div
+    at /Users/amity/projects/oven-ai/oven-ai/src/components/ui/card.tsx:10:50
+    at div
+    at LeadForm (/Users/amity/projects/oven-ai/oven-ai/src/components/forms/LeadForm.tsx:13:21)
+    at RTLProvider (/Users/amity/projects/oven-ai/oven-ai/src/contexts/RTLContext.tsx:14:24)
+
+ ✓ src/components/forms/__tests__/LeadForm.test.tsx (18 tests) 1034ms
+ ✓ src/pages/__tests__/LandingPage.test.tsx (32 tests) 1264ms
+ ✓ src/test/mobile-components.test.tsx (18 tests) 400ms
+ ✓ src/test/rtl-automation.test.tsx (7 tests) 232ms
+ ✓ tests/accessibility/basic.test.jsx (5 tests) 247ms
+ ✓ src/test/Messages.test.tsx (19 tests) 76ms
+/*! 🌼 daisyUI 5.0.46 */
+ ✓ src/components/dashboard/__tests__/ResizeIntegration.test.tsx (1 test) 55ms
+ ✓ src/components/dashboard/__tests__/ResizeBasic.test.tsx (2 tests) 73ms
+ ✓ src/components/dashboard/__tests__/GridSnapping.test.tsx (2 tests) 59ms
+ ✓ src/context/__tests__/DashboardContext.resize.test.tsx (1 test) 15ms
+ ✓ src/components/dashboard/__tests__/GridDashboard.simple.test.tsx (1 test) 69ms
+ ✓ src/components/dashboard/__tests__/GridDashboard.resize.test.tsx (1 test) 69ms
+ ✓ src/test/react-api-safety.test.tsx (6 tests) 24ms
+ ✓ tests/api/comprehensive-unified-api.test.ts (13 tests) 4ms
+ ✓ tests/regression/react-dependency-safety.test.ts (5 tests) 3ms
+[plugin vite:reporter] 
+(!) /Users/amity/projects/oven-ai/oven-ai/src/components/dashboard/MessagesAnalyticsDashboard.tsx is dynamically imported by /Users/amity/projects/oven-ai/oven-ai/src/App.tsx but also statically imported by /Users/amity/projects/oven-ai/oven-ai/src/components/leads/LeadManagementDashboard.tsx, dynamic import will not move module into another chunk.
+
+ ✓ tests/build/production-build-safety.test.ts (8 tests) 9060ms
+ ✓ tests/workflows/user-workflows.test.ts (1 test) 1ms
+
+ Test Files  17 passed | 1 skipped (18)
+      Tests  140 passed | 7 skipped (147)
+   Start at  14:00:04
+   Duration  10.25s (transform 1.26s, setup 2.01s, collect 5.40s, tests 12.69s, environment 4.82s, prepare 1.02s)
+
+[32m✅ Unit Tests completed successfully[0m
+[34m📊 Test results saved to: test-results-unit-1752404414347.json[0m
+[32m
+🎉 All tests completed successfully![0m
+
+> vite_react_shadcn_ts@0.0.0 test:build-safety
+> node scripts/testing/test-tracker.cjs unit "vitest run tests/build/production-build-safety.test.ts"
+
+[1m
+🧪 OvenAI Test Tracker[0m
+[34m📁 Working directory: /Users/amity/projects/oven-ai/oven-ai[0m
+[1m
+🚀 Running Unit Tests...[0m
+[34m📋 Command: vitest run tests/build/production-build-safety.test.ts[0m
+
+ RUN  v3.2.4 /Users/amity/projects/oven-ai/oven-ai
+
+[plugin vite:reporter] 
+(!) /Users/amity/projects/oven-ai/oven-ai/src/components/dashboard/MessagesAnalyticsDashboard.tsx is dynamically imported by /Users/amity/projects/oven-ai/oven-ai/src/App.tsx but also statically imported by /Users/amity/projects/oven-ai/oven-ai/src/components/leads/LeadManagementDashboard.tsx, dynamic import will not move module into another chunk.
+
+ ✓ tests/build/production-build-safety.test.ts (8 tests) 7179ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  14:00:14
+   Duration  7.76s (transform 52ms, setup 111ms, collect 14ms, tests 7.18s, environment 200ms, prepare 39ms)
+
+[32m✅ Unit Tests completed successfully[0m
+[34m📊 Test results saved to: test-results-unit-1752404422560.json[0m
+[32m
+🎉 All tests completed successfully![0m
+
+> vite_react_shadcn_ts@0.0.0 test:sanity
+> vitest run tests/unit/production-sanity.test.ts
+
+
+ RUN  v3.2.4 /Users/amity/projects/oven-ai/oven-ai
+
+
+> vite_react_shadcn_ts@0.0.0 build:clean
+> vite build --mode production --logLevel warn
+
+/*! 🌼 daisyUI 5.0.46 */
+[plugin vite:reporter] 
+(!) /Users/amity/projects/oven-ai/oven-ai/src/components/dashboard/MessagesAnalyticsDashboard.tsx is dynamically imported by /Users/amity/projects/oven-ai/oven-ai/src/App.tsx but also statically imported by /Users/amity/projects/oven-ai/oven-ai/src/components/leads/LeadManagementDashboard.tsx, dynamic import will not move module into another chunk.
+
+ ✓ tests/unit/production-sanity.test.ts (7 tests) 11972ms
+   ✓ 🚨 PRODUCTION SANITY TESTS - CRITICAL DOA PREVENTION > 🌐 SANITY: Production app loads without errors  1393ms
+   ✓ 🚨 PRODUCTION SANITY TESTS - CRITICAL DOA PREVENTION > 📱 SANITY: Mobile viewport works  948ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  14:00:22
+   Duration  12.62s (transform 52ms, setup 113ms, collect 82ms, tests 11.97s, environment 199ms, prepare 35ms)
+
+
+> vite_react_shadcn_ts@0.0.0 test:e2e-doa
+> node scripts/testing/test-tracker.cjs e2e "npx playwright test tests/e2e/doa-prevention.spec.ts"
+
+[1m
+🧪 OvenAI Test Tracker[0m
+[34m📁 Working directory: /Users/amity/projects/oven-ai/oven-ai[0m
+[1m
+🚀 Running End-to-End Tests...[0m
+[34m📋 Command: npx playwright test tests/e2e/doa-prevention.spec.ts[0m
+
+Running 7 tests using 2 workers
+···React content did not load within timeout, but no critical errors detected
+····
+  7 passed (17.6s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report test-results/html[39m
+[36m[39m
+[32m✅ End-to-End Tests completed successfully[0m
+[34m📊 Test results saved to: test-results-e2e-1752404454082.json[0m
+[32m
+🎉 All tests completed successfully![0m
+[1m
+🧪 OvenAI Test Tracker[0m
+[34m📁 Working directory: /Users/amity/projects/oven-ai/oven-ai[0m
+[1m
+🚀 Running End-to-End Tests...[0m
+[34m📋 Command: npx playwright test[0m
+Skipping device iPad Pro - device configuration not found
+
+Running 593 tests using 2 workers
+
+📄 Testing Dashboard page...
+
+📄 Testing Leads page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /dashboard
+✅ URL verified: /leads
+⚠️ Header not found: "Dashboard"
+⚠️ Header not found: "Leads"
+⚠️ Header not found: "Recent Activity"
+⚠️ Header not found: "Lead Management"
+⚠️ Header not found: "Quick Stats"
+✅ Found 0 chart(s)
+✅ Found 0 card(s)
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+✅ mobile view tested
+📊 Accessibility scan:
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+··
+📄 Testing Messages page...
+
+📄 Testing Projects page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /projects
+⚠️ Header not found: "Projects"
+⚠️ Header not found: "Active Projects"
+✅ Found 0 card(s)
+✅ URL verified: /messages
+⚠️ Header not found: "Messages"
+⚠️ Header not found: "Conversations"
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+··
+📄 Testing Optimized Messages page...
+
+📄 Testing Reports page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /messages/optimized
+⚠️ Header not found: "Messages"
+⚠️ Header not found: "Optimized View"
+✅ URL verified: /reports
+⚠️ Header not found: "Reports"
+⚠️ Header not found: "Analytics"
+✅ Found 0 chart(s)
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+··
+📄 Testing Enhanced Reports page...
+
+📄 Testing Modern Reports page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /reports/modern
+⚠️ Header not found: "Modern Reports"
+⚠️ Header not found: "Analytics Dashboard"
+✅ Found 0 chart(s)
+✅ Found 0 card(s)
+✅ URL verified: /reports/enhanced
+⚠️ Header not found: "Enhanced Reports"
+⚠️ Header not found: "Advanced Analytics"
+✅ Found 0 chart(s)
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+··
+📄 Testing Calendar page...
+
+📄 Testing Lead Pipeline page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /calendar
+✅ URL verified: /lead-pipeline
+⚠️ Header not found: "Calendar"
+⚠️ Header not found: "Lead Pipeline"
+⚠️ Header not found: "Schedule"
+⚠️ Header not found: "Pipeline View"
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+··
+📄 Testing Settings page...
+
+📄 Testing Users page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /settings
+⚠️ Header not found: "Settings"
+⚠️ Header not found: "Account Settings"
+✅ Found 0 form(s)
+   Found 0 input field(s)
+✅ URL verified: /users
+⚠️ Header not found: "Users"
+⚠️ Header not found: "Team Management"
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+··
+📄 Testing FAQ page...
+
+📄 Testing Admin Console page...
+✅ URL verified: /faq
+⚠️ Header not found: "FAQ"
+⚠️ Header not found: "Frequently Asked Questions"
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Connection Test page...
+✅ URL verified: /connection-test
+⚠️ Header not found: "Connection Test"
+⚠️ Header not found: "System Status"
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Integrations Test page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /admin/console
+⚠️ Header not found: "System Administration Console"
+⚠️ Header not found: "Infrastructure monitoring"
+✅ Found 0 card(s)
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing WhatsApp Demo page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /integrations-test
+⚠️ Header not found: "Integrations"
+⚠️ Header not found: "Test Integrations"
+✅ Found 0 card(s)
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing WhatsApp Test page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /whatsapp-demo
+⚠️ Header not found: "WhatsApp Demo"
+⚠️ Header not found: "Messaging Demo"
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Privacy Policy page...
+✅ URL verified: /privacy-policy
+⚠️ Header not found: "Privacy Policy"
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Terms of Service page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /whatsapp-test
+⚠️ Header not found: "WhatsApp Test"
+⚠️ Header not found: "Integration Test"
+✅ Found 0 form(s)
+   Found 0 input field(s)
+✅ URL verified: /terms-of-service
+⚠️ Header not found: "Terms of Service"
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+
+📄 Testing Accessibility Declaration page...
+·
+📄 Testing Data Export page...
+✅ URL verified: /accessibility
+⚠️ Header not found: "Accessibility"
+⚠️ Header not found: "Accessibility Declaration"
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Data Deletion page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /data-export
+⚠️ Header not found: "Data Export"
+⚠️ Header not found: "Export Your Data"
+✅ Found 0 form(s)
+   Found 0 input field(s)
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Landing Page page...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ URL verified: /data-deletion
+⚠️ Header not found: "Data Deletion"
+⚠️ Header not found: "Delete Your Data"
+✅ URL verified: /
+⚠️ Header not found: "OvenAI"
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Coming Soon page...
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing Maintenance page...
+✅ URL verified: /coming-soon
+⚠️ Header not found: "Coming Soon"
+✅ URL verified: /maintenance
+⚠️ Header not found: "System Maintenance"
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing 404 Not Found page...
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing 401 Unauthorized page...
+✅ URL verified: /404
+⚠️ Header not found: "404"
+⚠️ Header not found: "Page Not Found"
+✅ URL verified: /401
+⚠️ Header not found: "401"
+⚠️ Header not found: "Unauthorized"
+✅ desktop view tested
+✅ desktop view tested
+✅ tablet view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing 403 Forbidden page...
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+📄 Testing 500 Internal Server Error page...
+✅ URL verified: /403
+⚠️ Header not found: "403"
+⚠️ Header not found: "Forbidden"
+✅ URL verified: /500
+⚠️ Header not found: "500"
+⚠️ Header not found: "Internal Server Error"
+✅ desktop view tested
+✅ tablet view tested
+✅ desktop view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+✅ tablet view tested
+·
+📄 Testing 503 Service Unavailable page...
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+🛡️ Testing admin functionality...
+✅ URL verified: /503
+⚠️ Header not found: "503"
+⚠️ Header not found: "Service Unavailable"
+✅ desktop view tested
+✅ tablet view tested
+✅ mobile view tested
+📊 Accessibility scan:
+   Images: 1 total, 1 without alt text
+   Buttons: 0 total, 0 without text/label
+·
+🧭 Testing navigation flow...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ Navigated to /leads
+✅ Navigated to /projects
+✅ Navigated to /messages
+✅ Navigated to /reports
+✅ Navigated to /calendar
+✅ Navigated to /settings
+·
+⚠️ Testing error handling...
+×
+⚠️ Testing error handling...
+×F
+🛡️ Testing admin functionality...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+×F·FAuth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+××Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+FFAuth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+···××FF×F🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Landing Page at /
+❌ Error testing Landing Page: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@25'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@25'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404724667[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Landing Page, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Login at /auth/login
+❌ Error testing Login: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404726531[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Login, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Dashboard at /dashboard
+❌ Error testing Dashboard: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404728214[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Dashboard, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Leads at /leads
+❌ Error testing Leads: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404729931[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Leads, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Projects at /projects
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+❌ Error testing Projects: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404731588[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Projects, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Messages at /messages
+❌ Error testing Messages: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404733300[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Messages, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Calendar at /calendar
+❌ Error testing Calendar: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404735081[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Calendar, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Reports at /reports
+❌ Error testing Reports: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404736772[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Reports, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Enhanced Reports at /enhanced-reports
+❌ Error testing Enhanced Reports: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404738729[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Enhanced Reports, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Lead Pipeline at /lead-pipeline
+❌ Error testing Lead Pipeline: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404740422[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Lead Pipeline, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Optimized Messages at /optimized-messages
+❌ Error testing Optimized Messages: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404742123[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Optimized Messages, but continuing...
+·🔐 Logging in user...
+×❌ Could not find login form fields
+🌐 Testing page: Settings at /settings
+❌ Error testing Settings: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404743827[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Settings, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Users at /users
+❌ Error testing Users: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404745565[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Users, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Notifications at /notifications
+❌ Error testing Notifications: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404747264[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Notifications, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: WhatsApp Demo at /whatsapp-demo
+❌ Error testing WhatsApp Demo: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404748963[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test WhatsApp Demo, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Components Demo at /components-demo
+❌ Error testing Components Demo: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404750663[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Components Demo, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Connection Test at /connection-test
+❌ Error testing Connection Test: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404752363[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Connection Test, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Admin Dashboard at /admin-dashboard
+❌ Error testing Admin Dashboard: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404754047[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Admin Dashboard, but continuing...
+·🔐 Logging in user...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+❌ Could not find login form fields
+🌐 Testing page: Admin Data Requests at /admin-data-requests
+❌ Error testing Admin Data Requests: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404755920[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Admin Data Requests, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Data Export at /data-export
+❌ Error testing Data Export: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404757631[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Data Export, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Data Deletion at /data-deletion
+❌ Error testing Data Deletion: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404759363[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Data Deletion, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Privacy Policy at /privacy-policy
+❌ Error testing Privacy Policy: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404761076[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Privacy Policy, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Accessibility Declaration at /accessibility-declaration
+❌ Error testing Accessibility Declaration: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404762779[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Accessibility Declaration, but continuing...
+·🔐 Logging in user...
+❌ Could not find login form fields
+🌐 Testing page: Terms of Service at /terms-of-service
+❌ Error testing Terms of Service: ExpectError: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+    at [90m/Users/amity/projects/oven-ai/oven-ai/[39mtests/e2e/comprehensive-app-navigation.spec.ts:233:31 {
+  matcherResult: {
+    actual: [33mfalse[39m,
+    expected: [33mtrue[39m,
+    message: [32m'\x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+      [32m'\n'[39m +
+      [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+      [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+    name: [32m'toBe'[39m,
+    pass: [33mfalse[39m
+  },
+  [32mSymbol(step)[39m: {
+    stepId: [32m'expect@23'[39m,
+    category: [32m'expect'[39m,
+    title: [32m'expect.toBe'[39m,
+    params: { expected: [33mtrue[39m },
+    infectParentStepsWithError: [90mundefined[39m,
+    boxedStack: [90mundefined[39m,
+    location: {
+      file: [32m'/Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts'[39m,
+      line: [33m233[39m,
+      column: [33m31[39m
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [36m[TestInfoImpl][39m,
+      _stepId: [32m'expect@23'[39m
+    },
+    complete: [36m[Function: complete][39m,
+    endWallTime: [33m1752404764465[39m,
+    error: {
+      message: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m'[39m,
+      stack: [32m'Error: \x1B[2mexpect(\x1B[22m\x1B[31mreceived\x1B[39m\x1B[2m).\x1B[22mtoBe\x1B[2m(\x1B[22m\x1B[32mexpected\x1B[39m\x1B[2m) // Object.is equality\x1B[22m\n'[39m +
+        [32m'\n'[39m +
+        [32m'Expected: \x1B[32mtrue\x1B[39m\n'[39m +
+        [32m'Received: \x1B[31mfalse\x1B[39m\n'[39m +
+        [32m'    at /Users/amity/projects/oven-ai/oven-ai/tests/e2e/comprehensive-app-navigation.spec.ts:233:31'[39m,
+      cause: [90mundefined[39m
+    }
+  }
+}
+⚠️ Could not fully test Terms of Service, but continuing...
+·🔐 Logging in user...
+F❌ Could not find login form fields
+🔐 Logging in user...
+🔗 Testing Dashboard interactive elements...
+Found 0 buttons on Dashboard
+Found 0 links on Dashboard
+·🔐 Logging in user...
+❌ Could not find login form fields
+❌ Could not find login form fields
+�� Testing navigation between main pages...
+Testing navigation to: Leads
+Testing navigation to: Projects
+Testing navigation to: Messages
+Testing navigation to: Calendar
+·🔐 Logging in user...
+📱 Testing mobile responsive layout...
+❌ Could not find login form fields
+✅ Responsive layout tests completed
+
+·🧪 Starting simple sidebar test with real authentication...
+🎨 Testing Components Demo functionality...
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+×🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+Current URL: http://localhost:3000/dashboard
+❌ Sidebar is not visible
+Page title: OvenAI
+Page contains: 
+    
+    
+    
+    
+    
+    
+    
+    
+      // Make sure jQuery is available globally
+      window.jQuery = window.$ = jQuery;
+    
+    
+    
+    
+      // Suppress console warnings about jQuery
+  
+·⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+F🔧 Ensuring Vite server is fully ready...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+✅ Vite server confirmed ready
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+×⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+×🔧 Ensuring Vite server is fully ready...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+✅ Vite server confirmed ready
+F⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+F🔧 Ensuring Vite server is fully ready...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+✅ Vite server confirmed ready
+×⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+×🔧 Ensuring Vite server is fully ready...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+✅ Vite server confirmed ready
+F⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+F❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔧 Ensuring Vite server is fully ready...
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+✅ Vite server confirmed ready
+×⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+×🔧 Ensuring Vite server is fully ready...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+✅ Vite server confirmed ready
+F⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+F❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+·⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+🔧 Ensuring Vite server is fully ready...
+·✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+·🔒 Testing unauthorized access prevention...
+   Testing regular user access...
+⏳ Waiting for React app to fully render...
+⚠️ SECURITY ISSUE: Regular user may have access to admin console
+   Testing unauthenticated user access...
+⚠️ SECURITY ISSUE: Unauthenticated user may have access to admin console
+·👑 Testing admin user access...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🛡️ Testing role-based permissions...
+   Testing admin permissions...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+×Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+👑 Testing admin user access...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+×🛡️ Testing role-based permissions...
+   Testing admin permissions...
+F👥 Testing user creation security...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+F⚠️ Testing destructive operations security...
+×👥 Testing user creation security...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+   Testing cleanup operations...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+×⚠️ Testing destructive operations security...
+F🧭 Testing navigation security...
+   Testing regular user navigation...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+   Testing cleanup operations...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+✅ Admin Console hidden from regular users
+   Testing admin user navigation...
+⚠️ Admin Console not visible to admin users (may need page refresh)
+·🔐 Testing session security...
+   Testing invalid token handling...
+F   Testing expired session handling...
+🛡️ Testing data protection...
+·🔍 Running comprehensive security audit...
+   Testing Direct URL Access...
+   Testing Client-side Role Manipulation...
+✅ No major security issues detected
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+   Checking for sensitive data exposure...
+✅ Data protection check completed
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+×🛡️ Testing data protection...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+Auth failed, trying development fallback: TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#email') to be visible[22m
+
+   Checking for sensitive data exposure...
+✅ Data protection check completed
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+F🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·🔧 Ensuring Vite server is fully ready...
+✅ Vite server confirmed ready
+⏳ Waiting for React app to fully render...
+❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+·⚠️ 404 page not found
+·❌ Authentication error: page.waitForFunction: Timeout 10000ms exceeded.
+🔍 Debug info - Current URL: http://localhost:3000/auth/login
+📄 Page content debug: {
+  hasRoot: [33mtrue[39m,
+  rootChildren: [33m0[39m,
+  bodyHTML: [32m'\n'[39m +
+    [32m'    <div id="root"></div>\n'[39m +
+    [32m'    <script type="module" src="/src/main.tsx"></script>\n'[39m +
+    [32m'    \n'[39m +
+    [32m'    <!-- jQuery for Nagish accessibility plugin - loaded synchronously -->\n'[39m +
+    [32m'    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin'[39m
+}
+🔍 Debug info - Fields found: email=0, password=0, submit=0
+📸 Debug screenshot saved: test-results/auth-failure-debug.png
+✅ Desktop view tested
+✅ Tablet view tested
+⚠️ Mobile menu not found
+·××F·F××FF××FF××FF××FF🔑 Starting authenticated exploration...
+🔐 Attempting login with test credentials...
+·📊 Exploring dashboard features...
+🔍 Dashboard not immediately visible, checking navigation...
+·👥 Exploring leads management...
+·💬 Exploring messaging features...
+
+🎯 AUTHENTICATED EXPLORATION SUMMARY
+=====================================
+Features Discovered: [33m0[39m
+API Endpoints: [33m0[39m
+Authentication: Tested with test@test.test
+
+Features Found:
+
+Check test-results/exploration/authenticated-logs/ for detailed analysis
+·📈 Exploring reports and analytics...
+·🏗️ Exploring project management...
+·⚙️ Exploring settings and configuration...
+·🔔 Exploring notifications system...
+
+🎯 AUTHENTICATED EXPLORATION SUMMARY
+=====================================
+Features Discovered: [33m0[39m
+API Endpoints: [33m0[39m
+Authentication: Tested with test@test.test
+
+Features Found:
+
+Check test-results/exploration/authenticated-logs/ for detailed analysis
+·×🔐 Logging in for avatar upload tests...
+×
+F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+F×🔐 Logging in for avatar upload tests...
+🔐 Logging in for avatar upload tests...
+×F🔐 Logging in for avatar upload tests...
+×FF××F×F×F×F×FF×F××F×F🚀 Starting comprehensive workflow test...
+📋 Step 1: Navigate to landing page and click Sign In
+🔍 Looking for Sign In button on landing page...
+F🔄 Testing project switching specifically...
+×🚀 Starting comprehensive workflow test...
+📋 Step 1: Navigate to landing page and click Sign In
+🔍 Looking for Sign In button on landing page...
+×🔄 Testing project switching specifically...
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+F🔐 Starting login process...
+❌ Could not find email field
+×🔐 Starting login process...
+❌ Could not find email field
