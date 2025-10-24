@@ -1154,7 +1154,7 @@ export const mockProjects = [
     value: '$75,000',
     team: ['Agent A', 'Implementation Team'],
     progress: 35,
-    lead_count: 3, // Number of leads associated with this project
+    leads_count: 3, // Number of leads associated with this project
     milestones: [
       { name: 'Requirements Gathering', status: 'completed', date: '2024-01-20' },
       { name: 'System Configuration', status: 'in-progress', date: '2024-02-01' },
@@ -1176,7 +1176,7 @@ export const mockProjects = [
     value: '$120,000',
     team: ['Agent C', 'Technical Team', 'Integration Specialist'],
     progress: 10,
-    lead_count: 2, // Number of leads associated with this project
+    leads_count: 2, // Number of leads associated with this project
     milestones: [
       { name: 'Technical Discovery', status: 'in-progress', date: '2024-02-01' },
       { name: 'API Setup', status: 'pending', date: '2024-02-10' },
@@ -1198,7 +1198,7 @@ export const mockProjects = [
     value: '$45,000',
     team: ['Agent B', 'Automation Team'],
     progress: 65,
-    lead_count: 5, // Number of leads associated with this project
+    leads_count: 5, // Number of leads associated with this project
     milestones: [
       { name: 'Requirements Gathering', status: 'completed', date: '2024-01-10' },
       { name: 'Automation Setup', status: 'completed', date: '2024-01-20' },
