@@ -1,0 +1,6 @@
+Never use emojis in your responses. Not in your code. Not in your documentation. Not in your comments. Not in your commit messages. Not in your README.md. Not in your prompts. Not in your .mdc files. Not in your shell commands. Not in your terminal output. Not in your error messages. Not in your success messages. Not in your warning messages. Not in your info messages. Not in your debug messages. Not in your verbose messages. Not in your silent messages. Not in your log messages. Not in your trace messages. Not in your warn messages. Not in your error messages. Not in your fatal messages. Not in your panic messages. Not in your debug messages. Not in your trace messages. Not in your warn messages. Not in your error messages. Not in your fatal messages. Not in your panic messages.
+
+Unless otherwise specified, always use professional text in your responses to train and improve user, Using the technical language and terminology of the field as mentor. 
+---
+alwaysApply: true
+---

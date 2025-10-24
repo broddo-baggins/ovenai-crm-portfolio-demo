@@ -44,19 +44,19 @@ const createMockSupabaseClient = () => {
   const mockFrom = (table: string) => {
     return {
       select: (...args: any[]) => {
-        console.log(`[DEMO MODE] Mock: SELECT from "${table}" - This would query Supabase table`);
+        console.log('[DEMO MODE] Mock: SELECT from "' + table + '" - This would query Supabase table');
         return mockFrom(table);
       },
       insert: (data: any) => {
-        console.log(`[DEMO MODE] Mock: INSERT into "${table}"`, data, '- This would insert into Supabase table');
+        console.log('[DEMO MODE] Mock: INSERT into "' + table + '"', data, '- This would insert into Supabase table');
         return mockFrom(table);
       },
       update: (data: any) => {
-        console.log(`[DEMO MODE] Mock: UPDATE "${table}"`, data, '- This would update Supabase table');
+        console.log('[DEMO MODE] Mock: UPDATE "' + table + '"', data, '- This would update Supabase table');
         return mockFrom(table);
       },
       delete: () => {
-        console.log(`[DEMO MODE] Mock: DELETE from "${table}" - This would delete from Supabase table');
+        console.log('[DEMO MODE] Mock: DELETE from "' + table + '" - This would delete from Supabase table');
         return mockFrom(table);
       },
       eq: (...args: any[]) => mockFrom(table),
@@ -76,7 +76,7 @@ const createMockSupabaseClient = () => {
       subscribe: () => ({ unsubscribe: () => {} })
     }),
     rpc: async (fn: string, params: any) => {
-      console.log(`[DEMO MODE] Mock: RPC call to "${fn}"`, params, '- This would call Supabase function');
+      console.log('[DEMO MODE] Mock: RPC call to "' + fn + '"', params, '- This would call Supabase function');
       return { data: null, error: null };
     }
   };
@@ -154,7 +154,7 @@ class SupabaseOptimizer {
       return supabase.channel(channelName);
     }
 
-    console.log(`[CHANNEL] Creating optimized channel: ${channelName}`);
+    console.log('[CHANNEL] Creating optimized channel: ' + channelName);
     this.activeChannels.add(channelName);
 
     const channel = supabase.channel(channelName, {
@@ -184,7 +184,7 @@ class SupabaseOptimizer {
           this.connectionMetrics.reconnectCount++;
           break;
         case 'phx_close':
-          console.log(`[CLOSE] Channel ${channelName} closed`);
+          console.log('[CLOSE] Channel ' + channelName + ' closed');
           this.activeChannels.delete(channelName);
           break;
       }
@@ -197,7 +197,7 @@ class SupabaseOptimizer {
    * OPTIMIZATION: Batch subscription cleanup
    */
   cleanup(): void {
-    console.log(`[CLEANUP] Cleaning up ${this.activeChannels.size} active channels`);
+    console.log('[CLEANUP] Cleaning up ' + this.activeChannels.size + ' active channels');
     
     this.activeChannels.forEach(channelName => {
       const channel = supabase.channel(channelName);
