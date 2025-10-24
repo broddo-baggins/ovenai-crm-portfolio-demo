@@ -73,8 +73,13 @@ docker-compose.override.yml
 
 # Logs and Reports (organized folders)
 logs/
-reports/
+/reports/
 assets/debug/
+
+# Exception: Allow src/components/reports (source code)
+!src/components/reports/
+!src/**/reports/*.ts
+!src/**/reports/*.tsx
 
 # Test artifacts that may contain secrets
 test-results/
