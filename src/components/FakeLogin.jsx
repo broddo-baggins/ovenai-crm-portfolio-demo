@@ -22,8 +22,8 @@ const FakeLogin = ({ onLoginSuccess }) => {
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     // Always succeed - this is a demo
-    localStorage.setItem('ovenai_demo_authenticated', 'true');
-    localStorage.setItem('ovenai_demo_user', JSON.stringify({
+    localStorage.setItem('crm_demo_authenticated', 'true');
+    localStorage.setItem('crm_demo_user', JSON.stringify({
       name: 'Demo Agent',
       email: email,
       role: 'Sales Agent'
@@ -227,7 +227,7 @@ export default FakeLogin;
 //   const [isAuthenticated, setIsAuthenticated] = useState(false);
 //
 //   useEffect(() => {
-//     const auth = localStorage.getItem('ovenai_demo_authenticated');
+//     const auth = localStorage.getItem('crm_demo_authenticated');
 //     setIsAuthenticated(auth === 'true');
 //   }, []);
 //

@@ -193,7 +193,7 @@ const AdminConsole: React.FC = () => {
         realUsers = [
           {
             id: 'test-admin',
-            email: 'admin@oven-ai.com',
+            email: 'admin.demo@example.com',
             first_name: 'Admin',
             last_name: 'User',
             role: 'admin',

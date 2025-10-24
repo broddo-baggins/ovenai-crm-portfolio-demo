@@ -398,7 +398,7 @@ const LandingPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "OvenAI",
+            name: "CRM Demo",
             description: isHebrew
               ? "מערכת AI אוטונומית המייעלת את מחלקות השירות והמכירות"
                               : "Advanced AI-powered business system for sales and service optimization",
@@ -407,7 +407,7 @@ const LandingPage = () => {
             url: "https://ovenai.app",
             author: {
               "@type": "Organization",
-              name: "OvenAI",
+              name: "CRM Demo",
               url: "https://ovenai.app",
             },
             offers: {
@@ -489,8 +489,8 @@ const LandingPage = () => {
           property="og:title"
           content={
             isHebrew
-              ? "OvenAI - מערכת AI מתקדמת למכירות ושירות"
-              : "OvenAI - Advanced AI-Powered Business System"
+              ? "CRM Demo - מערכת AI מתקדמת למכירות ושירות"
+              : "CRM Demo - Advanced AI-Powered Business System"
           }
         />
         <meta
@@ -511,8 +511,8 @@ const LandingPage = () => {
           property="twitter:title"
           content={
             isHebrew
-              ? "OvenAI - מערכת AI מתקדמת למכירות ושירות"
-              : "OvenAI - Advanced AI-Powered Business System"
+              ? "CRM Demo - מערכת AI מתקדמת למכירות ושירות"
+              : "CRM Demo - Advanced AI-Powered Business System"
           }
         />
         <meta
@@ -546,7 +546,7 @@ const LandingPage = () => {
               >
                 <Building2 className="w-8 h-8 text-gray-900" />
                 <span className="text-xl font-geist-bold text-gray-900">
-                  OvenAI
+                  CRM Demo
                 </span>
               </motion.div>
 
@@ -602,7 +602,7 @@ const LandingPage = () => {
                   className="mb-6"
                 >
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-geist-bold text-primary-600 mb-4 max-w-none">
-                    {t("hero.brand", "OvenAI")}
+                    {t("hero.brand", "CRM Demo")}
                   </h1>
                 </motion.div>
 
@@ -627,7 +627,7 @@ const LandingPage = () => {
                   {/* Enhanced Typing Animation with Oven Cooking Visualization */}
                   <div className="mt-4 h-20 flex items-center gap-4">
                     <div className="flex items-center gap-3 text-lg md:text-xl text-primary-600 font-geist-medium">
-                      {/* Oven AI Cooking Indicator */}
+                      {/* CRM AI Indicator */}
                       <div className="relative">
                         <div className="w-8 h-8 rounded-full border-3 border-gray-300 relative overflow-hidden bg-gray-50">
                           {/* Oven Heat Animation - Cycles like cooking */}
@@ -838,7 +838,7 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Why OvenAI is Different - REDESIGNED */}
+        {/* Why CRM Demo is Different - REDESIGNED */}
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -854,8 +854,8 @@ const LandingPage = () => {
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-geist-bold text-gray-900 mb-6">
                 {isHebrew
-                  ? "למה הכולם מדברים על OvenAI"
-                  : "Why Everyone's Talking About OvenAI"}
+                  ? "למה הכולם מדברים על CRM Demo"
+                  : "Why Everyone's Talking About CRM Demo"}
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-accent-600 mx-auto mb-8"></div>
             </motion.div>
@@ -1029,8 +1029,8 @@ const LandingPage = () => {
                 </div>
                 <p className="text-white/90 text-lg mb-6">
                   {isHebrew
-                    ? "גלו איך OvenAI יכול לשנות את תהליכי המכירה שלכם ולהגדיל את ההכנסות"
-                    : "Discover how OvenAI can transform your sales processes and increase revenue"}
+                    ? "גלו איך CRM Demo יכול לשנות את תהליכי המכירה שלכם ולהגדיל את ההכנסות"
+                    : "Discover how CRM Demo can transform your sales processes and increase revenue"}
                 </p>
                 <Button
                   size="lg"
@@ -1092,8 +1092,8 @@ const LandingPage = () => {
                     </span>
                     <p className="text-gray-700 leading-relaxed">
                       {isHebrew
-                        ? "באמצעות הטכנולוגיה של OvenAI הביצועים שלכם משתפרים פלאים ובאופן מיידי"
-                        : "With OvenAI technology, your performance improves dramatically and immediately"}
+                        ? "באמצעות הטכנולוגיה של CRM Demo הביצועים שלכם משתפרים פלאים ובאופן מיידי"
+                        : "With CRM Demo technology, your performance improves dramatically and immediately"}
                     </p>
                   </div>
                 </div>
@@ -1145,7 +1145,7 @@ const LandingPage = () => {
                 </ul>
               </motion.div>
 
-              {/* New Lead Journey with OvenAI */}
+              {/* New Lead Journey with CRM Demo */}
               <motion.div
                 variants={slideUpVariants}
                 className="bg-gradient-to-br from-green-50 to-primary-50 p-8 rounded-2xl shadow-xl border-l-4 border-primary-600"
@@ -1157,8 +1157,8 @@ const LandingPage = () => {
                   </div>
                   <h3 className="text-xl font-geist-semibold text-primary-600">
                     {isHebrew
-                      ? "מסע הליד עם OvenAI"
-                      : "Lead Journey with OvenAI"}
+                      ? "מסע הליד עם CRM Demo"
+                      : "Lead Journey with CRM Demo"}
                   </h3>
                 </div>
                 <ul className="space-y-4">
@@ -1336,8 +1336,8 @@ const LandingPage = () => {
                     </h3>
                     <p className="font-geist text-gray-700 leading-relaxed">
                       {isHebrew
-                        ? "OvenAI מנהלת שיחות מותאמות אישית 24/7, מזהה כוונות ומחממת לידים."
-                        : "OvenAI manages personalized conversations 24/7, identifies intentions and warms leads."}
+                        ? "CRM Demo מנהלת שיחות מותאמות אישית 24/7, מזהה כוונות ומחממת לידים."
+                        : "CRM Demo manages personalized conversations 24/7, identifies intentions and warms leads."}
                     </p>
                   </div>
                 </motion.div>
@@ -1585,7 +1585,7 @@ const LandingPage = () => {
           </div>
         </motion.section>
 
-        {/* Why Choose OvenAI - Competitor Comparison */}
+        {/* Why Choose CRM Demo - Competitor Comparison */}
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -1602,8 +1602,8 @@ const LandingPage = () => {
                 <Crown className="w-8 h-8 text-yellow-500" />
                 <h2 className="text-2xl md:text-3xl font-geist-semibold text-gray-900">
                   {isHebrew
-                    ? "למה OvenAI? הפתרון הייחודי לנדל״ן ישראלי"
-                    : "Why OvenAI? Built Specifically for Israeli Real Estate"}
+                    ? "למה CRM Demo? הפתרון הייחודי לנדל״ן ישראלי"
+                    : "Why CRM Demo? Built Specifically for Israeli Real Estate"}
                 </h2>
                 <Crown className="w-8 h-8 text-yellow-500" />
               </div>
@@ -1665,7 +1665,7 @@ const LandingPage = () => {
                   </ul>
                 </motion.div>
 
-                {/* OvenAI */}
+                {/* CRM Demo */}
                 <motion.div
                   variants={slideUpVariants}
                   className="bg-gradient-to-br from-primary-600 to-primary-700 p-8 rounded-2xl shadow-xl border-4 border-yellow-400 relative transform scale-105"
@@ -1680,7 +1680,7 @@ const LandingPage = () => {
                       <Building2 className="w-8 h-8 text-primary-600" />
                     </div>
                     <h3 className="text-xl font-geist-semibold text-white mb-2">
-                      OvenAI
+                      CRM Demo
                     </h3>
                     <p className="text-primary-100 text-sm">
                       {isHebrew
@@ -1897,7 +1897,7 @@ const LandingPage = () => {
               >
                 <Building2 className="w-6 h-6" />
                 <span className="text-xl font-geist-bold text-gray-900">
-                  OvenAI
+                  CRM Demo
                 </span>
                 <span className="text-gray-400 text-sm ml-2">
                   {t("footer.copyright")}

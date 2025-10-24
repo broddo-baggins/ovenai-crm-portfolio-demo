@@ -314,9 +314,9 @@ const MaintenancePage: React.FC<MaintenancePageProps> = ({
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="outline" asChild>
-                    <a href="mailto:support@oven-ai.com">
+                    <a href="mailto:amit@amityogev.com?subject=CRM Demo Inquiry">
                       <Mail className={cn("h-4 w-4", isRTL ? "ml-2" : "mr-2")} />
-                      {t('pages:maintenance.contact.email', 'Email Support')}
+                      {t('pages:maintenance.contact.email', 'Contact Developer')}
                     </a>
                   </Button>
                   

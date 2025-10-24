@@ -34,7 +34,7 @@ const ForbiddenPage = () => {
 
   const handleContactSupport = () => {
     // Navigate to contact support or open email
-    window.location.href = 'mailto:support@ovenaicr.app?subject=Access Issue - 403 Forbidden';
+    window.location.href = 'mailto:amit@amityogev.com?subject=CRM Demo - Access Issue';
   };
 
   return (

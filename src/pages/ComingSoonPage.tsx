@@ -363,9 +363,9 @@ const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
               </Button>
 
               <Button variant="outline" asChild>
-                <a href="mailto:support@oven-ai.com">
+                <a href="mailto:amit@amityogev.com?subject=CRM Demo Inquiry">
                   <Mail className={cn("h-4 w-4", isRTL ? "ml-2" : "mr-2")} />
-                  {t('pages:comingSoon.navigation.contact', 'Contact Us')}
+                  {t('pages:comingSoon.navigation.contact', 'Contact Developer')}
                 </a>
               </Button>
             </div>

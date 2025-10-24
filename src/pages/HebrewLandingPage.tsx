@@ -81,7 +81,7 @@ export const HebrewLandingPage: React.FC = () => {
     {
       number: "3",
       title: "חימום ושיחה אוטומטית",
-      description: "OvenAI מנהלת שיחות מותאמות אישית 24/7, מזהה כוונות ומחממת לידים"
+      description: "CRM Demo מנהלת שיחות מותאמות אישית 24/7, מזהה כוונות ומחממת לידים"
     },
     {
       number: "4",
@@ -133,7 +133,7 @@ export const HebrewLandingPage: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              OvenAI
+              CRM Demo
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4">
               מערכת מבוססת בינה מלאכותית המתקדמת בעולם
@@ -153,19 +153,19 @@ export const HebrewLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Why OvenAI Section */}
+      {/* Why CRM Demo Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              למה הבאז סביב OvenAI
+              למה הבאז סביב CRM Demo
             </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
                 פירקנו את מסע הלקוח המסורתי והטמענו טכנולוגיות AI מהפכניות כדי להאיץ חימום לידים ואנליזה מתקדמת.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                OvenAI מנתחת כל שלב בשיחה ומשפרת כל אינטראקציה כך שמנהל המכירות מגיע מוכן לפגישה עם כל הנתונים הרלוונטיים.
+                CRM Demo מנתחת כל שלב בשיחה ומשפרת כל אינטראקציה כך שמנהל המכירות מגיע מוכן לפגישה עם כל הנתונים הרלוונטיים.
               </p>
               <p className="text-xl font-semibold text-blue-600 dark:text-blue-400 mt-8">
                 אנחנו לא צ'אטבוט. אנחנו צוות המכירות המסור שלך שאף פעם לא ישן

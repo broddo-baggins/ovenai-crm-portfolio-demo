@@ -77,7 +77,7 @@ VITE_WHATSAPP_APP_ID=your_app_id_here
 VITE_WHATSAPP_APP_SECRET=your_app_secret_here
 
 # LINK Webhook Configuration
-VITE_WHATSAPP_WEBHOOK_VERIFY_TOKEN=oven-ai-webhook-verify-token-2024
+VITE_WHATSAPP_WEBHOOK_VERIFY_TOKEN=crm-demo-webhook-verify-token-2024
 VITE_WHATSAPP_WEBHOOK_URL=https://your-domain.com/api/whatsapp/webhook
 
 # TARGET Meta Business Configuration

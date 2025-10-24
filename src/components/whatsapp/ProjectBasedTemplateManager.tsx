@@ -217,7 +217,7 @@ export const ProjectBasedTemplateManager: React.FC<ProjectBasedTemplateManagerPr
       '3': 'זמין מיידי',
       'agent_name': 'שרה כהן',
       'phone': '054-123-4567',
-      'email': 'sarah@oven-ai.com'
+      'email': 'sarah.demo@example.com'
     };
 
     onSendTemplate?.(template.id, mockVariables);

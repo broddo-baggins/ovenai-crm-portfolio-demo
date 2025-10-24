@@ -23,7 +23,7 @@ export const env = {
   get APP_URL() {
     return (
       import.meta.env.VITE_APP_URL ||
-      (import.meta.env.PROD ? "https://oven-ai.com" : "http://127.0.0.1:3000")
+      (import.meta.env.PROD ? "https://ovenai-crm-portfolio-demo.vercel.app" : "http://127.0.0.1:3000")
     );
   },
   ENVIRONMENT: import.meta.env.VITE_ENVIRONMENT || "development",
@@ -39,7 +39,7 @@ export const env = {
   WHATSAPP_APP_SECRET: import.meta.env.VITE_WHATSAPP_APP_SECRET || "",
   WHATSAPP_WEBHOOK_VERIFY_TOKEN:
     import.meta.env.VITE_WHATSAPP_WEBHOOK_VERIFY_TOKEN ||
-    "oven-ai-secure-webhook-2024",
+    "crm-demo-secure-webhook-2024",
   WHATSAPP_WEBHOOK_SECRET: import.meta.env.VITE_WHATSAPP_WEBHOOK_SECRET || "",
   WHATSAPP_WEBHOOK_URL: import.meta.env.VITE_WHATSAPP_WEBHOOK_URL || "",
   
@@ -53,7 +53,7 @@ export const env = {
   CALENDLY_REDIRECT_URI:
     import.meta.env.VITE_CALENDLY_REDIRECT_URI ||
     (import.meta.env.PROD
-      ? "https://ovenai.app/auth/calendly/callback"
+      ? "https://ovenai-crm-portfolio-demo.vercel.app/auth/calendly/callback"
       : "http://localhost:3000/auth/calendly/callback"),
 
   // Google OAuth Configuration
@@ -62,7 +62,7 @@ export const env = {
   GOOGLE_REDIRECT_URI:
     import.meta.env.VITE_GOOGLE_REDIRECT_URI ||
     (import.meta.env.PROD
-      ? "https://ovenai.app/auth/google/callback"
+      ? "https://ovenai-crm-portfolio-demo.vercel.app/auth/google/callback"
       : "http://localhost:3000/auth/google/callback"),
 
   // Development flags

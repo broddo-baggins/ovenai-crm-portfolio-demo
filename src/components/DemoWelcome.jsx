@@ -14,7 +14,7 @@ const DemoWelcome = () => {
 
   useEffect(() => {
     // Check if user has seen the welcome modal
-    const hasSeenWelcome = localStorage.getItem('ovenai_demo_welcome_seen');
+    const hasSeenWelcome = localStorage.getItem('crm_demo_welcome_seen');
     
     if (!hasSeenWelcome) {
       // Delay slightly for better UX
@@ -29,7 +29,7 @@ const DemoWelcome = () => {
     setIsAnimating(false);
     setTimeout(() => {
       setIsVisible(false);
-      localStorage.setItem('ovenai_demo_welcome_seen', 'true');
+      localStorage.setItem('crm_demo_welcome_seen', 'true');
     }, 300);
   };
 

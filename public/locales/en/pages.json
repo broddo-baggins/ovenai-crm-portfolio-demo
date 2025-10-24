@@ -589,10 +589,10 @@
     },
     "stillNeedHelp": {
       "title": "Still need help?",
-      "description": "Our support team is here to help you get the most out of CRM Demo"
+      "description": "This is a portfolio demo showcasing CRM capabilities with mock data"
     },
-    "contactSupport": "Contact Support",
-    "scheduleCall": "Schedule a Call"
+    "contactSupport": "Contact Developer",
+    "scheduleCall": "View Portfolio"
   },
   "maintenance": {
     "title": "System Maintenance",

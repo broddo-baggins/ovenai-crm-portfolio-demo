@@ -308,12 +308,12 @@ const CookiePolicy: React.FC = () => {
           </CardHeader>
           <CardContent>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              If you have questions about our cookie policy or how we use cookies:
+              If you have questions about this demo or my portfolio:
             </p>
             <div className="space-y-2 text-gray-700 dark:text-gray-300">
-              <p><strong>Email:</strong> privacy@ovenai.com</p>
-              <p><strong>Support:</strong> support@ovenai.com</p>
-              <p><strong>Data Protection Officer:</strong> dpo@ovenai.com</p>
+              <p><strong>Contact:</strong> amit@amityogev.com</p>
+              <p><strong>Portfolio:</strong> https://amityogev.com</p>
+              <p><strong>Note:</strong> This is a portfolio demo with mock data</p>
             </div>
           </CardContent>
         </Card>

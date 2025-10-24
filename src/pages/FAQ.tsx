@@ -259,7 +259,7 @@ const FAQ: React.FC = () => {
     {
       id: 'lead-lifecycle',
       category: 'leads',
-      question: 'What is the complete lead lifecycle in OvenAI?',
+      question: 'What is the complete lead lifecycle in CRM Demo?',
       answer: 'Leads progress through stages: Creation (manual/import/WhatsApp) → BANT Qualification → Queue Management → WhatsApp Outreach → Conversation Management → Meeting Scheduling → Conversion Tracking. Each stage has specific statuses and automated workflows.',
       steps: [
         'Lead Creation: Added manually, imported via CSV, or created from incoming WhatsApp messages',
@@ -328,7 +328,7 @@ const FAQ: React.FC = () => {
       id: 'calendly-integration',
       category: 'calendar',
       question: 'How do I set up Calendly integration?',
-      answer: 'OvenAI supports two Calendly integration methods: OAuth (user authorization) and Personal Access Token (PAT). OAuth requires user login to Calendly, while PAT uses a token from your Calendly account. Both methods allow meeting scheduling directly from conversations and calendar sync.',
+      answer: 'CRM Demo supports two Calendly integration methods: OAuth (user authorization) and Personal Access Token (PAT). OAuth requires user login to Calendly, while PAT uses a token from your Calendly account. Both methods allow meeting scheduling directly from conversations and calendar sync.',
       steps: [
         'Go to Settings → Integrations → Calendly',
         'Choose integration method: OAuth (recommended for new users) or PAT (for advanced users)',
@@ -561,10 +561,10 @@ const FAQ: React.FC = () => {
     {
       id: 'mobile-optimization',
       category: 'mobile',
-      question: 'How is OvenAI optimized for mobile devices?',
-      answer: 'OvenAI is fully responsive with mobile-first design: touch-optimized interface, collapsible sidebar navigation, mobile-friendly forms, swipe gestures, optimized loading times, and adaptive layouts. All features work seamlessly on smartphones and tablets.',
+      question: 'How is CRM Demo optimized for mobile devices?',
+      answer: 'CRM Demo is fully responsive with mobile-first design: touch-optimized interface, collapsible sidebar navigation, mobile-friendly forms, swipe gestures, optimized loading times, and adaptive layouts. All features work seamlessly on smartphones and tablets.',
       steps: [
-        'Access OvenAI from any mobile browser (no app installation needed)',
+        'Access CRM Demo from any mobile browser (no app installation needed)',
         'Login with the same credentials as desktop',
         'Use the hamburger menu (☰) to access sidebar navigation',
         'Navigate with touch gestures: tap, swipe, pinch-to-zoom on charts',
@@ -578,7 +578,7 @@ const FAQ: React.FC = () => {
       id: 'mobile-features',
       category: 'mobile',
       question: 'What features are available on mobile?',
-      answer: 'All OvenAI features are available on mobile: lead management with touch-friendly forms, WhatsApp conversations with mobile chat interface, queue management with touch controls, calendar with mobile-optimized scheduling, analytics with responsive charts, and full Settings access.',
+      answer: 'All CRM Demo features are available on mobile: lead management with touch-friendly forms, WhatsApp conversations with mobile chat interface, queue management with touch controls, calendar with mobile-optimized scheduling, analytics with responsive charts, and full Settings access.',
       steps: [
         'Leads: Add, edit, search, and filter leads with mobile-optimized forms',
         'Messages: Full WhatsApp conversation management with mobile chat interface',
@@ -612,7 +612,7 @@ const FAQ: React.FC = () => {
       id: 'browser-support',
       category: 'technical',
       question: 'What browsers and devices are supported?',
-      answer: 'OvenAI supports all modern browsers: Chrome, Firefox, Safari, Edge. Works on desktop computers, laptops, tablets, and smartphones. Minimum requirements: JavaScript enabled, Internet connection, modern browser (last 2 versions). Optimized for Chrome and Safari.',
+      answer: 'CRM Demo supports all modern browsers: Chrome, Firefox, Safari, Edge. Works on desktop computers, laptops, tablets, and smartphones. Minimum requirements: JavaScript enabled, Internet connection, modern browser (last 2 versions). Optimized for Chrome and Safari.',
       steps: [
         'Desktop: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+',
         'Mobile: iOS Safari 14+, Chrome Mobile 90+, Samsung Internet 14+',
@@ -645,8 +645,8 @@ const FAQ: React.FC = () => {
     {
       id: 'system-architecture',
       category: 'technical',
-      question: 'How is OvenAI architected and what technologies are used?',
-      answer: 'OvenAI uses modern web technologies: React 18 with TypeScript, Supabase for backend/database, real-time subscriptions, Tailwind CSS for styling, i18next for internationalization, Vite for development, and comprehensive testing with Playwright. Built with scalability and security in mind.',
+      question: 'How is CRM Demo architected and what technologies are used?',
+      answer: 'CRM Demo uses modern web technologies: React 18 with TypeScript, Supabase for backend/database, real-time subscriptions, Tailwind CSS for styling, i18next for internationalization, Vite for development, and comprehensive testing with Playwright. Built with scalability and security in mind.',
       steps: [
         'Frontend: React 18 + TypeScript + Vite for fast development and builds',
         'Backend: Supabase with PostgreSQL database, Row Level Security (RLS)',
@@ -661,7 +661,7 @@ const FAQ: React.FC = () => {
     {
       id: 'performance-optimization',
       category: 'technical',
-      question: 'How is OvenAI optimized for performance?',
+      question: 'How is CRM Demo optimized for performance?',
       answer: 'Performance optimizations include: lazy loading components, data caching with TTL, optimized database queries, image compression, code splitting, service worker caching, real-time data pagination, debounced search inputs, and efficient re-renders with React optimization techniques.',
       steps: [
         'Page Loading: Lazy-loaded routes, code splitting for faster initial load',
@@ -859,7 +859,7 @@ const FAQ: React.FC = () => {
        id: 'global-search-functionality',
        category: 'admin',
        question: 'How does the global search system work across the platform?',
-       answer: 'OvenAI features a comprehensive global search system with real-time database connectivity. Search across projects, leads, and conversations with 300ms debounced performance, mobile-responsive interface, and full RTL support.',
+       answer: 'CRM Demo features a comprehensive global search system with real-time database connectivity. Search across projects, leads, and conversations with 300ms debounced performance, mobile-responsive interface, and full RTL support.',
        steps: [
          'Access search bar in top navigation (placeholder: "Search everything...")',
          'Search Sources: Projects (name, description), Leads (name, email, phone), Conversations (participants)',
@@ -894,9 +894,9 @@ const FAQ: React.FC = () => {
       id: 'webhook-setup',
       category: 'integrations',
       question: 'How do I configure webhooks for real-time updates?',
-      answer: 'Webhooks enable real-time data synchronization between OvenAI and external services. Configure WhatsApp Business API webhooks for message delivery, Meta webhooks for lead updates, and custom webhooks for third-party integrations.',
+      answer: 'Webhooks enable real-time data synchronization between CRM Demo and external services. Configure WhatsApp Business API webhooks for message delivery, Meta webhooks for lead updates, and custom webhooks for third-party integrations.',
       steps: [
-        'WhatsApp Webhooks: Configure in Meta Business Manager → Point to your OvenAI webhook URL',
+        'WhatsApp Webhooks: Configure in Meta Business Manager → Point to your CRM Demo webhook URL',
         'Set webhook verification token for security validation',
         'Test webhook delivery: Send test message and verify receipt in Messages section',
         'Custom webhooks: Define endpoints for your specific integration needs',
@@ -948,7 +948,7 @@ const FAQ: React.FC = () => {
       id: 'notification-system',
       category: 'notifications',
       question: 'How does the notification system work?',
-      answer: 'OvenAI provides real-time notifications for important events: new messages, lead status changes, meeting reminders, system alerts, and queue updates. Configure notification preferences for email, in-app, and push notifications.',
+      answer: 'CRM Demo provides real-time notifications for important events: new messages, lead status changes, meeting reminders, system alerts, and queue updates. Configure notification preferences for email, in-app, and push notifications.',
       steps: [
         'Navigate to Settings → Notifications to configure preferences',
         'Message notifications: Real-time alerts for new WhatsApp messages',
@@ -982,7 +982,7 @@ const FAQ: React.FC = () => {
       question: 'Why am I not receiving notifications?',
       answer: 'Common notification issues include browser permissions, email spam filters, notification settings, and system connectivity. Check each component systematically to restore notification delivery.',
       steps: [
-        'Check browser permissions: Allow notifications for the OvenAI domain',
+        'Check browser permissions: Allow notifications for the CRM Demo domain',
         'Review notification settings: Ensure desired categories are enabled',
         'Verify email address: Check if your email is correct in profile settings',
         'Check spam folders: Notifications might be filtered as spam',
@@ -1036,7 +1036,7 @@ const FAQ: React.FC = () => {
               {t('pages:faq.title', 'Help & Support Center')}
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              {t('pages:faq.subtitle', 'Find answers to common questions and learn how to make the most of OvenAI')}
+              {t('pages:faq.subtitle', 'Find answers to common questions and learn how to make the most of CRM Demo')}
             </p>
             
             {/* Search */}
@@ -1202,19 +1202,19 @@ const FAQ: React.FC = () => {
                 {t('pages:faq.stillNeedHelp.title', 'Still need help?')}
               </h3>
               <p className="text-muted-foreground mb-6">
-                {t('pages:faq.stillNeedHelp.description', 'Our support team is here to help you get the most out of OvenAI')}
+                {t('pages:faq.stillNeedHelp.description', 'This is a portfolio demo showcasing CRM capabilities with mock data')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild>
-                  <a href="mailto:support@oven-ai.com">
+                  <a href="mailto:amit@amityogev.com?subject=CRM Demo Inquiry">
                     <MessageSquare className={cn("h-4 w-4", isRTL ? "ml-2" : "mr-2")} />
-                    {t('pages:faq.contactSupport', 'Contact Support')}
+                    {t('pages:faq.contactSupport', 'Contact Developer')}
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="mailto:support@oven-ai.com?subject=Schedule Support Call&body=Hi, I would like to schedule a support call. Please let me know your availability.%0D%0A%0D%0AName: %0D%0ACompany: %0D%0APhone: %0D%0APreferred time: %0D%0AAgenda: ">
+                  <a href="https://amityogev.com" target="_blank" rel="noopener noreferrer">
                     <Calendar className={cn("h-4 w-4", isRTL ? "ml-2" : "mr-2")} />
-                    {t('pages:faq.scheduleCall', 'Schedule a Call')}
+                    {t('pages:faq.scheduleCall', 'View Portfolio')}
                   </a>
                 </Button>
               </div>

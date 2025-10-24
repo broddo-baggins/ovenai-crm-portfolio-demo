@@ -34,7 +34,7 @@ export const LightModeWrapper: React.FC<LightModeWrapperProps> = ({ children }) 
       // Small delay to ensure theme restoration happens after navigation
       setTimeout(() => {
         // Restore original theme based on user preference
-        const storedTheme = localStorage.getItem('oven-ai-theme');
+        const storedTheme = localStorage.getItem('crm-demo-theme');
         if (storedTheme === 'dark') {
           root.classList.add('dark');
           document.body.classList.add('dark');

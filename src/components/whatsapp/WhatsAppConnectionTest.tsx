@@ -252,7 +252,7 @@ const WhatsAppConnectionTest: React.FC = () => {
 VITE_WHATSAPP_ACCESS_TOKEN=${env.WHATSAPP_ACCESS_TOKEN || "YOUR_ACCESS_TOKEN"}
 VITE_WHATSAPP_PHONE_NUMBER_ID=${env.WHATSAPP_PHONE_NUMBER_ID || "YOUR_PHONE_NUMBER_ID"}
 VITE_WHATSAPP_APP_SECRET=${env.WHATSAPP_APP_SECRET || "YOUR_APP_SECRET"}
-VITE_WHATSAPP_WEBHOOK_VERIFY_TOKEN=oven-ai-webhook-2024`;
+VITE_WHATSAPP_WEBHOOK_VERIFY_TOKEN=crm-demo-webhook-2024`;
 
     navigator.clipboard.writeText(config);
     toast.success("Configuration copied to clipboard");

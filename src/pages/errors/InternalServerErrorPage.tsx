@@ -38,7 +38,7 @@ const InternalServerErrorPage = () => {
 
   const handleReportIssue = () => {
     const errorDetails = `Error occurred at: ${location.pathname}\nTimestamp: ${new Date().toISOString()}\nUser Agent: ${navigator.userAgent}`;
-    window.location.href = `mailto:support@ovenaicr.app?subject=500 Server Error Report&body=${encodeURIComponent(errorDetails)}`;
+    window.location.href = `mailto:amit@amityogev.com?subject=CRM Demo - Error Report&body=${encodeURIComponent(errorDetails)}`;
   };
 
   return (
