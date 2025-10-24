@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { Toaster } from "sonner";
 import { Toaster as ShadcnToaster } from "@/components/ui/toaster";
-import { AuthProvider } from "./context/ClientAuthContext.tsx";
-import { DashboardProvider } from "./context/DashboardContext.tsx";
-import { ProjectProvider } from "./context/ProjectContext.tsx";
+import { AuthProvider } from "./context/ClientAuthContext";
+import { DashboardProvider } from "./context/DashboardContext";
+import { ProjectProvider } from "./context/ProjectContext";
 import { HelmetProvider } from "react-helmet-async";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
