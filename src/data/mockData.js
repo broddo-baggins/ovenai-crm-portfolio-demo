@@ -31,19 +31,21 @@ export const mockLeads = [
     company: 'Growth Marketing Co',
     phone: '+1-555-0102',
     email: 'mchen@growthmarket.demo',
-    status: 'nurturing',
-    bant_score: 62,
+    status: 'qualified',
+    bant_score: 88,
     budget: 'Medium ($10k-$50k)',
-    authority: 'Influencer',
+    authority: 'Decision Maker',
     need: 'Lead Management',
-    timeline: '3-6 months',
+    timeline: '1-3 months',
     last_contact: '2024-01-18T15:45:00Z',
     next_followup: '2024-01-30T11:00:00Z',
     assigned_agent: 'Agent B',
-    tags: ['mid-market', 'warm-lead'],
-    notes: 'Needs to consult with team before moving forward.',
+    tags: ['mid-market', 'hot-lead', 'automation-ready'],
+    notes: 'Team approved budget. Ready to move forward with implementation.',
     source: 'Website Contact',
-    created_at: '2024-01-12T14:20:00Z'
+    created_at: '2024-01-12T14:20:00Z',
+    project_id: 'project-003',
+    current_project_id: 'project-003'
   },
   {
     id: 'lead-003',
@@ -83,7 +85,9 @@ export const mockLeads = [
     tags: ['enterprise', 'hot-lead', 'high-priority'],
     notes: 'Calendly meeting booked for demo presentation. Very qualified lead.',
     source: 'Referral',
-    created_at: '2024-01-20T08:00:00Z'
+    created_at: '2024-01-20T08:00:00Z',
+    project_id: 'project-002',
+    current_project_id: 'project-002'
   },
   {
     id: 'lead-005',
@@ -123,7 +127,9 @@ export const mockLeads = [
     tags: ['mid-market', 'qualified'],
     notes: 'Strong fit. Reviewing proposal with finance team.',
     source: 'Website Contact',
-    created_at: '2024-01-16T11:00:00Z'
+    created_at: '2024-01-16T11:00:00Z',
+    project_id: 'project-003',
+    current_project_id: 'project-003'
   },
   {
     id: 'lead-007',
@@ -143,7 +149,9 @@ export const mockLeads = [
     tags: ['startup', 'nurture'],
     notes: 'Interested but waiting for next funding round.',
     source: 'LinkedIn',
-    created_at: '2024-01-14T13:30:00Z'
+    created_at: '2024-01-14T13:30:00Z',
+    project_id: 'project-003',
+    current_project_id: 'project-003'
   },
   {
     id: 'lead-008',
@@ -163,7 +171,9 @@ export const mockLeads = [
     tags: ['enterprise', 'hot-lead', 'demo-scheduled'],
     notes: 'C-level meeting scheduled. Prepare custom demo.',
     source: 'WhatsApp Inbound',
-    created_at: '2024-01-19T09:15:00Z'
+    created_at: '2024-01-19T09:15:00Z',
+    project_id: 'project-001',
+    current_project_id: 'project-001'
   },
   {
     id: 'lead-009',
@@ -195,6 +205,8 @@ export const mockLeads = [
     bant_score: 82,
     budget: 'High (>$50k)',
     authority: 'Decision Maker',
+    project_id: 'project-002',
+    current_project_id: 'project-002',
     need: 'AI-Powered Automation',
     timeline: '1-3 months',
     last_contact: '2024-01-20T12:00:00Z',
@@ -223,7 +235,9 @@ export const mockLeads = [
     tags: ['enterprise', 'saas', 'pipeline-focused'],
     notes: 'Director of Sales Operations. Looking for comprehensive solution.',
     source: 'Website Contact',
-    created_at: '2024-01-17T09:00:00Z'
+    created_at: '2024-01-17T09:00:00Z',
+    project_id: 'project-003',
+    current_project_id: 'project-003'
   },
   {
     id: 'lead-012',
@@ -243,7 +257,9 @@ export const mockLeads = [
     tags: ['enterprise', 'fintech', 'compliance-focused'],
     notes: 'CTO attending meeting. Needs security and compliance discussion.',
     source: 'Referral',
-    created_at: '2024-01-21T08:30:00Z'
+    created_at: '2024-01-21T08:30:00Z',
+    project_id: 'project-001',
+    current_project_id: 'project-001'
   },
   {
     id: 'lead-013',
@@ -259,6 +275,8 @@ export const mockLeads = [
     timeline: '3-6 months',
     last_contact: '2024-01-19T16:30:00Z',
     next_followup: '2024-01-31T11:00:00Z',
+    project_id: 'project-003',
+    current_project_id: 'project-003',
     assigned_agent: 'Agent C',
     tags: ['ecommerce', 'sustainability', 'warm-lead'],
     notes: 'Growing fast. Will revisit after Q1 results.',
@@ -1136,6 +1154,7 @@ export const mockProjects = [
     value: '$75,000',
     team: ['Agent A', 'Implementation Team'],
     progress: 35,
+    lead_count: 3, // Number of leads associated with this project
     milestones: [
       { name: 'Requirements Gathering', status: 'completed', date: '2024-01-20' },
       { name: 'System Configuration', status: 'in-progress', date: '2024-02-01' },
@@ -1157,6 +1176,7 @@ export const mockProjects = [
     value: '$120,000',
     team: ['Agent C', 'Technical Team', 'Integration Specialist'],
     progress: 10,
+    lead_count: 2, // Number of leads associated with this project
     milestones: [
       { name: 'Technical Discovery', status: 'in-progress', date: '2024-02-01' },
       { name: 'API Setup', status: 'pending', date: '2024-02-10' },
@@ -1166,6 +1186,28 @@ export const mockProjects = [
     ],
     description: 'High-volume WhatsApp Business API integration with AI automation for 500+ daily leads',
     notes: 'VP of Sales championing internally. Fast-track for month-end launch.'
+  },
+  {
+    id: 'project-003',
+    name: 'Growth Marketing - Lead Automation System',
+    client: 'Growth Marketing Co',
+    lead_id: 'lead-002',
+    status: 'active',
+    start_date: '2024-01-10T00:00:00Z',
+    estimated_completion: '2024-02-28T00:00:00Z',
+    value: '$45,000',
+    team: ['Agent B', 'Automation Team'],
+    progress: 65,
+    lead_count: 5, // Number of leads associated with this project
+    milestones: [
+      { name: 'Requirements Gathering', status: 'completed', date: '2024-01-10' },
+      { name: 'Automation Setup', status: 'completed', date: '2024-01-20' },
+      { name: 'Testing', status: 'in-progress', date: '2024-02-01' },
+      { name: 'Training', status: 'pending', date: '2024-02-15' },
+      { name: 'Go Live', status: 'pending', date: '2024-02-28' }
+    ],
+    description: 'Automated lead nurturing and follow-up system with AI-powered qualification',
+    notes: 'Strong engagement from marketing team. On track for early February launch.'
   }
 ];
 
