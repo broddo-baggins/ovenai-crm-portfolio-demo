@@ -166,6 +166,12 @@ coverage/
 *auth*
 *.backup
 
+# Exception: Allow legitimate source code files in context directories
+!src/context/*Auth*.tsx
+!src/context/*Auth*.ts
+!src/contexts/*Auth*.tsx
+!src/contexts/*Auth*.ts
+
 # 🔐 CREDENTIALS DIRECTORY - COMPLETE EXCLUSION
 # Block the entire credentials directory and all its contents
 credentials/
