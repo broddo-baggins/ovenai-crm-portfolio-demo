@@ -6,7 +6,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { X, Sparkles, Mail, User, Building, Calendar, Phone, ArrowLeft, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
-import { handleEarlyAccessSubmission } from "../../../functions/api/early-access-submit";
+// DEMO MODE: Mock function since functions/ folder was deleted
+const handleEarlyAccessSubmission = async (data: any) => {
+  console.log('[DEMO MODE] Mock: Early access submission', data);
+  return { success: true, message: 'Demo mode - no real submission' };
+};
 
 interface EarlyAccessFormProps {
   isOpen: boolean;
