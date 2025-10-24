@@ -16,27 +16,27 @@ if (!isDemoMode && (!supabaseUrl || !supabaseAnonKey)) {
 
 // DEMO MODE: Create mock client that doesn't make any real calls
 const createMockSupabaseClient = () => {
-  console.log('🎭 [DEMO MODE] Using mock Supabase client - NO real API calls will be made');
+  console.log('[DEMO MODE] Using mock Supabase client - NO real API calls will be made');
   
   const mockAuth = {
     getSession: async () => {
-      console.log('📝 [DEMO MODE] Mock: This would fetch session from Supabase auth.sessions table');
+      console.log('[DEMO MODE] Mock: This would fetch session from Supabase auth.sessions table');
       return { data: { session: null }, error: null };
     },
     getUser: async () => {
-      console.log('📝 [DEMO MODE] Mock: This would fetch user from Supabase auth.users table');
+      console.log('[DEMO MODE] Mock: This would fetch user from Supabase auth.users table');
       return { data: { user: null }, error: null };
     },
     onAuthStateChange: (callback: any) => {
-      console.log('📝 [DEMO MODE] Mock: This would subscribe to Supabase auth state changes');
+      console.log('[DEMO MODE] Mock: This would subscribe to Supabase auth state changes');
       return { data: { subscription: { unsubscribe: () => {} } } };
     },
     signOut: async () => {
-      console.log('📝 [DEMO MODE] Mock: This would sign out user via Supabase auth');
+      console.log('[DEMO MODE] Mock: This would sign out user via Supabase auth');
       return { error: null };
     },
     signInWithPassword: async (credentials: any) => {
-      console.log('📝 [DEMO MODE] Mock: This would authenticate via Supabase auth.users table');
+      console.log('[DEMO MODE] Mock: This would authenticate via Supabase auth.users table');
       return { data: null, error: { message: 'Demo mode - no real authentication' } };
     }
   };
@@ -44,19 +44,19 @@ const createMockSupabaseClient = () => {
   const mockFrom = (table: string) => {
     return {
       select: (...args: any[]) => {
-        console.log(`📝 [DEMO MODE] Mock: SELECT from "${table}" - This would query Supabase table`);
+        console.log(`[DEMO MODE] Mock: SELECT from "${table}" - This would query Supabase table`);
         return mockFrom(table);
       },
       insert: (data: any) => {
-        console.log(`📝 [DEMO MODE] Mock: INSERT into "${table}"`, data, '- This would insert into Supabase table');
+        console.log(`[DEMO MODE] Mock: INSERT into "${table}"`, data, '- This would insert into Supabase table');
         return mockFrom(table);
       },
       update: (data: any) => {
-        console.log(`📝 [DEMO MODE] Mock: UPDATE "${table}"`, data, '- This would update Supabase table');
+        console.log(`[DEMO MODE] Mock: UPDATE "${table}"`, data, '- This would update Supabase table');
         return mockFrom(table);
       },
       delete: () => {
-        console.log(`📝 [DEMO MODE] Mock: DELETE from "${table}" - This would delete from Supabase table');
+        console.log(`[DEMO MODE] Mock: DELETE from "${table}" - This would delete from Supabase table');
         return mockFrom(table);
       },
       eq: (...args: any[]) => mockFrom(table),
@@ -76,7 +76,7 @@ const createMockSupabaseClient = () => {
       subscribe: () => ({ unsubscribe: () => {} })
     }),
     rpc: async (fn: string, params: any) => {
-      console.log(`📝 [DEMO MODE] Mock: RPC call to "${fn}"`, params, '- This would call Supabase function');
+      console.log(`[DEMO MODE] Mock: RPC call to "${fn}"`, params, '- This would call Supabase function');
       return { data: null, error: null };
     }
   };
@@ -154,7 +154,7 @@ class SupabaseOptimizer {
       return supabase.channel(channelName);
     }
 
-    console.log(`📡 Creating optimized channel: ${channelName}`);
+    console.log(`[CHANNEL] Creating optimized channel: ${channelName}`);
     this.activeChannels.add(channelName);
 
     const channel = supabase.channel(channelName, {
@@ -184,7 +184,7 @@ class SupabaseOptimizer {
           this.connectionMetrics.reconnectCount++;
           break;
         case 'phx_close':
-          console.log(`🔌 Channel ${channelName} closed`);
+          console.log(`[CLOSE] Channel ${channelName} closed`);
           this.activeChannels.delete(channelName);
           break;
       }
@@ -197,7 +197,7 @@ class SupabaseOptimizer {
    * OPTIMIZATION: Batch subscription cleanup
    */
   cleanup(): void {
-    console.log(`🧹 Cleaning up ${this.activeChannels.size} active channels`);
+    console.log(`[CLEANUP] Cleaning up ${this.activeChannels.size} active channels`);
     
     this.activeChannels.forEach(channelName => {
       const channel = supabase.channel(channelName);
