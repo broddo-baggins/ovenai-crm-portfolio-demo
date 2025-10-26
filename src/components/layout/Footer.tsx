@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   const { t } = useTranslation('common');
   const { isRTL, flexRowReverse, textStart, textEnd } = useLang();
   const currentYear = new Date().getFullYear();
-  const version = "1.0.2"; // Enhanced Mobile Navigation + Queue Management + Analytics Cleanup
+  const version = "1.0.5-EA"; // Security fixes, mock data enhancements, and API improvements
 
   return (
     <footer className={cn("bg-gray-100 dark:bg-slate-900 py-4 border-t border-gray-200 dark:border-slate-700", isRTL && "font-hebrew")} dir={isRTL ? "rtl" : "ltr"}>

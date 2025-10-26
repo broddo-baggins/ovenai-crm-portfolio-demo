@@ -155,7 +155,7 @@ export class AdminCommandService {
         auth: 'active',
         users: userCount || 0,
         uptime: this.getUptime(),
-        version: '1.0.0'
+        version: '1.0.5-EA'
       };
 
       const statusMessage = [

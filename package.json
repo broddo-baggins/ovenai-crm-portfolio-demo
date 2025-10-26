@@ -1,9 +1,9 @@
 {
   "name": "vite_react_shadcn_ts",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.5",
   "type": "module",
-  "comment": "Build v1.0.2EA - Enhanced Mobile Navigation + Queue Management + Analytics Cleanup",
+  "comment": "Build v1.0.5-EA - Security fixes, mock data enhancements, and API improvements",
   "scripts": {
     "backup:create": "node scripts/emergency-backup/backup-cycler.cjs create",
     "backup:cycle": "node scripts/emergency-backup/backup-cycler.cjs cycle",
