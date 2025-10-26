@@ -859,6 +859,12 @@ export class SimpleProjectService {
 
   // Get WhatsApp-style messages from conversations
   async getWhatsAppMessages(limit: number = 100, projectId?: string): Promise<any[]> {
+    // DEMO MODE: Return empty array (messages handled by mock API elsewhere)
+    if (import.meta.env.VITE_DEMO_MODE === 'true') {
+      console.log('📋 DEMO MODE: Skipping WhatsApp messages query');
+      return [];
+    }
+
     const cacheKey = `whatsapp-messages${projectId ? `-${projectId}` : ''}`;
     const throttleKey = `whatsapp-messages-throttle${projectId ? `-${projectId}` : ''}`;
 
@@ -922,7 +928,7 @@ export class SimpleProjectService {
           .from('conversations')
           .select('id, lead_id, message_content, sender_number, receiver_number, wa_timestamp, created_at, updated_at, message_type, wamid, metadata')
           .in('lead_id', leadIds)
-          .filter('message_content', 'not.is', null)
+          .not('message_content', 'is', null)
           .order('wa_timestamp', { ascending: false })
           .limit(Math.min(limit, 200));
           
