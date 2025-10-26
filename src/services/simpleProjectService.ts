@@ -922,7 +922,7 @@ export class SimpleProjectService {
           .from('conversations')
           .select('id, lead_id, message_content, sender_number, receiver_number, wa_timestamp, created_at, updated_at, message_type, wamid, metadata')
           .in('lead_id', leadIds)
-          .not('message_content', 'is', null)
+          .filter('message_content', 'not.is', null)
           .order('wa_timestamp', { ascending: false })
           .limit(Math.min(limit, 200));
           
