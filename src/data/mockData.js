@@ -1306,7 +1306,7 @@ export const mockTemplates = [
     id: 'template-001',
     name: 'Initial Contact - General Inquiry',
     category: 'First Contact',
-    message: 'Hi {name}! Thanks for reaching out to OvenAI. I\'d love to learn more about your needs. What challenges are you facing with your current lead management process?',
+    message: 'Hi {name}! Thanks for reaching out. I\'d love to learn more about your needs. What challenges are you facing with your current lead management process?',
     variables: ['name'],
     usage_count: 234,
     avg_response_rate: 68,
@@ -1426,7 +1426,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/abc123',
     notes: 'Focus on WhatsApp automation features. Customer very interested in 70% response rate metric.',
-    attendees: ['sarah.j@techstart.demo', 'agent-a@ovenai.demo'],
+    attendees: ['sarah.j@techstart.demo', 'agent-a@crm.demo'],
     color: '#3b82f6',
     title: 'Product Demo - TechStart Solutions'
   });
@@ -1442,7 +1442,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/xyz789',
     notes: 'VP of Sales attending. Prepare custom presentation. Budget approved up to $150k.',
-    attendees: ['dpark@entsystems.demo', 'vp-sales@entsystems.demo', 'agent-c@ovenai.demo', 'tech-lead@ovenai.demo'],
+    attendees: ['dpark@entsystems.demo', 'vp-sales@entsystems.demo', 'agent-c@crm.demo', 'tech-lead@crm.demo'],
     color: '#8b5cf6',
     title: 'Executive Demo - Enterprise Systems'
   });
@@ -1458,7 +1458,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/def456',
     notes: 'C-level meeting. High priority. Show AI BANT scoring demo.',
-    attendees: ['rkim@globalsolutions.demo', 'ceo@globalsolutions.demo', 'agent-b@ovenai.demo'],
+    attendees: ['rkim@globalsolutions.demo', 'ceo@globalsolutions.demo', 'agent-b@crm.demo'],
     color: '#10b981',
     title: 'Product Demo - Global Solutions'
   });
@@ -1474,7 +1474,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/ghi789',
     notes: 'Discuss proposal and pricing. Finance team reviewing. Answer ROI questions.',
-    attendees: ['jwilson@digitaldynamics.demo', 'agent-a@ovenai.demo'],
+    attendees: ['jwilson@digitaldynamics.demo', 'agent-a@crm.demo'],
     color: '#f59e0b',
     title: 'Follow-up - Digital Dynamics'
   });
@@ -1490,7 +1490,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/jkl012',
     notes: 'Technical buyer. Focus on AI architecture, API integrations, and security. Bring technical spec sheet.',
-    attendees: ['tanderson@matrix.demo', 'cto@matrix.demo', 'agent-c@ovenai.demo', 'cto@ovenai.demo'],
+    attendees: ['tanderson@matrix.demo', 'cto@matrix.demo', 'agent-c@crm.demo', 'cto@crm.demo'],
     color: '#6366f1',
     title: 'Technical Deep Dive - Matrix Technologies'
   });
@@ -1506,7 +1506,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/mno345',
     notes: 'CTO attending. Cover SOC 2, GDPR compliance, data encryption, audit trails. Critical regulatory deadline.',
-    attendees: ['kobrien@fintech.demo', 'cto@fintech.demo', 'compliance@fintech.demo', 'agent-b@ovenai.demo', 'security@ovenai.demo'],
+    attendees: ['kobrien@fintech.demo', 'cto@fintech.demo', 'compliance@fintech.demo', 'agent-b@crm.demo', 'security@crm.demo'],
     color: '#ef4444',
     title: 'Compliance Demo - FinTech Solutions'
   });
@@ -1522,7 +1522,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/pqr678',
     notes: 'COO attending. Needs solution before new semester. Discuss timeline, training, go-live date.',
-    attendees: ['otaylor@edtech.demo', 'coo@edtech.demo', 'agent-c@ovenai.demo', 'implementation@ovenai.demo'],
+    attendees: ['otaylor@edtech.demo', 'coo@edtech.demo', 'agent-c@crm.demo', 'implementation@crm.demo'],
     color: '#ec4899',
     title: 'Implementation Planning - EdTech'
   });
@@ -1539,7 +1539,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/stu901',
     notes: 'Director of Sales Ops. Understand current pain points and workflow bottlenecks.',
-    attendees: ['amartinez@cloudscale.demo', 'agent-a@ovenai.demo'],
+    attendees: ['amartinez@cloudscale.demo', 'agent-a@crm.demo'],
     color: '#14b8a6',
     title: 'Discovery Call - CloudScale'
   });
@@ -1555,7 +1555,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/vwx234',
     notes: 'Managing partner. Real estate industry specific features. Show lead follow-up automation.',
-    attendees: ['mjohnson@realestatepro.demo', 'agent-a@ovenai.demo'],
+    attendees: ['mjohnson@realestatepro.demo', 'agent-a@crm.demo'],
     color: '#f97316',
     title: 'Product Demo - Real Estate Pro'
   });
@@ -1563,14 +1563,14 @@ const generateCalendarEvents = () => {
   events.push({
     id: 'booking-010',
     lead_name: 'Internal Team Sync',
-    lead_company: 'OvenAI',
+    lead_company: 'CRM Demo',
     meeting_type: 'Team Meeting',
     scheduled_time: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 4, 9, 0).toISOString(),
     duration: 30,
     status: 'confirmed',
     meeting_link: 'https://meet.demo/internal-001',
     notes: 'Weekly sales team sync. Review pipeline, share wins, discuss challenges.',
-    attendees: ['agent-a@ovenai.demo', 'agent-b@ovenai.demo', 'agent-c@ovenai.demo', 'sales-manager@ovenai.demo'],
+    attendees: ['agent-a@crm.demo', 'agent-b@crm.demo', 'agent-c@crm.demo', 'sales-manager@crm.demo'],
     color: '#64748b',
     title: 'Sales Team Sync'
   });
@@ -1587,7 +1587,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/health-001',
     notes: 'Healthcare practice manager. Review HIPAA compliance features and patient data security.',
-    attendees: ['dbrown@healthcareconnect.demo', 'agent-c@ovenai.demo'],
+    attendees: ['dbrown@healthcareconnect.demo', 'agent-c@crm.demo'],
     color: '#22c55e',
     title: 'HIPAA Review - HealthCare Connect'
   });
@@ -1603,7 +1603,7 @@ const generateCalendarEvents = () => {
     status: 'scheduled',
     meeting_link: 'https://meet.demo/eco-001',
     notes: 'Ecommerce company. Show customer communication automation.',
-    attendees: ['npatel@ecocommerce.demo', 'agent-c@ovenai.demo'],
+    attendees: ['npatel@ecocommerce.demo', 'agent-c@crm.demo'],
     color: '#84cc16',
     title: 'Product Demo - EcoCommerce'
   });
@@ -1619,7 +1619,7 @@ const generateCalendarEvents = () => {
     status: 'scheduled',
     meeting_link: 'https://meet.demo/fashion-001',
     notes: 'Marketing director. Explore customer engagement solutions for retail.',
-    attendees: ['rgreen@fashionforward.demo', 'agent-a@ovenai.demo'],
+    attendees: ['rgreen@fashionforward.demo', 'agent-a@crm.demo'],
     color: '#ec4899',
     title: 'Consultation - Fashion Forward'
   });
@@ -1635,7 +1635,7 @@ const generateCalendarEvents = () => {
     status: 'scheduled',
     meeting_link: 'https://meet.demo/legal-001',
     notes: 'Law firm administrator. Discuss client management needs.',
-    attendees: ['clee@legalpartners.demo', 'agent-b@ovenai.demo'],
+    attendees: ['clee@legalpartners.demo', 'agent-b@crm.demo'],
     color: '#6366f1',
     title: 'Discovery - Legal Partners'
   });
@@ -1651,7 +1651,7 @@ const generateCalendarEvents = () => {
     status: 'confirmed',
     meeting_link: 'https://meet.demo/supply-001',
     notes: 'VP of Operations. Multi-channel vendor communication solution. Large scale deployment.',
-    attendees: ['bwright@supplychainmasters.demo', 'vp-tech@supplychainmasters.demo', 'agent-a@ovenai.demo', 'solutions@ovenai.demo'],
+    attendees: ['bwright@supplychainmasters.demo', 'vp-tech@supplychainmasters.demo', 'agent-a@crm.demo', 'solutions@crm.demo'],
     color: '#0ea5e9',
     title: 'Architecture Review - Supply Chain Masters'
   });
@@ -1668,7 +1668,7 @@ const generateCalendarEvents = () => {
     status: 'completed',
     meeting_link: 'https://meet.demo/growth-001',
     notes: 'Completed. Excellent fit. Team approved budget. Moving to proposal stage.',
-    attendees: ['mchen@growthmarket.demo', 'agent-b@ovenai.demo'],
+    attendees: ['mchen@growthmarket.demo', 'agent-b@crm.demo'],
     color: '#10b981',
     title: 'Product Demo - Growth Marketing (Completed)'
   });
@@ -1684,7 +1684,7 @@ const generateCalendarEvents = () => {
     status: 'completed',
     meeting_link: 'https://meet.demo/digital-001',
     notes: 'Completed. Finance team reviewing. Scheduled follow-up.',
-    attendees: ['jwilson@digitaldynamics.demo', 'agent-a@ovenai.demo'],
+    attendees: ['jwilson@digitaldynamics.demo', 'agent-a@crm.demo'],
     color: '#10b981',
     title: 'Initial Demo - Digital Dynamics (Completed)'
   });
@@ -1700,7 +1700,7 @@ const generateCalendarEvents = () => {
     status: 'scheduled',
     meeting_link: 'https://meet.demo/data-001',
     notes: 'Explore API capabilities and data integration options.',
-    attendees: ['schen@datadriven.demo', 'agent-b@ovenai.demo'],
+    attendees: ['schen@datadriven.demo', 'agent-b@crm.demo'],
     color: '#8b5cf6',
     title: 'Technical Call - DataDriven Analytics'
   });
@@ -1716,7 +1716,7 @@ const generateCalendarEvents = () => {
     status: 'scheduled',
     meeting_link: 'https://meet.demo/future-001',
     notes: 'Startup waiting for funding round. Maintain relationship.',
-    attendees: ['mgarcia@futuretech.demo', 'agent-c@ovenai.demo'],
+    attendees: ['mgarcia@futuretech.demo', 'agent-c@crm.demo'],
     color: '#f59e0b',
     title: 'Check-in - FutureTech Ventures'
   });
@@ -1732,7 +1732,7 @@ const generateCalendarEvents = () => {
     status: 'cancelled',
     meeting_link: 'https://meet.demo/innovate-001',
     notes: 'Cancelled by lead. Budget not approved. Re-schedule for Q2.',
-    attendees: ['emily@innovatelabs.demo', 'agent-a@ovenai.demo'],
+    attendees: ['emily@innovatelabs.demo', 'agent-a@crm.demo'],
     color: '#ef4444',
     title: 'Qualification - Innovate Labs (Cancelled)'
   });
@@ -1740,14 +1740,14 @@ const generateCalendarEvents = () => {
   events.push({
     id: 'booking-021',
     lead_name: 'Internal: Product Training',
-    lead_company: 'OvenAI',
+    lead_company: 'CRM Demo',
     meeting_type: 'Training Session',
     scheduled_time: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 11, 9, 0).toISOString(),
     duration: 60,
     status: 'confirmed',
     meeting_link: 'https://meet.demo/training-001',
     notes: 'Product training for new features. Mandatory for all sales agents.',
-    attendees: ['agent-a@ovenai.demo', 'agent-b@ovenai.demo', 'agent-c@ovenai.demo', 'product@ovenai.demo'],
+    attendees: ['agent-a@crm.demo', 'agent-b@crm.demo', 'agent-c@crm.demo', 'product@crm.demo'],
     color: '#64748b',
     title: 'Product Training Session'
   });
@@ -1763,7 +1763,7 @@ const generateCalendarEvents = () => {
     status: 'scheduled',
     meeting_link: 'https://meet.demo/creative-001',
     notes: 'New lead. Understand client management needs for creative agency.',
-    attendees: ['jlee@creativeagency.demo', 'agent-a@ovenai.demo'],
+    attendees: ['jlee@creativeagency.demo', 'agent-a@crm.demo'],
     color: '#a855f7',
     title: 'Discovery - Creative Agency Pro'
   });
@@ -1808,7 +1808,7 @@ export const mockReports = {
 export const mockUserProfile = {
   name: 'Demo Agent',
   role: 'Sales Agent',
-  email: 'demo@ovenai.example',
+  email: 'demo@crm.example',
   avatar: null,
   stats: {
     total_leads: 98,

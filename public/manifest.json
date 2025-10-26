@@ -1,7 +1,7 @@
 {
-  "name": "OvenAI - Lead Management System",
-  "short_name": "OvenAI",
-  "description": "AI-powered lead management system for WhatsApp® Business",
+  "name": "CRM Demo - Lead Management System",
+  "short_name": "CRM Demo",
+  "description": "AI-powered lead management system for WhatsApp Business",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -114,7 +114,7 @@
   },
   "protocol_handlers": [
     {
-      "protocol": "web+ovenai",
+      "protocol": "web+crmdemo",
       "url": "/handle?url=%s"
     }
   ]

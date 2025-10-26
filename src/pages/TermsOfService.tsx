@@ -252,7 +252,7 @@ export default function TermsOfService() {
         <div className="space-y-4">
           <p className="text-gray-700">
             All content, features, and functionality of the Services are owned
-            by OvenAI and are protected by Israeli and international copyright,
+            by the Service Provider and are protected by international copyright,
             trademark, and other intellectual property laws.
           </p>
           <p className="text-gray-700">
@@ -325,13 +325,13 @@ export default function TermsOfService() {
       content: (
         <div className="space-y-4">
           <p className="text-gray-700">
-            To the maximum extent permitted by law, OvenAI shall not be liable
+            To the maximum extent permitted by law, the Service Provider shall not be liable
             for any indirect, incidental, special, consequential, or punitive
             damages resulting from your use of or inability to use the Services.
           </p>
           <p className="text-gray-700">
             In no event shall our total liability to you for all damages exceed
-            the amount paid by you to OvenAI in the twelve (12) months preceding
+            the amount paid by you to the Service Provider in the twelve (12) months preceding
             the claim.
           </p>
         </div>
