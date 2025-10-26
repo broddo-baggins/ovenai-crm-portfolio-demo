@@ -167,6 +167,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@fontsource/rubik": "^5.2.6",
+    "@google/generative-ai": "^0.24.1",
     "@hookform/resolvers": "^3.10.0",
     "@llamaindex/chat-ui": "^0.5.12",
     "@microsoft/clarity": "^1.0.0",

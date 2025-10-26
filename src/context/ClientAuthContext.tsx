@@ -54,17 +54,17 @@ export const useAuth = () => {
   return context;
 };
 
-// Mock demo user
+// Mock demo user - Portfolio Demonstration
 const DEMO_USER: MockUser = {
   id: 'demo-user-12345',
-  email: 'demo@ovenai.example.com',
+  email: 'honored.guest@crm.demo',
   role: 'ADMIN',
   app_metadata: {},
   aud: 'authenticated',
   created_at: '2024-01-01T00:00:00Z',
   user_metadata: {
-    name: 'Demo User',
-    full_name: 'Demo User',
+    name: 'Honored Guest',
+    full_name: 'Honored Guest',
     avatar_url: undefined,
     role: 'ADMIN',
     is_admin: true
@@ -108,10 +108,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return login(email, password);
   };
 
-  // Mock logout
+  // Mock logout - Shows demo notice
   const logout = async (): Promise<void> => {
-    console.log('DEMO [DEMO MODE] Mock logout called');
-    setIsAuthenticated(false);
+    console.log('DEMO [DEMO MODE] Mock logout called - staying in demo');
+    // Don't actually log out in demo mode
+    // Show a toast/banner instead
+    const event = new CustomEvent('demo-logout-attempt');
+    window.dispatchEvent(event);
   };
 
   // Mock permission check - always true for demo

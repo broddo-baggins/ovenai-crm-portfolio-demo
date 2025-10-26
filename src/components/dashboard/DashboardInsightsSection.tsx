@@ -343,7 +343,7 @@ const DashboardInsightsSection: React.FC<DashboardInsightsSectionProps> = ({
         {/* Action Items */}
         <Card className="bg-blue-50/50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800">
           <CardHeader>
-            <div className={cn("flex items-center gap-2", flexRowReverse())}>
+            <div className="flex items-center gap-2">
               <Zap className="h-5 w-5 text-blue-600 dark:text-blue-400" />
               <CardTitle className="text-lg text-blue-800 dark:text-blue-300">
                 {t("insights.actions.title", "Recommended Actions")}
@@ -359,19 +359,15 @@ const DashboardInsightsSection: React.FC<DashboardInsightsSectionProps> = ({
                 >
                   {t("insights.actions.priority.high", "High Priority")}
                 </Badge>
-                <ul className={cn("space-y-1 text-sm", textStart())}>
-                  <li
-                    className={cn("flex items-center gap-2", flexRowReverse())}
-                  >
+                <ul className="space-y-1 text-sm text-left">
+                  <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
                     {t(
                       "insights.actions.high.1",
                       "Optimize cold→warm lead warming sequences",
                     )}
                   </li>
-                  <li
-                    className={cn("flex items-center gap-2", flexRowReverse())}
-                  >
+                  <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
                     {t(
                       "insights.actions.high.2",
@@ -387,19 +383,15 @@ const DashboardInsightsSection: React.FC<DashboardInsightsSectionProps> = ({
                 >
                   {t("insights.actions.priority.medium", "Medium Priority")}
                 </Badge>
-                <ul className={cn("space-y-1 text-sm", textStart())}>
-                  <li
-                    className={cn("flex items-center gap-2", flexRowReverse())}
-                  >
+                <ul className="space-y-1 text-sm text-left">
+                  <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
                     {t(
                       "insights.actions.medium.1",
                       "A/B test Calendly booking flow CTAs",
                     )}
                   </li>
-                  <li
-                    className={cn("flex items-center gap-2", flexRowReverse())}
-                  >
+                  <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
                     {t(
                       "insights.actions.medium.2",

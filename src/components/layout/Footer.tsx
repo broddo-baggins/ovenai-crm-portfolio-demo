@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
         {/* Meta Attribution - Required for WhatsApp® Business API Compliance */}
         <div className={cn("flex items-center justify-center pb-3 mb-3 border-b border-gray-200 dark:border-slate-700")}>
           <div className={cn("flex items-center gap-2 text-sm text-gray-500 dark:text-slate-400", flexRowReverse())}>
-            <span>Powered by Meta</span>
+            <span>was powered by Meta</span>
             <div className="w-5 h-5 bg-blue-600 rounded flex items-center justify-center">
               <span className="text-white text-xs font-bold">f</span>
             </div>

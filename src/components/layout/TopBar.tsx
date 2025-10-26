@@ -1,4 +1,4 @@
-import { Bell, Search, UserPlus, FolderOpen } from "lucide-react";
+import { Bell, Search, UserPlus, FolderOpen, Sparkles } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/ClientAuthContext";
@@ -18,6 +18,8 @@ import { useLang } from "@/hooks/useLang";
 import { useTranslation } from 'react-i18next';
 import logger from "@/services/base/logger";
 import { simpleProjectService } from "@/services/simpleProjectService";
+import { searchMockData, SearchResult as MockSearchResult } from "@/services/mockSearchService";
+import { GeminiAgent } from "@/components/agent/GeminiAgent";
 
 interface TopBarProps {
   pendingUserCount?: number;
@@ -167,6 +169,8 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [_notificationsLoading, setNotificationsLoading] = useState(false);
+  const [isAgentOpen, setIsAgentOpen] = useState(false);
+  const [agentQuestion, setAgentQuestion] = useState<string | undefined>();
   
   // Removed non-functional sidebar toggle function
   
@@ -225,80 +229,39 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
     }
   }, [notifications.length]);
   
-  // Real global search with database indexing
+  // Real global search with mock data
   useEffect(() => {
     const performSearch = async () => {
       if (globalSearch.length > 1) {
         setShowResults(true);
         try {
-          // Search across multiple data sources
-          const [projects, leads, conversations] = await Promise.all([
-            simpleProjectService.getProjects(),
-            simpleProjectService.getAllLeads(),
-            simpleProjectService.getAllConversations()
-          ]);
-
-          const results: SearchResult[] = [];
-          const searchLower = globalSearch.toLowerCase();
-
-          // Filter and add project results
-          const filteredProjects = projects?.filter(project => 
-            project.name?.toLowerCase().includes(searchLower) ||
-            project.description?.toLowerCase().includes(searchLower)
-          ) || [];
+          // Use mock search service
+          const mockResults = searchMockData(globalSearch, 10);
           
-          filteredProjects.slice(0, 3).forEach(project => {
-            results.push({
-              type: "project",
-              name: project.name || 'Unnamed Project',
-              id: project.id
-            });
-          });
-
-          // Filter and add lead results
-          const filteredLeads = leads?.filter(lead => 
-            `${lead.first_name || ''} ${lead.last_name || ''}`.toLowerCase().includes(searchLower) ||
-            lead.phone?.toLowerCase().includes(searchLower)
-          ) || [];
-          
-          filteredLeads.slice(0, 3).forEach(lead => {
-            const fullName = `${lead.first_name || ''} ${lead.last_name || ''}`.trim() || 'Unnamed Lead';
-            results.push({
-              type: "lead",
-              name: fullName,
-              id: lead.id
-            });
-          });
-
-          // Filter and add conversation results
-          const filteredConversations = conversations?.filter(conversation => 
-            `${conversation.lead?.first_name || ''} ${conversation.lead?.last_name || ''}`.toLowerCase().includes(searchLower) ||
-            conversation.contact_name?.toLowerCase().includes(searchLower)
-          ) || [];
-          
-          filteredConversations.slice(0, 2).forEach(conversation => {
-            results.push({
-              type: "conversation",
-              name: `Conversation with ${conversation.lead?.name || conversation.contact_name || 'Unknown'}`,
-              id: conversation.id
-            });
-          });
+          // Convert mock results to TopBar SearchResult format
+          const results: SearchResult[] = mockResults.map(result => ({
+            type: result.type,
+            name: result.title,
+            id: result.id
+          }));
 
           setSearchResults(results);
         } catch (error) {
-          console.error('Search error:', error);
-          // Fallback to empty results on error
+          console.error('Search failed:', error);
           setSearchResults([]);
         }
       } else {
-        setShowResults(false);
         setSearchResults([]);
+        setShowResults(false);
       }
     };
 
-    // Debounce search to avoid too many API calls
-    const timeoutId = setTimeout(performSearch, 300);
-    return () => clearTimeout(timeoutId);
+    // Debounce search
+    const timer = setTimeout(() => {
+      performSearch();
+    }, 300);
+
+    return () => clearTimeout(timer);
   }, [globalSearch]);
   
   const unreadCount = notifications.filter(n => !n.read).length;
@@ -637,10 +600,31 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
                   </Link>
                 </Button>
               )}
+
+              {/* AI Assistant Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative h-8 w-8"
+                onClick={() => {
+                  setAgentQuestion(undefined);
+                  setIsAgentOpen(true);
+                }}
+                title="AI Assistant - Ask about this CRM"
+              >
+                <Sparkles className="h-5 w-5 text-purple-500" />
+              </Button>
             </>
           )}
         </div>
       </header>
+
+      {/* Gemini AI Agent Dialog */}
+      <GeminiAgent
+        open={isAgentOpen}
+        onOpenChange={setIsAgentOpen}
+        initialQuestion={agentQuestion}
+      />
     </div>
   );
 };

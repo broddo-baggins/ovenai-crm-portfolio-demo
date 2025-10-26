@@ -68,42 +68,100 @@ export const NotificationsList = () => {
       console.error('Error fetching notifications:', error);
       setError('Failed to load notifications');
       
-      // Create some sample notifications for demo purposes if the table doesn't exist
+      // Create demo notifications for portfolio showcase
       const sampleNotifications: Notification[] = [
         {
-          id: 'sample-1',
+          id: 'demo-1',
           user_id: user.id,
-          title: 'Welcome to OvenAI',
-          message: 'Your account has been successfully created. Start by adding your first lead!',
+          title: '🎉 Welcome to CRM Demo',
+          message: 'This is a portfolio demonstration with mock data. All information is fictional.',
           type: 'success',
           read: false,
           action_url: '/dashboard',
-          metadata: { category: 'onboarding' },
+          metadata: { category: 'demo' },
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString()
         },
         {
-          id: 'sample-2',
+          id: 'demo-2',
           user_id: user.id,
-          title: 'New Lead Available',
-          message: 'A potential lead has been identified from your recent marketing campaign.',
+          title: '📊 BANT Qualification Complete',
+          message: 'Sarah Johnson from TechStart Solutions has been fully BANT qualified. Budget approved, decision maker identified.',
           type: 'lead',
           read: false,
           action_url: '/leads',
-          metadata: { source: 'marketing' },
+          metadata: { source: 'whatsapp', lead: 'lead-001' },
+          created_at: new Date(Date.now() - 1800000).toISOString(), // 30 min ago
+          updated_at: new Date(Date.now() - 1800000).toISOString()
+        },
+        {
+          id: 'demo-3',
+          user_id: user.id,
+          title: '🔥 Hot Lead Alert',
+          message: 'David Park temperature increased to HOT! Enterprise Systems Inc is ready for demo presentation.',
+          type: 'warning',
+          read: false,
+          action_url: '/leads',
+          metadata: { temperature: 'hot', lead: 'lead-004' },
           created_at: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
           updated_at: new Date(Date.now() - 3600000).toISOString()
         },
         {
-          id: 'sample-3',
+          id: 'demo-4',
           user_id: user.id,
-          title: 'System Update',
-          message: 'OvenAI has been updated with new features and improvements.',
+          title: '📅 Meeting Scheduled',
+          message: 'Michael Chen booked a Calendly meeting for next week. Demo presentation confirmed.',
+          type: 'meeting',
+          read: false,
+          action_url: '/calendar',
+          metadata: { type: 'calendly', lead: 'lead-002' },
+          created_at: new Date(Date.now() - 7200000).toISOString(), // 2 hours ago
+          updated_at: new Date(Date.now() - 7200000).toISOString()
+        },
+        {
+          id: 'demo-5',
+          user_id: user.id,
+          title: '⚙️ System Information',
+          message: 'This CRM demo uses mock data to showcase BANT/HEAT lead management, WhatsApp integration, and automated sales workflows.',
+          type: 'system',
+          read: false,
+          metadata: { category: 'info' },
+          created_at: new Date(Date.now() - 10800000).toISOString(), // 3 hours ago
+          updated_at: new Date(Date.now() - 10800000).toISOString()
+        },
+        {
+          id: 'demo-6',
+          user_id: user.id,
+          title: '💬 First Contact Established',
+          message: 'Emily Rodriguez from Innovate Labs - Initial WhatsApp conversation started. Gathering requirements.',
+          type: 'message',
+          read: true,
+          action_url: '/leads',
+          metadata: { source: 'whatsapp', lead: 'lead-003' },
+          created_at: new Date(Date.now() - 172800000).toISOString(), // 2 days ago
+          updated_at: new Date(Date.now() - 172800000).toISOString()
+        },
+        {
+          id: 'demo-7',
+          user_id: user.id,
+          title: '📈 Performance Update',
+          message: 'Monthly metrics updated: 92% lead reach rate, 35% BANT qualification rate, 15 meetings scheduled this month.',
           type: 'system',
           read: true,
-          metadata: { version: '2.1.0' },
-          created_at: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
-          updated_at: new Date(Date.now() - 86400000).toISOString()
+          metadata: { category: 'performance' },
+          created_at: new Date(Date.now() - 259200000).toISOString(), // 3 days ago
+          updated_at: new Date(Date.now() - 259200000).toISOString()
+        },
+        {
+          id: 'demo-8',
+          user_id: user.id,
+          title: 'ℹ️ Portfolio Demo Notice',
+          message: 'This is a demonstration project by Amit Yogev. For questions or to request removal: amit.yogev@gmail.com',
+          type: 'info',
+          read: true,
+          metadata: { category: 'demo', website: 'https://amityogev.com' },
+          created_at: new Date(Date.now() - 432000000).toISOString(), // 5 days ago
+          updated_at: new Date(Date.now() - 432000000).toISOString()
         }
       ];
       setNotifications(sampleNotifications);

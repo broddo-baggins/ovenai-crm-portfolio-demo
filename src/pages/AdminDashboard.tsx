@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Check, X, Clock, Users, Shield, Bell } from "lucide-react";
+import { Check, X, Clock, Users, Shield, Bell, Building2, Target, TrendingUp, Flame, Database, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,6 +15,8 @@ import { authService } from "@/integrations/supabase/client";
 import { useAuth } from "@/context/ClientAuthContext";
 import { useLang } from "@/hooks/useLang";
 import { cn } from "@/lib/utils";
+import { getAdminStats, getRecentAdminActivity, AdminStats, AdminActivity } from "@/services/mockAdminService";
+import { SystemStatusCard } from "@/components/admin/SystemStatusCard";
 
 interface UserProfile {
   id: string;
@@ -44,6 +46,8 @@ export function AdminDashboard() {
   const [pendingUsers, setPendingUsers] = useState<UserProfile[]>([]);
   const [allUsers, setAllUsers] = useState<UserProfile[]>([]);
   const [notifications, setNotifications] = useState<AdminNotification[]>([]);
+  const [adminStats, setAdminStats] = useState<AdminStats | null>(null);
+  const [recentActivity, setRecentActivity] = useState<AdminActivity[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -90,6 +94,10 @@ export function AdminDashboard() {
       setPendingUsers(mockPendingUsers);
       setAllUsers(mockAllUsers);
       setNotifications([]); // Empty notifications for now
+      
+      // Load admin stats and activity
+      setAdminStats(getAdminStats());
+      setRecentActivity(getRecentAdminActivity());
     } catch (err) {
       console.error("Error loading admin data:", err);
       setError(
@@ -286,17 +294,17 @@ export function AdminDashboard() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
               <Clock className="w-5 h-5 text-yellow-600" />
               <div>
                 <p className="text-sm text-muted-foreground">
-                  Pending Approval
+                  Pending Users
                 </p>
                 <p className="text-2xl font-bold text-yellow-600">
-                  {pendingUsers.length}
+                  {adminStats?.pendingUsers || pendingUsers.length}
                 </p>
               </div>
             </div>
@@ -310,7 +318,7 @@ export function AdminDashboard() {
               <div>
                 <p className="text-sm text-muted-foreground">Total Users</p>
                 <p className="text-2xl font-bold text-blue-600">
-                  {allUsers.length}
+                  {adminStats?.totalUsers || allUsers.length}
                 </p>
               </div>
             </div>
@@ -320,11 +328,39 @@ export function AdminDashboard() {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Check className="w-5 h-5 text-green-600" />
+              <Target className="w-5 h-5 text-purple-600" />
               <div>
-                <p className="text-sm text-muted-foreground">Approved</p>
+                <p className="text-sm text-muted-foreground">Projects</p>
+                <p className="text-2xl font-bold text-purple-600">
+                  {adminStats?.totalProjects || 0}
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center space-x-2">
+              <Building2 className="w-5 h-5 text-cyan-600" />
+              <div>
+                <p className="text-sm text-muted-foreground">Clients</p>
+                <p className="text-2xl font-bold text-cyan-600">
+                  {adminStats?.totalClients || 0}
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center space-x-2">
+              <TrendingUp className="w-5 h-5 text-green-600" />
+              <div>
+                <p className="text-sm text-muted-foreground">Total Leads</p>
                 <p className="text-2xl font-bold text-green-600">
-                  {allUsers.filter((u) => u.status === "approved").length}
+                  {adminStats?.totalLeads || 0}
                 </p>
               </div>
             </div>
@@ -334,11 +370,11 @@ export function AdminDashboard() {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Bell className="w-5 h-5 text-red-600" />
+              <Flame className="w-5 h-5 text-orange-600" />
               <div>
-                <p className="text-sm text-muted-foreground">Notifications</p>
-                <p className="text-2xl font-bold text-red-600">
-                  {unreadNotifications}
+                <p className="text-sm text-muted-foreground">Hot Leads</p>
+                <p className="text-2xl font-bold text-orange-600">
+                  {adminStats?.hotLeads || 0} + {adminStats?.burningLeads || 0}
                 </p>
               </div>
             </div>
@@ -352,6 +388,12 @@ export function AdminDashboard() {
             Pending Approval ({pendingUsers.length})
           </TabsTrigger>
           <TabsTrigger value="all">All Users ({allUsers.length})</TabsTrigger>
+          <TabsTrigger value="system">
+            System Status
+          </TabsTrigger>
+          <TabsTrigger value="activity">
+            Recent Activity
+          </TabsTrigger>
           <TabsTrigger value="notifications">
             Notifications ({unreadNotifications})
           </TabsTrigger>
@@ -517,6 +559,61 @@ export function AdminDashboard() {
                             Mark Read
                           </Button>
                         )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="system" className="space-y-4">
+          <SystemStatusCard />
+        </TabsContent>
+
+        <TabsContent value="activity" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Activity className="h-5 w-5 text-primary" />
+                <CardTitle>Recent Admin Activity</CardTitle>
+              </div>
+              <CardDescription>
+                Recent administrative actions and system events
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {recentActivity.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  <Activity className="w-12 h-12 mx-auto mb-4 text-muted" />
+                  <p>No recent activity</p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {recentActivity.map((activity) => (
+                    <div
+                      key={activity.id}
+                      className="p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <Badge variant="outline" className="font-medium">
+                              {activity.action}
+                            </Badge>
+                            <span className="text-sm text-muted-foreground">→</span>
+                            <span className="text-sm font-medium">{activity.target}</span>
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            {activity.details}
+                          </p>
+                          <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
+                            <span>By: {activity.user}</span>
+                            <span>•</span>
+                            <span>{new Date(activity.timestamp).toLocaleString()}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   ))}

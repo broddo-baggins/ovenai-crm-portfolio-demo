@@ -26,14 +26,14 @@ export const AccessibilityDeclaration: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>הצהרת נגישות - OvenAI Accessibility Declaration</title>
+        <title>הצהרת נגישות - Portfolio Demo Accessibility Declaration</title>
         <meta
           name="description"
-          content="הצהרת נגישות של OvenAI - עמידה בתקן WCAG 2.2 AA ותקן ישראלי 5568"
+          content="הצהרת נגישות - עמידה בתקן WCAG 2.2 AA ותקן ישראלי 5568 - Portfolio Demo"
         />
         <meta
           name="keywords"
-          content="נגישות, accessibility, WCAG, תקן ישראלי 5568"
+          content="נגישות, accessibility, WCAG, תקן ישראלי 5568, portfolio demo"
         />
       </Helmet>
       <div
@@ -47,7 +47,7 @@ export const AccessibilityDeclaration: React.FC = () => {
               הצהרת נגישות
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              OvenAI מחויבת לספק שירות נגיש ושוויוני לכל המשתמשים
+              פרויקט פורטפוליו המדגים מחויבות לנגישות ושוויון לכל המשתמשים
             </p>
             <div className="flex justify-center gap-4 mt-4">
               <Badge
@@ -65,6 +65,17 @@ export const AccessibilityDeclaration: React.FC = () => {
                 תקן ישראלי 5568
               </Badge>
             </div>
+            
+            {/* Demo Notice */}
+            <div className="mt-6 p-4 bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-800 rounded-lg text-right">
+              <p className="text-orange-900 dark:text-orange-200 font-semibold mb-2">
+                ⚠️ הודעה: זהו פרויקט תיק עבודות
+              </p>
+              <p className="text-orange-800 dark:text-orange-300 text-sm">
+                זהו פרויקט הדגמה של עמית יוגב עם מידע דמו. לשאלות או לבקשות הסרה:{" "}
+                <a href="mailto:amit.yogev@gmail.com" className="underline font-semibold">amit.yogev@gmail.com</a>
+              </p>
+            </div>
           </div>
 
           {/* Main Content */}
@@ -79,13 +90,16 @@ export const AccessibilityDeclaration: React.FC = () => {
               </CardHeader>
               <CardContent className="prose prose-lg max-w-none text-right dark:prose-invert">
                 <p>
-                  חברת OvenAI מחויבת לאפשר לאנשים עם מוגבלויות להשתמש באתר שלה
+                  פרויקט הדגמה זה מציג מחויבות לאפשר לאנשים עם מוגבלויות להשתמש באתר
                   באופן שוויוני, מכובד, נוח ועצמאי.
                 </p>
                 <p>
-                  אנו פועלים על פי חוק שוויון זכויות לאנשים עם מוגבלות,
+                  הפרויקט בנוי על פי חוק שוויון זכויות לאנשים עם מוגבלות,
                   התשנ"ח-1998 ותקנות שוויון זכויות לאנשים עם מוגבלות (התאמות
                   נגישות לשירות), התשע"ג-2013.
+                </p>
+                <p className="text-sm text-orange-700 dark:text-orange-300 mt-3 italic">
+                  זהו פרויקט פורטפוליו להדגמה בלבד.
                 </p>
               </CardContent>
             </Card>
@@ -307,22 +321,18 @@ export const AccessibilityDeclaration: React.FC = () => {
                         <Mail className="w-4 h-4 text-blue-600" />
                         <div>
                           <p className="font-medium">
-                            accessibility@ovenai.app
+                            amit.yogev@gmail.com
                           </p>
                           <p className="text-sm text-muted-foreground">
-                            דוא"ל נגישות
+                            דוא"ל ליצירת קשר
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-4 h-4 text-blue-600" />
-                        <div>
-                          <p className="font-medium">054-247-5705</p>
-                          <p className="text-sm text-muted-foreground">
-                            קו נגישות
-                          </p>
-                        </div>
+                      <div className="bg-blue-50 dark:bg-blue-950/30 p-3 rounded">
+                        <p className="text-sm text-blue-800 dark:text-blue-300">
+                          זהו פרויקט הדגמה. לשאלות אודות הפרויקט, ניתן ליצור קשר בכתובת המייל לעיל.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -336,7 +346,7 @@ export const AccessibilityDeclaration: React.FC = () => {
                     </div>
 
                     <Button className="mt-4" variant="outline" asChild>
-                      <a href="mailto:accessibility@ovenai.app">
+                      <a href="mailto:amit.yogev@gmail.com">
                         <Mail className="w-4 h-4 mr-2" />
                         שלח פניה
                       </a>

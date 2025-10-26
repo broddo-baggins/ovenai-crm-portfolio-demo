@@ -25,6 +25,17 @@ const CookiePolicy: React.FC = () => {
         <Badge variant="secondary" className="mb-4">
           Last updated: {lastUpdated}
         </Badge>
+        
+        {/* Demo Notice */}
+        <div className="mt-6 p-4 bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-800 rounded-lg">
+          <p className="text-orange-900 dark:text-orange-200 font-semibold text-lg mb-2">
+            ⚠️ Portfolio Demo Application
+          </p>
+          <p className="text-orange-800 dark:text-orange-300 text-sm">
+            This is a demonstration project by Amit Yogev with mock data. No real cookies are set for tracking purposes.
+            For questions or takedown requests: <a href="mailto:amit.yogev@gmail.com" className="underline font-semibold">amit.yogev@gmail.com</a>
+          </p>
+        </div>
       </div>
 
       {/* Meta Integration Notice */}
@@ -322,7 +333,7 @@ const CookiePolicy: React.FC = () => {
       {/* Footer */}
       <div className="mt-12 text-center">
         <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
-          <span>Powered by Meta</span>
+          <span>was powered by Meta</span>
           <div className="w-4 h-4 bg-blue-600 rounded flex items-center justify-center">
             <span className="text-white text-xs font-bold">f</span>
           </div>
@@ -331,8 +342,8 @@ const CookiePolicy: React.FC = () => {
         </div>
         <Separator className="mb-4" />
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          This cookie policy complies with GDPR, CCPA, and Meta platform requirements. 
-          Changes will be communicated via email and updated on this page.
+          This is a portfolio demo showcasing cookie policy templates.
+          No actual cookies are being used for tracking in this demonstration.
         </p>
       </div>
     </div>

@@ -7,17 +7,17 @@
 import { supabase } from '@/integrations/supabase/client';
 import { User, Session } from '@supabase/supabase-js';
 
-// Demo mode mock user
+// Demo mode mock user - Portfolio Demonstration
 const DEMO_USER: User = {
   id: 'demo-user-12345',
-  email: 'demo@ovenai.example.com',
+  email: 'honored.guest@crm.demo',
   role: 'authenticated',
   app_metadata: { provider: 'demo' },
   aud: 'authenticated',
   created_at: '2024-01-01T00:00:00Z',
   user_metadata: {
-    name: 'Demo User',
-    full_name: 'Demo User',
+    name: 'Honored Guest',
+    full_name: 'Honored Guest',
     avatar_url: undefined,
     role: 'ADMIN',
     is_admin: true

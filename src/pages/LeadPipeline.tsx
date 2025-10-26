@@ -219,7 +219,7 @@ const initialTemplateColumns: KanbanColumn[] = [
 
 // Meta WhatsApp Business Account Configuration
 const META_WHATSAPP_CONFIG = {
-  BUSINESS_ACCOUNT_ID: "509878158869000", // Test WhatsApp Business Account
+  BUSINESS_ACCOUNT_ID: "847392016254731", // Demo WhatsApp Business Account
   ACCESS_TOKEN: env.WHATSAPP_ACCESS_TOKEN,
   PHONE_NUMBER_ID: env.WHATSAPP_PHONE_NUMBER_ID,
 };
@@ -323,7 +323,7 @@ const TemplateManagement: React.FC = () => {
     toast.info("Testing connection to Meta WhatsApp Business API...");
     // Connection test logic would go here
     setTimeout(() => {
-      toast.success("Connected to Meta WhatsApp Business Account (ID: 509878158869000)");
+      toast.success("Connected to Meta WhatsApp Business Account (ID: 847392016254731)");
     }, 1500);
   };
 
@@ -441,7 +441,7 @@ const TemplateManagement: React.FC = () => {
             </p>
             <div className="mt-3 flex items-center gap-2">
               <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                MOBILE Meta WhatsApp Business ID: 509878158869000
+                MOBILE Meta WhatsApp Business ID: 847392016254731
               </Badge>
               <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
                 INIT Ready for Template Submission

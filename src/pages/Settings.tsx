@@ -41,6 +41,7 @@ import {
   DialogTitle, 
   DialogTrigger 
 } from "@/components/ui/dialog";
+import { MockIntegrationsDisplay } from "@/components/settings/MockIntegrationsDisplay";
 
 // Form schemas
 const projectFormSchema = z.object({
@@ -1085,6 +1086,9 @@ const Settings = () => {
 
                 </div>
               </div>
+
+              {/* ALL INTEGRATIONS SHOWCASE (Demo) */}
+              <MockIntegrationsDisplay />
 
               {/* Stored Credentials */}
               {integrationStatuses.length > 0 && (

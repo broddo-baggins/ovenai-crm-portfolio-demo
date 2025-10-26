@@ -64,14 +64,40 @@ const PrivacyPolicy = () => {
 
   const sections = [
     {
+      id: "demo-notice",
+      title: "⚠️ Portfolio Demo Notice",
+      icon: <AlertTriangle className="h-6 w-6 text-orange-600" />,
+      content: (
+        <div className="space-y-4 p-4 bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-800 rounded-lg">
+          <p className="text-orange-900 dark:text-orange-200 font-semibold text-lg">
+            IMPORTANT: This is a Portfolio Demo Application
+          </p>
+          <p className="text-orange-800 dark:text-orange-300">
+            This application is a <strong>demonstration project</strong> created by Amit Yogev for portfolio purposes only. 
+            All data shown is <strong>mock/fictional data</strong> for demonstration purposes.
+          </p>
+          <ul className="list-disc pl-6 text-orange-800 dark:text-orange-300 space-y-1">
+            <li>This is NOT a live commercial product or service</li>
+            <li>No real user data is collected or stored</li>
+            <li>All displayed information is fictional and for demonstration only</li>
+            <li>If you want this demo taken down, please email: <a href="mailto:amit.yogev@gmail.com" className="underline font-semibold">amit.yogev@gmail.com</a></li>
+          </ul>
+          <p className="text-orange-800 dark:text-orange-300">
+            <strong>Contact:</strong> For questions about this portfolio project, reach out to{" "}
+            <a href="mailto:amit.yogev@gmail.com" className="underline font-semibold">amit.yogev@gmail.com</a>
+          </p>
+        </div>
+      ),
+    },
+    {
       id: "introduction",
       title: "Introduction",
       icon: <Info className="h-6 w-6 text-primary" />,
       content: (
         <p className="text-gray-700">
-          At OvenAI, we take your privacy seriously. This Privacy Policy
-          explains how we collect, use, disclose, and safeguard your information
-          when you use our service.
+          This Privacy Policy would explain how a production version of this application 
+          would collect, use, disclose, and safeguard user information. Since this is a demo application 
+          with mock data, no actual user data is collected or processed.
         </p>
       ),
     },
@@ -245,16 +271,20 @@ const PrivacyPolicy = () => {
       title: "Contact Us",
       icon: <Mail className="h-6 w-6 text-primary" />,
       content: (
-        <p className="text-gray-700">
-          If you have any questions about this Privacy Policy, please contact us
-          at{" "}
-          <a
-            href="mailto:privacy@ovenai.com"
-            className="text-primary hover:underline"
-          >
-            privacy@ovenai.com
-          </a>
-        </p>
+        <div className="space-y-3">
+          <p className="text-gray-700">
+            If you have any questions about this portfolio demo, please contact:
+          </p>
+          <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
+            <p className="font-semibold text-blue-900 dark:text-blue-200">Amit Yogev</p>
+            <p className="text-blue-800 dark:text-blue-300">
+              Email: <a href="mailto:amit.yogev@gmail.com" className="underline">amit.yogev@gmail.com</a>
+            </p>
+            <p className="text-blue-800 dark:text-blue-300">
+              Website: <a href="https://amityogev.com" className="underline">https://amityogev.com</a>
+            </p>
+          </div>
+        </div>
       ),
     },
   ];

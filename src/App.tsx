@@ -17,10 +17,11 @@ import Layout from "./components/layout/Layout";
 import AppLayout from "./components/layout/AppLayout.tsx";
 import { RequireAuth } from "./components/auth/RequireAuth";
 import { useTranslation } from "react-i18next";
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense, useState } from "react";
 import React from "react";
 import { RTLProvider } from "@/contexts/RTLContext";
 import { LightModeWrapper } from "@/components/ui/light-mode-wrapper";
+import { DemoLogoutBanner } from "@/components/demo/DemoLogoutBanner";
 
 // Import analytics utilities
 import { initializeAnalytics, trackPageView } from "@/utils/combined-analytics";
@@ -263,6 +264,7 @@ const AnalyticsTracker = () => {
 
 function App() {
   const { i18n } = useTranslation();
+  const [showLogoutBanner, setShowLogoutBanner] = useState(false);
 
   // Handle language changes
   useEffect(() => {
@@ -270,6 +272,16 @@ function App() {
     i18n.on("languageChanged", handleLanguageChange);
     return () => i18n.off("languageChanged", handleLanguageChange);
   }, [i18n]);
+
+  // Listen for demo logout attempts
+  useEffect(() => {
+    const handleLogoutAttempt = () => {
+      setShowLogoutBanner(true);
+    };
+
+    window.addEventListener('demo-logout-attempt', handleLogoutAttempt);
+    return () => window.removeEventListener('demo-logout-attempt', handleLogoutAttempt);
+  }, []);
 
   return (
     <ErrorBoundary>
@@ -423,6 +435,9 @@ function App() {
                       </div>
                       <Toaster />
                       <ShadcnToaster />
+                      {showLogoutBanner && (
+                        <DemoLogoutBanner onDismiss={() => setShowLogoutBanner(false)} />
+                      )}
                       <Analytics />
                       <SpeedInsights />
                     </ProjectProvider>

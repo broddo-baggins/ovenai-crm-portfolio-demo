@@ -404,11 +404,11 @@ const LandingPage = () => {
                               : "Advanced AI-powered business system for sales and service optimization",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web-based",
-            url: "https://ovenai.app",
+            url: "https://amityogev.com",
             author: {
               "@type": "Organization",
               name: "CRM Demo",
-              url: "https://ovenai.app",
+              url: "https://amityogev.com",
             },
             offers: {
               "@type": "Offer",
@@ -484,7 +484,7 @@ const LandingPage = () => {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ovenai.app" />
+        <meta property="og:url" content="https://amityogev.com" />
         <meta
           property="og:title"
           content={
@@ -501,12 +501,12 @@ const LandingPage = () => {
               : "Autonomous AI system that optimizes your sales and service departments, customized for your specific needs, improving close rates and warming leads - without requiring additional human resources"
           }
         />
-        <meta property="og:image" content="https://ovenai.app/og-image.png" />
+        <meta property="og:image" content="https://amityogev.com/og-image.png" />
         <meta property="og:locale" content={isHebrew ? "he_IL" : "en_US"} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://ovenai.app" />
+        <meta property="twitter:url" content="https://amityogev.com" />
         <meta
           property="twitter:title"
           content={
@@ -525,7 +525,7 @@ const LandingPage = () => {
         />
         <meta
           property="twitter:image"
-          content="https://ovenai.app/og-image.png"
+          content="https://amityogev.com/og-image.png"
         />
 
         {/* Language and direction */}
@@ -1926,7 +1926,7 @@ const LandingPage = () => {
                 </a>
                 <span className="text-gray-600">•</span>
                 <a
-                  href="https://ovenai.app/terms-conditions"
+                  href="https://amityogev.com/terms"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {t("footer.terms")}

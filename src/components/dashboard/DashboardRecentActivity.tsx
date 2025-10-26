@@ -183,40 +183,97 @@ const DashboardRecentActivity: React.FC = () => {
       setActivities(sortedActivities);
     } catch (error) {
       console.error("Error loading recent activities:", error);
-      // Show error but still provide fallback data so dashboard doesn't break
+      // Show mock data for demo purposes
       setActivities([
         {
-          id: "fallback-1",
+          id: "demo-1",
           type: "bant_qualified",
-          lead_name: "Sarah Wilson",
-          lead_company: "TechStart Inc",
+          lead_name: "Sarah Johnson",
+          lead_company: "TechStart Solutions",
           details: t(
             "recentActivity.bantQualifiedDetail",
-            "BANT qualified - has budget and authority",
+            "BANT fully qualified - Budget approved, Decision maker identified",
           ),
-          time: "2 days ago",
-          bant_status: "qualified",
+          time: "2 hours ago",
+          bant_status: "fully_qualified",
         },
         {
-          id: "fallback-2",
+          id: "demo-2",
+          type: "calendly_booked",
+          lead_name: "Michael Chen",
+          lead_company: "Growth Marketing Co",
+          details: t(
+            "recentActivity.calendlyBookedDetail",
+            "Calendly demo meeting scheduled for next week",
+          ),
+          time: "5 hours ago",
+        },
+        {
+          id: "demo-3",
           type: "heat_increased",
-          lead_name: "John Martinez",
-          lead_company: "Growth Labs",
+          lead_name: "David Park",
+          lead_company: "Enterprise Systems Inc",
           details: t(
             "recentActivity.heatIncreasedDetail",
-            "Lead temperature: warm",
+            "Lead temperature increased: warm → hot",
+          ),
+          time: "1 day ago",
+          heat_level: "hot",
+        },
+        {
+          id: "demo-4",
+          type: "bant_qualified",
+          lead_name: "Lisa Thompson",
+          lead_company: "Digital Innovations",
+          details: t(
+            "recentActivity.bantQualifiedDetail",
+            "BANT partially qualified - Budget and need confirmed",
+          ),
+          time: "1 day ago",
+          bant_status: "partially_qualified",
+        },
+        {
+          id: "demo-5",
+          type: "first_message",
+          lead_name: "Emily Rodriguez",
+          lead_company: "Innovate Labs",
+          details: t(
+            "recentActivity.newLead",
+            "First contact made via WhatsApp - Gathering requirements",
+          ),
+          time: "2 days ago",
+        },
+        {
+          id: "demo-6",
+          type: "meeting_scheduled",
+          lead_name: "James Wilson",
+          lead_company: "CloudTech Partners",
+          details: t(
+            "recentActivity.meetingScheduled",
+            "Discovery call scheduled - High priority lead",
           ),
           time: "3 days ago",
+        },
+        {
+          id: "demo-7",
+          type: "heat_increased",
+          lead_name: "Maria Garcia",
+          lead_company: "SmartBiz Solutions",
+          details: t(
+            "recentActivity.heatIncreasedDetail",
+            "Lead temperature increased: cold → warm",
+          ),
+          time: "4 days ago",
           heat_level: "warm",
         },
         {
-          id: "fallback-3",
-          type: "first_message",
-          lead_name: "Emily Chen",
-          lead_company: "GlobalTech",
+          id: "demo-8",
+          type: "calendly_booked",
+          lead_name: "Robert Lee",
+          lead_company: "Automation Pro",
           details: t(
-            "recentActivity.newLead",
-            "New lead added to pipeline",
+            "recentActivity.calendlyBookedDetail",
+            "Follow-up meeting booked via Calendly",
           ),
           time: "5 days ago",
         },

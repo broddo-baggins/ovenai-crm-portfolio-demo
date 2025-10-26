@@ -29,13 +29,13 @@ export default function TermsOfService() {
   // Set the document title and meta tags with useEffect
   useEffect(() => {
     // Set document title
-    document.title = `Terms & Conditions - OvenAI`;
+    document.title = `Terms & Conditions - Portfolio Demo`;
 
     // Add meta tags for SEO
     const metaDescription = document.createElement("meta");
     metaDescription.name = "description";
     metaDescription.content =
-      "OvenAI Terms & Conditions - AI-powered property management platform terms of service";
+      "Portfolio Demo Terms & Conditions - This is a demonstration project";
     document.head.appendChild(metaDescription);
 
     const metaRobots = document.createElement("meta");
@@ -56,21 +56,46 @@ export default function TermsOfService() {
 
   const sections = [
     {
+      id: "demo-notice",
+      title: "⚠️ Portfolio Demo Notice",
+      icon: <AlertTriangle className="h-6 w-6 text-orange-600" />,
+      content: (
+        <div className="space-y-4 p-4 bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-800 rounded-lg">
+          <p className="text-orange-900 dark:text-orange-200 font-semibold text-lg">
+            IMPORTANT: This is a Portfolio Demo Application
+          </p>
+          <p className="text-orange-800 dark:text-orange-300">
+            This application is a <strong>demonstration project</strong> created by Amit Yogev for portfolio purposes only. 
+            All data shown is <strong>mock/fictional data</strong> for demonstration purposes.
+          </p>
+          <ul className="list-disc pl-6 text-orange-800 dark:text-orange-300 space-y-1">
+            <li>This is NOT a live commercial product or service</li>
+            <li>No real user data is collected or stored</li>
+            <li>All displayed information is fictional and for demonstration only</li>
+            <li>These terms are templates for demonstration purposes</li>
+            <li>If you want this demo taken down, please email: <a href="mailto:amit.yogev@gmail.com" className="underline font-semibold">amit.yogev@gmail.com</a></li>
+          </ul>
+          <p className="text-orange-800 dark:text-orange-300">
+            <strong>Contact:</strong> For questions about this portfolio project, reach out to{" "}
+            <a href="mailto:amit.yogev@gmail.com" className="underline font-semibold">amit.yogev@gmail.com</a>
+          </p>
+        </div>
+      ),
+    },
+    {
       id: "introduction",
       title: "Introduction",
       icon: <Info className="h-6 w-6 text-primary" />,
       content: (
         <div className="space-y-4">
           <p className="text-foreground">
-            Welcome to OvenAI, an AI-powered property management and lead
-            generation platform. These Terms & Conditions ("Terms") govern your
-            access to and use of OvenAI's website, services, and applications
-            (collectively, the "Services").
+            This is a demo application showcasing an AI-powered CRM and lead
+            generation platform. These Terms & Conditions are provided as examples
+            of what a production service would include.
           </p>
           <p className="text-foreground">
-            By accessing or using our Services, you agree to be bound by these
-            Terms. If you disagree with any part of these terms, then you may
-            not access the Service.
+            Since this is a portfolio demonstration with mock data, these terms
+            do not represent an actual service agreement.
           </p>
         </div>
       ),
@@ -81,28 +106,27 @@ export default function TermsOfService() {
       icon: <FileText className="h-6 w-6 text-primary" />,
       content: (
         <div className="space-y-2">
-          <p className="text-gray-700">For the purposes of these Terms:</p>
+          <p className="text-gray-700">For demonstration purposes, these definitions show how a production service would be structured:</p>
           <ul className="list-disc pl-6 text-gray-700 space-y-1">
             <li>
-              <strong>"Company"</strong> refers to OvenAI
+              <strong>"Company"</strong> would refer to the service provider
             </li>
             <li>
-              <strong>"Service"</strong> refers to the AI property management
-              platform
+              <strong>"Service"</strong> would refer to the CRM platform
             </li>
             <li>
-              <strong>"User"</strong> refers to the individual accessing or
-              using the Service
+              <strong>"User"</strong> would refer to the individual accessing the service
             </li>
             <li>
-              <strong>"Content"</strong> refers to any data, text, graphics, or
-              other materials
+              <strong>"Content"</strong> would refer to any data, text, or materials
             </li>
             <li>
-              <strong>"AI Agent"</strong> refers to our automated conversation
-              and lead management system
+              <strong>"AI Agent"</strong> would refer to the automated conversation system
             </li>
           </ul>
+          <p className="text-sm text-gray-600 mt-3 italic">
+            Note: This is a portfolio demo - no actual service agreement exists.
+          </p>
         </div>
       ),
     },
@@ -346,30 +370,20 @@ export default function TermsOfService() {
       content: (
         <div className="space-y-4">
           <p className="text-gray-700">
-            If you have any questions about these Terms & Conditions, please
-            contact us:
+            If you have any questions about this portfolio demo, please contact:
           </p>
-          <ul className="list-none text-gray-700 space-y-1">
-            <li>
-              Email:{" "}
-              <a
-                href="mailto:legal@ovenai.com"
-                className="text-primary hover:underline"
-              >
-                legal@ovenai.com
-              </a>
-            </li>
-            <li>Address: Tel Aviv, Israel</li>
-            <li>
-              Website:{" "}
-              <a
-                href="https://ovenai.app"
-                className="text-primary hover:underline"
-              >
-                https://ovenai.app
-              </a>
-            </li>
-          </ul>
+          <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
+            <p className="font-semibold text-blue-900 dark:text-blue-200">Amit Yogev</p>
+            <p className="text-blue-800 dark:text-blue-300">
+              Email: <a href="mailto:amit.yogev@gmail.com" className="underline">amit.yogev@gmail.com</a>
+            </p>
+            <p className="text-blue-800 dark:text-blue-300">
+              Website: <a href="https://amityogev.com" className="underline">https://amityogev.com</a>
+            </p>
+            <p className="text-sm text-blue-700 dark:text-blue-400 mt-2">
+              This is a portfolio demonstration project with mock data.
+            </p>
+          </div>
         </div>
       ),
     },

@@ -5,12 +5,12 @@
 export const siteSettings = {
   // Company information
   company: {
-    name: "CRM Demo",
-    domain: "crm-demo.example.com",
+    name: "CRM Demo - Portfolio Project",
+    domain: "amityogev.com",
     email: {
-      contact: "demo@example.com",
-      support: "demo@example.com",
-      privacy: "demo@example.com",
+      contact: "amit.yogev@gmail.com",
+      support: "amit.yogev@gmail.com",
+      privacy: "amit.yogev@gmail.com",
     },
   },
   

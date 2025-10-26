@@ -100,7 +100,7 @@ export const CalendlyConnectionOptions: React.FC<CalendlyConnectionOptionsProps>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                      <span>Redirect URI: <code className="bg-muted px-1 rounded">https://ovenai.app/auth/calendly/callback</code></span>
+                      <span>Redirect URI: <code className="bg-muted px-1 rounded">https://amityogev.com/auth/calendly/callback</code></span>
                     </li>
                   </ul>
                 </div>
