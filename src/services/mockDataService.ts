@@ -16,18 +16,18 @@ import {
 } from '@/data/mockData';
 
 export const mockDataService = {
-  // Mock projects - returns 2 comprehensive projects
+  // Mock projects - returns 3 comprehensive projects
   getMockProjects() {
     return mockProjects.map(project => ({
       id: project.id,
       name: project.name,
       description: project.description,
-      client_id: project.lead_id,
+      client_id: project.client_id,
       status: project.status,
       created_at: project.start_date,
       updated_at: project.start_date,
       client: {
-        id: project.lead_id,
+        id: project.client_id,
         name: project.client
       }
     }));
@@ -50,9 +50,11 @@ export const mockDataService = {
         phone: lead.phone,
         company: lead.company,
         status: lead.status,
+        state: lead.state,
         temperature: lead.bant_score >= 75 ? 'hot' : lead.bant_score >= 50 ? 'warm' : 'cold',
-        current_project_id: 'mock-project-1',
-        project_id: 'mock-project-1',
+        current_project_id: lead.current_project_id || null,
+        project_id: lead.project_id || null,
+        value: lead.value,
         created_at: lead.created_at || lead.last_contact,
         updated_at: lead.last_contact,
         bant_budget: lead.budget !== 'Unknown',
