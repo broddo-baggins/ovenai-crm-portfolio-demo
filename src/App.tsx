@@ -424,7 +424,7 @@ function App() {
                       <Toaster />
                       <ShadcnToaster />
                       <Analytics />
-                      <SpeedInsights debug={process.env.NODE_ENV === 'development'} />
+                      <SpeedInsights />
                     </ProjectProvider>
                   </DashboardProvider>
                 </AuthProvider>
