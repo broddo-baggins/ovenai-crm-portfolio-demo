@@ -279,9 +279,9 @@ export async function queryAgent(
     // Initialize Gemini AI
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // Use gemini-1.5-flash for faster responses, or gemini-1.5-pro for better quality
+    // Use gemini-pro for stable responses (v1 API)
     const model = genAI.getGenerativeModel({ 
-      model: 'gemini-1.5-flash',
+      model: 'gemini-pro',
       generationConfig: {
         temperature: 0.7,
         maxOutputTokens: 2048,
