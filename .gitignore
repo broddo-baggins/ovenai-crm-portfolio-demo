@@ -274,3 +274,5 @@ typescript-*.json
 
 # Workspace files
 *.code-workspace
+GEMINI_VERIFICATION.md
+README_DEPLOYMENT.md
