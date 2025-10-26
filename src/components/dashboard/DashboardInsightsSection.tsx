@@ -59,16 +59,14 @@ const DashboardInsightsSection: React.FC<DashboardInsightsSectionProps> = ({
   const meetingRateStatus = calculateReachRateStatus(meetingConversionRate);
 
   return (
-    <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 dark:border-blue-800">
+    <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 dark:border-blue-800" dir="ltr">
       <CardHeader className="pb-4">
-        <div
-          className={cn("flex items-center justify-between", flexRowReverse())}
-        >
-          <div className={cn("flex items-center gap-3", flexRowReverse())}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
               <TrendingUp className="h-6 w-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <div className={textStart()}>
+            <div className="text-left">
               <CardTitle className="text-xl font-semibold">
                 {t("insights.title", "Performance Analytics")}
               </CardTitle>

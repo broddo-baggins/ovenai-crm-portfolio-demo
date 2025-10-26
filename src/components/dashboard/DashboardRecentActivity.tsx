@@ -341,13 +341,13 @@ const DashboardRecentActivity: React.FC = () => {
   };
 
   return (
-    <Card data-testid="recent-activity">
+    <Card data-testid="recent-activity" dir="ltr">
       <CardHeader>
-        <CardTitle className={cn("flex items-center gap-2", flexRowReverse())}>
+        <CardTitle className="flex items-center gap-2 text-left">
           <Calendar className="h-5 w-5" />
           {t("recentActivity.title", "Recent Activity")}
         </CardTitle>
-        <CardDescription className={textStart()}>
+        <CardDescription className="text-left">
           {t(
             "recentActivity.description",
             "Lead progression: BANT qualification → Heat warming → Calendly meetings",

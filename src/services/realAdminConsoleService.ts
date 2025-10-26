@@ -98,10 +98,29 @@ export interface SystemPrompt {
 }
 
 // ==========================================
+// DEMO MODE DETECTION
+// ==========================================
+
+// Check if we're in demo/development mode (no real backend)
+const isDemoMode = (): boolean => {
+  // For portfolio demo, always treat as demo mode if we can't connect properly
+  // This allows the UI to function without a backend
+  return import.meta.env.VITE_DEMO_MODE === 'true' || 
+         import.meta.env.DEV === true ||
+         window.location.hostname === 'localhost';
+};
+
+// ==========================================
 // ADMIN LEVEL DETECTION
 // ==========================================
 
 export const getCurrentAdminLevel = async (): Promise<AdminLevel | null> => {
+  // In demo mode, grant system_admin access
+  if (isDemoMode()) {
+    console.log('DEMO MODE: Granting system_admin access');
+    return 'system_admin';
+  }
+  
   try {
     // Try the RPC function first
     const { data, error } = await supabase.rpc('get_current_admin_level');
@@ -646,6 +665,33 @@ export const resetUserPreferences = async (userId: string): Promise<void> => {
 
 export const getSystemPrompts = async (): Promise<SystemPrompt[]> => {
   try {
+    // In demo mode, return mock system prompts
+    if (isDemoMode()) {
+      return [
+        {
+          id: 'demo-1',
+          project_id: 'proj-1',
+          project_name: 'CRM System',
+          project_description: 'Customer Relationship Management System',
+          client_name: 'Demo Client',
+          client_id: 'client-1',
+          system_prompt: 'You are an AI assistant for a CRM system. Help users manage leads, contacts, and sales activities.',
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        },
+        {
+          id: 'demo-2',
+          project_id: 'proj-2',
+          project_name: 'Sales Automation',
+          project_description: 'Automated sales workflow management',
+          client_name: 'Demo Client',
+          client_id: 'client-1',
+          system_prompt: 'You are an AI assistant for sales automation. Help users automate their sales workflows and improve efficiency.',
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        }
+      ];
+    }
     
     const adminLevel = await getCurrentAdminLevel();
     
@@ -773,6 +819,18 @@ export const getSystemAnalytics = async (): Promise<{
   totalApiKeys: number;
 }> => {
   try {
+    // In demo mode, return mock analytics data
+    if (isDemoMode()) {
+      return {
+        totalClients: 5,
+        totalUsers: 24,
+        totalProjects: 12,
+        totalLeads: 87,
+        activeLeads: 54,
+        totalApiKeys: 8
+      };
+    }
+    
     if (!(await isSystemAdmin())) {
       throw new Error('Access denied: System admin required');
     }

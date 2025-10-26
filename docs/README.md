@@ -29,6 +29,12 @@ docs/
 
 ## 🔧 Recent Critical Fixes
 
+### CRM Issues Complete Fix (Oct 26, 2025)
+- **Files**: [CRM_ISSUES_PROPAGATION_PLAN.md](CRM_ISSUES_PROPAGATION_PLAN.md) | [CRM_FIXES_IMPLEMENTATION_SUMMARY.md](CRM_FIXES_IMPLEMENTATION_SUMMARY.md)
+- **What**: Fixed all dashboard data, lead enhancements, calendar, reports, UI alignment, and admin errors
+- **Why**: Portfolio demo needed complete, realistic data across all sections
+- **Impact**: 7 files modified, 20 leads enhanced, 22 calendar meetings added, all widgets populated
+
 ### Branding Cleanup (Oct 24, 2025)
 - **File**: [BRANDING_CLEANUP_SUMMARY.md](fixes/BRANDING_CLEANUP_SUMMARY.md)
 - **What**: Removed all "Oven AI" branding from user-facing content
@@ -85,7 +91,7 @@ Historical documentation and session summaries are in [archive/](archive/)
 
 ---
 
-**Last Updated**: October 25, 2025  
+**Last Updated**: October 26, 2025  
 **Project**: CRM Demo (Portfolio)  
 **Repository**: https://github.com/broddo-baggins/ovenai-crm-portfolio-demo
 

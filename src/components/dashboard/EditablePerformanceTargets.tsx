@@ -269,16 +269,14 @@ const EditablePerformanceTargets: React.FC<EditablePerformanceTargetsProps> = ({
   }
 
   return (
-    <Card className={cn("w-full", className)}>
+    <Card className={cn("w-full", className)} dir="ltr">
       <CardHeader>
-        <div
-          className={cn("flex items-center justify-between", flexRowReverse())}
-        >
-          <div className={cn("flex items-center gap-3", flexRowReverse())}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
               <Target className="h-6 w-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <div className={textStart()}>
+            <div className="text-left">
               <CardTitle className="text-xl font-semibold">
                 {t("performanceTargets.title", "Performance Targets")}
               </CardTitle>
