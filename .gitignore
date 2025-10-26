@@ -271,14 +271,6 @@ typescript-*.json
 /reports/
 /temp-reports/
 /recovery-reports/
-# Demo: Prevent any .env files from being committed
-.env
-.env.*
-!.env.example
-node_modules
-node_modules
-node_modules
-node_modules
-node_modules
-node_modules
-node_modules
+
+# Workspace files
+*.code-workspace
