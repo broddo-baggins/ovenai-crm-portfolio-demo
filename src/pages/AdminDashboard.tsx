@@ -276,10 +276,15 @@ export function AdminDashboard() {
     >
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">
-            Admin Dashboard
-          </h1>
-          <p className="text-muted-foreground">
+          <div className="flex items-center gap-3">
+            <h1 className="text-3xl font-bold text-foreground">
+              Admin Dashboard
+            </h1>
+            <Badge variant="secondary" className="text-sm">
+              v1.0.5-EA
+            </Badge>
+          </div>
+          <p className="text-muted-foreground mt-1">
             Manage user access and system settings
           </p>
         </div>

@@ -68,7 +68,7 @@ const AdminLandingPage: React.FC = () => {
       </div>
 
       {/* Admin Type Badge */}
-      <div className="mb-8">
+      <div className="mb-8 flex items-center gap-2">
         {isSystemAdmin && (
           <Badge variant="destructive" className="mr-2">
             <Crown className="h-3 w-3 mr-1" />
@@ -81,6 +81,9 @@ const AdminLandingPage: React.FC = () => {
             Company Administrator ({companyAdminClients.length} companies)
           </Badge>
         )}
+        <Badge variant="outline" className="ml-auto">
+          v1.0.5-EA
+        </Badge>
       </div>
 
       {/* Admin Options - Centered Layout */}

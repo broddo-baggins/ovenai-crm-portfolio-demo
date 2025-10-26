@@ -1137,6 +1137,21 @@ const Settings = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
+              <div className="mb-4 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Layout className="h-5 w-5 text-primary" />
+                    <span className="font-semibold text-lg">Application Version</span>
+                  </div>
+                  <Badge variant="default" className="text-base px-4 py-1">
+                    v1.0.5-EA
+                  </Badge>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Security fixes, mock data enhancements, and API improvements
+                </p>
+              </div>
+              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex items-center space-x-2">
                   <Database className="h-5 w-5" />
