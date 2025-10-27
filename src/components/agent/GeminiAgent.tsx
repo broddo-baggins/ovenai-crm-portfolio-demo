@@ -15,11 +15,62 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
+// Markdown parser utility
+const parseMarkdown = (markdown: string): string => {
+  if (!markdown) return '';
+  
+  let html = markdown
+    // Headers
+    .replace(/^### (.*$)/gm, '<h3 class="text-lg font-semibold mb-2 mt-4">$1</h3>')
+    .replace(/^## (.*$)/gm, '<h2 class="text-xl font-semibold mb-3 mt-4">$1</h2>')
+    .replace(/^# (.*$)/gm, '<h1 class="text-2xl font-bold mb-4 mt-4">$1</h1>')
+    
+    // Bold and italic
+    .replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="font-bold italic">$1</strong>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+    
+    // Code blocks (before inline code)
+    .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded-lg overflow-x-auto my-3 text-sm"><code>$2</code></pre>')
+    .replace(/```([\s\S]*?)```/g, '<pre class="bg-gray-900 dark:bg-gray-950 text-gray-100 p-3 rounded-lg overflow-x-auto my-3 text-sm"><code>$1</code></pre>')
+    
+    // Inline code
+    .replace(/`([^`]+)`/g, '<code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-purple-600 dark:text-purple-400">$1</code>')
+    
+    // Lists (numbered and bullet)
+    .replace(/^\d+\.\s+(.*$)/gm, '<li class="ml-6 mb-1">$1</li>')
+    .replace(/^[\*\-]\s+(.*$)/gm, '<li class="ml-6 mb-1">$1</li>')
+    
+    // Links
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline" target="_blank" rel="noopener noreferrer">$1</a>')
+    
+    // Blockquotes
+    .replace(/^&gt;\s+(.*$)/gm, '<blockquote class="border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic my-2">$1</blockquote>')
+    
+    // Horizontal rules
+    .replace(/^---$/gm, '<hr class="my-4 border-gray-300 dark:border-gray-700" />')
+    
+    // Line breaks - preserve double line breaks, convert single to <br>
+    .replace(/\n\n/g, '</p><p class="mb-2">')
+    .replace(/\n/g, '<br>');
+
+  // Wrap consecutive list items in ul/ol tags
+  html = html.replace(/(<li[^>]*>.*?<\/li>(?:\s*<li[^>]*>.*?<\/li>)*)/gs, '<ul class="list-disc space-y-1 my-2">$1</ul>');
+
+  // Wrap in paragraph if not already wrapped
+  if (!html.startsWith('<')) {
+    html = '<p class="mb-2">' + html + '</p>';
+  }
+
+  return html;
+};
+
 interface Message {
   id: string;
   role: 'user' | 'assistant';
   content: string;
   timestamp: Date;
+  isStreaming?: boolean;
 }
 
 interface GeminiAgentProps {
@@ -37,8 +88,10 @@ export const GeminiAgent: React.FC<GeminiAgentProps> = ({
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [streamingMessageId, setStreamingMessageId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const streamingIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
@@ -60,6 +113,49 @@ export const GeminiAgent: React.FC<GeminiAgentProps> = ({
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [open]);
+
+  // Simulate streaming effect for smoother UX
+  const streamMessage = (fullContent: string, messageId: string) => {
+    let currentIndex = 0;
+    const words = fullContent.split(' ');
+    
+    // Clear any existing streaming interval
+    if (streamingIntervalRef.current) {
+      clearInterval(streamingIntervalRef.current);
+    }
+
+    setStreamingMessageId(messageId);
+    
+    streamingIntervalRef.current = setInterval(() => {
+      if (currentIndex < words.length) {
+        const displayedContent = words.slice(0, currentIndex + 1).join(' ');
+        
+        setMessages(prev => 
+          prev.map(msg => 
+            msg.id === messageId 
+              ? { ...msg, content: displayedContent, isStreaming: true }
+              : msg
+          )
+        );
+        
+        currentIndex++;
+      } else {
+        // Streaming complete
+        if (streamingIntervalRef.current) {
+          clearInterval(streamingIntervalRef.current);
+          streamingIntervalRef.current = null;
+        }
+        setStreamingMessageId(null);
+        setMessages(prev => 
+          prev.map(msg => 
+            msg.id === messageId 
+              ? { ...msg, isStreaming: false }
+              : msg
+          )
+        );
+      }
+    }, 30); // Adjust speed here (30ms = ~33 words/second)
+  };
 
   const handleSend = async (question?: string) => {
     const messageText = question || input.trim();
@@ -85,14 +181,20 @@ export const GeminiAgent: React.FC<GeminiAgentProps> = ({
       // Query the agent
       const response = await queryAgent(messageText, context);
 
+      const assistantMessageId = `assistant-${Date.now()}`;
       const assistantMessage: Message = {
-        id: `assistant-${Date.now()}`,
+        id: assistantMessageId,
         role: 'assistant',
-        content: response,
+        content: '', // Start empty for streaming
         timestamp: new Date(),
+        isStreaming: true,
       };
 
       setMessages(prev => [...prev, assistantMessage]);
+      
+      // Start streaming the response
+      streamMessage(response, assistantMessageId);
+      
     } catch (error) {
       console.error('Failed to get response:', error);
       
@@ -108,6 +210,15 @@ export const GeminiAgent: React.FC<GeminiAgentProps> = ({
       setIsLoading(false);
     }
   };
+
+  // Cleanup streaming on unmount
+  useEffect(() => {
+    return () => {
+      if (streamingIntervalRef.current) {
+        clearInterval(streamingIntervalRef.current);
+      }
+    };
+  }, []);
 
   const handleCopy = async (messageId: string, content: string) => {
     try {
@@ -209,15 +320,25 @@ export const GeminiAgent: React.FC<GeminiAgentProps> = ({
                     >
                       <div
                         className={cn(
-                          'rounded-lg px-4 py-3 prose prose-sm max-w-none',
+                          'rounded-lg px-4 py-3',
                           message.role === 'user'
                             ? 'bg-primary text-primary-foreground'
                             : 'bg-muted'
                         )}
                       >
-                        <div className="whitespace-pre-wrap break-words">
-                          {message.content}
-                        </div>
+                        {message.role === 'user' ? (
+                          <div className="whitespace-pre-wrap break-words text-sm">
+                            {message.content}
+                          </div>
+                        ) : (
+                          <div 
+                            className="prose prose-sm max-w-none dark:prose-invert prose-headings:mt-2 prose-headings:mb-2 prose-p:my-1 prose-pre:my-2"
+                            dangerouslySetInnerHTML={{ __html: parseMarkdown(message.content) }}
+                          />
+                        )}
+                        {message.isStreaming && (
+                          <span className="inline-block w-2 h-4 bg-primary-foreground/50 ml-1 animate-pulse" />
+                        )}
                       </div>
 
                       <div className="flex items-center gap-2 px-1">
