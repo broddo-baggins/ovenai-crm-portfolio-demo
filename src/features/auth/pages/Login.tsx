@@ -92,7 +92,7 @@ const Login = () => {
               <Building2 className="h-12 w-12 text-primary-100 drop-shadow-lg" />
             </motion.div>
             <h1 className="text-3xl font-geist-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent text-center">
-              {isRTL ? 'ברוכים הבאים ל-OvenAI' : 'Welcome Back to OvenAI'}
+              {isRTL ? 'ברוכים הבאים' : 'Welcome Back'}
             </h1>
             <p className="font-geist text-gray-600 text-base leading-relaxed text-center">
               {isRTL 

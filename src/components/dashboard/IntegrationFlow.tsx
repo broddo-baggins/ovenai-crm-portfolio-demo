@@ -26,7 +26,7 @@ const IntegrationFlow: React.FC = () => {
           ref={containerRef}
           className="relative h-80 w-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-lg overflow-hidden"
         >
-          {/* Central OvenAI Hub */}
+          {/* Central CRM Hub */}
           <div
             ref={ovenaiRef}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
@@ -35,7 +35,7 @@ const IntegrationFlow: React.FC = () => {
               <span className="text-white font-bold text-lg">AI</span>
             </div>
             <div className="text-center mt-2">
-              <div className="text-sm font-semibold text-gray-900 dark:text-slate-100">OvenAI</div>
+              <div className="text-sm font-semibold text-gray-900 dark:text-slate-100">CRM Demo</div>
               <div className="text-xs text-gray-500 dark:text-slate-400">Core Engine</div>
             </div>
           </div>

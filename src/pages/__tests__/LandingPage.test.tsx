@@ -102,9 +102,9 @@ vi.mock("react-i18next", () => ({
         "faq.title": "Frequently Asked Questions",
         "faq.items": [
           {
-            question: "How does OvenAI work?",
+            question: "How does CRM Demo work?",
             answer:
-              "OvenAI uses advanced AI to engage with your leads through WhatsApp",
+              "CRM Demo uses advanced AI to engage with your leads through WhatsApp",
           },
           {
             question: "What languages does it support?",
@@ -115,7 +115,7 @@ vi.mock("react-i18next", () => ({
         "integrations.salesforce": "Salesforce",
         "integrations.monday": "Monday.com",
         "integrations.whatsapp": "WhatsApp Business",
-        "footer.copyright": "© 2025 OvenAI",
+        "footer.copyright": "© 2025 CRM Demo",
         "footer.privacy": "Privacy Policy",
         "footer.terms": "Terms of Service",
       };
@@ -318,8 +318,8 @@ vi.mock("@/components/landing/FAQ", () => ({
   default: () => (
     <div data-testid="faq-component">
       <h2>Frequently Asked Questions</h2>
-      <button>How does OvenAI work?</button>
-      <div>OvenAI uses advanced AI to engage with your leads</div>
+      <button>How does CRM Demo work?</button>
+      <div>CRM Demo uses advanced AI to engage with your leads</div>
       <button>What languages does it support?</button>
       <div>We support Hebrew and English</div>
     </div>
@@ -381,7 +381,7 @@ describe("LandingPage", () => {
       expect(screen.getByRole("contentinfo")).toBeInTheDocument();
     });
 
-    it("should render the OvenAI branding", async () => {
+    it("should render the CRM Demo branding", async () => {
       render(
         <TestWrapper>
           <LandingPage />
@@ -393,8 +393,8 @@ describe("LandingPage", () => {
       });
 
       // Check for branding text - use getAllByText since there are multiple instances
-      const ovenAIElements = screen.getAllByText(/OvenAI/i);
-      expect(ovenAIElements.length).toBeGreaterThan(0);
+      const crmDemoElements = screen.getAllByText(/CRM Demo/i);
+      expect(crmDemoElements.length).toBeGreaterThan(0);
     });
 
     it("should render navigation menu items", async () => {
@@ -712,13 +712,13 @@ describe("LandingPage", () => {
       });
 
       // Find and click on first FAQ item
-      const firstFAQ = screen.getByText(/How does OvenAI work/i);
+      const firstFAQ = screen.getByText(/How does CRM Demo work/i);
       fireEvent.click(firstFAQ);
 
       // Should show expanded content
       await waitFor(() => {
         expect(
-          screen.getByText(/OvenAI uses advanced AI/i),
+          screen.getByText(/CRM Demo uses advanced AI/i),
         ).toBeInTheDocument();
       });
     });
@@ -856,7 +856,7 @@ describe("LandingPage", () => {
       });
 
       // Check for footer content
-      expect(screen.getByText(/© 2025 OvenAI/i)).toBeInTheDocument();
+      expect(screen.getByText(/© 2025 CRM Demo/i)).toBeInTheDocument();
       expect(screen.getByText(/Privacy Policy/i)).toBeInTheDocument();
       expect(screen.getByText(/Terms of Service/i)).toBeInTheDocument();
     });

@@ -1009,7 +1009,7 @@ export function IntegrationsSettings({ className }: IntegrationsSettingsProps) {
                 <li>• Automatic BANT/HEAT lead qualification meetings</li>
                 <li>• Real-time booking notifications</li>
                 <li>• Lead heat progression based on meeting activity</li>
-                <li>• Integration with OvenAI notification system</li>
+                <li>• Integration with CRM notification system</li>
               </ul>
             </div>
           )}

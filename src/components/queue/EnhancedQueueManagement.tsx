@@ -308,7 +308,7 @@ const EnhancedQueueManagement: React.FC = () => {
       <Alert className="border-indigo-200 bg-indigo-50">
         <AlertTriangle className="h-4 w-4 text-indigo-600" />
         <AlertDescription>
-          WhatsApp conversations are subject to Meta Business rate limits. OvenAI automatically throttles new conversations to remain compliant and prevent abuse. Daily capacity numbers reflect these limits.
+          WhatsApp conversations are subject to Meta Business rate limits. The CRM automatically throttles new conversations to remain compliant and prevent abuse. Daily capacity numbers reflect these limits.
         </AlertDescription>
       </Alert>
 

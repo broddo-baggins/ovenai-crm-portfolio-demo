@@ -183,7 +183,7 @@ export class DashboardReportGenerator {
       excludedWidgets: widgets.length - widgetReportData.length,
       reportSize: 0, // Will be calculated after export
       generationTime: Date.now() - startTime,
-      generatedBy: 'OvenAI Dashboard',
+      generatedBy: 'CRM Demo Dashboard',
       dashboardVersion: '1.0'
     };
 

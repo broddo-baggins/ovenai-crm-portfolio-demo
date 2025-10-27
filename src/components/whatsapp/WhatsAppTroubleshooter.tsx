@@ -199,7 +199,7 @@ export function WhatsAppTroubleshooter() {
         },
         body: JSON.stringify({
           to: testPhoneNumber,
-          message: 'This is a test message from OvenAI WhatsApp integration. If you receive this, the integration is working! COMPLETE'
+          message: 'This is a test message from CRM Demo WhatsApp integration. If you receive this, the integration is working! COMPLETE'
         }),
       });
 

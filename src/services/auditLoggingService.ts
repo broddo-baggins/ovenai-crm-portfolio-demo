@@ -1,6 +1,6 @@
 // @ts-nocheck
 /**
- * Enhanced Audit Logging Service for OvenAI
+ * Enhanced Audit Logging Service for CRM Demo
  * 
  * Provides comprehensive user activity tracking across the entire system including:
  * - Authentication events (login, logout, failed attempts)

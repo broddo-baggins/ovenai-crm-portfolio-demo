@@ -661,7 +661,7 @@ export const META_SUBMISSION_TEMPLATES = {
     components: [
       {
         type: "BODY",
-        text: "Welcome to OvenAI! We help you find the perfect property. How can we assist you today?",
+        text: "Welcome! We help you find the perfect property. How can we assist you today?",
       },
     ],
   },

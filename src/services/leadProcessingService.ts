@@ -238,7 +238,7 @@ export class LeadProcessingService {
         message_template: 'follow_up_template',
         message_variables: {
           lead_name: lead.first_name || 'there',
-          company: 'OvenAI',
+          company: 'CRM Demo',
           follow_up_date: nextBusinessDay.toISOString()
         }
       }));

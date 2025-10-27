@@ -300,7 +300,7 @@ export const WhatsAppDiagnosticTool: React.FC = () => {
           to: testPhoneNumber.replace('+', ''),
           type: 'text',
           text: {
-            body: 'Hello! This is a test message from OvenAI. If you receive this, your WhatsApp integration is working! COMPLETE'
+            body: 'Hello! This is a test message from CRM Demo. If you receive this, your WhatsApp integration is working! COMPLETE'
           }
         })
       });

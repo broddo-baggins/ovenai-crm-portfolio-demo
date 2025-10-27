@@ -126,7 +126,7 @@ export function N8NSettings() {
     setConnections([
       {
         id: 'conn-1',
-        name: 'OvenAI Database',
+        name: 'CRM Database',
         type: 'supabase',
         endpoint: 'https://your-project.supabase.co',
         status: 'disconnected'
@@ -630,7 +630,7 @@ export function N8NSettings() {
               <div>
                 <h4 className="font-medium">Configure Database Connection</h4>
                 <p className="text-sm text-muted-foreground">
-                  Connect N8N to OvenAI's Supabase database for trigger monitoring
+                  Connect N8N to CRM's Supabase database for trigger monitoring
                 </p>
               </div>
             </div>

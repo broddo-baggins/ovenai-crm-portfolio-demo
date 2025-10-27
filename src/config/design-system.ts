@@ -1,6 +1,6 @@
 /**
- * OvenAI Design System Configuration
- * Based on the OvenAI Branding Guide and modern UI/UX standards
+ * CRM Demo Design System Configuration
+ * Based on modern UI/UX standards
  */
 
 import { type ClassValue, clsx } from "clsx";
@@ -11,7 +11,7 @@ export const cn = (...inputs: ClassValue[]) => {
 };
 
 export const designTokens = {
-  // Color Palette - Updated from OvenAI Brand Guide
+  // Color Palette - Modern CRM Design
   colors: {
     // Primary Colors
     primary: {
@@ -20,7 +20,7 @@ export const designTokens = {
       200: '#bfdbfe',
       300: '#93c5fd',
       400: '#60a5fa',
-      500: '#0055FF', // OvenAI Primary Blue
+      500: '#0055FF', // Primary Blue
       600: '#2563eb',
       700: '#1d4ed8',
       800: '#1e40af',
@@ -35,7 +35,7 @@ export const designTokens = {
       200: '#a7f3d0',
       300: '#6ee7b7',
       400: '#34d399',
-      500: '#10B981', // OvenAI Success Green
+      500: '#10B981', // Success Green
       600: '#059669',
       700: '#047857',
       800: '#065f46',
@@ -50,7 +50,7 @@ export const designTokens = {
       200: '#ddd6fe',
       300: '#c4b5fd',
       400: '#a78bfa',
-      500: '#8B5CF6', // OvenAI Accent Purple
+      500: '#8B5CF6', // Accent Purple
       600: '#7c3aed',
       700: '#6d28d9',
       800: '#5b21b6',
@@ -65,7 +65,7 @@ export const designTokens = {
       200: '#fde68a',
       300: '#fcd34d',
       400: '#fbbf24',
-      500: '#F59E0B', // OvenAI Warning Orange
+      500: '#F59E0B', // Warning Orange
       600: '#d97706',
       700: '#b45309',
       800: '#92400e',
@@ -80,7 +80,7 @@ export const designTokens = {
       200: '#e5e7eb',
       300: '#d1d5db',
       400: '#9ca3af',
-      500: '#6B7280', // OvenAI Neutral Gray
+      500: '#6B7280', // Neutral Gray
       600: '#4b5563',
       700: '#374151',
       800: '#1f2937',

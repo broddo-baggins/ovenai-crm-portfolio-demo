@@ -48,16 +48,16 @@ export const openEmailClient = (
 };
 
 /**
- * Specific helper for OvenAI early access requests
+ * Specific helper for CRM Demo early access requests
  */
 export const requestEarlyAccess = (isHebrew: boolean = false) => {
   const email = 'amit.yogev@gmail.com';
   const subject = isHebrew 
-    ? 'בקשה לגישה מוקדמת ל-OvenAI' 
-    : 'OvenAI Early Access Request';
+    ? 'בקשה לגישה מוקדמת למערכת CRM' 
+    : 'CRM Demo Early Access Request';
   const body = isHebrew 
-    ? 'שלום,\n\nאני מעוניין/ת לקבל גישה מוקדמת למערכת OvenAI.\n\nתודה רבה!'
-    : 'Hello,\n\nI am interested in getting early access to OvenAI.\n\nThank you!';
+    ? 'שלום,\n\nאני מעוניין/ת לקבל גישה מוקדמת למערכת CRM.\n\nתודה רבה!'
+    : 'Hello,\n\nI am interested in getting early access to CRM Demo.\n\nThank you!';
   const fallbackMessage = isHebrew
     ? `אנא שלחו מייל ל: ${email}\nנושא: ${subject}\n\nתוכן:\n${body}`
     : `Please send an email to: ${email}\nSubject: ${subject}\n\nContent:\n${body}`;
@@ -71,11 +71,11 @@ export const requestEarlyAccess = (isHebrew: boolean = false) => {
 export const requestDemo = (isHebrew: boolean = false) => {
   const email = 'amit.yogev@gmail.com';
   const subject = isHebrew 
-    ? 'בקשה להדגמה של OvenAI' 
-    : 'OvenAI Demo Request';
+    ? 'בקשה להדגמה של מערכת CRM' 
+    : 'CRM Demo Request';
   const body = isHebrew 
-    ? 'שלום,\n\nאני מעוניין/ת לקבוע הדגמה של מערכת OvenAI.\n\nתודה!'
-    : 'Hello,\n\nI would like to schedule a demo of OvenAI.\n\nThank you!';
+    ? 'שלום,\n\nאני מעוניין/ת לקבוע הדגמה של מערכת CRM.\n\nתודה!'
+    : 'Hello,\n\nI would like to schedule a demo of CRM Demo.\n\nThank you!';
   const fallbackMessage = isHebrew
     ? `אנא שלחו מייל ל: ${email}\nנושא: ${subject}\n\nתוכן:\n${body}`
     : `Please send an email to: ${email}\nSubject: ${subject}\n\nContent:\n${body}`;

@@ -31,7 +31,7 @@ interface DashboardSettingsProps {
 }
 
 const defaultDashboardSettings: DashboardSettingsType = {
-      dashboardName: 'OvenAI Analytics',
+      dashboardName: 'CRM Analytics',
   autoSave: true,
   autoSaveInterval: 30,
   defaultWidgetSize: 'medium',

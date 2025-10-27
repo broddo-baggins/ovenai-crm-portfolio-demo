@@ -18,7 +18,7 @@ const Queue: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{t('queue.page.title')} | OvenAI</title>
+        <title>{t('queue.page.title')} | CRM Demo</title>
         <meta name="description" content={t('queue.page.description')} />
       </Helmet>
       
