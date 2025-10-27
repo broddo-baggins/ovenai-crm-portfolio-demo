@@ -1,4 +1,4 @@
-# 🎭 OvenAI CRM - Portfolio Demo
+# Portfolio CRM Demo
 
 ## ⚠️ Important Notice
 

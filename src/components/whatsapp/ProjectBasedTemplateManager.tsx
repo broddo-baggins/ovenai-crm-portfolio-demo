@@ -81,7 +81,7 @@ export const ProjectBasedTemplateManager: React.FC<ProjectBasedTemplateManagerPr
         {
           id: 'global_001',
           name: 'welcome_new_lead',
-          content: 'ברוכים הבאים ל-OvenAI! אנחנו כאן לעזור לכם למצוא את הנכס המושלם. איך נוכל לעזור לכם היום?',
+          content: 'ברוכים הבאים! אנחנו כאן לעזור לכם למצוא את הנכס המושלם. איך נוכל לעזור לכם היום?',
           category: 'UTILITY',
           language: 'he_IL',
           status: 'APPROVED',

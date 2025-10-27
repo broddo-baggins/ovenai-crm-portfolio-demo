@@ -125,13 +125,13 @@ export const CalendlyConnectionOptions: React.FC<CalendlyConnectionOptionsProps>
                       <div className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-semibold">
                         3
                       </div>
-                      <span className="text-sm">Authorize OvenAI to access your calendar</span>
+                      <span className="text-sm">Authorize CRM Demo to access your calendar</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-semibold">
                         4
                       </div>
-                      <span className="text-sm">Return to OvenAI with connected account</span>
+                      <span className="text-sm">Return to CRM Demo with connected account</span>
                     </div>
                   </div>
                 </div>

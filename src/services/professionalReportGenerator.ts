@@ -130,7 +130,7 @@ class ProfessionalReportGenerator {
         title: 'Lead Management Analytics Report',
         subtitle: 'Comprehensive Performance Analysis',
         date: new Date().toLocaleDateString(),
-        company: 'OvenAI Platform',
+        company: 'CRM Demo Platform',
         summary: {
           totalLeads: leads.length,
           totalRevenue: revenueByMonth.reduce((sum, month) => sum + month.revenue, 0),
@@ -197,7 +197,7 @@ class ProfessionalReportGenerator {
     const branding = options.branding || {
       primaryColor: '#3b82f6',
       secondaryColor: '#1e40af',
-      companyName: 'OvenAI'
+      companyName: 'CRM Demo'
     };
 
     switch (options.template) {
@@ -854,7 +854,7 @@ class ProfessionalReportGenerator {
             </div>
             
             <div class="footer">
-                <p>This report was generated automatically by OvenAI Professional Report Generator</p>
+                <p>This report was generated automatically by CRM Demo Professional Report Generator</p>
             </div>
         </div>
     </body>

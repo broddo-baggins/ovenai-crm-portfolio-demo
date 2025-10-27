@@ -94,11 +94,11 @@ export const supabase = isDemoMode
           persistSession: true,
           detectSessionInUrl: true,
           storage: localStorage, // Explicitly use localStorage
-          storageKey: 'ovenai-auth', // Custom storage key
+          storageKey: 'crm-demo-auth', // Custom storage key
         },
         global: {
           headers: {
-            'x-application-name': 'ovenai-crm'
+            'x-application-name': 'crm-portfolio-demo'
           }
         },
         db: {

@@ -4,7 +4,7 @@
   "framework": "vite",
   "env": {
     "VITE_APP_MODE": "demo",
-    "VITE_APP_NAME": "OvenAI CRM Demo",
+    "VITE_APP_NAME": "CRM Portfolio Demo",
     "VITE_DEMO_MODE": "true"
   },
   "headers": [

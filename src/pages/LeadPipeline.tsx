@@ -78,7 +78,7 @@ const initialTemplateColumns: KanbanColumn[] = [
         tags: ["Hebrew", "Opening", "Real Estate"],
         templateType: "opening",
         content:
-          "שלום [שם], ראיתי שאתם מחפשים פתרון CRM מתקדם. האם תהיו זמינים לשיחה קצרה השבוע כדי שאוכל לספר לכם איך OvenAI יכול לעזור לכם לסגור יותר עסקאות?",
+          "שלום [שם], ראיתי שאתם מחפשים פתרון CRM מתקדם. האם תהיו זמינים לשיחה קצרה השבוע כדי שאוכל לספר לכם איך CRM Demo יכול לעזור לכם לסגור יותר עסקאות?",
         responseRate: 23.5,
         usageCount: 156,
         lastUsed: "2025-01-29",
@@ -113,7 +113,7 @@ const initialTemplateColumns: KanbanColumn[] = [
         tags: ["Hebrew", "Follow-up", "Post-Demo"],
         templateType: "follow_up",
         content:
-          "תודה על הזמן שהקדשתם לדמו של OvenAI! ראיתי שהיה לכם עניין במיוחד בפיצ'ר החימום הטוט של הלידים. האם תרצו שנקבע פגישת המשך עם הצוות הטכני שלנו?",
+          "תודה על הזמן שהקדשתם לדמו! ראיתי שהיה לכם עניין במיוחד בפיצ'ר החימום הטוט של הלידים. האם תרצו שנקבע פגישת המשך עם הצוות הטכני שלנו?",
         responseRate: 31.7,
         usageCount: 67,
         lastUsed: "2025-01-29",
@@ -171,7 +171,7 @@ const initialTemplateColumns: KanbanColumn[] = [
         tags: ["English", "Competition", "Differentiation"],
         templateType: "objection_handling",
         content:
-          "I know you might be considering other options like HubSpot or Salesforce. What sets OvenAI apart is our 24/7 AI that actually converses like a human - not just chatbot responses. Would you like to see a side-by-side comparison?",
+          "I know you might be considering other options like HubSpot or Salesforce. What sets our CRM apart is the 24/7 AI that actually converses like a human - not just chatbot responses. Would you like to see a side-by-side comparison?",
         responseRate: 22.1,
         usageCount: 112,
         lastUsed: "2025-01-22",
@@ -188,7 +188,7 @@ const initialTemplateColumns: KanbanColumn[] = [
         tags: ["Hebrew", "Case Study", "Real Estate"],
         templateType: "nurturing",
         content:
-          'לקוח שלנו, סוכן נדל"ן בתל אביב, הגדיל את מספר הפגישות שלו ב-300% תוך חודש אחד עם OvenAI. הוא אומר שהבינה המלאכותית שלנו מזהה לידים איכותיים כמו אדם מנוסה. האם תרצו לשמוע את הסיפור המלא שלו?',
+          'לקוח שלנו, סוכן נדל"ן בתל אביב, הגדיל את מספר הפגישות שלו ב-300% תוך חודש אחד. הוא אומר שהבינה המלאכותית שלנו מזהה לידים איכותיים כמו אדם מנוסה. האם תרצו לשמוע את הסיפור המלא שלו?',
         responseRate: 28.9,
         usageCount: 178,
         lastUsed: "2025-01-26",
@@ -205,7 +205,7 @@ const initialTemplateColumns: KanbanColumn[] = [
         tags: ["English", "Technical", "Integration"],
         templateType: "follow_up",
         content:
-          "For the technical details you requested: OvenAI integrates with your existing CRM via API, supports 50+ languages with contextual memory, and includes enterprise-grade security. Our technical team can walk you through the architecture - when works best for you?",
+          "For the technical details you requested: Our CRM integrates with your existing systems via API, supports 50+ languages with contextual memory, and includes enterprise-grade security. Our technical team can walk you through the architecture - when works best for you?",
         responseRate: 19.4,
         usageCount: 56,
         lastUsed: "2025-01-15",

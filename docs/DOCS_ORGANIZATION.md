@@ -107,7 +107,7 @@ Total: 18 markdown files, organized
 - `DOCS_ORGANIZATION.md` - This file
 
 ### Recent Fixes (2)
-- `BRANDING_CLEANUP_SUMMARY.md` - OvenAI cleanup
+- `BRANDING_CLEANUP_SUMMARY.md` - Branding cleanup
 - `GITIGNORE_FIX_SUMMARY.md` - 43 files recovered
 
 ### Deployment (1)

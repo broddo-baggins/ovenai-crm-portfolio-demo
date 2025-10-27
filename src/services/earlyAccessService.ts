@@ -81,7 +81,7 @@ class EarlyAccessService {
       // For example, using SendGrid, Resend, or similar
       
       const emailData = {
-        to: 'team@ovenai.com', // Your team email
+        to: 'amit@amityogev.com', // Your team email
         subject: `New Early Access Request - ${request.company}`,
         text: `
           New early access request received:

@@ -17,7 +17,7 @@
 
 2. **Import to Vercel**
    - Go to https://vercel.com/new
-   - Select your `ovenai-crm-portfolio-demo` repository
+   - Select your `crm-portfolio-demo` repository
    - Click "Import"
 
 3. **Configure Environment Variables** (Optional)
@@ -83,5 +83,5 @@ Could not resolve "./path/to/file"
 
 ---
 
-**Status:** ✅ Deployed at https://ovenai-crm-portfolio-demo.vercel.app
+**Status:** ✅ Deployed at https://crm-portfolio-demo.vercel.app
 

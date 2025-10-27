@@ -1130,7 +1130,7 @@ const Reports = () => {
 
       // For now, copy to clipboard and show instructions
       const emailContent = `
-OvenAI Reports Summary
+CRM Demo Reports Summary
 Generated: ${new Date().toLocaleString()}
 
 DATA Summary:

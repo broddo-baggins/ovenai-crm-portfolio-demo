@@ -32,8 +32,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/broddo-baggins/ovenai-crm-portfolio-demo.git
-cd ovenai-crm-portfolio-demo
+git clone https://github.com/broddo-baggins/crm-portfolio-demo.git
+cd crm-portfolio-demo
 
 # Install dependencies
 npm install
@@ -202,7 +202,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👥 Team
 
 **Project Lead**: Amit Yogev
-**Repository**: [github.com/broddo-baggins/ovenai-crm-portfolio-demo](https://github.com/broddo-baggins/ovenai-crm-portfolio-demo)
+**Repository**: [github.com/broddo-baggins/crm-portfolio-demo](https://github.com/broddo-baggins/crm-portfolio-demo)
 
 ## 🙏 Acknowledgments
 
@@ -215,8 +215,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For questions, issues, or feature requests:
-- **Issues**: [GitHub Issues](https://github.com/broddo-baggins/ovenai-crm-portfolio-demo/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/broddo-baggins/ovenai-crm-portfolio-demo/discussions)
+- **Issues**: [GitHub Issues](https://github.com/broddo-baggins/crm-portfolio-demo/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/broddo-baggins/crm-portfolio-demo/discussions)
 - **Email**: demo@example.com
 
 ---

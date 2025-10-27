@@ -854,7 +854,7 @@ export class CalendlyService {
       await userSettingsService.createNotification({
         title: "Calendly Connected Successfully",
         message:
-          "Your Calendly account is now integrated with OvenAI for BANT/HEAT lead qualification meetings.",
+          "Your Calendly account is now integrated with CRM Demo for BANT/HEAT lead qualification meetings.",
         type: "success",
         action_url: "/settings/integrations",
         metadata: {
@@ -1441,7 +1441,7 @@ export class CalendlyService {
       // Create disconnection notification
       await userSettingsService.createNotification({
         title: "Calendly Disconnected",
-        message: "Your Calendly integration has been disconnected from OvenAI.",
+        message: "Your Calendly integration has been disconnected from CRM Demo.",
         type: "info",
         action_url: "/settings/integrations",
         metadata: {

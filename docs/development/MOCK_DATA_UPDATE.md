@@ -1,7 +1,7 @@
 # Mock Data Update - Comprehensive Demo Portfolio
 
 ## Overview
-Updated the OvenAI CRM demo with comprehensive mock data to showcase all features without requiring authentication or database connections.
+Updated the CRM Portfolio Demo with comprehensive mock data to showcase all features without requiring authentication or database connections.
 
 ## Changes Made
 
@@ -69,7 +69,7 @@ Set in `vercel.json`:
 ```json
 "env": {
   "VITE_APP_MODE": "demo",
-  "VITE_APP_NAME": "OvenAI CRM Demo",
+  "VITE_APP_NAME": "CRM Portfolio Demo",
   "VITE_DEMO_MODE": "true"
 }
 ```
@@ -78,7 +78,7 @@ Set in `vercel.json`:
 ```javascript
 {
   id: 'demo-user-12345',
-  email: 'demo@ovenai.example.com',
+  email: 'demo@crm-demo.example.com',
   role: 'ADMIN',
   name: 'Demo User'
 }

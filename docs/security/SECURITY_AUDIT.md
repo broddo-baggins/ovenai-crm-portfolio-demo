@@ -1,4 +1,4 @@
-# Security Audit - OvenAI CRM Demo
+# Security Audit - CRM Portfolio Demo
 
 **Date:** October 24, 2025  
 **Status:** Portfolio Demo (Mock Data Only)
@@ -83,7 +83,7 @@ git log --all --full-history -- "*key*"
 ### 3. Environment Variables
 All environment variables in Vercel are set to demo mode:
 - `VITE_DEMO_MODE=true`
-- `VITE_APP_NAME=OvenAI CRM Demo`
+- `VITE_APP_NAME=CRM Portfolio Demo`
 
 ### 4. No Database Access
 - No Supabase connection strings
@@ -131,7 +131,7 @@ Run these commands to double-check:
 
 ```bash
 # Search for potential secrets
-cd /Users/amity/projects/ovenai-crm-portfolio-demo
+cd /Users/amity/projects/crm-portfolio-demo
 
 # Check for API keys
 grep -r "api_key\|apiKey\|API_KEY" --include="*.ts" --include="*.tsx" src/ | grep -v "demo\|mock\|example"

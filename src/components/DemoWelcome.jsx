@@ -188,7 +188,7 @@ const DemoWelcome = () => {
               Enter Demo
             </button>
             <a
-              href="https://github.com/yourusername/ovenai-demo"
+              href="https://github.com/broddo-baggins/crm-portfolio-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all"

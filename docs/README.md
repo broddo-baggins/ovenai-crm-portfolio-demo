@@ -50,7 +50,7 @@ docs/
 ## 📊 Project Status
 
 - ✅ **Build**: Passing locally and on Vercel
-- ✅ **Deployment**: Live at https://ovenai-crm-portfolio-demo.vercel.app
+- ✅ **Deployment**: Live at https://crm-portfolio-demo.vercel.app
 - ✅ **Branding**: All "Oven AI" references removed
 - ✅ **Git**: All source files properly tracked
 
@@ -93,5 +93,5 @@ Historical documentation and session summaries are in [archive/](archive/)
 
 **Last Updated**: October 26, 2025  
 **Project**: CRM Demo (Portfolio)  
-**Repository**: https://github.com/broddo-baggins/ovenai-crm-portfolio-demo
+**Repository**: https://github.com/broddo-baggins/crm-portfolio-demo
 
