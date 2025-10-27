@@ -16,7 +16,7 @@ import {
 } from '@/data/mockData';
 
 export const mockDataService = {
-  // Mock projects - returns 3 comprehensive projects
+  // Mock projects - returns 3 comprehensive projects with all stats
   getMockProjects() {
     return mockProjects.map(project => ({
       id: project.id,
@@ -25,7 +25,22 @@ export const mockDataService = {
       client_id: project.client_id,
       status: project.status,
       created_at: project.start_date,
-      updated_at: project.start_date,
+      updated_at: project.updated_at,
+      start_date: project.start_date,
+      estimated_completion: project.estimated_completion,
+      value: project.value,
+      team: project.team,
+      progress: project.progress,
+      leads_count: project.leads_count,
+      active_conversations: project.active_conversations,
+      conversion_rate: project.conversion_rate,
+      last_activity: project.last_activity,
+      last_activity_at: project.last_activity_at,
+      priority: project.priority,
+      color: project.color,
+      tags: project.tags,
+      milestones: project.milestones,
+      notes: project.notes,
       client: {
         id: project.client_id,
         name: project.client
@@ -51,6 +66,7 @@ export const mockDataService = {
         company: lead.company,
         status: lead.status,
         state: lead.state,
+        region: lead.region,
         temperature: lead.bant_score >= 75 ? 'hot' : lead.bant_score >= 50 ? 'warm' : 'cold',
         current_project_id: lead.current_project_id || null,
         project_id: lead.project_id || null,
@@ -62,11 +78,14 @@ export const mockDataService = {
         bant_need: lead.need !== 'General Inquiry',
         bant_timeline: lead.timeline !== 'Unknown',
         bant_score: Math.round(lead.bant_score / 25), // Convert 0-100 to 0-4 scale
+        bant_status: lead.bant_status,
+        interaction_count: lead.interaction_count || 0,
         tags: lead.tags,
         notes: lead.notes,
         source: lead.source,
         assigned_agent: lead.assigned_agent,
-        next_followup: lead.next_followup
+        next_followup: lead.next_followup,
+        last_contact: lead.last_contact
       };
     });
   },
