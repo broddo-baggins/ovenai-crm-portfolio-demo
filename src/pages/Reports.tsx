@@ -232,14 +232,24 @@ const ErrorDisplay = ({ error, onRetry, isMobile }) => {
 };
 
 // FIXED: Proper status and temperature mappings from database schema
+// Handle both uppercase (database) and lowercase (mock data) formats
 const statusMapping = {
+  // Uppercase formats (database)
   'NEW': 'new',
   'CONTACTED': 'contacted', 
   'INTERESTED': 'interested',
   'NOT_INTERESTED': 'not_interested',
   'MEETING_SCHEDULED': 'meeting',
   'CLOSED_WON': 'closed_won',
-  'CLOSED_LOST': 'closed_lost'
+  'CLOSED_LOST': 'closed_lost',
+  // Lowercase formats (mock data compatibility)
+  'new': 'new',
+  'qualified': 'contacted',
+  'nurturing': 'interested',
+  'meeting-scheduled': 'meeting',
+  'disqualified': 'not_interested',
+  'closed-won': 'closed_won',
+  'closed-lost': 'closed_lost'
 };
 
 // FIXED: Enhanced temperature labels matching the sophisticated system
@@ -513,9 +523,9 @@ const Reports = () => {
       const statusCounts = leads.reduce((acc, lead) => {
         if (!lead) return acc;
         
-        // Use actual database status field (NEW, CONTACTED, etc.)
-        const dbStatus = lead.status || 'NEW';
-        const mappedStatus = statusMapping[dbStatus] || dbStatus.toLowerCase();
+        // Use actual database status field (NEW, CONTACTED, etc.) or mock data field (new, qualified, etc.)
+        const dbStatus = lead.status || 'new';
+        const mappedStatus = statusMapping[dbStatus] || dbStatus.toLowerCase().replace(/-/g, '_');
         acc[mappedStatus] = (acc[mappedStatus] || 0) + 1;
         return acc;
       }, {});

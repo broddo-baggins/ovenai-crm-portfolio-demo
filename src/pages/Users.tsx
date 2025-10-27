@@ -62,6 +62,12 @@ interface User {
 }
 
 const fetchUsers = async (): Promise<User[]> => {
+  // DEMO MODE: Return mock users immediately in demo mode
+  if (import.meta.env.VITE_DEMO_MODE === 'true') {
+    console.log('DEMO [DEMO MODE] Returning mock users');
+    return getMockUsers();
+  }
+
   try {
     // Get the current session for authentication
     const { data: { session }, error: sessionError } = await supabase.auth.getSession();

@@ -341,7 +341,7 @@ const DashboardRecentActivity: React.FC = () => {
   };
 
   return (
-    <Card data-testid="recent-activity" dir="ltr">
+    <Card data-testid="recent-activity">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-left">
           <Calendar className="h-5 w-5" />
@@ -392,25 +392,20 @@ const DashboardRecentActivity: React.FC = () => {
               activities.map((activity) => (
                 <div
                   key={activity.id}
-                  className={cn(
-                    "flex items-center justify-between p-3 rounded-lg border hover:bg-muted/50 transition-colors",
-                    flexRowReverse(),
-                  )}
+                  className="flex items-center justify-between p-3 rounded-lg border hover:bg-muted/50 transition-colors"
                 >
-                  <div
-                    className={cn("flex items-center gap-3", flexRowReverse())}
-                  >
+                  <div className="flex items-center gap-3 flex-1 min-w-0">
                     <div
                       className={cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center text-white",
+                        "w-8 h-8 flex-shrink-0 rounded-full flex items-center justify-center text-white",
                         getActivityColor(activity.type),
                       )}
                     >
                       {getActivityIcon(activity.type)}
                     </div>
-                    <div className={textStart()}>
+                    <div className="flex-1 min-w-0 text-left">
                       <p className="font-medium">{getActivityText(activity)}</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted-foreground truncate">
                         {activity.lead_name}
                         {activity.lead_company &&
                           ` from ${activity.lead_company}`}
@@ -420,9 +415,7 @@ const DashboardRecentActivity: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                  <span
-                    className={cn("text-sm text-muted-foreground", textEnd())}
-                  >
+                  <span className="text-sm text-muted-foreground flex-shrink-0 ml-4 text-right">
                     {activity.time}
                   </span>
                 </div>
