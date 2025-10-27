@@ -7,9 +7,8 @@ import { useTranslation } from 'react-i18next';
 const IntegrationFlow: React.FC = () => {
   const { t } = useTranslation('dashboard');
   const containerRef = useRef<HTMLDivElement>(null);
-  const ovenaiRef = useRef<HTMLDivElement>(null);
-  const whatsappRef = useRef<HTMLDivElement>(null);
   const crmRef = useRef<HTMLDivElement>(null);
+  const whatsappRef = useRef<HTMLDivElement>(null);
   const analyticsRef = useRef<HTMLDivElement>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +27,7 @@ const IntegrationFlow: React.FC = () => {
         >
           {/* Central CRM Hub */}
           <div
-            ref={ovenaiRef}
+            ref={crmRef}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
           >
             <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-slate-800">
@@ -96,7 +95,7 @@ const IntegrationFlow: React.FC = () => {
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={whatsappRef}
-            toRef={ovenaiRef}
+            toRef={crmRef}
             gradientStartColor="#10b981"
             gradientStopColor="#059669"
             duration={3}
@@ -104,7 +103,7 @@ const IntegrationFlow: React.FC = () => {
           
           <AnimatedBeam
             containerRef={containerRef}
-            fromRef={ovenaiRef}
+            fromRef={crmRef}
             toRef={crmRef}
             gradientStartColor="#3b82f6"
             gradientStopColor="#1d4ed8"
@@ -114,7 +113,7 @@ const IntegrationFlow: React.FC = () => {
 
           <AnimatedBeam
             containerRef={containerRef}
-            fromRef={ovenaiRef}
+            fromRef={crmRef}
             toRef={analyticsRef}
             gradientStartColor="#8b5cf6"
             gradientStopColor="#7c3aed"
@@ -124,7 +123,7 @@ const IntegrationFlow: React.FC = () => {
 
           <AnimatedBeam
             containerRef={containerRef}
-            fromRef={ovenaiRef}
+            fromRef={crmRef}
             toRef={calendarRef}
             gradientStartColor="#6366f1"
             gradientStopColor="#4f46e5"
@@ -136,7 +135,7 @@ const IntegrationFlow: React.FC = () => {
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={crmRef}
-            toRef={ovenaiRef}
+            toRef={crmRef}
             gradientStartColor="#1d4ed8"
             gradientStopColor="#3b82f6"
             duration={4.5}

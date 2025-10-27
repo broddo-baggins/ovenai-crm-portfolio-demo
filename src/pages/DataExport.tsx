@@ -292,8 +292,8 @@ const DataExport = () => {
                   </p>
                   <p>
                     For questions about data export or privacy rights, contact us at{' '}
-                    <a href="mailto:privacy@ovenai.com" className="text-primary hover:underline">
-                      privacy@ovenai.com
+                    <a href="mailto:privacy@crm-demo.com" className="text-primary hover:underline">
+                      privacy@crm-demo.com
                     </a>.
                   </p>
                 </div>

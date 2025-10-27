@@ -477,7 +477,7 @@ const DataDeletion = () => {
                 Have questions about data deletion? Contact our support team.
               </p>
               <Button variant="outline" size="sm" asChild>
-                <a href="mailto:privacy@ovenai.com">Contact Support</a>
+                <a href="mailto:privacy@crm-demo.com">Contact Support</a>
               </Button>
             </CardContent>
           </Card>
@@ -513,10 +513,10 @@ const DataDeletion = () => {
                     </Link>{" "}
                     or contact us at{" "}
                     <a
-                      href="mailto:privacy@ovenai.com"
+                      href="mailto:privacy@crm-demo.com"
                       className="text-primary hover:underline"
                     >
-                      privacy@ovenai.com
+                      privacy@crm-demo.com
                     </a>
                     .
                   </p>

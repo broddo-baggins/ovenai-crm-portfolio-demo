@@ -34,7 +34,7 @@ interface SecuritySettings {
 }
 
 class TokenSecurityService {
-  private readonly ENCRYPTION_KEY = 'oven-ai-token-encryption-2024';
+  private readonly ENCRYPTION_KEY = 'crm-portfolio-token-encryption-2024';
   private readonly MAX_TOKEN_AGE_DAYS = 90;
   private readonly DEFAULT_ROTATION_DAYS = 30;
 

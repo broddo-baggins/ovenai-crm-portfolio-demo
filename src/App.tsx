@@ -315,14 +315,6 @@ function App() {
                               } 
                             />
                             <Route 
-                              path="/landingpage-demo" 
-                              element={
-                                <LightModeWrapper>
-                                  <LandingPage />
-                                </LightModeWrapper>
-                              } 
-                            />
-                            <Route 
                               path="/auth/login" 
                               element={
                                 <LightModeWrapper>
