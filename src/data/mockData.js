@@ -20,13 +20,13 @@ export const mockLeads = [
     need: 'CRM Automation',
     timeline: '1-3 months',
     interaction_count: 24,
-    last_contact: '2024-01-20T10:30:00Z',
+    last_contact: '2025-05-07T10:52:22.352Z',
     next_followup: '2024-01-25T14:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['enterprise', 'hot-lead', 'demo-scheduled'],
     notes: 'Very interested in AI automation features. Demo scheduled for next week.',
     source: 'WhatsApp Inbound',
-    created_at: '2024-01-15T09:00:00Z',
+    created_at: '2025-05-06T10:52:22.352Z',
     project_id: 'project-001',
     current_project_id: 'project-001'
   },
@@ -47,13 +47,13 @@ export const mockLeads = [
     need: 'Lead Management',
     timeline: '1-3 months',
     interaction_count: 31,
-    last_contact: '2024-01-18T15:45:00Z',
+    last_contact: '2025-10-29T07:25:22.352Z',
     next_followup: '2024-01-30T11:00:00Z',
     assigned_agent: 'Agent B',
     tags: ['mid-market', 'hot-lead', 'automation-ready'],
     notes: 'Team approved budget. Ready to move forward with implementation.',
     source: 'Website Contact',
-    created_at: '2024-01-12T14:20:00Z',
+    created_at: '2025-10-27T07:25:22.352Z',
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -74,13 +74,13 @@ export const mockLeads = [
     need: 'General Inquiry',
     timeline: 'Unknown',
     interaction_count: 3,
-    last_contact: '2024-01-22T09:15:00Z',
+    last_contact: '2025-06-09T07:30:22.352Z',
     next_followup: '2024-01-23T10:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['new', 'needs-qualification'],
     notes: 'Initial contact made via WhatsApp. Gathering requirements.',
     source: 'WhatsApp Inbound',
-    created_at: '2024-01-22T09:00:00Z'
+    created_at: '2025-06-07T07:30:22.352Z'
   },
   {
     id: 'lead-004',
@@ -99,13 +99,13 @@ export const mockLeads = [
     need: 'WhatsApp Business Integration',
     timeline: 'Immediate (<1 month)',
     interaction_count: 42,
-    last_contact: '2024-01-21T16:20:00Z',
+    last_contact: '2025-09-14T13:33:22.352Z',
     next_followup: '2024-01-24T13:00:00Z',
     assigned_agent: 'Agent C',
     tags: ['enterprise', 'hot-lead', 'high-priority'],
     notes: 'Calendly meeting booked for demo presentation. Very qualified lead.',
     source: 'Referral',
-    created_at: '2024-01-20T08:00:00Z',
+    created_at: '2025-09-13T13:33:22.352Z',
     project_id: 'project-002',
     current_project_id: 'project-002'
   },
@@ -126,13 +126,13 @@ export const mockLeads = [
     authority: 'Individual Contributor',
     need: 'Basic CRM',
     timeline: '>6 months',
-    last_contact: '2024-01-15T11:30:00Z',
+    last_contact: '2025-10-19T13:03:22.352Z',
     next_followup: null,
     assigned_agent: 'Agent B',
     tags: ['small-business', 'budget-constraint'],
     notes: 'Budget too low for our solution. Referred to alternative providers.',
     source: 'LinkedIn',
-    created_at: '2024-01-10T10:00:00Z'
+    created_at: '2025-10-17T13:03:22.352Z'
   },
   {
     id: 'lead-006',
@@ -151,13 +151,13 @@ export const mockLeads = [
     need: 'Sales Automation',
     timeline: '1-3 months',
     interaction_count: 19,
-    last_contact: '2024-01-19T14:00:00Z',
+    last_contact: '2025-06-03T09:24:22.352Z',
     next_followup: '2024-01-26T15:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['mid-market', 'qualified'],
     notes: 'Strong fit. Reviewing proposal with finance team.',
     source: 'Website Contact',
-    created_at: '2024-01-16T11:00:00Z',
+    created_at: '2025-06-02T09:24:22.352Z',
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -178,13 +178,13 @@ export const mockLeads = [
     need: 'Customer Engagement',
     timeline: '3-6 months',
     interaction_count: 12,
-    last_contact: '2024-01-17T10:45:00Z',
+    last_contact: '2025-09-22T11:38:22.352Z',
     next_followup: '2024-01-29T12:00:00Z',
     assigned_agent: 'Agent C',
     tags: ['startup', 'nurture'],
     notes: 'Interested but waiting for next funding round.',
     source: 'LinkedIn',
-    created_at: '2024-01-14T13:30:00Z',
+    created_at: '2025-09-20T11:38:22.352Z',
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -205,13 +205,13 @@ export const mockLeads = [
     need: 'Enterprise CRM',
     timeline: 'Immediate (<1 month)',
     interaction_count: 38,
-    last_contact: '2024-01-22T13:30:00Z',
+    last_contact: '2025-05-19T07:28:22.352Z',
     next_followup: '2024-01-25T10:00:00Z',
     assigned_agent: 'Agent B',
     tags: ['enterprise', 'hot-lead', 'demo-scheduled'],
     notes: 'C-level meeting scheduled. Prepare custom demo.',
     source: 'WhatsApp Inbound',
-    created_at: '2024-01-19T09:15:00Z',
+    created_at: '2025-05-19T07:28:22.352Z',
     project_id: 'project-001',
     current_project_id: 'project-001'
   },
@@ -232,13 +232,13 @@ export const mockLeads = [
     need: 'Client Management',
     timeline: 'Unknown',
     interaction_count: 2,
-    last_contact: '2024-01-22T16:00:00Z',
+    last_contact: '2025-07-31T08:12:22.352Z',
     next_followup: '2024-01-24T09:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['new', 'creative-industry'],
     notes: 'First WhatsApp conversation initiated. Needs follow-up.',
     source: 'Referral',
-    created_at: '2024-01-22T15:45:00Z'
+    created_at: '2025-07-31T08:12:22.352Z'
   },
   {
     id: 'lead-010',
@@ -259,13 +259,13 @@ export const mockLeads = [
     need: 'AI-Powered Automation',
     timeline: '1-3 months',
     interaction_count: 27,
-    last_contact: '2024-01-20T12:00:00Z',
+    last_contact: '2025-06-13T06:53:22.352Z',
     next_followup: '2024-01-27T14:00:00Z',
     assigned_agent: 'Agent C',
     tags: ['enterprise', 'ai-focused', 'technical'],
     notes: 'Very technical buyer. Impressed by AI capabilities.',
     source: 'LinkedIn',
-    created_at: '2024-01-18T10:30:00Z'
+    created_at: '2025-06-12T06:53:22.352Z'
   },
   {
     id: 'lead-011',
@@ -284,13 +284,13 @@ export const mockLeads = [
     need: 'Sales Pipeline Management',
     timeline: '1-3 months',
     interaction_count: 22,
-    last_contact: '2024-01-21T11:20:00Z',
+    last_contact: '2025-06-19T05:49:22.352Z',
     next_followup: '2024-01-28T10:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['enterprise', 'saas', 'pipeline-focused'],
     notes: 'Director of Sales Operations. Looking for comprehensive solution.',
     source: 'Website Contact',
-    created_at: '2024-01-17T09:00:00Z',
+    created_at: '2025-06-17T05:49:22.352Z',
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -311,13 +311,13 @@ export const mockLeads = [
     need: 'Compliance-Ready CRM',
     timeline: 'Immediate (<1 month)',
     interaction_count: 35,
-    last_contact: '2024-01-22T14:15:00Z',
+    last_contact: '2025-07-25T11:00:22.352Z',
     next_followup: '2024-01-25T15:00:00Z',
     assigned_agent: 'Agent B',
     tags: ['enterprise', 'fintech', 'compliance-focused'],
     notes: 'CTO attending meeting. Needs security and compliance discussion.',
     source: 'Referral',
-    created_at: '2024-01-21T08:30:00Z',
+    created_at: '2025-07-25T11:00:22.352Z',
     project_id: 'project-001',
     current_project_id: 'project-001'
   },
@@ -338,7 +338,7 @@ export const mockLeads = [
     need: 'Customer Communication',
     timeline: '3-6 months',
     interaction_count: 14,
-    last_contact: '2024-01-19T16:30:00Z',
+    last_contact: '2025-08-28T11:01:22.352Z',
     next_followup: '2024-01-31T11:00:00Z',
     project_id: 'project-003',
     current_project_id: 'project-003',
@@ -346,7 +346,7 @@ export const mockLeads = [
     tags: ['ecommerce', 'sustainability', 'warm-lead'],
     notes: 'Growing fast. Will revisit after Q1 results.',
     source: 'LinkedIn',
-    created_at: '2024-01-15T14:00:00Z'
+    created_at: '2025-08-26T11:01:22.352Z'
   },
   {
     id: 'lead-014',
@@ -365,13 +365,13 @@ export const mockLeads = [
     need: 'Lead Follow-up Automation',
     timeline: '1-3 months',
     interaction_count: 26,
-    last_contact: '2024-01-20T15:00:00Z',
+    last_contact: '2025-05-02T08:22:22.352Z',
     next_followup: '2024-01-27T13:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['real-estate', 'hot-lead', 'automation-focused'],
     notes: 'Managing partner. Loves the 70% response rate metric.',
     source: 'WhatsApp Inbound',
-    created_at: '2024-01-19T12:00:00Z'
+    created_at: '2025-05-01T08:22:22.352Z'
   },
   {
     id: 'lead-015',
@@ -390,13 +390,13 @@ export const mockLeads = [
     need: 'Data Integration',
     timeline: 'Unknown',
     interaction_count: 4,
-    last_contact: '2024-01-23T10:00:00Z',
+    last_contact: '2025-07-10T14:03:22.352Z',
     next_followup: '2024-01-24T14:00:00Z',
     assigned_agent: 'Agent B',
     tags: ['new', 'data-analytics', 'technical'],
     notes: 'Initial outreach. Wants to understand API capabilities.',
     source: 'Website Contact',
-    created_at: '2024-01-23T09:45:00Z'
+    created_at: '2025-07-08T14:03:22.352Z'
   },
   {
     id: 'lead-016',
@@ -415,13 +415,13 @@ export const mockLeads = [
     need: 'Patient Communication',
     timeline: '1-3 months',
     interaction_count: 20,
-    last_contact: '2024-01-21T09:30:00Z',
+    last_contact: '2025-06-20T11:00:22.352Z',
     next_followup: '2024-01-28T11:00:00Z',
     assigned_agent: 'Agent C',
     tags: ['healthcare', 'hipaa', 'qualified'],
     notes: 'Practice manager. Needs HIPAA-compliant solution.',
     source: 'Referral',
-    created_at: '2024-01-18T13:00:00Z'
+    created_at: '2025-06-20T11:00:22.352Z'
   },
   {
     id: 'lead-017',
@@ -440,13 +440,13 @@ export const mockLeads = [
     need: 'Customer Engagement',
     timeline: '3-6 months',
     interaction_count: 11,
-    last_contact: '2024-01-18T13:45:00Z',
+    last_contact: '2025-07-25T06:23:22.352Z',
     next_followup: '2024-02-01T10:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['retail', 'fashion', 'nurture'],
     notes: 'Marketing director. Needs buy-in from operations.',
     source: 'LinkedIn',
-    created_at: '2024-01-16T10:00:00Z'
+    created_at: '2025-07-25T06:23:22.352Z'
   },
   {
     id: 'lead-018',
@@ -465,13 +465,13 @@ export const mockLeads = [
     need: 'Client Management',
     timeline: 'Unknown',
     interaction_count: 5,
-    last_contact: '2024-01-23T11:15:00Z',
+    last_contact: '2025-09-03T08:00:22.352Z',
     next_followup: '2024-01-25T09:00:00Z',
     assigned_agent: 'Agent B',
     tags: ['new', 'legal', 'exploring'],
     notes: 'Law firm administrator. Just starting research phase.',
     source: 'Website Contact',
-    created_at: '2024-01-23T11:00:00Z'
+    created_at: '2025-09-01T08:00:22.352Z'
   },
   {
     id: 'lead-019',
@@ -490,13 +490,13 @@ export const mockLeads = [
     need: 'Student Communication Platform',
     timeline: 'Immediate (<1 month)',
     interaction_count: 33,
-    last_contact: '2024-01-22T10:00:00Z',
+    last_contact: '2025-09-04T16:59:22.352Z',
     next_followup: '2024-01-26T14:00:00Z',
     assigned_agent: 'Agent C',
     tags: ['education', 'enterprise', 'urgent'],
     notes: 'COO. Needs solution before new semester starts.',
     source: 'Referral',
-    created_at: '2024-01-21T15:00:00Z'
+    created_at: '2025-09-04T16:59:22.352Z'
   },
   {
     id: 'lead-020',
@@ -515,13 +515,13 @@ export const mockLeads = [
     need: 'Vendor Communication',
     timeline: '1-3 months',
     interaction_count: 18,
-    last_contact: '2024-01-20T14:30:00Z',
+    last_contact: '2025-10-22T10:11:22.352Z',
     next_followup: '2024-01-29T10:00:00Z',
     assigned_agent: 'Agent A',
     tags: ['logistics', 'b2b', 'qualified'],
     notes: 'VP of Operations. Interested in multi-channel communication.',
     source: 'WhatsApp Inbound',
-    created_at: '2024-01-19T16:00:00Z'
+    created_at: '2025-10-21T10:11:22.352Z'
   }
 ];
 
@@ -533,56 +533,56 @@ export const mockConversations = [
       {
         id: 'msg-001',
         sender: 'lead',
-        timestamp: '2024-01-20T10:30:00Z',
+        timestamp: '2025-05-06T10:52:22.352Z',
         content: 'Hi! I saw your website and I\'m interested in learning more about your CRM solution.',
         status: 'delivered'
       },
       {
         id: 'msg-002',
         sender: 'agent',
-        timestamp: '2024-01-20T10:32:00Z',
+        timestamp: '2025-05-06T10:57:22.352Z',
         content: 'Hello Sarah! Thanks for reaching out. I\'d be happy to help. Can you tell me a bit about your current challenges with customer management?',
         status: 'read'
       },
       {
         id: 'msg-003',
         sender: 'lead',
-        timestamp: '2024-01-20T10:35:00Z',
+        timestamp: '2025-05-06T11:52:22.352Z',
         content: 'We\'re using spreadsheets right now and it\'s becoming unmanageable. We need automation for WhatsApp communication especially.',
         status: 'delivered'
       },
       {
         id: 'msg-004',
         sender: 'agent',
-        timestamp: '2024-01-20T10:37:00Z',
+        timestamp: '2025-05-06T11:57:22.352Z',
         content: 'That\'s exactly what we specialize in! Our system achieved 70% response rates with automated WhatsApp integration. What\'s your typical monthly lead volume?',
         status: 'read'
       },
       {
         id: 'msg-005',
         sender: 'lead',
-        timestamp: '2024-01-20T10:40:00Z',
+        timestamp: '2025-05-06T12:52:22.352Z',
         content: 'About 200-300 leads per month. What would something like this cost?',
         status: 'delivered'
       },
       {
         id: 'msg-006',
         sender: 'agent',
-        timestamp: '2024-01-20T10:42:00Z',
+        timestamp: '2025-05-06T12:57:22.352Z',
         content: 'For your volume, we have enterprise packages starting at $50k annually. Would you like to schedule a demo to see it in action?',
         status: 'read'
       },
       {
         id: 'msg-007',
         sender: 'lead',
-        timestamp: '2024-01-20T10:45:00Z',
+        timestamp: '2025-05-06T13:52:22.352Z',
         content: 'Yes, that budget works for us. Let\'s schedule something for next week.',
         status: 'delivered'
       },
       {
         id: 'msg-008',
         sender: 'agent',
-        timestamp: '2024-01-20T10:47:00Z',
+        timestamp: '2025-05-06T13:57:22.352Z',
         content: 'Perfect! I\'ll send you a Calendly link. Looking forward to showing you what we can do!',
         status: 'read'
       }
@@ -603,56 +603,56 @@ export const mockConversations = [
       {
         id: 'msg-101',
         sender: 'lead',
-        timestamp: '2024-01-21T16:20:00Z',
+        timestamp: '2025-09-13T13:33:22.352Z',
         content: 'Our company needs WhatsApp Business integration yesterday. Can you help?',
         status: 'delivered'
       },
       {
         id: 'msg-102',
         sender: 'agent',
-        timestamp: '2024-01-21T16:21:00Z',
+        timestamp: '2025-09-13T13:38:22.352Z',
         content: 'Absolutely! We specialize in WhatsApp Business API integration. Tell me more about your use case.',
         status: 'read'
       },
       {
         id: 'msg-103',
         sender: 'lead',
-        timestamp: '2024-01-21T16:25:00Z',
+        timestamp: '2025-09-13T14:33:22.352Z',
         content: 'We have 500+ incoming leads per day. Manual handling is killing us. We need AI automation.',
         status: 'delivered'
       },
       {
         id: 'msg-104',
         sender: 'agent',
-        timestamp: '2024-01-21T16:27:00Z',
+        timestamp: '2025-09-13T14:38:22.352Z',
         content: 'We\'ve handled 100+ leads per day per agent with our system. Our AI handles initial qualification automatically. What\'s your decision timeline?',
         status: 'read'
       },
       {
         id: 'msg-105',
         sender: 'lead',
-        timestamp: '2024-01-21T16:30:00Z',
+        timestamp: '2025-09-13T15:33:22.352Z',
         content: 'We need to decide this month. I\'m the VP of Sales and have budget approval. Can we meet this week?',
         status: 'delivered'
       },
       {
         id: 'msg-106',
         sender: 'agent',
-        timestamp: '2024-01-21T16:32:00Z',
+        timestamp: '2025-09-13T15:38:22.352Z',
         content: 'Perfect! Yes, I have availability tomorrow at 1pm or Thursday at 10am. Which works better?',
         status: 'read'
       },
       {
         id: 'msg-107',
         sender: 'lead',
-        timestamp: '2024-01-21T16:33:00Z',
+        timestamp: '2025-09-13T16:33:22.352Z',
         content: 'Tomorrow at 1pm works. Send me the details.',
         status: 'delivered'
       },
       {
         id: 'msg-108',
         sender: 'agent',
-        timestamp: '2024-01-21T16:35:00Z',
+        timestamp: '2025-09-13T16:38:22.352Z',
         content: 'Meeting confirmed for tomorrow at 1pm. I\'ll email you the Zoom link and agenda. Looking forward to it!',
         status: 'read'
       }
@@ -673,28 +673,28 @@ export const mockConversations = [
       {
         id: 'msg-201',
         sender: 'lead',
-        timestamp: '2024-01-22T09:15:00Z',
+        timestamp: '2025-06-07T07:30:22.352Z',
         content: 'Hey, what does your CRM do?',
         status: 'delivered'
       },
       {
         id: 'msg-202',
         sender: 'agent',
-        timestamp: '2024-01-22T09:20:00Z',
+        timestamp: '2025-06-07T07:35:22.352Z',
         content: 'Hi Emily! Our CRM specializes in AI-powered WhatsApp automation for lead management. What challenges are you facing with your current setup?',
         status: 'read'
       },
       {
         id: 'msg-203',
         sender: 'lead',
-        timestamp: '2024-01-22T09:45:00Z',
+        timestamp: '2025-06-07T08:30:22.352Z',
         content: 'Just exploring options right now. Don\'t have a specific timeline.',
         status: 'delivered'
       },
       {
         id: 'msg-204',
         sender: 'agent',
-        timestamp: '2024-01-22T09:50:00Z',
+        timestamp: '2025-06-07T08:35:22.352Z',
         content: 'No problem! I\'d love to learn more about your needs. What size is your team and how many leads do you typically handle?',
         status: 'sent'
       }
@@ -715,63 +715,63 @@ export const mockConversations = [
       {
         id: 'msg-301',
         sender: 'lead',
-        timestamp: '2024-01-22T14:15:00Z',
+        timestamp: '2025-07-25T11:00:22.352Z',
         content: 'We\'re a FinTech company and need a CRM that meets SOC 2 and GDPR requirements. Do you have this?',
         status: 'delivered'
       },
       {
         id: 'msg-302',
         sender: 'agent',
-        timestamp: '2024-01-22T14:17:00Z',
+        timestamp: '2025-07-25T11:05:22.352Z',
         content: 'Yes absolutely! We\'re SOC 2 Type II certified and fully GDPR compliant. Security and compliance are core to our platform.',
         status: 'read'
       },
       {
         id: 'msg-303',
         sender: 'lead',
-        timestamp: '2024-01-22T14:20:00Z',
+        timestamp: '2025-07-25T12:00:22.352Z',
         content: 'Great. We process 300+ customer inquiries daily. Need automated responses but must maintain audit trails for compliance.',
         status: 'delivered'
       },
       {
         id: 'msg-304',
         sender: 'agent',
-        timestamp: '2024-01-22T14:22:00Z',
+        timestamp: '2025-07-25T12:05:22.352Z',
         content: 'Perfect fit. Our system logs every interaction with timestamps, user IDs, and maintains immutable audit trails. Can I show you a demo?',
         status: 'read'
       },
       {
         id: 'msg-305',
         sender: 'lead',
-        timestamp: '2024-01-22T14:25:00Z',
+        timestamp: '2025-07-25T13:00:22.352Z',
         content: 'Yes, our CTO wants to attend. We need to implement by end of month due to regulatory deadline.',
         status: 'delivered'
       },
       {
         id: 'msg-306',
         sender: 'agent',
-        timestamp: '2024-01-22T14:27:00Z',
+        timestamp: '2025-07-25T13:05:22.352Z',
         content: 'Understood. I can do an expedited demo and technical deep dive. How about Thursday at 3pm for you and your CTO?',
         status: 'read'
       },
       {
         id: 'msg-307',
         sender: 'lead',
-        timestamp: '2024-01-22T14:28:00Z',
+        timestamp: '2025-07-25T14:00:22.352Z',
         content: 'Thursday works. Send the calendar invite. Also, what\'s the budget range for 300 daily interactions?',
         status: 'delivered'
       },
       {
         id: 'msg-308',
         sender: 'agent',
-        timestamp: '2024-01-22T14:30:00Z',
+        timestamp: '2025-07-25T14:05:22.352Z',
         content: 'For your volume with enterprise compliance features, we\'re looking at $60-75k annually. I\'ll prepare detailed pricing for Thursday. Meeting invite coming now.',
         status: 'read'
       },
       {
         id: 'msg-309',
         sender: 'lead',
-        timestamp: '2024-01-22T14:32:00Z',
+        timestamp: '2025-07-25T15:00:22.352Z',
         content: 'Perfect. Budget is approved up to $100k if it solves our compliance gap. See you Thursday.',
         status: 'delivered'
       }
@@ -792,63 +792,63 @@ export const mockConversations = [
       {
         id: 'msg-401',
         sender: 'lead',
-        timestamp: '2024-01-23T08:15:00Z',
+        timestamp: '2025-10-17T13:03:22.352Z',
         content: 'Our e-commerce store gets 800+ customer inquiries daily via WhatsApp. We are drowning. Can your AI help?',
         status: 'delivered'
       },
       {
         id: 'msg-402',
         sender: 'agent',
-        timestamp: '2024-01-23T08:17:00Z',
+        timestamp: '2025-10-17T13:08:22.352Z',
         content: 'Absolutely! We handle 1000+ messages/day per agent with 95% accuracy. Our AI handles common questions instantly, escalates complex ones to your team.',
         status: 'read'
       },
       {
         id: 'msg-403',
         sender: 'lead',
-        timestamp: '2024-01-23T08:20:00Z',
+        timestamp: '2025-10-17T14:03:22.352Z',
         content: 'What about product recommendations? Can it suggest items based on customer questions?',
         status: 'delivered'
       },
       {
         id: 'msg-404',
         sender: 'agent',
-        timestamp: '2024-01-23T08:22:00Z',
+        timestamp: '2025-10-17T14:08:22.352Z',
         content: 'Yes! Our AI integrates with your product catalog. It can suggest items, check inventory, even send product images. Increased our clients average order value by 35%.',
         status: 'read'
       },
       {
         id: 'msg-405',
         sender: 'lead',
-        timestamp: '2024-01-23T08:25:00Z',
+        timestamp: '2025-10-17T15:03:22.352Z',
         content: 'That sounds perfect. We are currently paying $8k/month for 5 customer service reps. What is your pricing?',
         status: 'delivered'
       },
       {
         id: 'msg-406',
         sender: 'agent',
-        timestamp: '2024-01-23T08:27:00Z',
+        timestamp: '2025-10-17T15:08:22.352Z',
         content: 'For 800 daily messages with product integration, we are at $6k/month. This includes unlimited AI responses, human escalation, and full analytics dashboard.',
         status: 'read'
       },
       {
         id: 'msg-407',
         sender: 'lead',
-        timestamp: '2024-01-23T08:30:00Z',
+        timestamp: '2025-10-17T16:03:22.352Z',
         content: 'So we save $2k monthly AND handle more volume? I am the Director so I can approve this. When can we start?',
         status: 'delivered'
       },
       {
         id: 'msg-408',
         sender: 'agent',
-        timestamp: '2024-01-23T08:32:00Z',
+        timestamp: '2025-10-17T16:08:22.352Z',
         content: 'We can have you live in 2 weeks! Let me send you our implementation timeline and contract. You will see ROI within the first month.',
         status: 'read'
       },
       {
         id: 'msg-409',
         sender: 'lead',
-        timestamp: '2024-01-23T08:35:00Z',
+        timestamp: '2025-10-17T17:03:22.352Z',
         content: 'Send it over. This is exactly what we need. Our Black Friday is coming and we need this ASAP.',
         status: 'delivered'
       }
@@ -869,56 +869,56 @@ export const mockConversations = [
       {
         id: 'msg-501',
         sender: 'lead',
-        timestamp: '2024-01-23T11:00:00Z',
+        timestamp: '2025-05-19T07:28:22.352Z',
         content: 'We are a medical clinic. Need a CRM for patient appointment reminders via WhatsApp. Must be HIPAA compliant. Are you certified?',
         status: 'delivered'
       },
       {
         id: 'msg-502',
         sender: 'agent',
-        timestamp: '2024-01-23T11:02:00Z',
+        timestamp: '2025-05-19T07:33:22.352Z',
         content: 'Yes! We are HIPAA compliant with BAA available. End-to-end encryption, audit logs, and secure patient data handling. We work with 50+ healthcare providers.',
         status: 'read'
       },
       {
         id: 'msg-503',
         sender: 'lead',
-        timestamp: '2024-01-23T11:05:00Z',
+        timestamp: '2025-05-19T08:28:22.352Z',
         content: 'Good. We have 200 appointments weekly. 30% no-shows costing us $15k monthly. Can you reduce that?',
         status: 'delivered'
       },
       {
         id: 'msg-504',
         sender: 'agent',
-        timestamp: '2024-01-23T11:07:00Z',
+        timestamp: '2025-05-19T08:33:22.352Z',
         content: 'Absolutely! Our clients see 60-70% reduction in no-shows with automated reminders 48hrs and 2hrs before appointments. Patients can confirm via WhatsApp.',
         status: 'read'
       },
       {
         id: 'msg-505',
         sender: 'lead',
-        timestamp: '2024-01-23T11:10:00Z',
+        timestamp: '2025-05-19T09:28:22.352Z',
         content: 'That would save us $10k monthly! What is the pricing and how fast can we implement?',
         status: 'delivered'
       },
       {
         id: 'msg-506',
         sender: 'agent',
-        timestamp: '2024-01-23T11:12:00Z',
+        timestamp: '2025-05-19T09:33:22.352Z',
         content: 'For 200 weekly appointments, $2.5k/month. Implementation takes 1 week including EHR integration. ROI payback in 3 weeks based on your no-show costs.',
         status: 'read'
       },
       {
         id: 'msg-507',
         sender: 'lead',
-        timestamp: '2024-01-23T11:15:00Z',
+        timestamp: '2025-05-19T10:28:22.352Z',
         content: 'Send me the BAA and contract. I am the Administrator so I can sign today. This will transform our practice.',
         status: 'delivered'
       },
       {
         id: 'msg-508',
         sender: 'agent',
-        timestamp: '2024-01-23T11:17:00Z',
+        timestamp: '2025-05-19T10:33:22.352Z',
         content: 'Perfect! Sending BAA, contract, and HIPAA compliance documentation now. Welcome to better patient care!',
         status: 'read'
       }
@@ -939,56 +939,56 @@ export const mockConversations = [
       {
         id: 'msg-601',
         sender: 'lead',
-        timestamp: '2024-01-23T14:30:00Z',
+        timestamp: '2025-06-12T06:53:22.352Z',
         content: 'Hey! We just raised Series A. Scaling from 100 to 1000 leads/month. Current CRM can not handle it. Need something NOW.',
         status: 'delivered'
       },
       {
         id: 'msg-602',
         sender: 'agent',
-        timestamp: '2024-01-23T14:32:00Z',
+        timestamp: '2025-06-12T06:58:22.352Z',
         content: 'Congrats on Series A! We specialize in fast-scaling SaaS companies. Can handle 10k+ leads/month with AI qualification. How quickly do you need to be live?',
         status: 'read'
       },
       {
         id: 'msg-603',
         sender: 'lead',
-        timestamp: '2024-01-23T14:35:00Z',
+        timestamp: '2025-06-12T07:53:22.352Z',
         content: 'Like yesterday haha. Our investors want to see improved conversion metrics by Q2. We close at 8% now, need to hit 15%.',
         status: 'delivered'
       },
       {
         id: 'msg-604',
         sender: 'agent',
-        timestamp: '2024-01-23T14:37:00Z',
+        timestamp: '2025-06-12T07:58:22.352Z',
         content: 'Our SaaS clients average 18-22% conversion with our AI BANT scoring and automated follow-ups. We can migrate your data and go live in 72 hours.',
         status: 'read'
       },
       {
         id: 'msg-605',
         sender: 'lead',
-        timestamp: '2024-01-23T14:40:00Z',
+        timestamp: '2025-06-12T08:53:22.352Z',
         content: 'Whoa, 72 hours? And 18-22% conversion? That would make our investors VERY happy. What is the investment?',
         status: 'delivered'
       },
       {
         id: 'msg-606',
         sender: 'agent',
-        timestamp: '2024-01-23T14:42:00Z',
+        timestamp: '2025-06-12T08:58:22.352Z',
         content: 'For rapid scaling at your volume: $8k/month with onboarding included. White-glove service, dedicated success manager, and we guarantee live in 3 days.',
         status: 'read'
       },
       {
         id: 'msg-607',
         sender: 'lead',
-        timestamp: '2024-01-23T14:45:00Z',
+        timestamp: '2025-06-12T09:53:22.352Z',
         content: 'SOLD. Send me the contract. I am the Founder/CEO so I can sign immediately. Let us start tomorrow morning.',
         status: 'delivered'
       },
       {
         id: 'msg-608',
         sender: 'agent',
-        timestamp: '2024-01-23T14:47:00Z',
+        timestamp: '2025-06-12T09:58:22.352Z',
         content: 'Amazing! Contract incoming. I will personally oversee your implementation. By Friday you will be scaling like a rocket. Welcome aboard!',
         status: 'read'
       }
@@ -1009,63 +1009,63 @@ export const mockConversations = [
       {
         id: 'msg-701',
         sender: 'lead',
-        timestamp: '2024-01-23T16:00:00Z',
+        timestamp: '2025-07-08T14:03:22.352Z',
         content: 'Hi, I run a real estate agency with 12 agents. We get 400+ property inquiries monthly but only close 15 deals. Need better lead management.',
         status: 'delivered'
       },
       {
         id: 'msg-702',
         sender: 'agent',
-        timestamp: '2024-01-23T16:02:00Z',
+        timestamp: '2025-07-08T14:08:22.352Z',
         content: 'That is only 3.75% conversion! Our real estate clients see 10-12% with automated lead routing, instant property details via WhatsApp, and smart follow-ups.',
         status: 'read'
       },
       {
         id: 'msg-703',
         sender: 'lead',
-        timestamp: '2024-01-23T16:05:00Z',
+        timestamp: '2025-07-08T15:03:22.352Z',
         content: 'Really? 10-12% would be 40-48 deals monthly! That is $480k additional annual commission for us. How does it work?',
         status: 'delivered'
       },
       {
         id: 'msg-704',
         sender: 'agent',
-        timestamp: '2024-01-23T16:07:00Z',
+        timestamp: '2025-07-08T15:08:22.352Z',
         content: 'Our AI qualifies leads by budget/location, routes hot prospects to your best agents instantly, sends property photos/videos via WhatsApp automatically. Your agents only handle warm leads.',
         status: 'read'
       },
       {
         id: 'msg-705',
         sender: 'lead',
-        timestamp: '2024-01-23T16:10:00Z',
+        timestamp: '2025-07-08T16:03:22.352Z',
         content: 'This sounds like exactly what we need. My agents are wasting time on unqualified leads. What is the pricing?',
         status: 'delivered'
       },
       {
         id: 'msg-706',
         sender: 'agent',
-        timestamp: '2024-01-23T16:12:00Z',
+        timestamp: '2025-07-08T16:08:22.352Z',
         content: 'For 12 agents with 400 monthly leads: $5k/month. Based on your numbers, this pays for itself with just 1 extra deal closed per month.',
         status: 'read'
       },
       {
         id: 'msg-707',
         sender: 'lead',
-        timestamp: '2024-01-23T16:15:00Z',
+        timestamp: '2025-07-08T17:03:22.352Z',
         content: 'So if we close even 5 extra deals monthly, that is $50k revenue vs $5k cost. I am the owner, I can approve this. When can we start?',
         status: 'delivered'
       },
       {
         id: 'msg-708',
         sender: 'agent',
-        timestamp: '2024-01-23T16:17:00Z',
+        timestamp: '2025-07-08T17:08:22.352Z',
         content: 'We can start this week! I will personally train your agents. Plus, you will get a dedicated dashboard showing each agent performance in real-time.',
         status: 'read'
       },
       {
         id: 'msg-709',
         sender: 'lead',
-        timestamp: '2024-01-23T16:20:00Z',
+        timestamp: '2025-07-08T18:03:22.352Z',
         content: 'Perfect! Send the contract and training schedule. My team is going to love this. Game changer for our agency!',
         status: 'delivered'
       }
@@ -1086,63 +1086,63 @@ export const mockConversations = [
       {
         id: 'msg-801',
         sender: 'lead',
-        timestamp: '2024-01-24T09:00:00Z',
+        timestamp: '2025-09-01T08:00:22.352Z',
         content: 'We are an online education platform with 5,000 students. Need automated support for course questions via WhatsApp. Students ask 200+ questions daily.',
         status: 'delivered'
       },
       {
         id: 'msg-802',
         sender: 'agent',
-        timestamp: '2024-01-24T09:02:00Z',
+        timestamp: '2025-09-01T08:05:22.352Z',
         content: 'Perfect use case! Our AI can answer common course questions 24/7, handle enrollment inquiries, send class reminders, and escalate complex questions to instructors.',
         status: 'read'
       },
       {
         id: 'msg-803',
         sender: 'lead',
-        timestamp: '2024-01-24T09:05:00Z',
+        timestamp: '2025-09-01T09:00:22.352Z',
         content: 'Our instructors spend 3 hours daily answering repetitive questions. If AI handles 70%, that saves us 2 hours per instructor. Can it integrate with our LMS?',
         status: 'delivered'
       },
       {
         id: 'msg-804',
         sender: 'agent',
-        timestamp: '2024-01-24T09:07:00Z',
+        timestamp: '2025-09-01T09:05:22.352Z',
         content: 'Yes! We integrate with Canvas, Moodle, Blackboard, and custom LMS platforms. AI can check student progress, assignment deadlines, and grades to give personalized answers.',
         status: 'read'
       },
       {
         id: 'msg-805',
         sender: 'lead',
-        timestamp: '2024-01-24T09:10:00Z',
+        timestamp: '2025-09-01T10:00:22.352Z',
         content: 'That is amazing. We currently pay 2 support staff $6k/month total. If your AI handles most questions, we could redeploy them to curriculum development.',
         status: 'delivered'
       },
       {
         id: 'msg-806',
         sender: 'agent',
-        timestamp: '2024-01-24T09:12:00Z',
+        timestamp: '2025-09-01T10:05:22.352Z',
         content: 'Exactly! Our EdTech clients save 60-70% on support costs while improving student satisfaction scores. For 5,000 students, pricing is $3k/month with LMS integration included.',
         status: 'read'
       },
       {
         id: 'msg-807',
         sender: 'lead',
-        timestamp: '2024-01-24T09:15:00Z',
+        timestamp: '2025-09-01T11:00:22.352Z',
         content: 'So we save $3k monthly AND improve student experience? I am the Platform Director. Let me discuss with our Dean and get back to you by Friday.',
         status: 'delivered'
       },
       {
         id: 'msg-808',
         sender: 'agent',
-        timestamp: '2024-01-24T09:17:00Z',
+        timestamp: '2025-09-01T11:05:22.352Z',
         content: 'Sounds good! I will send you our EdTech case studies and ROI calculator. Our implementation takes 2 weeks - perfect timing for next semester launch!',
         status: 'read'
       },
       {
         id: 'msg-809',
         sender: 'lead',
-        timestamp: '2024-01-24T09:20:00Z',
+        timestamp: '2025-09-01T12:00:22.352Z',
         content: 'Perfect timing indeed! Send those over. I am confident we will move forward. Our students deserve better support.',
         status: 'delivered'
       }
@@ -1163,70 +1163,70 @@ export const mockConversations = [
       {
         id: 'msg-901',
         sender: 'lead',
-        timestamp: '2024-01-24T13:00:00Z',
+        timestamp: '2025-10-21T10:11:22.352Z',
         content: 'We are a financial advisory firm. Need secure WhatsApp communication for 500 high-net-worth clients. Must be compliant with SEC regulations. Do you support this?',
         status: 'delivered'
       },
       {
         id: 'msg-902',
         sender: 'agent',
-        timestamp: '2024-01-24T13:02:00Z',
+        timestamp: '2025-10-21T10:16:22.352Z',
         content: 'Yes! We are SEC-compliant with full message archiving, e-discovery support, and encrypted communication. We work with 20+ financial firms managing $5B+ in assets.',
         status: 'read'
       },
       {
         id: 'msg-903',
         sender: 'lead',
-        timestamp: '2024-01-24T13:05:00Z',
+        timestamp: '2025-10-21T11:11:22.352Z',
         content: 'Good. Our clients want instant responses for market updates, portfolio questions. We have 8 advisors manually responding. Takes too much time from actual financial planning.',
         status: 'delivered'
       },
       {
         id: 'msg-904',
         sender: 'agent',
-        timestamp: '2024-01-24T13:07:00Z',
+        timestamp: '2025-10-21T11:16:22.352Z',
         content: 'Our AI handles routine inquiries, sends automated market updates, portfolio summaries, and meeting reminders. Advisors only handle complex financial planning conversations.',
         status: 'read'
       },
       {
         id: 'msg-905',
         sender: 'lead',
-        timestamp: '2024-01-24T13:10:00Z',
+        timestamp: '2025-10-21T12:11:22.352Z',
         content: 'That would free up 20 hours per advisor weekly. That is 160 billable hours monthly. At $500/hour, that is $80k in recovered revenue. What is your pricing?',
         status: 'delivered'
       },
       {
         id: 'msg-906',
         sender: 'agent',
-        timestamp: '2024-01-24T13:12:00Z',
+        timestamp: '2025-10-21T12:16:22.352Z',
         content: 'For 500 clients with SEC compliance and financial integrations: $7k/month. Based on your math, $80k revenue vs $7k cost = $73k net monthly gain!',
         status: 'read'
       },
       {
         id: 'msg-907',
         sender: 'lead',
-        timestamp: '2024-01-24T13:15:00Z',
+        timestamp: '2025-10-21T13:11:22.352Z',
         content: 'Impressive ROI. I am the Managing Partner. Need to present to our compliance team first. Can you provide SEC compliance documentation?',
         status: 'delivered'
       },
       {
         id: 'msg-908',
         sender: 'agent',
-        timestamp: '2024-01-24T13:17:00Z',
+        timestamp: '2025-10-21T13:16:22.352Z',
         content: 'Absolutely! Sending full SEC compliance docs, FINRA archiving procedures, and case studies from similar firms. I can also join your compliance call to answer technical questions.',
         status: 'read'
       },
       {
         id: 'msg-909',
         sender: 'lead',
-        timestamp: '2024-01-24T13:20:00Z',
+        timestamp: '2025-10-21T14:11:22.352Z',
         content: 'Perfect. Our compliance meets next Tuesday. Can you attend? If they approve, we will move forward immediately.',
         status: 'delivered'
       },
       {
         id: 'msg-910',
         sender: 'agent',
-        timestamp: '2024-01-24T13:22:00Z',
+        timestamp: '2025-10-21T14:16:22.352Z',
         content: 'I will clear my calendar for Tuesday. Sending meeting invite now. Looking forward to helping your firm scale efficiently while staying compliant!',
         status: 'read'
       }
@@ -1250,17 +1250,17 @@ export const mockProjects = [
     client_id: 'client-001',
     lead_id: 'lead-001',
     status: 'active',
-    start_date: '2024-01-15T00:00:00Z',
+    start_date: '2025-07-29T09:04:22.352Z',
     estimated_completion: '2024-03-15T00:00:00Z',
     created_at: '2024-01-15T00:00:00Z',
-    updated_at: '2024-12-20T14:30:00Z',
+    updated_at: '2025-08-13T09:04:22.352Z',
     value: 75000,
     team: ['Agent A', 'Implementation Team'],
     progress: 35,
     leads_count: 3,
     active_conversations: 5,
     conversion_rate: 42,
-    last_activity: '2024-12-20T14:30:00Z',
+    last_activity: '2025-08-13T09:04:22.352Z',
     last_activity_at: '2024-12-20T14:30:00Z',
     priority: 'high',
     color: '#3B82F6',
