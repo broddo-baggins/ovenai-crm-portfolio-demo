@@ -20,6 +20,8 @@ import logger from "@/services/base/logger";
 import { simpleProjectService } from "@/services/simpleProjectService";
 import { searchMockData, SearchResult as MockSearchResult } from "@/services/mockSearchService";
 import { GeminiAgent } from "@/components/agent/GeminiAgent";
+import { useAgentOnboarding } from "@/hooks/useAgentOnboarding";
+import { AgentTooltip } from "@/components/agent/AgentTooltip";
 
 interface TopBarProps {
   pendingUserCount?: number;
@@ -171,6 +173,9 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
   const [_notificationsLoading, setNotificationsLoading] = useState(false);
   const [isAgentOpen, setIsAgentOpen] = useState(false);
   const [agentQuestion, setAgentQuestion] = useState<string | undefined>();
+  
+  // Agent onboarding hook
+  const { showTooltip, showPulse, dismissTooltip, markAsInteracted } = useAgentOnboarding();
   
   // Removed non-functional sidebar toggle function
   
@@ -601,19 +606,36 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
                 </Button>
               )}
 
-              {/* AI Assistant Button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="relative h-8 w-8"
-                onClick={() => {
-                  setAgentQuestion(undefined);
-                  setIsAgentOpen(true);
-                }}
-                title="AI Assistant - Ask about this CRM"
-              >
-                <Sparkles className="h-5 w-5 text-purple-500" />
-              </Button>
+              {/* AI Assistant Button with Onboarding */}
+              <div className="relative">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={cn(
+                    "relative h-8 w-8",
+                    showPulse && "animate-pulse-glow"
+                  )}
+                  onClick={() => {
+                    markAsInteracted();
+                    setAgentQuestion(undefined);
+                    setIsAgentOpen(true);
+                  }}
+                  title="AI Assistant - Ask about this CRM"
+                >
+                  <Sparkles className="h-5 w-5 text-purple-500" />
+                  
+                  {/* Animated ping ring for pulsing state */}
+                  {showPulse && (
+                    <span className="absolute inset-0 rounded-full bg-purple-500/20 animate-ping-slow" />
+                  )}
+                </Button>
+                
+                {/* Floating tooltip for first-time users */}
+                <AgentTooltip 
+                  show={showTooltip} 
+                  onDismiss={dismissTooltip} 
+                />
+              </div>
             </>
           )}
         </div>

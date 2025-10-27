@@ -8,6 +8,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { CRM_DEMO_ASSISTANT_PROMPT } from '@/config/systemPrompts';
+import { searchKnowledgeBase, buildRAGContext, type DocumentChunk } from './ragKnowledgeBase';
 
 // Mock response when Gemini is not available
 const getMockResponse = (question: string): string => {
@@ -261,15 +262,29 @@ export function isGeminiAvailable(): boolean {
 }
 
 /**
- * Query the Gemini AI agent
+ * Query the Gemini AI agent with RAG (Retrieval-Augmented Generation)
  */
 export async function queryAgent(
   question: string,
   context?: string
 ): Promise<string> {
-  // Check if Gemini is available
+  // Step 1: Search knowledge base for relevant documentation
+  console.log('🔍 Searching knowledge base for:', question);
+  const relevantDocs = searchKnowledgeBase(question, 3);
+  console.log(`📚 Found ${relevantDocs.length} relevant documents`);
+  
+  // Step 2: Build RAG context from matched documents
+  const ragContext = buildRAGContext(relevantDocs);
+  
+  // Step 3: Check if Gemini is available
   if (!isGeminiAvailable()) {
-    console.warn('Gemini API key not found, using mock responses');
+    console.warn('Gemini API key not found, using mock responses with RAG');
+    
+    // Even in mock mode, use RAG context if available
+    if (ragContext) {
+      return `${getMockResponse(question)}\n\n---\n\n**📚 Related Documentation:**\n\n${relevantDocs.map(doc => `- ${doc.title} (${doc.source})`).join('\n')}`;
+    }
+    
     return getMockResponse(question);
   }
 
@@ -288,16 +303,42 @@ export async function queryAgent(
       }
     });
     
-    // Build prompt with system instructions
-    const fullPrompt = `${CRM_DEMO_ASSISTANT_PROMPT}\n\n---\n\nUser Question: ${question}${context ? `\n\nConversation Context:\n${context}` : ''}`;
+    // Build enhanced prompt with RAG context
+    let fullPrompt = CRM_DEMO_ASSISTANT_PROMPT;
     
-    console.log('🤖 Querying Gemini AI...');
+    // Add RAG context if available
+    if (ragContext) {
+      fullPrompt += `\n\n## 📚 Relevant Documentation from CRM Knowledge Base:\n\n${ragContext}`;
+    }
+    
+    // Add conversation context if provided
+    if (context) {
+      fullPrompt += `\n\n## 💬 Conversation History:\n${context}`;
+    }
+    
+    // Add user question
+    fullPrompt += `\n\n---\n\n## ❓ User Question:\n${question}`;
+    
+    // Add instructions for using RAG context
+    if (ragContext) {
+      fullPrompt += `\n\n**Instructions:** Use the documentation provided above to give accurate, specific answers about this CRM system. Reference the exact features, architecture, and capabilities described in the docs. If the documentation covers the question, prioritize that information over general knowledge.`;
+    }
+    
+    console.log('🤖 Querying Gemini AI with RAG context...');
     
     const result = await model.generateContent(fullPrompt);
     const response = await result.response;
     const text = response.text();
     
     console.log('✅ Gemini response received');
+    
+    // Optionally append sources
+    if (relevantDocs.length > 0) {
+      const sources = relevantDocs
+        .map(doc => `- ${doc.title} (${doc.source})`)
+        .join('\n');
+      return `${text}\n\n---\n\n<small>📚 **Sources consulted:**\n${sources}</small>`;
+    }
     
     return text;
   } catch (error: any) {
