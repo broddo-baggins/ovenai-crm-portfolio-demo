@@ -483,7 +483,7 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
               {/* Admin User Plus Icon (if admin) */}
               {isAdmin && (
                 <Button variant="ghost" size="icon" className="relative h-8 w-8" asChild>
-                  <Link to="/dashboard/users">
+                  <Link to="/users">
                     <UserPlus className="h-5 w-5" />
                     {pendingUserCount > 0 && (
                       <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-white text-[10px] flex items-center justify-center">
@@ -594,7 +594,7 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
               {/* Admin User Plus Icon (if admin) */}
               {isAdmin && (
                 <Button variant="ghost" size="icon" className="relative h-8 w-8" asChild>
-                  <Link to="/dashboard/users">
+                  <Link to="/users">
                     <UserPlus className="h-5 w-5" />
                     {pendingUserCount > 0 && (
                       <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-white text-[10px] flex items-center justify-center">

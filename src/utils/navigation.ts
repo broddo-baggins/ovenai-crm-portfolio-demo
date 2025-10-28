@@ -87,5 +87,10 @@ export const getNavItems = (
       name: t('navigation.adminCenter', 'Admin Center'), 
       icon: Shield 
     },
+    { 
+      path: "/users", 
+      name: t('navigation.users', 'Users'), 
+      icon: Users 
+    },
   ] : []),
 ]; 
