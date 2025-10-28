@@ -37,7 +37,7 @@ import {
   LockKeyhole,
   ToggleLeft,
   ToggleRight,
-  Users,
+  Users as UsersIcon,
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
@@ -64,51 +64,6 @@ interface User {
   clientName: string | null;
   projectCount: number;
 }
-
-// CACHE mock users to prevent infinite re-renders
-const MOCK_USERS_CACHE = getMockUsers();
-
-const fetchUsers = async (): Promise<User[]> => {
-  // DEMO MODE: Return mock users immediately in demo mode
-  
-  if (import.meta.env.VITE_DEMO_MODE === 'true') {
-    return MOCK_USERS_CACHE;
-  }
-
-  try {
-    // Get the current session for authentication
-    const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-    
-    if (sessionError || !session?.access_token) {
-      throw new Error('User not authenticated');
-    }
-
-    // Use Supabase Edge Function for user management
-    const response = await fetch('/functions/v1/user-management', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${session.access_token}`,
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: Failed to fetch users`);
-    }
-
-    const result = await response.json();
-    if (result.success && result.users && result.users.length > 0) {
-      return result.users;
-    } else {
-      // Return mock users for demo
-      return getMockUsers();
-    }
-  } catch (error) {
-    console.error('Failed to fetch users, using demo data:', error);
-    // Fallback to demo data
-    return getMockUsers();
-  }
-};
 
 const getMockUsers = (): User[] => [
   // ===== SUPER ADMIN =====
@@ -324,6 +279,51 @@ const getMockUsers = (): User[] => [
   }
 ];
 
+// CACHE mock users to prevent infinite re-renders
+const MOCK_USERS_CACHE = getMockUsers();
+
+const fetchUsers = async (): Promise<User[]> => {
+  // DEMO MODE: Return mock users immediately in demo mode
+  
+  if (import.meta.env.VITE_DEMO_MODE === 'true') {
+    return MOCK_USERS_CACHE;
+  }
+
+  try {
+    // Get the current session for authentication
+    const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+    
+    if (sessionError || !session?.access_token) {
+      throw new Error('User not authenticated');
+    }
+
+    // Use Supabase Edge Function for user management
+    const response = await fetch('/functions/v1/user-management', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${session.access_token}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: Failed to fetch users`);
+    }
+
+    const result = await response.json();
+    if (result.success && result.users && result.users.length > 0) {
+      return result.users;
+    } else {
+      // Return mock users for demo
+      return MOCK_USERS_CACHE;
+    }
+  } catch (error) {
+    console.error('Failed to fetch users, using demo data:', error);
+    // Fallback to demo data
+    return MOCK_USERS_CACHE;
+  }
+};
+
 const Users = () => {
   const { user: currentUser, hasPermission } = useAuth();
   const { t } = useTranslation("pages");
@@ -494,7 +494,7 @@ const Users = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="h-12 w-12 rounded-full bg-blue-500 flex items-center justify-center">
-                <Users className="h-6 w-6 text-white" />
+                <UsersIcon className="h-6 w-6 text-white" />
               </div>
               <div>
                 <h3 className="font-semibold text-blue-900 dark:text-blue-100">
