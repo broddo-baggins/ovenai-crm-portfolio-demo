@@ -65,18 +65,15 @@ interface User {
   projectCount: number;
 }
 
+// CACHE mock users to prevent infinite re-renders
+const MOCK_USERS_CACHE = getMockUsers();
+
 const fetchUsers = async (): Promise<User[]> => {
   // DEMO MODE: Return mock users immediately in demo mode
-  console.log('🔍 [Users] fetchUsers called, DEMO_MODE:', import.meta.env.VITE_DEMO_MODE);
   
   if (import.meta.env.VITE_DEMO_MODE === 'true') {
-    console.log('✅ [DEMO MODE] Returning mock users - count:', getMockUsers().length);
-    const mockUsers = getMockUsers();
-    console.log('📊 [DEMO MODE] First user:', mockUsers[0]);
-    return mockUsers;
+    return MOCK_USERS_CACHE;
   }
-  
-  console.warn('⚠️ [Users] DEMO_MODE not true, attempting real fetch');
 
   try {
     // Get the current session for authentication
@@ -328,8 +325,6 @@ const getMockUsers = (): User[] => [
 ];
 
 const Users = () => {
-  console.log('🚀 [Users Component] Rendering...');
-  
   const { user: currentUser, hasPermission } = useAuth();
   const { t } = useTranslation("pages");
   const { isRTL } = useLang();
@@ -337,8 +332,6 @@ const Users = () => {
   const [createDialogOpen, setCreateDialogOpen] = useState(false);
   const [resetDialogOpen, setResetDialogOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
-
-  console.log('🔑 [Users] hasPermission check - currentUser:', currentUser?.email);
 
   const {
     data: users,
@@ -349,8 +342,6 @@ const Users = () => {
     queryKey: ["users"],
     queryFn: fetchUsers,
   });
-  
-  console.log('📊 [Users] Query state - isLoading:', isLoading, 'error:', error, 'users count:', users?.length);
 
   // Form states
   const [newUser, setNewUser] = useState({
@@ -363,15 +354,12 @@ const Users = () => {
   const [resetPassword, setResetPassword] = useState("");
 
   if (!hasPermission("SUPER_ADMIN") && !hasPermission("ADMIN")) {
-    console.error('❌ [Users] Permission denied - no SUPER_ADMIN or ADMIN permission');
     return (
       <div className="flex h-full items-center justify-center">
         <p>You don't have permission to access this page.</p>
       </div>
     );
   }
-  
-  console.log('✅ [Users] Permission granted, rendering users page');
 
   const filteredUsers = users?.filter(
     (user) =>
@@ -469,7 +457,6 @@ const Users = () => {
   };
 
   if (isLoading) {
-    console.log('⏳ [Users] Still loading...');
     return (
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
@@ -481,7 +468,6 @@ const Users = () => {
   }
 
   if (error) {
-    console.error('❌ [Users] Error state:', error);
     return (
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
@@ -491,8 +477,6 @@ const Users = () => {
       </div>
     );
   }
-  
-  console.log('✅ [Users] Rendering with users:', users?.length);
 
   // Calculate statistics for the info banner
   const totalUsers = users?.length || 0;
