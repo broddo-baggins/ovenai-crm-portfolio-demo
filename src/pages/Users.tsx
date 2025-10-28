@@ -469,18 +469,30 @@ const Users = () => {
   };
 
   if (isLoading) {
+    console.log('⏳ [Users] Still loading...');
     return (
-      <div className="flex h-full items-center justify-center">Loading...</div>
+      <div className="flex h-full items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
+          <p>Loading users...</p>
+        </div>
+      </div>
     );
   }
 
   if (error) {
+    console.error('❌ [Users] Error state:', error);
     return (
       <div className="flex h-full items-center justify-center">
-        Error loading users
+        <div className="text-center">
+          <p className="text-red-600 mb-2">Error loading users</p>
+          <Button onClick={() => refetch()}>Retry</Button>
+        </div>
       </div>
     );
   }
+  
+  console.log('✅ [Users] Rendering with users:', users?.length);
 
   // Calculate statistics for the info banner
   const totalUsers = users?.length || 0;
