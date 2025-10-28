@@ -36,6 +36,9 @@ import {
   LockKeyhole,
   ToggleLeft,
   ToggleRight,
+  Users,
+  CheckCircle,
+  AlertCircle,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -332,12 +335,48 @@ const Users = () => {
     );
   }
 
+  // Calculate statistics for the info banner
+  const totalUsers = users?.length || 0;
+  const activeUsers = users?.filter(u => u.status === 'ACTIVE').length || 0;
+  const pendingUsers = users?.filter(u => u.status === 'PENDING_APPROVAL').length || 0;
+
   return (
     <div
-      className={cn("container mx-auto py-6", isRTL && "rtl")}
+      className={cn("container mx-auto py-6 space-y-6", isRTL && "rtl")}
       dir={isRTL ? "rtl" : "ltr"}
     >
-      <div className="flex items-center justify-between mb-6">
+      {/* Activity Banner */}
+      <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/50">
+        <CardContent className="pt-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full bg-blue-500 flex items-center justify-center">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-blue-900 dark:text-blue-100">
+                  User Management Active
+                </h3>
+                <p className="text-sm text-blue-700 dark:text-blue-300">
+                  {totalUsers} total users • {activeUsers} active • {pendingUsers} pending approval
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              {pendingUsers > 0 && (
+                <Badge variant="default" className="bg-orange-500">
+                  {pendingUsers} Pending
+                </Badge>
+              )}
+              <Badge variant="default" className="bg-green-500">
+                {activeUsers} Active
+              </Badge>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">
           {t("users.title", "User Directory")}
         </h1>
@@ -488,12 +527,17 @@ const Users = () => {
                       <TableCell>
                         <span
                           className={cn(
-                            "px-2 py-1 rounded-full text-xs font-medium",
+                            "inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium",
                             user.status === "ACTIVE"
                               ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-                              : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300",
+                              : "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300",
                           )}
                         >
+                          {user.status === "ACTIVE" ? (
+                            <CheckCircle className="h-3 w-3" />
+                          ) : (
+                            <AlertCircle className="h-3 w-3" />
+                          )}
                           {user.status}
                         </span>
                       </TableCell>
