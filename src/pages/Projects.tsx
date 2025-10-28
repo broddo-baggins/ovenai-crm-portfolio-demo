@@ -217,7 +217,26 @@ const Projects: React.FC = () => {
       const projectsWithStats: ProjectWithStats[] = await Promise.all(
         projectsData.map(async (project) => {
           try {
-            // Get real lead count for this project
+            // CRITICAL FIX: In demo mode, mock data already has stats - don't overwrite!
+            if (import.meta.env.VITE_DEMO_MODE === 'true' && 
+                (project as any).leads_count !== undefined && 
+                (project as any).active_conversations !== undefined) {
+              
+              console.log(`📊 Demo mode: Using existing stats for project ${project.name}`);
+              return {
+                ...project,
+                status: project.status || "active",
+                leads_count: (project as any).leads_count,
+                active_conversations: (project as any).active_conversations,
+                conversion_rate: (project as any).conversion_rate || 0,
+                last_activity: project.updated_at || project.created_at,
+                priority: (project as any).priority || "medium",
+                tags: (project as any).tags || ["General"],
+                color: (project as any).color || "#3B82F6",
+              } as ProjectWithStats;
+            }
+            
+            // For production: Get real lead count for this project
             const leadStats = await LeadService.getLeadStats(project.id);
             const leadsCount = leadStats?.totalLeads || 0;
 
