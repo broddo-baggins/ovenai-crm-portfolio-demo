@@ -2,6 +2,21 @@
 // This file contains sanitized, hardcoded data for demonstration purposes
 // All data is fictional and for portfolio showcase only
 
+// CRITICAL: Generate dates dynamically to always be within the last 30 days for Reports filtering
+const getRecentDate = (daysAgo) => {
+  const date = new Date();
+  date.setDate(date.getDate() - daysAgo);
+  return date.toISOString();
+};
+
+// Helper to get recent timestamp with hours offset
+const getRecentTimestamp = (daysAgo, hoursOffset = 0) => {
+  const date = new Date();
+  date.setDate(date.getDate() - daysAgo);
+  date.setHours(date.getHours() + hoursOffset);
+  return date.toISOString();
+};
+
 export const mockLeads = [
   {
     id: 'lead-001',
@@ -20,13 +35,13 @@ export const mockLeads = [
     need: 'CRM Automation',
     timeline: '1-3 months',
     interaction_count: 24,
-    last_contact: '2025-05-07T10:52:22.352Z',
-    next_followup: '2024-01-25T14:00:00Z',
+    last_contact: getRecentDate(2),
+    next_followup: getRecentDate(-5),
     assigned_agent: 'Agent A',
     tags: ['enterprise', 'hot-lead', 'demo-scheduled'],
     notes: 'Very interested in AI automation features. Demo scheduled for next week.',
     source: 'WhatsApp Inbound',
-    created_at: '2025-05-06T10:52:22.352Z',
+    created_at: getRecentDate(15),
     project_id: 'project-001',
     current_project_id: 'project-001'
   },
@@ -47,13 +62,13 @@ export const mockLeads = [
     need: 'Lead Management',
     timeline: '1-3 months',
     interaction_count: 31,
-    last_contact: '2025-10-29T07:25:22.352Z',
-    next_followup: '2024-01-30T11:00:00Z',
+    last_contact: getRecentDate(1),
+    next_followup: getRecentDate(-3),
     assigned_agent: 'Agent B',
     tags: ['mid-market', 'hot-lead', 'automation-ready'],
     notes: 'Team approved budget. Ready to move forward with implementation.',
     source: 'Website Contact',
-    created_at: '2025-10-27T07:25:22.352Z',
+    created_at: getRecentDate(10),
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -74,13 +89,13 @@ export const mockLeads = [
     need: 'General Inquiry',
     timeline: 'Unknown',
     interaction_count: 3,
-    last_contact: '2025-06-09T07:30:22.352Z',
-    next_followup: '2024-01-23T10:00:00Z',
+    last_contact: getRecentDate(5),
+    next_followup: getRecentDate(-2),
     assigned_agent: 'Agent A',
     tags: ['new', 'needs-qualification'],
     notes: 'Initial contact made via WhatsApp. Gathering requirements.',
     source: 'WhatsApp Inbound',
-    created_at: '2025-06-07T07:30:22.352Z'
+    created_at: getRecentDate(7)
   },
   {
     id: 'lead-004',
@@ -99,13 +114,13 @@ export const mockLeads = [
     need: 'WhatsApp Business Integration',
     timeline: 'Immediate (<1 month)',
     interaction_count: 42,
-    last_contact: '2025-09-14T13:33:22.352Z',
-    next_followup: '2024-01-24T13:00:00Z',
+    last_contact: getRecentDate(1),
+    next_followup: getRecentDate(-1),
     assigned_agent: 'Agent C',
     tags: ['enterprise', 'hot-lead', 'high-priority'],
     notes: 'Calendly meeting booked for demo presentation. Very qualified lead.',
     source: 'Referral',
-    created_at: '2025-09-13T13:33:22.352Z',
+    created_at: getRecentDate(12),
     project_id: 'project-002',
     current_project_id: 'project-002'
   },
@@ -126,13 +141,13 @@ export const mockLeads = [
     authority: 'Individual Contributor',
     need: 'Basic CRM',
     timeline: '>6 months',
-    last_contact: '2025-10-19T13:03:22.352Z',
+    last_contact: getRecentDate(20),
     next_followup: null,
     assigned_agent: 'Agent B',
     tags: ['small-business', 'budget-constraint'],
     notes: 'Budget too low for our solution. Referred to alternative providers.',
     source: 'LinkedIn',
-    created_at: '2025-10-17T13:03:22.352Z'
+    created_at: getRecentDate(25)
   },
   {
     id: 'lead-006',
@@ -151,13 +166,13 @@ export const mockLeads = [
     need: 'Sales Automation',
     timeline: '1-3 months',
     interaction_count: 19,
-    last_contact: '2025-06-03T09:24:22.352Z',
-    next_followup: '2024-01-26T15:00:00Z',
+    last_contact: getRecentDate(3),
+    next_followup: getRecentDate(-4),
     assigned_agent: 'Agent A',
     tags: ['mid-market', 'qualified'],
     notes: 'Strong fit. Reviewing proposal with finance team.',
     source: 'Website Contact',
-    created_at: '2025-06-02T09:24:22.352Z',
+    created_at: getRecentDate(18),
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -178,13 +193,13 @@ export const mockLeads = [
     need: 'Customer Engagement',
     timeline: '3-6 months',
     interaction_count: 12,
-    last_contact: '2025-09-22T11:38:22.352Z',
-    next_followup: '2024-01-29T12:00:00Z',
+    last_contact: getRecentDate(8),
+    next_followup: getRecentDate(-6),
     assigned_agent: 'Agent C',
     tags: ['startup', 'nurture'],
     notes: 'Interested but waiting for next funding round.',
     source: 'LinkedIn',
-    created_at: '2025-09-20T11:38:22.352Z',
+    created_at: getRecentDate(22),
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -205,13 +220,13 @@ export const mockLeads = [
     need: 'Enterprise CRM',
     timeline: 'Immediate (<1 month)',
     interaction_count: 38,
-    last_contact: '2025-05-19T07:28:22.352Z',
-    next_followup: '2024-01-25T10:00:00Z',
+    last_contact: getRecentDate(2),
+    next_followup: getRecentDate(-2),
     assigned_agent: 'Agent B',
     tags: ['enterprise', 'hot-lead', 'demo-scheduled'],
     notes: 'C-level meeting scheduled. Prepare custom demo.',
     source: 'WhatsApp Inbound',
-    created_at: '2025-05-19T07:28:22.352Z',
+    created_at: getRecentDate(14),
     project_id: 'project-001',
     current_project_id: 'project-001'
   },
@@ -232,13 +247,13 @@ export const mockLeads = [
     need: 'Client Management',
     timeline: 'Unknown',
     interaction_count: 2,
-    last_contact: '2025-07-31T08:12:22.352Z',
-    next_followup: '2024-01-24T09:00:00Z',
+    last_contact: getRecentDate(4),
+    next_followup: getRecentDate(-1),
     assigned_agent: 'Agent A',
     tags: ['new', 'creative-industry'],
     notes: 'First WhatsApp conversation initiated. Needs follow-up.',
     source: 'Referral',
-    created_at: '2025-07-31T08:12:22.352Z'
+    created_at: getRecentDate(6)
   },
   {
     id: 'lead-010',
@@ -259,13 +274,13 @@ export const mockLeads = [
     need: 'AI-Powered Automation',
     timeline: '1-3 months',
     interaction_count: 27,
-    last_contact: '2025-06-13T06:53:22.352Z',
-    next_followup: '2024-01-27T14:00:00Z',
+    last_contact: getRecentDate(3),
+    next_followup: getRecentDate(-5),
     assigned_agent: 'Agent C',
     tags: ['enterprise', 'ai-focused', 'technical'],
     notes: 'Very technical buyer. Impressed by AI capabilities.',
     source: 'LinkedIn',
-    created_at: '2025-06-12T06:53:22.352Z'
+    created_at: getRecentDate(16)
   },
   {
     id: 'lead-011',
@@ -284,13 +299,13 @@ export const mockLeads = [
     need: 'Sales Pipeline Management',
     timeline: '1-3 months',
     interaction_count: 22,
-    last_contact: '2025-06-19T05:49:22.352Z',
-    next_followup: '2024-01-28T10:00:00Z',
+    last_contact: getRecentDate(4),
+    next_followup: getRecentDate(-6),
     assigned_agent: 'Agent A',
     tags: ['enterprise', 'saas', 'pipeline-focused'],
     notes: 'Director of Sales Operations. Looking for comprehensive solution.',
     source: 'Website Contact',
-    created_at: '2025-06-17T05:49:22.352Z',
+    created_at: getRecentDate(19),
     project_id: 'project-003',
     current_project_id: 'project-003'
   },
@@ -311,13 +326,13 @@ export const mockLeads = [
     need: 'Compliance-Ready CRM',
     timeline: 'Immediate (<1 month)',
     interaction_count: 35,
-    last_contact: '2025-07-25T11:00:22.352Z',
-    next_followup: '2024-01-25T15:00:00Z',
+    last_contact: getRecentDate(1),
+    next_followup: getRecentDate(-2),
     assigned_agent: 'Agent B',
     tags: ['enterprise', 'fintech', 'compliance-focused'],
     notes: 'CTO attending meeting. Needs security and compliance discussion.',
     source: 'Referral',
-    created_at: '2025-07-25T11:00:22.352Z',
+    created_at: getRecentDate(8),
     project_id: 'project-001',
     current_project_id: 'project-001'
   },
@@ -338,15 +353,15 @@ export const mockLeads = [
     need: 'Customer Communication',
     timeline: '3-6 months',
     interaction_count: 14,
-    last_contact: '2025-08-28T11:01:22.352Z',
-    next_followup: '2024-01-31T11:00:00Z',
+    last_contact: getRecentDate(9),
+    next_followup: getRecentDate(-7),
     project_id: 'project-003',
     current_project_id: 'project-003',
     assigned_agent: 'Agent C',
     tags: ['ecommerce', 'sustainability', 'warm-lead'],
     notes: 'Growing fast. Will revisit after Q1 results.',
     source: 'LinkedIn',
-    created_at: '2025-08-26T11:01:22.352Z'
+    created_at: getRecentDate(24)
   },
   {
     id: 'lead-014',
@@ -365,13 +380,13 @@ export const mockLeads = [
     need: 'Lead Follow-up Automation',
     timeline: '1-3 months',
     interaction_count: 26,
-    last_contact: '2025-05-02T08:22:22.352Z',
-    next_followup: '2024-01-27T13:00:00Z',
+    last_contact: getRecentDate(2),
+    next_followup: getRecentDate(-5),
     assigned_agent: 'Agent A',
     tags: ['real-estate', 'hot-lead', 'automation-focused'],
     notes: 'Managing partner. Loves the 70% response rate metric.',
     source: 'WhatsApp Inbound',
-    created_at: '2025-05-01T08:22:22.352Z'
+    created_at: getRecentDate(13)
   },
   {
     id: 'lead-015',
@@ -390,13 +405,13 @@ export const mockLeads = [
     need: 'Data Integration',
     timeline: 'Unknown',
     interaction_count: 4,
-    last_contact: '2025-07-10T14:03:22.352Z',
-    next_followup: '2024-01-24T14:00:00Z',
+    last_contact: getRecentDate(6),
+    next_followup: getRecentDate(-1),
     assigned_agent: 'Agent B',
     tags: ['new', 'data-analytics', 'technical'],
     notes: 'Initial outreach. Wants to understand API capabilities.',
     source: 'Website Contact',
-    created_at: '2025-07-08T14:03:22.352Z'
+    created_at: getRecentDate(9)
   },
   {
     id: 'lead-016',
@@ -415,13 +430,13 @@ export const mockLeads = [
     need: 'Patient Communication',
     timeline: '1-3 months',
     interaction_count: 20,
-    last_contact: '2025-06-20T11:00:22.352Z',
-    next_followup: '2024-01-28T11:00:00Z',
+    last_contact: getRecentDate(5),
+    next_followup: getRecentDate(-6),
     assigned_agent: 'Agent C',
     tags: ['healthcare', 'hipaa', 'qualified'],
     notes: 'Practice manager. Needs HIPAA-compliant solution.',
     source: 'Referral',
-    created_at: '2025-06-20T11:00:22.352Z'
+    created_at: getRecentDate(17)
   },
   {
     id: 'lead-017',
@@ -440,13 +455,13 @@ export const mockLeads = [
     need: 'Customer Engagement',
     timeline: '3-6 months',
     interaction_count: 11,
-    last_contact: '2025-07-25T06:23:22.352Z',
-    next_followup: '2024-02-01T10:00:00Z',
+    last_contact: getRecentDate(10),
+    next_followup: getRecentDate(-8),
     assigned_agent: 'Agent A',
     tags: ['retail', 'fashion', 'nurture'],
     notes: 'Marketing director. Needs buy-in from operations.',
     source: 'LinkedIn',
-    created_at: '2025-07-25T06:23:22.352Z'
+    created_at: getRecentDate(20)
   },
   {
     id: 'lead-018',
@@ -465,13 +480,13 @@ export const mockLeads = [
     need: 'Client Management',
     timeline: 'Unknown',
     interaction_count: 5,
-    last_contact: '2025-09-03T08:00:22.352Z',
-    next_followup: '2024-01-25T09:00:00Z',
+    last_contact: getRecentDate(7),
+    next_followup: getRecentDate(-2),
     assigned_agent: 'Agent B',
     tags: ['new', 'legal', 'exploring'],
     notes: 'Law firm administrator. Just starting research phase.',
     source: 'Website Contact',
-    created_at: '2025-09-01T08:00:22.352Z'
+    created_at: getRecentDate(11)
   },
   {
     id: 'lead-019',
@@ -490,13 +505,13 @@ export const mockLeads = [
     need: 'Student Communication Platform',
     timeline: 'Immediate (<1 month)',
     interaction_count: 33,
-    last_contact: '2025-09-04T16:59:22.352Z',
-    next_followup: '2024-01-26T14:00:00Z',
+    last_contact: getRecentDate(1),
+    next_followup: getRecentDate(-4),
     assigned_agent: 'Agent C',
     tags: ['education', 'enterprise', 'urgent'],
     notes: 'COO. Needs solution before new semester starts.',
     source: 'Referral',
-    created_at: '2025-09-04T16:59:22.352Z'
+    created_at: getRecentDate(5)
   },
   {
     id: 'lead-020',
@@ -515,13 +530,13 @@ export const mockLeads = [
     need: 'Vendor Communication',
     timeline: '1-3 months',
     interaction_count: 18,
-    last_contact: '2025-10-22T10:11:22.352Z',
-    next_followup: '2024-01-29T10:00:00Z',
+    last_contact: getRecentDate(3),
+    next_followup: getRecentDate(-7),
     assigned_agent: 'Agent A',
     tags: ['logistics', 'b2b', 'qualified'],
     notes: 'VP of Operations. Interested in multi-channel communication.',
     source: 'WhatsApp Inbound',
-    created_at: '2025-10-21T10:11:22.352Z'
+    created_at: getRecentDate(21)
   }
 ];
 
@@ -533,56 +548,56 @@ export const mockConversations = [
       {
         id: 'msg-001',
         sender: 'lead',
-        timestamp: '2025-05-06T10:52:22.352Z',
+        timestamp: getRecentTimestamp(15, 10),
         content: 'Hi! I saw your website and I\'m interested in learning more about your CRM solution.',
         status: 'delivered'
       },
       {
         id: 'msg-002',
         sender: 'agent',
-        timestamp: '2025-05-06T10:57:22.352Z',
+        timestamp: getRecentTimestamp(15, 11),
         content: 'Hello Sarah! Thanks for reaching out. I\'d be happy to help. Can you tell me a bit about your current challenges with customer management?',
         status: 'read'
       },
       {
         id: 'msg-003',
         sender: 'lead',
-        timestamp: '2025-05-06T11:52:22.352Z',
+        timestamp: getRecentTimestamp(15, 12),
         content: 'We\'re using spreadsheets right now and it\'s becoming unmanageable. We need automation for WhatsApp communication especially.',
         status: 'delivered'
       },
       {
         id: 'msg-004',
         sender: 'agent',
-        timestamp: '2025-05-06T11:57:22.352Z',
+        timestamp: getRecentTimestamp(15, 13),
         content: 'That\'s exactly what we specialize in! Our system achieved 70% response rates with automated WhatsApp integration. What\'s your typical monthly lead volume?',
         status: 'read'
       },
       {
         id: 'msg-005',
         sender: 'lead',
-        timestamp: '2025-05-06T12:52:22.352Z',
+        timestamp: getRecentTimestamp(15, 14),
         content: 'About 200-300 leads per month. What would something like this cost?',
         status: 'delivered'
       },
       {
         id: 'msg-006',
         sender: 'agent',
-        timestamp: '2025-05-06T12:57:22.352Z',
+        timestamp: getRecentTimestamp(15, 15),
         content: 'For your volume, we have enterprise packages starting at $50k annually. Would you like to schedule a demo to see it in action?',
         status: 'read'
       },
       {
         id: 'msg-007',
         sender: 'lead',
-        timestamp: '2025-05-06T13:52:22.352Z',
+        timestamp: getRecentTimestamp(15, 16),
         content: 'Yes, that budget works for us. Let\'s schedule something for next week.',
         status: 'delivered'
       },
       {
         id: 'msg-008',
         sender: 'agent',
-        timestamp: '2025-05-06T13:57:22.352Z',
+        timestamp: getRecentTimestamp(15, 17),
         content: 'Perfect! I\'ll send you a Calendly link. Looking forward to showing you what we can do!',
         status: 'read'
       }
