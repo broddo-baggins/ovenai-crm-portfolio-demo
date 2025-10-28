@@ -396,6 +396,9 @@ function App() {
                               <Route path="settings" element={<Settings />} />
                               <Route path="users" element={<Users />} />
                               
+                              {/* Redirect old dashboard/users path to new /users path */}
+                              <Route path="dashboard/users" element={<Navigate to="/users" replace />} />
+                              
                               {/* Admin Routes - Unified under /admin */}
                               <Route path="admin" element={<AdminLandingPage />} />
                               <Route path="admin/console" element={<AdminConsolePage />} />
