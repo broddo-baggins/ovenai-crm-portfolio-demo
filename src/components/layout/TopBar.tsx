@@ -21,7 +21,6 @@ import { simpleProjectService } from "@/services/simpleProjectService";
 import { searchMockData, SearchResult as MockSearchResult } from "@/services/mockSearchService";
 import { GeminiAgent } from "@/components/agent/GeminiAgent";
 import { useAgentOnboarding } from "@/hooks/useAgentOnboarding";
-import { AgentTooltip } from "@/components/agent/AgentTooltip";
 
 interface TopBarProps {
   pendingUserCount?: number;
@@ -175,7 +174,7 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
   const [agentQuestion, setAgentQuestion] = useState<string | undefined>();
   
   // Agent onboarding hook
-  const { showTooltip, showPulse, dismissTooltip, markAsInteracted } = useAgentOnboarding();
+  const { showPulse, markAsInteracted } = useAgentOnboarding();
   
   // Removed non-functional sidebar toggle function
   
@@ -629,12 +628,6 @@ const TopBar = ({ pendingUserCount = 0 }: TopBarProps) => {
                     <span className="absolute inset-0 rounded-full bg-purple-500/20 animate-ping-slow" />
                   )}
                 </Button>
-                
-                {/* Floating tooltip for first-time users */}
-                <AgentTooltip 
-                  show={showTooltip} 
-                  onDismiss={dismissTooltip} 
-                />
               </div>
             </>
           )}
