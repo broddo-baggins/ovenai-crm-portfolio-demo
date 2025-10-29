@@ -150,6 +150,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             required={required}
             aria-invalid={error ? 'true' : undefined}
             aria-describedby={describedByIds || undefined}
+            autoComplete={props.autoComplete || (type === 'email' ? 'email' : type === 'password' ? 'current-password' : 'off')}
             {...props}
           />
           

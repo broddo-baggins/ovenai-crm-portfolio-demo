@@ -312,11 +312,13 @@ const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
                     <form onSubmit={handleEmailSignup} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                       <Input
                         type="email"
+                        name="notify-email"
                         placeholder={t('pages:comingSoon.notify.emailPlaceholder', 'Enter your email address')}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         className="flex-1"
+                        autoComplete="off"
                       />
                       <Button type="submit" className="whitespace-nowrap">
                         <Bell className={cn("h-4 w-4", isRTL ? "ml-2" : "mr-2")} />

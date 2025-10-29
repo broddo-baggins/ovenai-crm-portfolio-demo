@@ -378,11 +378,13 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           <Input
             id="email"
             type="email"
+            name="early-access-email"
             value={formData.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
             placeholder={t.placeholders.email}
             className={`${isRTL ? 'text-right' : 'text-left'} ${errors.email ? 'border-red-500' : ''}`}
             dir="ltr" // Email is always LTR
+            autoComplete="off"
           />
           {errors.email && (
             <p className="text-sm text-red-500">{errors.email}</p>
@@ -398,11 +400,13 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({
           <Input
             id="phone"
             type="tel"
+            name="early-access-phone"
             value={formData.phone}
             onChange={(e) => handleInputChange('phone', e.target.value)}
             placeholder={t.placeholders.phone}
             className={`${isRTL ? 'text-right' : 'text-left'} ${errors.phone ? 'border-red-500' : ''}`}
             dir="ltr" // Phone is always LTR
+            autoComplete="off"
           />
           {errors.phone && (
             <p className="text-sm text-red-500">{errors.phone}</p>

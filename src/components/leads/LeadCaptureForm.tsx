@@ -337,11 +337,13 @@ export const LeadCaptureForm = ({ open, onClose, onSuccess, campaign, source }: 
                 <Input
                   id="email"
                   type="email"
+                  name="lead-email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder={t('placeholders.email', 'Only if provided to us')}
                   disabled={isLoading}
                   dir="ltr"
+                  autoComplete="off"
                 />
               </div>
               <div className="space-y-2">
@@ -352,11 +354,13 @@ export const LeadCaptureForm = ({ open, onClose, onSuccess, campaign, source }: 
                 <Input
                   id="phone"
                   type="tel"
+                  name="lead-phone"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder={t('placeholders.phone', 'Enter your phone number')}
                   disabled={isLoading}
                   dir="ltr"
+                  autoComplete="off"
                 />
               </div>
             </div>

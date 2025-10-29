@@ -1681,3 +1681,51 @@
 .slow-spin {
   animation: slow-spin 3s linear infinite;
 }
+
+/* Safari autocomplete fixes - Prevent dropdown from blocking screen */
+/* Disable Safari's aggressive autocomplete styling */
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+/* Prevent Safari's autocomplete dropdown from overlaying content */
+input[type="email"]::-webkit-credentials-auto-fill-button,
+input[type="tel"]::-webkit-credentials-auto-fill-button,
+input[type="text"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+}
+
+/* Ensure autofill doesn't change background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px hsl(var(--background)) inset !important;
+  -webkit-text-fill-color: hsl(var(--foreground)) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Dark mode autofill fix */
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px hsl(var(--background)) inset !important;
+  -webkit-text-fill-color: hsl(var(--foreground)) !important;
+}
+
+/* Safari-specific: Prevent zoom on input focus (helps prevent autocomplete popup) */
+@supports (-webkit-touch-callout: none) {
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"] {
+    font-size: 16px !important; /* Prevents zoom on iOS Safari */
+  }
+}

@@ -316,10 +316,12 @@ const DataDeletion = () => {
                   </label>
                   <Input
                     type="email"
+                    name="confirm-email"
                     value={confirmEmail}
                     onChange={(e) => setConfirmEmail(e.target.value)}
                     placeholder="Enter your email to confirm"
                     required
+                    autoComplete="off"
                   />
                   <p className="text-xs text-gray-500 mt-1">
                     Current account email: {user?.email}
