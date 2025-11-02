@@ -118,32 +118,42 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           {t('language.selector', 'Language')}
         </label>
       )}
-      <DropdownMenu>
+      <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
             size={size === 'md' ? 'default' : size as 'sm' | 'lg'}
             disabled={isChanging}
             className={cn(
-              "justify-between min-w-[120px] gap-2",
+              "justify-between min-w-[90px] sm:min-w-[120px] gap-1 sm:gap-2 touch-manipulation",
               textStart(),
               isRTL && "flex-row-reverse",
-              isChanging && "opacity-50 cursor-not-allowed"
+              isChanging && "opacity-50 cursor-not-allowed",
+              // Ensure proper touch target size on mobile
+              "min-h-[44px]"
             )}
           >
-            <div className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
-              <span className={cn(currentLanguage?.code === 'he' && "font-hebrew")}>
+            <div className={cn("flex items-center gap-1 sm:gap-2", isRTL && "flex-row-reverse")}>
+              <span className={cn(
+                currentLanguage?.code === 'he' && "font-hebrew",
+                "text-xs sm:text-sm"
+              )}>
                 {isChanging ? '...' : currentLanguage?.nativeName}
               </span>
             </div>
-            <ChevronDown className="h-4 w-4" />
+            <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent 
           align={isRTL ? "end" : "start"} 
           side="bottom"
           sideOffset={4}
-          className={cn("min-w-[120px]", isRTL && "font-hebrew")}
+          className={cn(
+            "min-w-[120px] sm:min-w-[140px] z-[100]",
+            isRTL && "font-hebrew"
+          )}
+          // Prevent dropdown from being cut off on mobile
+          alignOffset={-4}
         >
           {languages.map((language) => (
             <DropdownMenuItem
@@ -151,14 +161,16 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
               onClick={() => handleLanguageChange(language.code)}
               disabled={isChanging || lang === language.code}
               className={cn(
-                "flex items-center gap-2 cursor-pointer",
+                "flex items-center gap-2 cursor-pointer touch-manipulation",
                 language.code === 'he' && "font-hebrew",
                 lang === language.code && "bg-accent text-accent-foreground",
                 textStart(),
-                isRTL && "flex-row-reverse"
+                isRTL && "flex-row-reverse",
+                // Ensure adequate touch target on mobile
+                "min-h-[44px] py-3"
               )}
             >
-              <span>{language.nativeName}</span>
+              <span className="text-sm sm:text-base">{language.nativeName}</span>
               {lang === language.code && (
                 <span className={cn("ml-auto text-xs opacity-60", isRTL && "mr-auto ml-0")}>
                   {isRTL ? "נוכחי" : "Current"}

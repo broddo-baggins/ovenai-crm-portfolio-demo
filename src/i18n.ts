@@ -30,7 +30,7 @@ i18n
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
     detection: {
-      order: ["localStorage", "navigator", "htmlTag"],
+      order: ["localStorage", "htmlTag"], // Removed 'navigator' to prevent browser language detection on first visit
       caches: ["localStorage"],
       lookupLocalStorage: "i18nextLng",
     },
