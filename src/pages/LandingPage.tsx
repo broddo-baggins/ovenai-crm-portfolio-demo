@@ -629,7 +629,7 @@ const LandingPage = () => {
                     <div className="flex items-center gap-3 text-lg md:text-xl text-primary-600 font-geist-medium">
                       {/* CRM AI Indicator */}
                       <div className="relative">
-                        <div className="w-8 h-8 rounded-full border-3 border-gray-300 relative overflow-hidden bg-gray-50">
+                        <div className="w-8 h-8 rounded-full border-2 border-gray-300 relative overflow-hidden bg-gray-50">
                           {/* Oven Heat Animation - Cycles like cooking */}
                           <motion.div
                             className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-orange-500 via-red-400 to-yellow-300"
