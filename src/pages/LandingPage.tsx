@@ -23,6 +23,7 @@ import { Meteors } from "@/components/ui/meteors";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { EarlyAccessForm } from "@/components/ui/EarlyAccessForm";
+import { GeminiAgent } from "@/components/agent/GeminiAgent";
 import { useAuth } from "@/context/ClientAuthContext";
 import { requestDemo } from "@/utils/email-helper";
 import {
@@ -47,6 +48,7 @@ import {
   Eye,
   Crown,
   Shield,
+  Sparkles,
 } from "lucide-react";
 import { ProgressWithLoading } from "@/components/ui/progress-with-loading";
 
@@ -56,6 +58,7 @@ const LandingPage = () => {
   const { t, i18n, ready } = useTranslation("landing");
   const [error, setError] = useState<string | null>(null);
   const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false);
+  const [isAgentOpen, setIsAgentOpen] = useState(false);
   const isHebrew = i18n?.language === "he";
 
   // Enhanced animation states
@@ -1982,11 +1985,43 @@ const LandingPage = () => {
           </div>
         </footer>
       </div>
-              <EarlyAccessForm 
-          isOpen={isEarlyAccessOpen} 
-          onClose={() => setIsEarlyAccessOpen(false)} 
-          language={isHebrew ? 'he' : 'en'}
-        />
+
+      {/* Floating AI Assistant Button */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 2, duration: 0.5, type: "spring" }}
+        className="fixed bottom-8 right-8 z-50"
+      >
+        <Button
+          onClick={() => setIsAgentOpen(true)}
+          className="h-16 w-16 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 group relative"
+          title={isHebrew ? "שאל את העוזר החכם שלנו" : "Ask our AI Assistant"}
+        >
+          <Sparkles className="h-7 w-7 text-white group-hover:scale-110 transition-transform" />
+          
+          {/* Animated ping effect */}
+          <span className="absolute inset-0 rounded-full bg-purple-500/30 animate-ping" />
+          
+          {/* Badge for "NEW" */}
+          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
+            {isHebrew ? "חדש" : "NEW"}
+          </span>
+        </Button>
+      </motion.div>
+
+      {/* AI Assistant Dialog */}
+      <GeminiAgent
+        open={isAgentOpen}
+        onOpenChange={setIsAgentOpen}
+      />
+
+      {/* Early Access Form */}
+      <EarlyAccessForm 
+        isOpen={isEarlyAccessOpen} 
+        onClose={() => setIsEarlyAccessOpen(false)} 
+        language={isHebrew ? 'he' : 'en'}
+      />
     </>
   );
 };
