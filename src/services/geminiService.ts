@@ -14,7 +14,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Groq from 'groq-sdk';
-import { CRM_DEMO_ASSISTANT_PROMPT } from '@/config/systemPrompts';
+import { CRM_DEMO_ASSISTANT_PROMPT, LANDING_PAGE_CONTEXT } from '@/config/systemPrompts';
 import { searchKnowledgeBase, buildRAGContext, type DocumentChunk } from './ragKnowledgeBase';
 import { env } from '@/config/env';
 
@@ -292,7 +292,8 @@ export function isGroqAvailable(): boolean {
  */
 export async function queryAgent(
   question: string,
-  context?: string
+  context?: string,
+  pageContext?: 'landing' | 'dashboard'
 ): Promise<string> {
   // Step 1: Search knowledge base for relevant documentation
   console.log('🔍 Searching knowledge base for:', question);
@@ -301,6 +302,11 @@ export async function queryAgent(
   
   // Step 2: Build RAG context from matched documents
   const ragContext = buildRAGContext(relevantDocs);
+  
+  // Step 3: Add page-specific context for landing page visitors
+  const pageSpecificContext = pageContext === 'landing' 
+    ? `\n\n${LANDING_PAGE_CONTEXT}\n\n` 
+    : '';
   
   // Step 3: Check if Gemini is available
   if (!isGeminiAvailable()) {
@@ -331,6 +337,11 @@ export async function queryAgent(
     
     // Build enhanced prompt with RAG context
     let fullPrompt = CRM_DEMO_ASSISTANT_PROMPT;
+    
+    // Add page-specific context for landing page visitors
+    if (pageSpecificContext) {
+      fullPrompt += pageSpecificContext;
+    }
     
     // Add RAG context if available
     if (ragContext) {
@@ -379,6 +390,14 @@ export async function queryAgent(
         const messages: Array<{ role: 'system' | 'user'; content: string }> = [
           { role: 'system', content: CRM_DEMO_ASSISTANT_PROMPT }
         ];
+        
+        // Add page-specific context for landing page visitors
+        if (pageSpecificContext) {
+          messages.push({
+            role: 'system',
+            content: pageSpecificContext
+          });
+        }
         
         // Add RAG context if available
         if (ragContext) {

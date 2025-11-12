@@ -77,12 +77,14 @@ interface GeminiAgentProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   initialQuestion?: string;
+  pageContext?: 'landing' | 'dashboard';
 }
 
 export const GeminiAgent: React.FC<GeminiAgentProps> = ({
   open,
   onOpenChange,
-  initialQuestion
+  initialQuestion,
+  pageContext = 'dashboard'
 }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -178,8 +180,8 @@ export const GeminiAgent: React.FC<GeminiAgentProps> = ({
         messages.map(m => ({ role: m.role, content: m.content }))
       );
 
-      // Query the agent
-      const response = await queryAgent(messageText, context);
+      // Query the agent with page context
+      const response = await queryAgent(messageText, context, pageContext);
 
       const assistantMessageId = `assistant-${Date.now()}`;
       const assistantMessage: Message = {

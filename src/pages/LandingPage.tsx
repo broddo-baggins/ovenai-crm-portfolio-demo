@@ -2014,6 +2014,7 @@ const LandingPage = () => {
       <GeminiAgent
         open={isAgentOpen}
         onOpenChange={setIsAgentOpen}
+        pageContext="landing"
       />
 
       {/* Early Access Form */}
