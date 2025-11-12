@@ -9,6 +9,12 @@
 
 ## ✨ Features
 
+- **🤖 AI Assistant (NEW!)** - Context-aware AI agent on every page powered by Gemini + Groq fallback
+  - Answers questions about the system, architecture, and features
+  - Explains design decisions and technical choices
+  - GLaDOS-inspired personality: witty, clever, and genuinely helpful
+  - Landing page mode: Introduces creator, explains product vision, guides exploration
+  - Dashboard mode: Deep technical assistance and feature explanations
 - **AI-Powered Lead Management** - Intelligent lead scoring, qualification, and routing
 - **Real-Time Conversations** - WhatsApp integration with live chat capabilities
 - **Advanced Analytics** - Comprehensive dashboards with charts and reports
@@ -52,8 +58,20 @@ Demo mode is enabled by default and provides:
 - **7 calendar events** with various meeting types
 - **4 conversation threads** with realistic message exchanges
 - **Full dashboard analytics** with charts and KPIs
+- **AI Assistant** - Click the sparkly purple button (bottom-right) to ask questions!
 
 No authentication required - just start and explore!
+
+### Try the AI Assistant
+
+Look for the **sparkly purple button** in the bottom-right corner on any page! Ask questions like:
+- "Who built this?"
+- "How do I log in?"
+- "What is BANT scoring?"
+- "How was the WhatsApp interface built?"
+- "What's the tech stack?"
+
+The AI assistant provides context-aware responses and knows the entire system inside and out!
 
 ## 📚 Documentation
 
@@ -77,6 +95,13 @@ No authentication required - just start and explore!
 - **TanStack Query** - Data fetching and caching
 - **Zustand** - State management
 - **i18next** - Internationalization
+
+### AI Integration
+- **Google Gemini** - Primary AI model for natural language understanding
+- **Groq (Llama 3.3 70B)** - High-speed fallback AI (14,400 req/day)
+- **RAG Knowledge Base** - Retrieval-augmented generation with 100+ documentation chunks
+- **Context-Aware Responses** - Different AI behavior for landing page vs. dashboard
+- **Streaming Responses** - Real-time message streaming for better UX
 
 ### Backend Integration
 - **Supabase** - Database and authentication
@@ -215,9 +240,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For questions, issues, or feature requests:
+- **AI Assistant**: Click the sparkly button in the app for instant help!
 - **Issues**: [GitHub Issues](https://github.com/broddo-baggins/crm-portfolio-demo/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/broddo-baggins/crm-portfolio-demo/discussions)
-- **Email**: demo@example.com
 
 ---
 

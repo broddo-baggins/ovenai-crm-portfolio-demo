@@ -92,7 +92,7 @@ export function SystemPromptEditor() {
   }, []);
 
   useEffect(() => {
-    if (currentUser && currentUser.email === 'vladtzadik@gmail.com') {
+    if (currentUser && currentUser.user_metadata?.is_admin) {
       loadProjects();
       loadSystemPrompts();
     }
@@ -399,8 +399,8 @@ export function SystemPromptEditor() {
     URL.revokeObjectURL(url);
   };
 
-  // Check if user is CEO
-  if (currentUser && currentUser.email !== 'vladtzadik@gmail.com') {
+  // Check if user is admin
+  if (currentUser && !currentUser.user_metadata?.is_admin) {
     return (
       <div className="space-y-6">
         <div className="flex items-center gap-4">
