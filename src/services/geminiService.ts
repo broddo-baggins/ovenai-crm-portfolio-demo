@@ -1,14 +1,22 @@
 /**
- * Gemini AI Service
+ * Gemini AI Service with Groq Fallback
  * 
- * Provides AI assistant functionality using Google's Gemini API.
+ * Provides AI assistant functionality using Google's Gemini API as primary,
+ * with Groq as a fallback for higher availability and reliability.
  * This service powers the CRM Demo Assistant that helps users understand
  * the application, its features, architecture, and data.
+ * 
+ * Fallback Chain:
+ * 1. Gemini (Primary) - High quality, 50 req/day
+ * 2. Groq (Fallback) - Fast LPU inference, 14,400 req/day
+ * 3. Mock Responses (Final) - Always available
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import Groq from 'groq-sdk';
 import { CRM_DEMO_ASSISTANT_PROMPT } from '@/config/systemPrompts';
 import { searchKnowledgeBase, buildRAGContext, type DocumentChunk } from './ragKnowledgeBase';
+import { env } from '@/config/env';
 
 // Mock response when Gemini is not available
 const getMockResponse = (question: string): string => {
@@ -254,11 +262,29 @@ What would you like to know?`;
 };
 
 /**
+ * Initialize Groq client for fallback AI responses
+ */
+const groqApiKey = env.GROQ_API_KEY;
+const groq = groqApiKey && groqApiKey.length > 0 
+  ? new Groq({ 
+      apiKey: groqApiKey, 
+      dangerouslyAllowBrowser: true 
+    }) 
+  : null;
+
+/**
  * Check if Gemini API is available
  */
 export function isGeminiAvailable(): boolean {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   return Boolean(apiKey && apiKey.length > 0);
+}
+
+/**
+ * Check if Groq API is available
+ */
+export function isGroqAvailable(): boolean {
+  return Boolean(groqApiKey && groqApiKey.length > 0);
 }
 
 /**
@@ -341,20 +367,78 @@ export async function queryAgent(
     }
     
     return text;
-  } catch (error: any) {
-    console.error('❌ Gemini API error:', error);
+  } catch (geminiError: any) {
+    console.warn('⚠️ Gemini failed, trying Groq fallback...', geminiError);
+    
+    // Step 2: Try Groq as fallback
+    if (groq && isGroqAvailable()) {
+      try {
+        console.log('🔄 Attempting Groq fallback...');
+        
+        // Build messages for Groq (OpenAI-compatible format)
+        const messages: Array<{ role: 'system' | 'user'; content: string }> = [
+          { role: 'system', content: CRM_DEMO_ASSISTANT_PROMPT }
+        ];
+        
+        // Add RAG context if available
+        if (ragContext) {
+          messages.push({
+            role: 'system',
+            content: `📚 Relevant Documentation from CRM Knowledge Base:\n\n${ragContext}`
+          });
+        }
+        
+        // Add conversation context if provided
+        if (context) {
+          messages.push({
+            role: 'system',
+            content: `💬 Conversation History:\n${context}`
+          });
+        }
+        
+        // Add user question
+        messages.push({ role: 'user', content: question });
+        
+        const completion = await groq.chat.completions.create({
+          messages,
+          model: 'llama-3.3-70b-versatile', // Best free model from Groq
+          temperature: 0.7,
+          max_tokens: 2048,
+        });
+        
+        const groqResponse = completion.choices[0]?.message?.content || '';
+        
+        console.log('✅ Groq response received');
+        
+        // Optionally append sources
+        if (relevantDocs.length > 0 && groqResponse) {
+          const sources = relevantDocs
+            .map(doc => `- ${doc.title} (${doc.source})`)
+            .join('\n');
+          return `${groqResponse}\n\n---\n\n<small>📚 **Sources consulted:**\n${sources}\n\n*⚡ Powered by Groq (Gemini fallback)*</small>`;
+        }
+        
+        return groqResponse || getMockResponse(question);
+        
+      } catch (groqError: any) {
+        console.error('❌ Groq also failed:', groqError);
+      }
+    }
+    
+    // Step 3: Final fallback to mock responses
+    console.warn('📋 Using mock responses (both Gemini and Groq unavailable)');
     
     // Provide helpful error messages
-    if (error?.message?.includes('API key')) {
+    if (geminiError?.message?.includes('API key')) {
       return `⚠️ **API Key Issue**\n\nThere's a problem with the Gemini API key. Please verify it's correctly set in your environment variables.\n\n${getMockResponse(question)}`;
     }
     
-    if (error?.message?.includes('quota') || error?.message?.includes('rate limit')) {
-      return `⚠️ **Rate Limit Reached**\n\nThe Gemini API rate limit has been reached. Here's a mock response:\n\n${getMockResponse(question)}`;
+    if (geminiError?.message?.includes('quota') || geminiError?.message?.includes('rate limit')) {
+      return `⚠️ **Rate Limit Reached**\n\nThe Gemini API rate limit has been reached. Trying alternative AI...\n\n${getMockResponse(question)}`;
     }
     
-    // Fallback to mock responses with error notice
-    return `⚠️ **Temporary Error**\n\nI'm having trouble connecting to Gemini AI. Here's a mock response:\n\n${getMockResponse(question)}`;
+    // Generic fallback message
+    return `⚠️ **AI Temporarily Unavailable**\n\nBoth Gemini and Groq AI services are currently unavailable. Here's a mock response:\n\n${getMockResponse(question)}`;
   }
 }
 

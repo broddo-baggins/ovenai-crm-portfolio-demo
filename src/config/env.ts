@@ -65,6 +65,10 @@ export const env = {
       ? "https://crm-portfolio-demo.vercel.app/auth/google/callback"
       : "http://localhost:3000/auth/google/callback"),
 
+  // AI Configuration
+  GEMINI_API_KEY: import.meta.env.VITE_GEMINI_API_KEY || "",
+  GROQ_API_KEY: import.meta.env.VITE_GROQ_API_KEY || "",
+
   // Development flags
   IS_DEV: import.meta.env.DEV,
   IS_PROD: import.meta.env.PROD,
@@ -101,6 +105,14 @@ export const env = {
 
   get isCalendlyConfigured() {
     return !!(this.CALENDLY_CLIENT_ID && this.CALENDLY_REDIRECT_URI);
+  },
+
+  get isGeminiConfigured() {
+    return !!this.GEMINI_API_KEY;
+  },
+
+  get isGroqConfigured() {
+    return !!this.GROQ_API_KEY;
   },
 
   // Debug info (without service role references)
@@ -141,6 +153,13 @@ export const env = {
         hasRedirectUri: !!this.CALENDLY_REDIRECT_URI,
         redirectUri: this.CALENDLY_REDIRECT_URI,
         isConfigured: this.isCalendlyConfigured,
+      },
+      // AI configuration status
+      ai: {
+        hasGeminiKey: !!this.GEMINI_API_KEY,
+        hasGroqKey: !!this.GROQ_API_KEY,
+        isGeminiConfigured: this.isGeminiConfigured,
+        isGroqConfigured: this.isGroqConfigured,
       },
     };
   },
