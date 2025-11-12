@@ -47,7 +47,7 @@ export default function IntegrationVisualization() {
       ) 
     },
     { 
-      name: 'Meta', 
+      name: 'Meta*', 
       color: 'bg-blue-600', 
       icon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current text-white">
