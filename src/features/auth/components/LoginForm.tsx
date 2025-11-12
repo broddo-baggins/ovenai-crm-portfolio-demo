@@ -24,8 +24,6 @@ const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
-  const [isFacebookLoading, setIsFacebookLoading] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [_supabaseHealthy, setSupabaseHealthy] = useState<boolean | null>(null);
   
@@ -58,16 +56,14 @@ const LoginForm: React.FC = () => {
     e.preventDefault();
     setAuthError(null);
     
-    if (!email || !password) {
-      setAuthError(t('auth.errors.fillAllFields', 'Please fill in all fields'));
-      return;
-    }
+    // DEMO MODE: Accept any credentials (no validation)
+    console.log('DEMO [DEMO MODE] Login form submitted - accepting any credentials');
 
     try {
       setIsLoading(true);
       console.log('SECURITY [LoginForm] Starting login process...');
 
-      const result = await login(email, password);
+      const result = await login(email || 'demo@crm.demo', password || 'demo');
       console.log('SECURITY [LoginForm] Login result:', result);
       
       if (result.success) {
@@ -93,49 +89,15 @@ const LoginForm: React.FC = () => {
   };
 
   const handleGoogleLogin = async () => {
-    try {
-      setIsGoogleLoading(true);
-      setAuthError(null);
-
-      const result = await login('', '', 'google');
-      
-      if (result.success) {
-        console.log('Google OAuth initiated successfully');
-        // Don't navigate here - the OAuth flow will handle it
-      } else {
-        const errorMessage = result.error || t('auth.errors.googleLoginFailed', 'Google login failed');
-        setAuthError(errorMessage);
-      }
-    } catch (error: any) {
-      const errorMessage = error.message || t('auth.errors.googleLoginFailed', 'Google login failed');
-      console.error('Google login error:', errorMessage);
-      setAuthError(errorMessage);
-    } finally {
-      setIsGoogleLoading(false);
-    }
+    // DEMO MODE: OAuth buttons disabled for portfolio demo
+    console.log('DEMO [DEMO MODE] Google OAuth disabled in demo mode');
+    return;
   };
 
   const handleFacebookLogin = async () => {
-    try {
-      setIsFacebookLoading(true);
-      setAuthError(null);
-
-      const result = await login('', '', 'facebook');
-      
-      if (result.success) {
-        console.log('Facebook OAuth initiated successfully');
-        // Don't navigate here - the OAuth flow will handle it
-      } else {
-        const errorMessage = result.error || t('auth.errors.facebookLoginFailed', 'Facebook login failed');
-        setAuthError(errorMessage);
-      }
-    } catch (error: any) {
-      const errorMessage = error.message || t('auth.errors.facebookLoginFailed', 'Facebook login failed');
-      console.error('Facebook login error:', errorMessage);
-      setAuthError(errorMessage);
-    } finally {
-      setIsFacebookLoading(false);
-    }
+    // DEMO MODE: OAuth buttons disabled for portfolio demo
+    console.log('DEMO [DEMO MODE] Facebook OAuth disabled in demo mode');
+    return;
   };
 
   // handleFallbackLogin function removed for security
@@ -173,61 +135,14 @@ const LoginForm: React.FC = () => {
         <Button 
           type="submit" 
           className="w-full" 
-          disabled={isLoading || isGoogleLoading || isFacebookLoading}
+          disabled={isLoading}
           data-testid="login-button"
         >
           {isLoading ? t('auth.signingIn', 'Signing in...') : t('auth.signIn', 'Sign In')}
         </Button>
 
-        {/* Social Login */}
-        <div className="relative w-full">
-          <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">
-              {t('auth.orContinueWith', 'Or continue with')}
-            </span>
-          </div>
-        </div>
-
-        <div className="flex space-x-2 w-full">
-          <Button
-            type="button"
-            variant="outline"
-            className="flex-1 h-10"
-            onClick={handleGoogleLogin}
-            disabled={isLoading || isGoogleLoading || isFacebookLoading}
-          >
-            <div className="flex items-center justify-center gap-2 w-full">
-              {isGoogleLoading ? (
-                <div className="w-4 h-4 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin shrink-0" />
-              ) : (
-                <GoogleIcon className="w-4 h-4 shrink-0" />
-              )}
-              <span className="font-medium">Google</span>
-            </div>
-          </Button>
-          
-          <Button
-            type="button"
-            variant="outline"
-            className="flex-1 h-10"
-            onClick={handleFacebookLogin}
-            disabled={isLoading || isGoogleLoading || isFacebookLoading}
-          >
-            <div className="flex items-center justify-center gap-2 w-full">
-              {isFacebookLoading ? (
-                <div className="w-4 h-4 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin shrink-0" />
-              ) : (
-                <FacebookIcon className="w-4 h-4 shrink-0" />
-              )}
-              <span className="font-medium">Facebook</span>
-            </div>
-          </Button>
-        </div>
-
-        {/* Development Fallback Login - REMOVED FOR SECURITY */}
+        {/* DEMO MODE: OAuth social login hidden for portfolio demo */}
+        {/* Google and Facebook authentication not available in demo mode */}
       </CardFooter>
     </form>
   );
