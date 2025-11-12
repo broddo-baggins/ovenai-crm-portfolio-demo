@@ -307,6 +307,22 @@ function App() {
                               } 
                             />
                             <Route 
+                              path="/landingpage" 
+                              element={
+                                <LightModeWrapper>
+                                  <LandingPage />
+                                </LightModeWrapper>
+                              } 
+                            />
+                            <Route 
+                              path="/land" 
+                              element={
+                                <LightModeWrapper>
+                                  <LandingPage />
+                                </LightModeWrapper>
+                              } 
+                            />
+                            <Route 
                               path="/he" 
                               element={
                                 <LightModeWrapper>
