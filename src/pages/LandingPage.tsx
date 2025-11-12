@@ -867,6 +867,41 @@ const LandingPage = () => {
               <motion.div variants={slideUpVariants} className="space-y-8">
                 <div className="space-y-6">
                   <div
+                    className="flex items-start gap-4 p-6 bg-gradient-to-br from-purple-50 to-blue-50 border-2 border-purple-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
+                    dir={isHebrew ? "rtl" : "ltr"}
+                  >
+                    <div className="absolute top-0 right-0 bg-gradient-to-br from-purple-500 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                      {isHebrew ? "חדש!" : "NEW!"}
+                    </div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <Bot className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-geist-semibold text-gray-900 mb-2">
+                        {isHebrew
+                          ? "עוזר AI חכם עם גיבוי Groq"
+                          : "Smart AI Assistant with Groq Fallback"}
+                      </h3>
+                      <p className="font-geist text-gray-700 leading-relaxed mb-2">
+                        {isHebrew
+                          ? "שאל את העוזר החכם שלנו כל שאלה על המערכת! מופעל על ידי Gemini AI עם גיבוי Groq (14,400 בקשות/יום) - ללא השבתות, תמיד זמין."
+                          : "Ask our clever AI assistant anything about the system! Powered by Gemini AI with Groq fallback (14,400 req/day) - no downtime, always available."}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-medium">
+                          {isHebrew ? "חכם וסרקסטי" : "Clever & Witty"}
+                        </span>
+                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium">
+                          {isHebrew ? "עומק טכני" : "Technical Depth"}
+                        </span>
+                        <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">
+                          {isHebrew ? "זמין תמיד" : "Always Available"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
                     className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
                     dir={isHebrew ? "rtl" : "ltr"}
                   >
